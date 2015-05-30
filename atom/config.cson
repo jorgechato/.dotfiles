@@ -1,0 +1,47 @@
+"*":
+  "exception-reporting":
+    userId: "f158d5ed-fc3b-be34-37bc-8f1c355d8355"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "one-light-ui"
+      "atom-github-theme"
+    ]
+    disabledPackages: [
+      "language-sql"
+      "language-yaml"
+      "metrics"
+      "styleguide"
+      "welcome"
+      "language-perl"
+      "language-objective-c"
+      "language-csharp"
+      "language-c"
+      "autosave"
+      "autoflow"
+      "background-tips"
+    ]
+    autoHideMenuBar: true
+  editor:
+    invisibles:
+      {}
+    tabLength: 4
+    fontSize: 14
+    zoomFontWhenCtrlScrolling: false
+  linter:
+    ignoredLinterErrors: [
+      "tidy"
+    ]
+  "markdown-pdf":
+    {}
+  "markdown-preview":
+    useGitHubStyle: true
+  emmet:
+    {}
+  "merge-conflicts":
+    {}
+  "todo-show":
+    {}
+  "spell-check":
+    {}
