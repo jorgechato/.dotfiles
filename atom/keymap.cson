@@ -15,6 +15,8 @@
 # 'atom-workspace':
 #   'ctrl-shift-p': 'core:move-up'
 #   'ctrl-p': 'core:move-down'
+'atom-text-editor':
+  'ctrl-alt-i': 'editor:auto-indent'
 #
 # You can find more information about keymaps in these guides:
 # * https://atom.io/docs/latest/using-atom-basic-customization#customizing-key-bindings
