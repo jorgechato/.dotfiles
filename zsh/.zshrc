@@ -93,4 +93,4 @@ alias atomlenguage="cd /usr/share/atom/resources/app.asar.unpacked/node_modules/
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # terminator with 256 colors to vim
-export TERM=xterm-256color
+export TERM="xterm-256color"
