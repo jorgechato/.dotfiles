@@ -1,21 +1,29 @@
 [global_config]
   title_receive_bg_color = "#242424"
   title_hide_sizetext = True
+  window_state = fullscreen
   suppress_multiple_term_dialog = True
 [keybindings]
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#000000:#b71c1c:#33691e:#004d40:#ff6f00:#4a148c:#00cdcd:#e5e5e5:#4c4c4c:#e53935:#7cb342:#009688:#ffb300:#7b1fa2:#00ffff:#ffffff"
+    palette = "#212121:#b7141f:#457b24:#fc7b08:#134eb2:#560088:#0e717c:#efefef:#424242:#e83b3f:#7aba3a:#fd8e09:#54a4f3:#aa4dbc:#26bbd1:#d9d9d9"
+    alternate_screen_scroll = False
+    background_color = "#eaeaea"
+    cursor_color = "#16afca"
+    foreground_color = "#2e2e2d"
+    show_titlebar = False
+    background_image = None
+    scrollback_infinite = True
+  [[github]]
+    scrollbar_position = hidden
+    palette = "#3e3e3e:#970b16:#07962a:#f8eec7:#003e8a:#e94691:#89d1ec:#ffffff:#666666:#de0000:#87d5a2:#f1d007:#2e6cba:#ffa29f:#1cfafe:#ffffff"
     alternate_screen_scroll = False
     background_image = None
-    background_darkness = 0.9
-    background_type = transparent
-    use_system_font = False
-    foreground_color = "#3f51b5"
+    cursor_color = "#3f3f3f"
+    foreground_color = "#3e3e3e"
     show_titlebar = False
-    font = Monospace 11
-    background_color = "#f8f8ff"
+    background_color = "#f4f4f4"
     scrollback_infinite = True
   [[orggue]]
     scrollbar_position = hidden
@@ -28,6 +36,46 @@
     foreground_color = "#00ff00"
     show_titlebar = False
     font = Monospace 12
+    scrollback_infinite = True
+  [[gotham]]
+    scrollbar_position = hidden
+    palette = "#0a0f14:#c33027:#26a98b:#edb54b:#195465:#4e5165:#33859d:#98d1ce:#10151b:#d26939:#081f2d:#245361:#093748:#888ba5:#599caa:#d3ebe9"
+    login_shell = True
+    use_system_font = False
+    background_darkness = 0.94
+    scrollback_lines = 5000
+    active_encodings = ANSI_X3.4-1968, UTF-8, ISO-8859-1
+    cursor_color = "#7b7b7b"
+    foreground_color = "#98d1ce"
+    background_image = None
+    font = Droid Sans Mono 7
+    background_color = "#0a0f14"
+    allow_bold = False
+  [[spacegray]]
+    scrollbar_position = hidden
+    palette = "#2c2f33:#b04c50:#919652:#e2995c:#66899d:#8d6494:#527c77:#606360:#4b5056:#b04c50:#94985b:#e2995c:#66899d:#8d6494:#527c77:#dde3dc"
+    login_shell = True
+    use_system_font = False
+    background_darkness = 0.94
+    scrollback_lines = 5000
+    active_encodings = ANSI_X3.4-1968, UTF-8, ISO-8859-1
+    cursor_color = "#7b7b7b"
+    foreground_color = "#b7bbb7"
+    background_image = None
+    font = Droid Sans Mono 7
+    background_color = "#111314"
+    allow_bold = False
+  [[default2]]
+    scrollbar_position = hidden
+    palette = "#000000:#b71c1c:#33691e:#004d40:#ff6f00:#4a148c:#00cdcd:#e5e5e5:#4c4c4c:#e53935:#7cb342:#009688:#ffb300:#7b1fa2:#00ffff:#ffffff"
+    alternate_screen_scroll = False
+    background_image = None
+    background_darkness = 0.9
+    use_system_font = False
+    foreground_color = "#3f51b5"
+    show_titlebar = False
+    font = Monospace 10.5
+    background_color = "#f8f8ff"
     scrollback_infinite = True
 [layouts]
   [[default]]

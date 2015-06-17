@@ -7,17 +7,74 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Search Pattern:
+~MSle0~/\<src\>
+
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :q
+:ls
+:wq
+:w
+:b app/assets/javascripts/newui/controllers/threads.js
+:b app/assets/javascripts/newui/services/threadmanager.js
+:NERDTree
+:b app/assets/javascripts/newui/directives/thread.js
+:b public/views/threads/elements/thread.html
+:b app/assets/stylesheets/active_admin.css.scss
+:b app/assets/stylesheets/newui/modules/threads/_threads.css.scss
+:e public/views/threads/elements/
 :q!
+:n Notes/Jorge/interesting.md
+:Q
+:help indent-guides
+:NERDTree:q
+:PluginInstall
+:setlocal spell spelllang=es_es
+:help ctrlp-mappings
+:n Notes/Jorge/tareas.md
+:help ctrlp.txt
+:helptags ~/.vim/bundle/ctrlp.vim/doc
+::helptags ~/.vim/bundle/ctrlp.vim/doc
+:b app/assets/stylesheets/newui/modules/imagesearch/_fullscreenview.css.scss
+:help airline
+:Helptags
+:AirlineTheme dark
+:AirlineTheme simple
+:AirlineTheme syntastic
+:AirlineTheme wombat
+:d
+:find z-index
+:Find z-index
+:e app/assets/stylesheets/newui/modules/imagesearch/
+:n
+:help remove
+:r jorge.md
+:n jorge.md
+:n 
+:w jorge.md
+:setlocal spell
+:spell
+:name demo.js
 :colorscheme github
 :e .vimrc
 :Sex
 
 # Search String History (newest to oldest):
+? \Vget\%#
+? \Vcur\%#
+? \Vc\%#
+? \<src\>
+? \<font\>
+? \<asset\>
+? \$\(cursor\|select\)\$
+? \<icon\>
+?/-d
+?/icon
+? \Vspan\%#
+? ^
 
 # Expression History (newest to oldest):
 
@@ -26,133 +83,1078 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
+""0	CHAR	0
+	ar una paleta de palabras clave, tantas como consideres
+	    necesarias.
+	+ investigar los blogs en los que **insulinum** se puede promocionar.
+"1	CHAR	0
+	ar una paleta de palabras clave, tantas como consideres
+	    necesarias.
+	+ investigar los blogs en los que **insulinum** se puede promocionar.
+"2	CHAR	0
+	ar una paleta de palabras clave, tantas como consideres
+	    necesarias.
+	+ investigar los blogs en los que **insulinum** se puede promocionar.
+"3	CHAR	0
+	ar una paleta de palabras clave, tantas como consideres
+	    necesarias.
+	+ investigar los blogs en los que **insulinum** se puede promocionar.
+"4	CHAR	0
+	ar una paleta de palabras clave, tantas como consideres
+	    necesarias.
+	+ investigar los blogs en los que **insulinum** se puede promocionar.
+"5	CHAR	0
+	iar ventajas/inconvenientes de crear la empresa en Amsterdam frente a España.
+	+ crear presupuesto ajustado
+	+ buscar networking que apoyen el proyecto
+	
+	## Beto
+"6	CHAR	0
+	iar ventajas/inconvenientes de crear la empresa en Amsterdam frente a España.
+	+ crear presupuesto ajustado
+"7	CHAR	0
+	i
+	+ buscar networking que apoyen el proyecto
+"8	CHAR	0
+	ar ventajas/inconvenientes de crear la empresa en Amsterdam frente a España.
+	+ crear presupuesto ajustado
+"9	LINE	0
+	    scrollback_infinite = True
+"-	CHAR	0
+	000
 
 # File marks:
-'0  28  0  ~/Github/TecnoBot/lib/bot.js
-'1  77  0  ~/Github/TecnoBot/lib/bot.js
-'2  146  0  ~/Github/TecnoBot/lib/bot.js
-'3  188  0  ~/Github/TecnoBot/lib/bot.js
-'4  1  0  ~/Github/TecnoBot/lib/bot.js
-'5  133  21  ~/Github/TecnoBot/lib/bot.js
-'6  1  0  ~/Github/TecnoBot/gulpfile.js
-'7  83  20  ~/.zshrc
-'8  27  0  ~/.vimrc
-'9  41  25  ~/.vimrc
+'M  52  0  ~/.vimrc
+'0  4  25  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
+'1  9  0  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
+'2  17  29  ~/.config/terminator/config
+'3  16  26  ~/.config/terminator/config
+'4  15  4  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
+'5  2  0  ~/Github/insulinum-angular/src/scripts/dashboard/my/main.controller.js
+'6  18  24  ~/.config/terminator/config
+'7  18  29  ~/.config/terminator/config
+'8  18  3  ~/.config/terminator/config
+'9  18  3  ~/.config/terminator/config
 
 # Jumplist (newest first):
--'  28  0  ~/Github/TecnoBot/lib/bot.js
--'  77  0  ~/Github/TecnoBot/lib/bot.js
--'  146  0  ~/Github/TecnoBot/lib/bot.js
--'  188  0  ~/Github/TecnoBot/lib/bot.js
--'  1  0  ~/Github/TecnoBot/lib/bot.js
--'  133  21  ~/Github/TecnoBot/lib/bot.js
--'  185  21  ~/Github/TecnoBot/lib/bot.js
--'  1  0  ~/Github/TecnoBot/gulpfile.js
--'  83  20  ~/.zshrc
--'  1  0  ~/.zshrc
--'  27  0  ~/.vimrc
--'  41  25  ~/.vimrc
--'  23  0  ~/.vimrc
--'  42  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  7  2  ~/.vimrc
--'  128  19  ~/Github/TecnoBot/lib/bot.js
--'  1  0  ~/Github/TecnoBot/gulpfile.js
--'  83  20  ~/.zshrc
--'  1  0  ~/.zshrc
--'  27  0  ~/.vimrc
--'  41  25  ~/.vimrc
--'  23  0  ~/.vimrc
--'  42  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  7  2  ~/.vimrc
--'  1  0  ~/Github/TecnoBot/gulpfile.js
--'  83  20  ~/.zshrc
--'  1  0  ~/.zshrc
--'  27  0  ~/.vimrc
--'  41  25  ~/.vimrc
--'  23  0  ~/.vimrc
--'  42  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  7  2  ~/.vimrc
--'  1  0  ~/Github/TecnoBot/gulpfile.js
--'  83  20  ~/.zshrc
--'  1  0  ~/.zshrc
--'  27  0  ~/.vimrc
--'  41  25  ~/.vimrc
--'  23  0  ~/.vimrc
--'  42  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  7  2  ~/.vimrc
--'  1  0  ~/Github/TecnoBot/gulpfile.js
--'  83  20  ~/.zshrc
--'  1  0  ~/.zshrc
--'  27  0  ~/.vimrc
--'  41  25  ~/.vimrc
--'  23  0  ~/.vimrc
--'  42  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  7  2  ~/.vimrc
--'  1  0  ~/Github/TecnoBot/gulpfile.js
--'  83  20  ~/.zshrc
--'  1  0  ~/.zshrc
--'  27  0  ~/.vimrc
--'  41  25  ~/.vimrc
--'  23  0  ~/.vimrc
--'  42  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  7  2  ~/.vimrc
--'  1  0  ~/Github/TecnoBot/gulpfile.js
--'  83  20  ~/.zshrc
--'  1  0  ~/.zshrc
--'  27  0  ~/.vimrc
--'  41  25  ~/.vimrc
--'  23  0  ~/.vimrc
--'  42  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  7  2  ~/.vimrc
--'  1  0  ~/Github/TecnoBot/gulpfile.js
--'  83  20  ~/.zshrc
--'  1  0  ~/.zshrc
--'  27  0  ~/.vimrc
--'  41  25  ~/.vimrc
--'  19  16  ~/Github/TecnoBot/lib/bot.js
--'  187  4  ~/Github/TecnoBot/lib/bot.js
--'  7  0  ~/Github/TecnoBot/lib/bot.js
--'  1  0  ~/Github/TecnoBot/gulpfile.js
--'  83  20  ~/.zshrc
--'  1  0  ~/.zshrc
--'  27  0  ~/.vimrc
--'  41  25  ~/.vimrc
--'  23  0  ~/.vimrc
--'  42  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  7  2  ~/.vimrc
--'  1  0  ~/Github/TecnoBot/gulpfile.js
--'  83  20  ~/.zshrc
--'  1  0  ~/.zshrc
--'  27  0  ~/.vimrc
--'  41  25  ~/.vimrc
--'  23  0  ~/.vimrc
--'  42  0  ~/.vimrc
--'  1  0  ~/Github/TecnoBot/gulpfile.js
+-'  4  25  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
+-'  2  14  ~/Github/Dashmote/dashmote-rail/public/views/threads/base.html
+-'  1  0  ~/Github/Dashmote/dashmote-rail/public/views/threads/base.html
+-'  8  0  ~/Github/Dashmote/dashmote-rail
+-'  1  0  ~/Github/Dashmote/dashmote-rail
+-'  9  0  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
+-'  15  6  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
+-'  6  6  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
+-'  1  0  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
+-'  8  0  ~/Dropbox/insulinum S.L
+-'  1  0  ~/Dropbox/insulinum S.L
+-'  17  29  ~/.config/terminator/config
+-'  16  26  ~/.config/terminator/config
+-'  18  3  ~/.config/terminator/config
+-'  20  0  ~/Dropbox/insulinum S.L
+-'  2  0  ~/Github/insulinum-angular/src/scripts/dashboard/my/main.controller.js
+-'  1  0  ~/Github/insulinum-angular/src/scripts/dashboard/my/main.controller.js
+-'  8  0  ~/Github/insulinum-angular
+-'  1  0  ~/Github/insulinum-angular
+-'  1  0  .vim/color/github.vim
+-'  1  0  ~/.config/terminator/config
+-'  1  0  ~/.vim/color/github.vim
+-'  10  15  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  10  28  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/threadmanager.js
+-'  17  13  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  16  32  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  2  6  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  39  25  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  40  43  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/threadmanager.js
+-'  34  34  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  8  54  ~/Github/Dashmote/dashmote-rail/public/views/threads/elements/thread.html
+-'  35  34  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  9  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  10  38  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  38  26  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  29  19  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  57  15  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js
+-'  19  5  ~/Github/Dashmote/dashmote-rail/NERD_tree_4
+-'  73  2  ~/Github/Dashmote/dashmote-rail/NERD_tree_4
+-'  1  5  ~/Github/Dashmote/dashmote-rail/NERD_tree_4
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/active_admin.css.scss
+-'  21  0  ~/Github/Dashmote/dashmote-rail/NERD_tree_3
+-'  73  2  ~/Github/Dashmote/dashmote-rail/NERD_tree_3
+-'  1  0  ~/Github/Dashmote/dashmote-rail/NERD_tree_3
+-'  43  12  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  64  26  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
+-'  63  1  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
+-'  60  20  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
+-'  10  0  ~/Github/Dashmote/dashmote-rail/public/views/threads/elements/thread.html
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
+-'  1  5  ~/Github/Dashmote/dashmote-rail/NERD_tree_1
+-'  10  15  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  10  28  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/threadmanager.js
+-'  17  13  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  16  32  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  2  6  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  39  25  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  40  43  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/threadmanager.js
+-'  34  34  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  8  54  ~/Github/Dashmote/dashmote-rail/public/views/threads/elements/thread.html
+-'  35  34  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  9  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  10  38  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  38  26  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  29  19  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  57  15  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js
+-'  19  5  ~/Github/Dashmote/dashmote-rail/NERD_tree_4
+-'  73  2  ~/Github/Dashmote/dashmote-rail/NERD_tree_4
+-'  1  5  ~/Github/Dashmote/dashmote-rail/NERD_tree_4
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/active_admin.css.scss
+-'  21  0  ~/Github/Dashmote/dashmote-rail/NERD_tree_3
+-'  73  2  ~/Github/Dashmote/dashmote-rail/NERD_tree_3
+-'  1  0  ~/Github/Dashmote/dashmote-rail/NERD_tree_3
+-'  43  12  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  10  0  ~/Github/Dashmote/dashmote-rail/public/views/threads/elements/thread.html
+-'  1  0  ~/.vim/color/github.vim
+-'  10  15  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  10  28  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/threadmanager.js
+-'  17  13  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  16  32  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  2  6  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+-'  39  25  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  40  43  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/threadmanager.js
+-'  34  34  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  8  54  ~/Github/Dashmote/dashmote-rail/public/views/threads/elements/thread.html
+-'  35  34  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  9  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+-'  9  0  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
+-'  15  6  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
+-'  6  6  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
+-'  1  0  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
 
 # History of marks within files (newest to oldest):
 
+> ~/Github/Dashmote/dashmote-rail/NERD_tree_1
+	"	6	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/public/views/threads/base.html
+	"	2	14
+
+> ~/Github/Dashmote/dashmote-rail/ControlP
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
+	"	4	25
+	^	64	27
+	.	64	26
+	+	66	0
+	+	60	0
+	+	66	0
+	+	60	26
+	+	61	23
+	+	63	19
+	+	65	0
+	+	63	0
+	+	66	0
+	+	63	0
+	+	63	0
+	+	64	0
+	+	64	26
+
+> ~/Dropbox/insulinum S.L/NERD_tree_1
+	"	11	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
+	"	9	0
+	^	17	69
+	.	15	0
+	+	1	8
+	+	6	9
+	+	4	7
+	+	6	2
+	+	3	70
+	+	3	88
+	+	3	1
+	+	3	258
+	+	3	220
+	+	3	329
+	+	4	0
+	+	3	243
+	+	3	243
+	+	3	173
+	+	3	138
+	+	3	72
+	+	3	72
+	+	4	0
+	+	14	0
+	+	6	7
+	+	6	7
+	+	13	35
+	+	12	14
+	+	13	68
+	+	6	48
+	+	6	23
+	+	6	7
+	+	6	7
+	+	6	7
+	+	6	0
+	+	15	7
+	+	15	7
+	+	15	7
+	+	15	0
+
+> ~/.config/terminator/config
+	"	17	29
+	^	17	30
+	.	17	4
+	+	7	1
+	+	7	0
+	+	7	0
+	+	7	14
+	+	27	0
+	+	7	10
+	+	27	12
+	+	27	0
+	+	27	0
+	+	27	0
+	+	26	0
+	+	19	4
+	+	20	0
+	+	19	0
+	+	23	0
+	+	21	30
+	+	22	4
+	+	18	9
+	+	18	0
+	+	18	3
+	+	18	31
+	+	18	35
+	+	18	3
+	+	18	25
+	+	18	32
+	+	18	0
+	+	18	3
+	+	18	0
+	+	16	0
+	+	9	4
+	+	11	35
+	+	15	4
+	+	17	4
+
+> ~/Github/insulinum-angular/NERD_tree_1
+	"	17	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/insulinum-angular/src/scripts/dashboard/my/main.controller.js
+	"	2	0
+	^	77	28
+	.	75	0
+	+	77	23
+	+	77	22
+	+	77	21
+	+	77	20
+	+	77	19
+	+	77	18
+	+	77	17
+	+	78	0
+	+	75	21
+	+	76	24
+	+	75	0
+
+> .vim/color/github.vim
+	"	1	0
+
+> ~/.vim/color/github.vim
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/active_admin.css.scss
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/public/views/threads/elements/thread.html
+	"	8	54
+	^	8	55
+	.	8	54
+	+	6	0
+	+	6	7
+	+	9	7
+	+	9	7
+	+	9	7
+	+	6	0
+	+	9	0
+	+	6	21
+	+	9	0
+	+	9	0
+	+	9	8
+	+	9	0
+	+	7	41
+	+	9	0
+	+	8	25
+	+	7	30
+	+	6	55
+	+	7	32
+	+	8	54
+
+> ~/Github/Dashmote/dashmote-rail/NERD_tree_2
+	"	25	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
+	"	36	25
+	^	36	26
+	.	36	25
+	+	29	0
+	+	31	19
+	+	32	23
+	+	31	19
+	+	32	23
+	+	33	19
+	+	2	46
+	+	32	98
+	+	2	34
+	+	8	85
+	+	39	0
+	+	35	52
+	+	35	52
+	+	37	23
+	+	39	25
+	+	41	0
+	+	37	75
+	+	38	76
+	+	39	26
+	+	37	25
+	+	38	27
+	+	37	0
+	+	39	0
+	+	8	75
+	+	37	25
+	+	35	34
+	+	40	0
+	+	39	0
+	+	40	55
+	+	40	31
+	+	8	41
+	+	40	0
+	+	40	0
+	+	38	0
+	+	39	0
+	+	40	24
+	+	38	0
+	+	36	85
+	+	36	25
+
+> ~/Github/Dashmote/dashmote-rail/NERD_tree_3
+	"	21	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-row.js
+	"	38	0
+
+> ~/Github/Dashmote/dashmote-rail/NERD_tree_4
+	"	19	5
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js
+	"	57	15
+
+> ~/Github/Dashmote/dashmote-rail/NERD_tree_5
+	"	14	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/NERD_tree_6
+	"	40	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/threadmanager.js
+	"	10	28
+
+> ~/Github/Dashmote/dashmote-rail/__InputList__
+	"	1	1
+	.	1	1
+	+	1	1
+
+> ~/Github/Dashmote/dashmote-rail/NERD_tree_7
+	"	16	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
+	"	10	15
+	^	10	16
+	.	10	15
+	+	16	0
+	+	20	0
+	+	16	45
+	+	17	8
+	+	19	0
+	+	17	27
+	+	16	54
+	+	17	0
+	+	19	0
+	+	18	28
+	+	16	19
+	+	17	12
+	+	9	40
+	+	10	0
+	+	11	0
+	+	12	0
+	+	10	0
+	+	10	15
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/lib/_dashmote-icons.css.scss
+	"	121	0
+	^	52	0
+	.	69	0
+	+	69	0
+
+> ~/Github/Dashmote/dashmote-rail/app/views/threads/show.html.erb
+	"	1	0
+
+> ~/Dropbox/insulinum S.L/Notes/Jorge/interesting.md
+	"	2	0
+	^	2	1
+	.	3	0
+	+	2	1
+	+	3	0
+
 > ~/Github/TecnoBot/lib/bot.js
-	"	28	0
+	"	14	0
+	^	51	5
+	.	51	0
+	+	7	22
+	+	14	3
+	+	18	25
+	+	18	0
+	+	17	32
+	+	17	0
+	+	20	14
+	+	20	15
+	+	20	15
+	+	20	15
+	+	20	0
+	+	1	0
+	+	19	0
+	+	50	0
+	+	50	3
+	+	51	4
+	+	52	4
+	+	51	0
+
+> ~/.vimrc
+	"	59	0
+	^	59	0
+	.	59	0
+	+	45	0
+	+	46	0
+	+	47	0
+	+	48	0
+	+	49	0
+	+	50	0
+	+	51	0
+	+	52	0
+	+	53	0
+	+	54	0
+	+	54	0
+	+	55	0
+	+	56	0
+	+	57	0
+	+	58	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	63	0
+	+	64	0
+	+	65	0
+	+	77	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	62	0
+	+	61	0
+	+	62	0
+	+	61	0
+	+	60	1
+	+	61	1
+	+	54	0
+	+	15	0
+	+	16	0
+	+	17	0
+	+	18	0
+	+	19	0
+	+	20	0
+	+	21	0
+	+	22	0
+	+	23	0
+	+	24	0
+	+	25	0
+	+	26	0
+	+	27	0
+	+	28	0
+	+	29	0
+	+	30	0
+	+	31	0
+	+	32	0
+	+	33	0
+	+	34	0
+	+	35	0
+	+	36	0
+	+	37	0
+	+	38	0
+	+	39	0
+	+	40	0
+	+	41	0
+	+	42	0
+	+	43	0
+	+	44	0
+	+	45	0
+	+	46	0
+	+	47	0
+	+	48	0
+	+	49	0
+	+	50	0
+	+	51	0
+	+	52	0
+	+	53	0
+	+	54	0
+	+	55	0
+	+	56	0
+	+	57	0
+	+	58	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	60	0
+	+	61	0
+	+	62	0
+	+	63	0
+	+	64	0
+	+	65	0
+	+	77	0
+	+	78	0
+	+	66	0
+	+	66	0
+	+	61	0
+	+	59	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/overlaymanager.js
+	"	106	0
+
+> ~/.vim/bundle/NERD_tree_1
+	"	12	0
+	.	1	0
+	+	1	0
+	+	1	0
+
+> ~/.vim/bundle/ControlP
+	"	10	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	2	0
+
+> ~/Dropbox/insulinum S.L/README.md
+	"	8	0
+	.	8	0
+	+	15	0
+	+	17	0
+	+	15	0
+	+	6	0
+	+	12	0
+	+	11	73
+	+	13	71
+	+	13	59
+	+	3	3
+	+	4	27
+	+	5	42
+	+	6	0
+	+	16	0
+	+	9	0
+	+	8	0
+
+> ~/Dropbox/insulinum S.L/Notes/Jorge/kickstarter.md
+	"	3	0
+	^	2	28
+	.	2	27
+	+	7	0
+	+	1	10
+	+	3	53
+	+	4	5
+	+	3	6
+	+	4	39
+	+	6	70
+	+	2	27
+
+> ~/Dropbox/insulinum S.L/NERD_tree_2
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Dropbox/insulinum S.L/[Vundle] Installer
+	"	4	0
+	.	1	0
+	+	1	0
+
+> ~/Dropbox/insulinum S.L/ControlP
+	"	4	0
+	.	2	0
+	+	2	0
+
+> ~/Github/Dashmote/dashmote-rail/README.md
+	"	2	0
+
+> ~/Dropbox/insulinum S.L/Notes/Christian/Apps B2B B2E  y B2C.md
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/imagesearch/_fullscreensearch.css.scss
+	"	1	0
+	.	40	0
+	+	40	0
+
+> ~/.vim/janus/vim/tools/ctrlp/doc/ctrlp.txt
+	"	1041	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/imagesearch/_fullscreenview.css.scss
+	"	133	3
+	^	133	4
+	.	134	0
+	+	46	0
+	+	47	0
+	+	41	0
+	+	35	0
+	+	28	0
+	+	134	0
+
+> ~/.vim/bundle/vim-airline/doc/airline.txt
+	"	393	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/imagesearch/_imagerow.css.scss
+	"	8	0
+	^	11	41
+	.	7	0
+	+	1	0
+	+	11	0
+	+	10	0
+	+	7	0
+	+	10	23
+	+	10	0
+	+	10	0
+	+	7	0
+	+	7	0
+
+> ~/Github/Dashmote/dashmote-rail/jorge.md
+	"	1	0
+
+> /usr/share/vim/vim74/doc/eval.txt
+	"	4986	35
+
+> Dropbox/insulinum S.L/README.md
+	"	1	0
+
+> ~/Github/insulinum-angular/bower_components/angular/angular.js
+	"	15035	1
+
+> ~/Github/insulinum-angular/gulpfile.js
+	"	1	0
+
+> ~/Github/InsuDoc/README.md
+	"	1	0
+
+> ~/Github/.dotfiles/NERD_tree_1
+	"	4	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/.dotfiles/atom/config.cson
+	"	1	0
 
 > ~/Github/TecnoBot/gulpfile.js
 	"	1	0
 
 > ~/.zshrc
 	"	83	20
-
-> ~/.vimrc
-	"	27	0
-	^	27	0
-	.	27	0
-	+	27	0
 
 > ~/.vim/janus/submodules.yaml
 	"	134	4

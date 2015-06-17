@@ -6,10 +6,10 @@ export ZSH=/home/orggue/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="geoffgarside"
-# ZSH_THEME="awesomepanda"
+ZSH_THEME="awesomepanda"
 # ZSH_THEME="fwalch"
 # ZSH_THEME="kolo"
-ZSH_THEME="mgutz"
+# ZSH_THEME="mgutz"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +49,7 @@ ZSH_THEME="mgutz"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git tmux)
 
 # User configuration
 
@@ -80,13 +80,13 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="atom ~/.zshrc"
-alias ohmyzsh="atom ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 alias stoplight="killall -USR1 redshift"
 # alias startlight="redshift &"
 alias mdb="mongod --dbpath mongodb/data/db"
 alias herokulog="heroku logs --tail"
-alias terminatorconfig="atom ~/.config/terminator/config"
+alias terminatorconfig="vim ~/.config/terminator/config"
 alias atompackages="atom ~/.atom/packages"
 alias atomlenguage="cd /usr/share/atom/resources/app.asar.unpacked/node_modules/spell-check/node_modules/spellchecker/vendor/hunspell_dictionaries"
 
