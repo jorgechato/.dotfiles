@@ -49,7 +49,7 @@ ZSH_THEME="awesomepanda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux)
+plugins=(git)
 
 # User configuration
 
@@ -74,6 +74,9 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# disable ctrl+s
+stty -ixon
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -94,3 +97,6 @@ alias atomlenguage="cd /usr/share/atom/resources/app.asar.unpacked/node_modules/
 
 # terminator with 256 colors to vim
 export TERM="xterm-256color"
+
+# tmux
+if [ "$TMUX" = "" ]; then tmux; fi
