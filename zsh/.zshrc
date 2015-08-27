@@ -53,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="$HOME/mongodb/mongodb-linux-x86_64-3.0.3/bin/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+export PATH="$HOME/mongodb/mongodb-linux-x86_64-3.0.3/bin/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/share/python"
 # export MANPATH="/usr/local/man:$MANPATH:"
 
 source $ZSH/oh-my-zsh.sh
@@ -83,7 +83,10 @@ stty -ixon
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias py="python"
 alias zshconfig="vim ~/.zshrc"
+alias vimcoloradmin="cd /usr/share/vim/vim74/colors"
+alias vimcolor="cd ~/.vim/color"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias stoplight="killall -USR1 redshift"
 # alias startlight="redshift &"

@@ -8,666 +8,482 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/focus
+~MSle0~/\<OverlayManager\>
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :q
-:w
+:wq
+:qw
 :NERDTree
-:n ./Notes/Jorge/video-kickstarter.md
+:q!
+:help folds
+:noh
+:s
+:n
+:Q
+:colorscheme behelit
+:w!
+:wq!
+:call <SNR>301_GundoClose()
+:n src/style/_repos.styl
+:tabnew
+:nq
+:call <SNR>277_GundoClose()
+:i
+:help jedi-vim
+:.,.+1NERDTree
+:call <SNR>289_GundoClose()
+:a
+:!
+:.,.+221NERDTree
+::NERDTree
 :LivedownKill
 :LivedownPreview
-:wq
-:q!
-:b ~/Dropbox/insulinum\ S.L/Notes/Jorge/interesting.md
-:n .gitignore
-:b app/assets/javascripts/newui/directives/thread.js
-:b app/assets/stylesheets/newui/modules/threads/_threads.css.scss
-:noh
-:earlier 40m
-:b public/views/threads/elements/thread.html
-:Gedit
-:Gdif
-:h airline
-:PowerlineClearCache
-:PluginInstall
-:b app/assets/javascripts/newui/controllers/threads.js
-:!
-:b app/assets/javascripts/newui/directives/droppane-thread.js
-:ls
-:b app/assets/stylesheets/newui/_variables.css.scss
-:b :n
-:1
-:ner
-:e .gitignore
-:wq!
-:setlocal spell spelllang=es_es
+:o .gitignore
+:O gitignore
+:o gitignore
+:O .gitignore
+:.,.+1q
+:open .gitignore
+:set ft=stylus
+:set ft=css
+:Make
+:set guifont=*
+:w ~/Documents/casey.md
+:w ~/Desktop/list.md
+:Gwrite
+:Gstatus
+:w
 :setlocal spell
-:n Ressources/Organization/THP-info.md
-:b app/assets/javascripts/newui/services/threadmanager.js
-:b app/assets/stylesheets/active_admin.css.scss
-:e public/views/threads/elements/
-:n Notes/Jorge/interesting.md
-:Q
-:help indent-guides
-:NERDTree:q
-:help ctrlp-mappings
-:n Notes/Jorge/tareas.md
-:help ctrlp.txt
-:helptags ~/.vim/bundle/ctrlp.vim/doc
-::helptags ~/.vim/bundle/ctrlp.vim/doc
-:b app/assets/stylesheets/newui/modules/imagesearch/_fullscreenview.css.scss
-:help airline
-:Helptags
-:AirlineTheme dark
-:AirlineTheme simple
+:spell
+:n src/scripts/services/middleware.js
+:Gdiff
+:call <SNR>273_GundoClose()
+:n src/style/_tweet.styl
+:n src/views/base/_tweet.html
 
 # Search String History (newest to oldest):
-? \Vshow\%#
+? \<OverlayManager\>
+?/ove
+?/broad
+?/mar
+?/over
+? \<registerOverlay\>
+?/regi
+?/droppane
+?/logo
 ? \$\(cursor\|select\)\$
-?/focus
-? \<blur\>
-? \<Notification\>
-? \<ThreadManager\>
-? \<thread\>
-? \<saveThreadTitle\>
-? \<\$element\>
-? \<id\>
-? \<newThread\>
-? \<\$input\>
-? \<\$timeout\>
-? \<focus\>
-? \<input\>
-? \<focusout\>
-?/dele
-? \<showShareIcons\>
-?/showshareicons
-? \Vh\%#
-?/thread-icon
-?/shareicons
-?/share
-? \^
-?/suc
-? \<Focus\>
-?/if
-? \<\$interval\>
-?/inter*
-?/newthread
-?/thre
-?/thread
-?/thread-tit
-?/blur
-? \Vwid\%#
-? \Vr\%#
-? \Vb\%#
-? \Vs\%#
-?/hint--top
-?/tooltip
-?//
-? \<Download\>
-? \<download\>
-?/downl
-?/smart
-? \<expand\>
-? \<source\>
-?/expand
-?/filety
-? \Vget\%#
+? \Vp\%#
+? \Vdiv\%#
+?/hover
+? \Vbr\%#
+? \<acceptCookie\>
+? \Va\%#
+? \<noProviderSelected\>
+?/search
+?/setque
+?/pro
+? \<DashSearch\>
+?/dashse
+? \Vw\%#
+? \Vh3\%#
+? \<aceptCookie\>
+?/ace
+?/acep
+?/currentfilter
+?/flex
+?/balloon
+?/transform
+?/transition
+?/animation
+?/ovh
+?/scrollpo
+?/qu
+?/media
+? \Vli\%#
+? \Vz\%#
+?/menu
+?/mobile
+?/background
+?/white
+?/nav
+?/bulle
+?/search--
+? \<partners\>
+?/part
+? \Vpos\%#
+? \Vshow\%#
 
 # Expression History (newest to oldest):
+=SuperTab('n')
 
 # Input Line History (newest to oldest):
-@/home/orggue
+@/home/orggue/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+@/home/orggue/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/elements/_cookies.css.scss
+@/home/orggue/Github/Dashmote/dashmote-rail/app/assets/ng-views/elements/cookiespan.html
+@/home/orggue/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/cookie-span.js
+@yes
+@/home/orggue/Github/jorgechato/lib/youtube/index.js
+@/home/orggue/Github/jorgechato/lib/youtube/
+@/home/orggue/Github/jorgechato/lib/mandrill/index.js
+@/home/orggue/Github/jorgechato/lib/mandrill/
+@/home/orggue/Github/jorgechato/src/style/_home.styl
+@/home/orggue/Github/Dashmote/dashlanding/src/views/base/team.html
+@/home/orggue/Github/Dashmote/dashlanding/src/views/base/
+@/home/orggue/Github/Dashmote/dashlanding/src/scripts/directives/header.js
+@/home/orggue/Github/Dashmote/dashlanding/src/style/_header.scss
+@/home/orggue/Github/Dashmote/dashlanding/src/views/element/header.html
+@/home/orggue/Github/Dashmote/dashlanding/src/style/_footer.scss
+@/home/orggue/Github/Dashmote/dashlanding/src/views/element/footer.html
+@/home/orggue/Github/Dashmote/dashlanding/src/scripts/directives/footer.js
+@/home/orggue/Github/MrOrggue/src/style/_footer.styl
+@/home/orggue/Github/MrOrggue/src/scripts/directives/footer.js
+@/home/orggue/Github/MrOrggue/src/views/element/footer.html
+@/home/orggue/Github/MrOrggue/src/style/_live.styl
+@/home/orggue/Github/MrOrggue/src/scripts/controllers/live.js
+@/home/orggue/Github/MrOrggue/src/views/github/index.html
+@/home/orggue/Github/MrOrggue/src/views/instagram/index.html
+@/home/orggue/Github/MrOrggue/src/views/instagram/
+@/home/orggue/Github/MrOrggue/src/views/github/
+@/home/orggue/Github/MrOrggue/src/views/element/live.html
+@/home/orggue/Github/MrOrggue/src/views/element/home.html
+@/home/orggue/Github/MrOrggue/src/scripts/services/middleware.js
+@/home/orggue/Github/MrOrggue/src/scripts/services/api.js
+@/home/orggue/Github/MrOrggue/src/style/_base.styl
+@/home/orggue/Github/MrOrggue/src/style/_header.styl
+@/home/orggue/Github/MrOrggue/src/scripts/directives/header.js
+@/home/orggue/Github/Dashmote/dashlanding/src/style/_navigation.scss
+@/home/orggue/Github/Dashmote/dashlanding/src/scripts/directives/navigation.js
+@/home/orggue/Github/Dashmote/dashlanding/src/views/element/navigation.html
+@/home/orggue/Github/MrOrggue/src/scripts/controllers/home.js
+@/home/orggue/Github/Dashmote/dashlanding/src/scripts/controllers/home.js
+@/home/orggue/Github/Dashmote/dashlanding/src/style/_home.scss
+@/home/orggue/Github/Dashmote/dashlanding/src/style/_base.scss
+@/home/orggue/Github/MrOrggue/src/scripts/services/colors.js
+@/home/orggue/Github/MrOrggue/src/scripts/app.js
+@/home/orggue/Github/Dashmote/fiveDoor/lib/openDoor.js
+@/home/orggue/Github/Dashmote/fiveDoor/lib/
+@/home/orggue/Github/hashtuber/src/scripts/services/notify.js
+@/home/orggue/Github/hashtuber/src/style/notification.styl
+@/home/orggue/Github/hashtuber/src/views/base/_notification.html
+@/home/orggue/Github/hashtuber/src/scripts/directives/notification.js
+@/home/orggue/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/legal.js
 
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	 clip-click="copyNotification()"
+""0	LINE	0
+	          $timeout(function () {
+	            ThreadManager.addImage(thread, $scope.result, function () {
+	              Notification.add("Image added", "Image added to your " + thread.title + " collection", $scope.result.thumbnail_url);
+	            });
+	            $el.addClass('dragging drag-removed');
+	          }, 100);
 "1	LINE	0
-	                    //return 'url';
+	          $timeout(function () {
+	            ThreadManager.addImage(thread, $scope.result, function () {
+	              Notification.add("Image added", "Image added to your " + thread.title + " collection", $scope.result.thumbnail_url);
+	            });
+	            $el.addClass('dragging drag-removed');
+	          }, 100);
 "2	LINE	0
-	                    console.log('hi i am zeroclipboard, your opponent');
+	          <%#return;%>
 "3	LINE	0
-	<div clip-copy="'hello'">jorge</div>
+	          <%#Notification.add("Oops", "You should create a collection first.");%>
 "4	LINE	0
-	clip-copy="copyThread()"
+	          }, 100);
 "5	LINE	0
-	clip-copy="copyThread()"
-"6	LINE	0
-	    {{showShareIcons}}
+	          $timeout(function () {
+"6	CHAR	0
+	, function (thread) {
+	            $timeout(function () {
+	              $rootScope.$broadcast('editThread', thread);
+	            }, 100);
+	          })
 "7	LINE	0
-	        height:28px;
+	            $timeout(function () {
+	              ThreadManager.addImage(thread, $scope.result, function () {
+	                Notification.add("Image added", "Image added to your " + thread.title + " collection", $scope.result.thumbnail_url);
+	              });
+	              $el.addClass('dragging drag-removed');
+	            }, 100);
 "8	LINE	0
-	        overflow:hidden;
+	            return;
 "9	LINE	0
-	        display:hidden;
+	            $timeout(function () {
+	              $rootScope.$broadcast('editThread', thread);
+	            }, 100);
 "q	CHAR	0
 	wwww
-""-	CHAR	0
-	#
+"-	CHAR	0
+	editThread
 
 # File marks:
 'M  56  0  ~/.vimrc
-'0  1  0  ~/Dropbox/insulinum S.L/Ressources/kickstarter-projects.md
-'1  2  1  ~/Dropbox/insulinum S.L/Notes/Jorge/interesting.md
-'2  9  0  ~/Downloads/ghost-0.6.4/NERD_tree_1
-'3  56  0  ~/Downloads/ghost-0.6.4/NERD_tree_1
-'4  31  3  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
-'5  25  38  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js
-'6  119  0  ~/Github/insulinum-angular/README.md
-'7  1  0  ~/Dropbox/insulinum S.L/NERD_tree_1
-'8  3  0  ~/Dropbox/insulinum S.L/Notes/Christian/Posicionar Landing.md
-'9  14  16  ~/.zshrc
+'0  68  0  ~/Github/nerdbook-studio/README.md
+'1  26  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane.js.erb
+'2  28  20  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane.js.erb
+'3  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane-thread.js.erb
+'4  2  17  ~/Github/MarkBook-Builder/package.json
+'5  228  6  ~/Github/Dashmote/dashlanding/src/style/_dashmote-icons.scss
+'6  4  127  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/elements/cookiespan.html
+'7  5  0  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+'8  9  4  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+'9  72  12  ~/Github/Dashmote/dashlanding/src/style/_career.scss
 
 # Jumplist (newest first):
--'  1  0  ~/Dropbox/insulinum S.L/Ressources/kickstarter-projects.md
--'  2  28  ~/Dropbox/insulinum S.L/Ressources/kickstarter-projects.md
--'  4  167  ~/Dropbox/insulinum S.L/Ressources/kickstarter-projects.md
--'  8  0  ~/Dropbox/insulinum S.L
--'  1  0  ~/Dropbox/insulinum S.L
--'  2  1  ~/Dropbox/insulinum S.L/Notes/Jorge/interesting.md
--'  11  1  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
--'  1  0  ~/Dropbox/insulinum S.L/NERD_tree_1
--'  20  0  ~/Dropbox/insulinum S.L
--'  32  0  ~/Dropbox/insulinum S.L
--'  9  0  ~/Downloads/ghost-0.6.4/NERD_tree_1
--'  17  2  ~/Downloads/ghost-0.6.4/NERD_tree_1
--'  1  0  ~/Downloads/ghost-0.6.4/NERD_tree_1
--'  8  0  ~/Downloads/ghost-0.6.4
--'  1  0  ~/Downloads/ghost-0.6.4
--'  56  0  ~/Downloads/ghost-0.6.4/NERD_tree_1
--'  62  2  ~/Downloads/ghost-0.6.4/NERD_tree_1
--'  30  0  ~/Downloads/ghost-0.6.4
--'  31  3  ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
--'  8  0  ~/Dropbox/insulinum S.L/Notes/Christian/Landing Page.md
--'  44  0  ~/Dropbox/insulinum S.L/NERD_tree_1
--'  51  2  ~/Dropbox/insulinum S.L/NERD_tree_1
--'  44  0  ~/Dropbox/insulinum S.L
--'  25  38  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js
--'  73  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  78  18  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  77  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  76  31  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  75  25  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  36  0  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
--'  55  20  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  80  18  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  48  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  51  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  70  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  68  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  67  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  66  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  65  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  64  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  60  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  59  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  58  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  54  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  53  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  52  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  87  12  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  46  20  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  39  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  10  90  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js
--'  12  70  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result.js
--'  70  6  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
--'  56  0  ~/Github/Dashmote/dashmote-rail/NERD_tree_4
--'  76  2  ~/Github/Dashmote/dashmote-rail/NERD_tree_4
--'  1  0  ~/Github/Dashmote/dashmote-rail/NERD_tree_4
--'  71  18  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
--'  75  8  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
--'  72  0  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
--'  85  36  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
--'  20  41  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  42  0  ~/Github/Dashmote/dashmote-rail/public/views/threads/elements/thread.html
--'  1  0  ~/Github/Dashmote/dashmote-rail/public/views/threads/elements/thread.html
--'  25  38  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js
--'  73  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  78  18  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  77  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  76  31  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  75  25  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  36  0  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
--'  55  20  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  80  18  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  48  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  8  0  ~/Dropbox/insulinum S.L/Notes/Christian/Landing Page.md
--'  25  38  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js
--'  73  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  78  18  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  77  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  76  31  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  75  25  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  36  0  ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
--'  55  20  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  8  0  ~/Dropbox/insulinum S.L/Notes/Christian/Landing Page.md
--'  25  38  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js
--'  73  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  78  18  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  77  27  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
--'  9  0  ~/Downloads/ghost-0.6.4/NERD_tree_1
--'  17  2  ~/Downloads/ghost-0.6.4/NERD_tree_1
--'  1  0  ~/Downloads/ghost-0.6.4/NERD_tree_1
--'  8  0  ~/Downloads/ghost-0.6.4
--'  1  0  ~/Downloads/ghost-0.6.4
--'  78  9  ~/.zshrc
--'  14  16  ~/.zshrc
+-'  68  0  ~/Github/nerdbook-studio/README.md
+-'  1  0  ~/Github/nerdbook-studio/README.md
+-'  8  0  ~/Github/nerdbook-studio
+-'  1  0  ~/Github/nerdbook-studio
+-'  26  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane.js.erb
+-'  43  0  ~/Github/Dashmote/dashmote-rail
+-'  8  78  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/imagesearch/elements/imageresultvertical.html
+-'  25  27  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/imagesearch/elements/imageresultvertical.html
+-'  78  0  ~/Github/Dashmote/dashmote-rail
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/imagesearch/base_vertical.html
+-'  113  0  ~/Github/Dashmote/dashmote-rail
+-'  77  31  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js.erb
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js.erb
+-'  148  0  ~/Github/Dashmote/dashmote-rail
+-'  1  0  ~/Github/Dashmote/dashmote-rail
+-'  28  20  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane.js.erb
+-'  14  16  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane.js.erb
+-'  13  40  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane.js.erb
+-'  8  80  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane.js.erb
+-'  12  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane.js.erb
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane.js.erb
+-'  288  0  ~/Github/Dashmote/dashmote-rail
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane-thread.js.erb
+-'  323  0  ~/Github/Dashmote/dashmote-rail
+-'  358  0  ~/Github/Dashmote/dashmote-rail
+-'  2  17  ~/Github/MarkBook-Builder/package.json
+-'  1  0  ~/Github/MarkBook-Builder/package.json
+-'  228  6  ~/Github/Dashmote/dashlanding/src/style/_dashmote-icons.scss
+-'  72  0  ~/Github/Dashmote/dashlanding/src/style/_dashmote-icons.scss
+-'  1  0  ~/Github/Dashmote/dashlanding/src/style/_dashmote-icons.scss
+-'  8  0  ~/Github/Dashmote/dashlanding
+-'  1  0  ~/Github/Dashmote/dashlanding
+-'  4  127  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/elements/cookiespan.html
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/elements/cookiespan.html
+-'  393  0  ~/Github/Dashmote/dashmote-rail
+-'  5  0  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  4  0  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  428  0  ~/Github/Dashmote/dashmote-rail
+-'  8  2  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/elements/cookiespan.html
+-'  463  0  ~/Github/Dashmote/dashmote-rail
+-'  9  4  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  23  5  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  8  5  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  11  8  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  16  8  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  21  38  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  14  14  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  498  0  ~/Github/Dashmote/dashmote-rail
+-'  72  12  ~/Github/Dashmote/dashlanding/src/style/_career.scss
+-'  83  0  ~/Github/Dashmote/dashlanding
+-'  33  30  ~/Github/Dashmote/dashlanding/src/scripts/controllers/career.js
+-'  1  0  ~/Github/Dashmote/dashlanding/src/scripts/controllers/career.js
+-'  108  0  ~/Github/Dashmote/dashlanding
+-'  1  0  ~/Github/Dashmote/dashlanding/.git/MERGE_MSG
+-'  25  21  ~/Github/Dashmote/dashlanding/src/style/_career.scss
+-'  133  0  ~/Github/Dashmote/dashlanding
+-'  38  16  ~/Github/Dashmote/dashlanding/src/scripts/controllers/career.js
+-'  241  0  ~/Github/Dashmote/dashlanding
+-'  233  0  ~/Github/Dashmote/dashlanding
+-'  18  104  ~/Github/Dashmote/dashlanding/src/scripts/controllers/career.js
+-'  42  15  ~/Github/Dashmote/dashlanding/src/scripts/controllers/career.js
+-'  31  22  ~/Github/Dashmote/dashlanding/src/scripts/controllers/career.js
+-'  258  0  ~/Github/Dashmote/dashlanding
+-'  28  7  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  27  21  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  29  3  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  26  3  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  31  2  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  3  20  ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+-'  73  26  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/app.js.erb
+-'  1  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/app.js.erb
+-'  918  0  ~/Github/Dashmote/dashmote-rail
+-'  184  23  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  124  37  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  123  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  128  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  133  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  141  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  142  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  149  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  147  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  139  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  129  4  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  109  4  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  113  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  117  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  116  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  111  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  110  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  103  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  99  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  82  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  81  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  80  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  64  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  62  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  61  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+-'  60  0  ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
 
 # History of marks within files (newest to oldest):
 
-> ~/Dropbox/insulinum S.L/NERD_tree_1
-	"	9	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
+> ~/Github/nerdbook-studio/README.md
+	"	68	0
 
-> ~/Dropbox/insulinum S.L/Ressources/kickstarter-projects.md
-	"	1	0
-	^	1	4
-	.	1	0
-	+	4	260
-	+	4	261
-	+	4	0
-	+	1	0
-
-> ~/Dropbox/insulinum S.L/Notes/Jorge/kickstarter.md
-	"	4	1
-	^	2	28
-	.	2	27
-	+	7	0
-	+	1	10
-	+	3	53
-	+	4	5
-	+	3	6
-	+	4	39
-	+	6	70
-	+	2	27
-
-> ~/Dropbox/insulinum S.L/Notes/Jorge/interesting.md
-	"	2	76
-	^	2	1
-	.	3	0
-	+	2	1
-	+	3	0
-
-> ~/Dropbox/insulinum S.L/NERD_tree_2
-	"	6	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Dropbox/insulinum S.L/Notes/Jorge/video-kickstarter.md
-	"	1	15
-	^	1	16
-	.	1	15
-	+	1	15
-
-> ~/Dropbox/insulinum S.L/NERD_tree_3
-	"	9	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Dropbox/insulinum S.L/NERD_tree_4
-	"	13	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/.zshrc
-	"	78	9
-	^	78	10
-	.	78	9
-	+	52	12
-	+	71	0
-	+	71	23
-	+	71	7
-	+	71	0
-	+	71	0
-	+	60	0
-	+	103	72
-	+	103	0
-	+	102	33
-	+	14	0
-	+	78	9
-
-> ~/.vimrc
-	"	103	4
-	^	98	23
-	.	98	22
-	+	21	0
-	+	22	0
-	+	23	0
-	+	24	0
-	+	26	0
-	+	27	0
-	+	28	0
-	+	29	0
-	+	30	0
-	+	31	0
-	+	32	0
-	+	33	0
-	+	34	0
-	+	35	0
-	+	36	0
-	+	37	0
-	+	38	0
-	+	39	0
-	+	40	0
-	+	41	0
-	+	42	0
-	+	43	0
-	+	48	0
-	+	48	0
-	+	49	0
-	+	50	0
-	+	51	0
-	+	52	0
-	+	53	0
-	+	54	0
-	+	55	0
-	+	56	0
-	+	57	0
-	+	58	0
-	+	59	0
-	+	60	0
-	+	61	0
-	+	62	0
-	+	63	0
-	+	64	0
-	+	64	0
-	+	64	0
-	+	64	0
-	+	64	0
-	+	65	0
-	+	66	0
-	+	67	0
-	+	68	0
-	+	69	0
-	+	70	0
-	+	82	0
-	+	83	0
-	+	71	0
-	+	71	0
-	+	66	0
-	+	64	0
-	+	91	7
-	+	92	42
-	+	24	0
-	+	20	12
-	+	16	14
-	+	93	4
-	+	107	16
-	+	107	0
-	+	94	16
-	+	17	12
-	+	25	11
-	+	95	9
-	+	96	7
-	+	95	7
-	+	96	23
-	+	96	20
-	+	95	6
-	+	96	0
-	+	95	0
-	+	96	6
-	+	17	12
-	+	90	25
-	+	48	0
-	+	45	0
-	+	44	13
-	+	47	0
-	+	45	0
-	+	45	25
-	+	46	30
-	+	46	32
-	+	104	74
-	+	102	0
-	+	104	0
-	+	104	0
-	+	107	0
-	+	100	14
-	+	46	32
-	+	47	32
-	+	46	32
-	+	47	0
-	+	106	17
-	+	104	0
-	+	104	0
-	+	98	22
-
-> ~/.tmux.conf
-	"	1	35
-	^	2	36
-	.	1	0
-	+	1	0
-
-> ~/Dropbox/insulinum S.L/Notes/Jorge/tareas.md
-	"	11	1
-	^	27	54
-	.	27	53
-	+	1	8
-	+	6	9
-	+	4	7
-	+	6	2
-	+	3	70
-	+	3	88
-	+	3	1
-	+	3	258
-	+	3	220
-	+	3	329
-	+	4	0
-	+	3	243
-	+	3	243
-	+	3	173
-	+	3	138
-	+	3	72
-	+	3	72
-	+	4	0
-	+	14	0
-	+	6	7
-	+	6	7
-	+	13	35
-	+	12	14
-	+	13	68
-	+	6	48
-	+	6	23
-	+	6	7
-	+	6	7
-	+	6	7
-	+	6	0
-	+	15	7
-	+	15	7
-	+	15	7
-	+	15	0
-	+	24	0
-	+	24	2
-	+	24	0
-	+	24	0
-	+	37	13
-	+	24	69
-	+	32	31
-	+	32	19
-	+	25	0
-	+	32	20
-	+	33	0
-	+	1	16
-	+	30	20
-	+	36	51
-	+	37	68
-	+	17	39
-	+	20	4
-	+	19	17
-	+	20	41
-	+	24	0
-	+	29	0
-	+	28	33
-	+	27	53
-
-> ~/Downloads/ghost-0.6.4/NERD_tree_1
-	"	9	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Downloads/ghost-0.6.4/index.js
-	"	13	0
-
-> ~/Downloads/ghost-0.6.4/config.js
-	"	134	23
-
-> ~/Downloads/ghost-0.6.4/.gitignore
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/Downloads/ghost-0.6.4/NERD_tree_2
+> ~/Github/nerdbook-studio/NERD_tree_1
 	"	4	0
 	.	1	0
 	+	1	0
 
-> ~/Downloads/ghost-0.6.4/content/apps/README.md
-	"	3	0
-
-> ~/Downloads/ghost-0.6.4/content/themes/casper/index.hbs
-	"	1	0
-
-> ~/Downloads/ghost-0.6.4/content/themes/casper/default.hbs
-	"	42	0
-
-> ~/Downloads/ghost-0.6.4/Gruntfile.js
-	"	402	0
-
-> ~/Dropbox/insulinum S.L/Ressources/logo/logo.beta2.png
-	"	1	0
-
-> ~/Dropbox/insulinum S.L/Notes/Christian/Landing Page.md
-	"	8	0
-
 > ~/Github/Dashmote/dashmote-rail/NERD_tree_1
-	"	13	15
+	"	23	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js.erb
+	"	56	10
+	.	56	0
+	+	69	0
+	+	69	0
+	+	55	0
+	+	55	0
+	+	2	0
+	+	51	57
+	+	51	57
+	+	55	79
+	+	55	58
+	+	55	58
+	+	55	76
+	+	71	9
+	+	55	58
+	+	51	49
+	+	55	58
+	+	55	0
+	+	51	0
+	+	55	58
+	+	55	58
+	+	66	0
+	+	55	58
+	+	66	0
+	+	66	0
+	+	55	58
+	+	66	0
+	+	66	0
+	+	66	0
+	+	69	0
+	+	55	0
+	+	66	0
+	+	56	0
+	z	56	10
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/imagesearch/base_vertical.html
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/imagesearch/elements/imageresultvertical.html
+	"	8	78
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane.js.erb
+	"	26	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/overlaymanager.js
+	"	91	13
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/imagesearch/elements/droppane.html
+	"	1	42
+
+> /etc/postgresql/X.Y/main/pg_hba.conf
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane-thread.js.erb
+	"	1	0
+
+> ~/Github/MarkBook-Builder/package.json
+	"	2	17
+	^	2	18
+	.	2	17
+	+	2	17
+
+> ~/Github/Dashmote/dashlanding/NERD_tree_1
+	"	29	0
 	.	1	0
 	+	1	0
 	+	1	0
@@ -770,288 +586,627 @@ $
 	+	1	0
 	+	1	0
 
-> ~/Github/Dashmote/dashmote-rail/public/views/threads/elements/thread.html
-	"	35	162
-	^	35	181
-	.	35	180
-	+	42	24
-	+	42	25
-	+	42	26
-	+	42	0
-	+	42	0
-	+	12	30
-	+	12	0
-	+	12	0
-	+	42	34
-	+	12	25
-	+	42	0
-	+	42	0
-	+	42	0
-	+	12	67
-	+	12	42
-	+	42	41
-	+	12	120
-	+	12	56
-	+	42	54
-	+	12	74
-	+	12	0
-	+	12	0
-	+	12	76
-	+	11	83
-	+	12	77
-	+	42	43
-	+	42	43
-	+	42	45
-	+	14	0
-	+	35	44
-	+	38	76
-	+	14	79
-	+	2	0
-	+	41	0
-	+	38	0
-	+	38	0
-	+	38	0
-	+	38	0
-	+	38	0
-	+	38	0
-	+	38	0
-	+	38	0
-	+	38	0
-	+	38	0
-	+	14	0
-	+	14	0
-	+	14	0
-	+	13	41
-	+	28	40
-	+	12	0
-	+	28	0
-	+	14	72
-	+	15	0
-	+	13	41
-	+	28	40
-	+	29	0
-	+	30	0
-	+	31	0
-	+	32	0
-	+	33	0
-	+	34	0
-	+	35	0
-	+	36	0
-	+	37	0
-	+	23	0
-	+	13	0
-	+	14	0
-	+	15	0
-	+	16	0
-	+	17	0
-	+	18	0
-	+	19	0
-	+	20	0
-	+	21	0
-	+	22	0
-	+	28	40
-	+	13	41
-	+	28	40
-	+	23	76
-	+	38	77
-	+	4	99
-	+	29	177
-	+	13	7
-	+	29	49
-	+	29	165
-	+	32	163
-	+	12	26
-	+	15	0
-	+	14	70
-	+	23	46
-	+	35	45
-	+	43	0
-	+	43	4
-	+	43	0
-	+	43	4
-	+	43	0
-	+	43	24
-	+	43	0
-	+	35	0
-	+	35	180
-	z	40	10
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/thread.js
-	"	73	0
-	.	72	0
-	+	62	0
-	+	58	28
-	+	62	0
-	+	60	0
-	+	62	34
-	+	60	0
-	+	62	0
-	+	62	0
-	+	62	0
-	+	60	32
-	+	58	31
-	+	59	24
-	+	58	59
-	+	59	52
-	+	61	0
-	+	62	0
-	+	60	0
-	+	60	19
-	+	8	113
-	+	13	45
-	+	60	37
-	+	60	0
-	+	60	0
-	+	58	0
-	+	59	0
-	+	60	49
-	+	56	25
-	+	50	30
-	+	56	0
-	+	50	0
-	+	60	35
-	+	60	33
-	+	60	0
-	+	60	52
-	+	56	0
-	+	56	0
-	+	52	0
-	+	56	0
-	+	52	0
-	+	52	19
-	+	60	30
-	+	12	28
-	+	52	25
-	+	60	32
-	+	12	27
-	+	60	0
-	+	15	26
-	+	15	15
-	+	16	0
-	+	15	0
-	+	15	17
-	+	16	0
-	+	15	0
-	+	15	0
-	+	15	64
-	+	12	19
-	+	60	0
-	+	12	0
-	+	15	0
-	+	16	0
-	+	52	0
-	+	56	0
-	+	2	0
-	+	56	0
-	+	84	30
-	+	57	0
-	+	56	20
-	+	51	51
-	+	56	43
-	+	60	0
-	+	62	0
-	+	56	0
-	+	51	44
-	+	8	72
-	+	53	40
-	+	55	0
-	+	54	37
-	+	55	22
-	+	39	0
-	+	37	0
-	+	38	0
-	+	39	0
-	+	79	0
-	+	55	22
-	+	78	19
-	+	76	78
-	+	78	30
-	+	75	47
-	+	78	31
-	+	76	0
-	+	78	0
-	+	78	0
-	+	76	0
-	+	75	41
-	+	76	0
-	+	78	0
-	+	75	0
-	+	73	0
-	+	71	0
-	+	72	0
-	z	56	16
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/controllers/threads.js
-	"	17	40
-	^	46	41
-	.	46	40
-	+	17	0
-	+	21	0
-	+	17	45
-	+	18	8
-	+	20	0
-	+	18	27
-	+	17	54
-	+	18	0
-	+	20	0
-	+	19	28
-	+	17	19
-	+	18	12
-	+	9	40
-	+	10	0
-	+	12	0
-	+	13	0
-	+	10	0
-	+	10	15
-	+	2	0
-	+	2	0
+> ~/Github/Dashmote/dashlanding/src/style/_dashmote-icons.scss
+	"	228	6
+	^	5	14
+	.	4	0
+	+	5	44
+	+	6	26
+	+	7	12
+	+	8	12
+	+	9	12
+	+	5	31
+	+	6	31
+	+	7	17
+	+	8	17
+	+	9	12
+	+	8	12
+	+	7	12
+	+	6	26
+	+	5	26
+	+	7	12
+	+	7	0
+	+	9	1
+	+	8	0
+	+	7	1
+	+	6	14
+	+	5	14
 	+	4	0
+	z	5	13
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/elements/cookiespan.html
+	"	4	127
+	^	4	128
+	.	4	127
+	+	1	20
+	+	13	5
+	+	1	6
+	+	13	0
+	+	12	93
+	+	8	0
+	+	7	47
+	+	9	43
+	+	10	41
+	+	1	24
+	+	7	47
+	+	7	0
+	+	1	24
 	+	2	0
+	+	2	2
+	+	3	0
+	+	4	216
+	+	5	0
+	+	5	7
+	+	5	0
+	+	5	7
+	+	6	0
+	+	5	15
+	+	5	29
+	+	7	36
+	+	4	127
+	z	12	93
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/cookies.html
+	"	5	0
+	^	5	0
+	.	5	0
+	+	1	0
+	+	33	0
+	+	31	0
+	+	3	0
+	+	14	0
+	+	14	0
+	+	25	45
+	+	31	0
+	+	26	0
+	+	29	23
+	+	29	0
+	+	29	5
+	+	29	0
+	+	29	0
+	+	27	44
+	+	29	0
+	+	28	0
+	+	29	0
+	+	14	0
+	+	21	0
+	+	14	44
+	+	22	0
+	+	21	6
+	+	22	20
+	+	25	0
+	+	7	0
+	+	15	0
+	+	16	0
+	+	10	0
+	+	11	0
+	+	4	0
+	+	4	7
+	+	8	0
+	+	8	0
+	+	22	5
+	+	23	0
+	+	23	0
+	+	4	5
+	+	7	0
+	+	4	5
+	+	5	0
+
+> ~/Github/Dashmote/dashlanding/src/scripts/controllers/career.js
+	"	33	30
+	^	33	31
+	.	31	76
+	+	18	123
+	+	18	213
+	+	18	310
+	+	42	234
+	+	42	135
+	+	42	20
+	+	41	0
+	+	42	239
+	+	45	0
+	+	44	7
+	+	18	213
+	+	18	386
+	+	19	0
+	+	42	234
+	+	43	0
+	+	44	8
+	+	18	212
+	+	18	376
+	+	18	32
+	+	18	386
+	+	18	565
+	+	18	218
+	+	42	227
+	+	42	312
+	+	43	0
+	+	42	519
+	+	42	30
+	+	42	234
+	+	42	20
+	+	42	18
+	+	42	501
+	+	18	569
+	+	18	19
+	+	42	19
+	+	42	219
+	+	18	7
+	+	18	205
+	+	42	291
+	+	42	488
+	+	18	370
+	+	18	0
+	+	2	54
+	+	11	0
 	+	3	0
 	+	2	0
-	+	43	44
-	+	44	0
-	+	52	0
-	+	44	4
-	+	43	0
-	+	52	9
-	+	2	54
-	+	45	52
-	+	51	0
-	+	51	0
-	+	44	63
-	+	51	13
-	+	52	0
-	+	45	0
-	+	45	0
-	+	45	13
-	+	51	0
-	+	45	51
-	+	45	27
-	+	8	45
+	+	5	0
+	+	6	0
+	+	21	0
+	+	29	0
+	+	23	22
+	+	24	0
+	+	16	0
+	+	32	0
+	+	38	19
+	+	30	29
+	+	31	22
+	+	34	15
+	+	26	15
+	+	33	17
+	+	25	17
+	+	22	21
+	+	23	94
+	+	34	106
+	+	34	205
+	+	34	106
+	+	34	185
+	+	33	28
+	+	42	292
+	+	42	106
+	+	42	190
+	+	42	106
+	+	42	0
+	+	34	15
+	+	34	28
+	+	34	228
+	+	34	116
+	+	34	111
+	+	34	223
+	+	35	0
+	+	34	203
+	+	35	0
+	+	35	0
+	+	26	255
+	+	26	15
+	+	26	255
+	+	26	248
+	+	26	255
+	+	27	0
+	+	26	208
+	+	26	116
+	+	27	0
+	+	25	45
+	+	18	104
+	+	18	104
+	+	19	0
+	+	18	104
+	+	38	16
+	+	31	76
+	z	6	6
+
+> ~/Github/Dashmote/dashlanding/src/style/_career.scss
+	"	72	12
+	^	25	22
+	.	72	0
+	+	81	0
+	+	65	0
+	+	81	0
+	+	66	24
+	+	69	14
+	+	60	21
+	+	64	21
+	+	61	15
+	+	62	14
+	+	8	0
+	+	7	22
+	+	69	5
+	+	80	0
+	+	79	24
+	+	70	19
+	+	61	15
+	+	64	7
+	+	62	14
+	+	77	0
+	+	76	21
+	+	71	20
+	+	59	7
+	+	8	0
+	+	21	0
+	+	17	0
+	+	16	21
+	+	65	0
+	+	15	42
+	+	18	23
+	+	19	20
+	+	93	0
+	+	110	0
+	+	93	20
+	+	94	17
+	+	67	7
+	+	110	0
+	+	82	12
+	+	95	0
+	+	99	18
+	+	109	0
+	+	103	30
+	+	83	7
+	+	101	0
+	+	109	21
+	+	101	0
+	+	101	0
+	+	101	0
+	+	109	0
+	+	107	18
+	+	108	22
+	+	96	12
+	+	98	25
+	+	107	18
+	+	108	25
+	+	101	0
+	+	66	30
+	+	105	26
+	+	102	21
+	+	51	7
+	+	51	36
+	+	51	62
+	+	14	0
 	+	13	0
+	+	5	0
+	+	51	0
 	+	12	13
-	+	11	40
-	+	50	0
-	+	48	0
-	+	45	0
-	+	48	15
-	+	2	122
-	+	49	17
-	+	47	25
-	+	49	19
-	+	50	0
-	+	48	0
-	+	48	17
-	+	47	24
-	+	54	0
+	+	43	0
+	+	43	44
+	+	43	44
+	+	47	0
+	+	44	19
+	+	44	38
+	+	43	0
+	+	44	0
+	+	47	0
+	+	44	0
+	+	45	38
+	+	42	0
+	+	41	21
+	+	58	0
 	+	53	0
-	+	46	49
-	+	46	40
-	z	1	0
+	+	53	0
+	+	57	41
+	+	32	0
+	+	23	0
+	+	61	11
+	+	62	11
+	+	61	0
+	+	24	0
+	+	25	13
+	+	26	13
+	+	28	0
+	+	31	0
+	+	30	17
+	+	28	0
+	+	25	21
+	+	26	0
+	+	83	0
+	+	25	21
+	+	72	0
+	z	83	12
+
+> ~/Github/Dashmote/dashlanding/src/style/_home.scss
+	"	128	0
+	^	130	53
+	.	128	0
+	+	228	0
+	+	228	0
+	+	228	15
+	+	228	15
+	+	228	14
+	+	228	16
+	+	228	15
+	+	228	16
+	+	228	33
+	+	228	0
+	+	228	20
+	+	228	24
+	+	228	0
+	+	228	24
+	+	228	0
+	+	228	21
+	+	228	18
+	+	228	19
+	+	228	19
+	+	228	17
+	+	228	19
+	+	228	0
+	+	228	0
+	+	228	0
+	+	228	27
+	+	228	0
+	+	228	0
+	+	2	0
+	+	98	0
+	+	46	0
+	+	46	20
+	+	45	0
+	+	38	13
+	+	46	0
+	+	40	0
+	+	35	0
+	+	35	16
+	+	38	0
+	+	39	16
+	+	35	0
+	+	36	15
+	+	37	15
+	+	41	24
+	+	44	0
+	+	43	27
+	+	39	0
+	+	15	15
+	+	18	17
+	+	19	19
+	+	23	16
+	+	22	15
+	+	169	0
+	+	168	26
+	+	125	19
+	+	125	20
+	+	131	23
+	+	125	20
+	+	125	22
+	+	125	22
+	+	131	0
+	+	125	19
+	+	125	0
+	+	131	0
+	+	131	0
+	+	125	22
+	+	125	21
+	+	125	0
+	+	125	0
+	+	125	28
+	+	125	0
+	+	125	0
+	+	125	0
+	+	125	0
+	+	128	0
+	+	125	30
+	+	123	0
+	+	127	0
+	+	62	70
+	+	6	12
+	+	252	0
+	+	252	23
+	+	252	0
+	+	252	0
+	+	252	0
+	+	223	0
+	+	65	0
+	+	69	71
+	+	128	0
+	+	128	40
+	+	128	0
+	+	128	0
+	+	125	0
+	+	124	38
+	+	132	36
+	+	128	11
+	+	128	0
+	+	128	0
+	+	130	52
+	+	129	0
+	+	128	0
+	i	39	17
+	z	128	37
+
+> ~/Github/Dashmote/dashlanding/src/views/base/career.html
+	"	20	8
+	.	20	0
+	+	11	0
+	+	10	20
+	+	11	0
+	+	33	0
+	+	2	0
+	+	31	0
+	+	8	21
+	+	10	0
+	+	30	0
+	+	16	0
+	+	9	52
+	+	8	16
+	+	16	60
+	+	21	35
+	+	2	0
+	+	19	43
+	+	19	98
+	+	19	43
+	+	18	40
+	+	16	0
+	+	16	31
+	+	23	0
+	+	19	43
+	+	19	81
+	+	16	0
+	+	16	0
+	+	24	35
+	+	16	0
+	+	24	24
+	+	16	25
+	+	10	18
+	+	19	24
+	+	10	20
+	+	24	90
+	+	24	0
+	+	22	26
+	+	23	0
+	+	27	0
+	+	25	39
+	+	25	39
+	+	25	39
+	+	26	0
+	+	25	39
+	+	24	35
+	+	23	0
+	+	26	0
+	+	25	93
+	+	16	91
+	+	16	0
+	+	16	59
+	+	16	0
+	+	16	0
+	+	16	13
+	+	16	0
+	+	29	0
+	+	16	0
+	+	13	0
+	+	29	0
+	+	15	97
+	+	6	49
+	+	25	93
+	+	6	65
+	+	14	0
+	+	15	0
+	+	14	64
+	+	15	33
+	+	13	58
+	+	16	34
+	+	15	34
+	+	18	0
+	+	17	0
+	+	18	0
+	+	20	0
+	z	24	35
+
+> ~/Github/Dashmote/dashlanding/.git/MERGE_MSG
+	"	1	0
+
+> ~/Github/Dashmote/dashlanding/dist/views/index.html
+	"	24	11
+
+> ~/Github/Dashmote/dashlanding/src/views/index.html
+	"	30	34
+	^	30	54
+	.	22	0
+	+	2	29
+	+	2	7
+	+	21	0
+	+	41	0
+	+	16	19
+	+	41	0
+	+	41	25
+	+	2	0
+	+	2	34
+	+	16	0
+	+	16	26
+	+	2	0
+	+	16	0
+	+	16	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	16	0
+	+	41	0
+	+	41	27
+	+	41	0
+	+	2	92
+	+	2	0
+	+	7	40
+	+	6	87
+	+	13	54
+	+	21	0
+	+	21	0
+	+	21	0
+	+	21	0
+	+	21	0
+	+	4	25
+	+	12	31
+	+	2	15
+	+	21	0
+	+	18	7
+	+	16	0
+	+	2	0
+	+	8	88
+	+	1	0
+	+	16	0
+	+	41	0
+	+	14	0
+	+	41	0
+	+	40	0
+	+	39	19
+	+	14	25
+	+	39	19
+	+	14	18
+	+	20	0
+	+	41	0
+	+	20	0
+	+	41	0
+	+	16	0
+	+	14	18
+	+	39	19
+	+	15	0
+	+	40	0
+	+	19	0
+	+	21	0
+	+	41	0
+	+	39	0
+	+	20	33
+	+	41	0
+	+	39	0
+	+	39	123
+	+	39	0
+	+	39	91
+	+	39	0
+	+	39	0
+	+	21	0
+	+	18	14
+	+	12	80
+	+	38	12
+	+	38	0
+	+	37	36
+	+	32	0
+	+	41	0
+	+	31	0
+	+	31	0
+	+	31	0
+	+	12	11
+	+	37	34
+	+	13	39
+	+	13	0
+	+	12	0
+	+	13	0
+	+	9	0
+	+	11	0
+	+	5	178
+	+	5	178
+	+	18	0
+	+	30	53
+	+	22	0
+	z	30	53
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/app.js.erb
+	"	73	20
+	^	73	27
+	.	73	26
+	+	1	169
+	+	73	0
+	+	78	57
+	+	76	42
+	+	74	29
+	+	73	26
 
 > ~/Github/Dashmote/dashmote-rail/NERD_tree_2
-	"	32	0
+	"	15	0
 	.	1	0
 	+	1	0
 	+	1	0
@@ -1066,83 +1221,209 @@ $
 	+	1	0
 	+	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
 
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/imagesearch/_imagerow.css.scss
-	"	52	17
-	^	11	41
-	.	7	0
-	+	1	0
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/privacy.html
+	"	19	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/cookie-span.js.erb
+	"	19	6
+	^	15	15
+	.	19	0
+	+	7	48
+	+	20	0
+	+	7	40
+	+	20	47
+	+	7	0
+	+	13	36
+	+	13	6
+	+	13	0
+	+	2	42
+	+	7	32
+	+	13	0
+	+	13	0
+	+	13	48
+	+	7	40
+	+	2	0
+	+	7	33
+	+	13	22
+	+	13	39
+	+	13	29
+	+	13	0
+	+	13	0
+	+	13	0
+	+	13	17
+	+	13	50
+	+	13	28
+	+	13	18
+	+	13	0
+	+	19	7
+	+	16	43
+	+	17	44
+	+	13	21
+	+	17	0
+	+	13	18
+	+	13	0
+	+	13	0
+	+	15	0
+	+	15	0
+	+	13	0
+	+	15	0
+	+	13	0
+	+	13	0
+	+	15	0
+	+	10	60
+	+	12	0
+	+	13	0
 	+	11	0
+	+	20	0
+	+	20	0
 	+	10	0
-	+	7	0
-	+	10	23
+	+	12	0
 	+	10	0
 	+	10	0
-	+	7	0
-	+	7	0
+	+	10	0
+	+	15	0
+	+	8	0
+	+	15	0
+	+	19	0
+	+	19	0
+	+	16	0
+	+	17	0
+	+	19	0
+	+	8	0
+	+	19	0
+	+	6	0
+	+	16	0
+	+	17	0
+	+	8	0
+	+	9	0
+	+	18	0
+	+	19	0
+	+	8	0
+	+	9	0
+	+	15	0
+	+	8	0
+	+	9	0
+	+	8	0
+	+	9	0
+	+	8	0
+	+	9	0
+	+	8	0
+	+	9	0
+	+	8	0
+	+	9	0
+	+	8	0
+	+	9	0
+	+	8	0
+	+	9	0
+	+	15	0
+	+	19	0
+	z	18	6
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/elements/_cookies.css.scss
+	"	37	31
+	^	37	32
+	.	37	31
+	+	1	0
+	+	1	26
+	+	1	17
+	+	1	14
+	+	1	26
+	+	1	14
+	+	1	0
+	+	1	20
+	+	1	17
+	+	1	0
+	+	1	0
+	+	24	0
+	+	23	22
+	+	30	0
+	+	26	27
+	+	29	0
+	+	28	17
+	+	39	0
+	+	33	19
+	+	33	0
+	+	33	0
+	+	34	15
+	+	32	11
+	+	34	13
+	+	23	24
+	+	34	0
+	+	14	0
+	+	9	2
+	+	9	13
+	+	14	0
+	+	14	0
+	+	13	43
+	+	13	39
+	+	13	0
+	+	15	0
+	+	17	0
+	+	13	0
+	+	13	0
+	+	14	65
+	+	15	0
+	+	17	0
+	+	14	0
+	+	9	0
+	+	9	58
+	+	9	0
+	+	2	0
+	+	13	13
+	+	2	37
+	+	2	10
+	+	2	0
+	+	16	0
+	+	15	2
+	+	9	12
+	+	13	0
+	+	16	12
+	+	2	0
+	+	10	32
+	+	9	11
+	+	15	3
+	+	16	12
+	+	13	12
+	+	12	0
+	+	12	0
+	+	10	58
+	+	38	0
+	+	37	31
+	z	13	12
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/legal/_legal.css.scss
+	"	37	0
+	.	27	0
+	+	11	0
+	+	19	0
+	+	27	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/legal/terms.html
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-search.js.erb
+	"	184	23
+	^	124	59
+	.	37	0
+	+	14	17
+	+	14	19
+	+	14	17
+	+	14	16
+	+	14	0
+	+	14	0
+	+	14	0
+	+	63	0
+	+	63	87
+	+	63	0
+	+	63	0
+	+	63	0
+	+	27	140
+	+	27	0
+	+	2	0
+	+	3	0
+	+	37	0
+	z	3	11
 
 > ~/Github/Dashmote/dashmote-rail/ControlP
 	"	3	0
@@ -1248,715 +1529,2588 @@ $
 	+	1	0
 	+	2	0
 
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/threads/_threads.css.scss
-	"	36	0
-	.	70	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	2	0
-	+	99	0
-	+	49	0
-	+	50	0
-	+	59	0
-	+	60	0
-	+	99	7
-	+	94	29
-	+	94	0
-	+	61	0
-	+	62	0
-	+	63	0
-	+	64	0
-	+	65	0
-	+	66	0
-	+	67	0
+> /usr/share/vim/vim74/doc/help.txt
+	"	1	0
+
+> ~/.vimrc
+	"	110	12
+	^	110	13
+	.	110	12
+	+	93	25
+	+	92	0
+	+	69	15
+	+	70	0
+	+	69	18
+	+	70	0
+	+	69	0
 	+	68	0
+	+	69	19
+	+	69	7
+	+	69	22
+	+	70	14
 	+	69	0
 	+	70	0
-	+	72	0
-	+	73	0
+	+	69	19
+	+	68	0
+	+	74	29
 	+	74	0
-	+	75	0
-	+	77	0
-	+	78	0
-	+	79	0
-	+	80	0
-	+	94	0
-	+	94	0
-	+	95	0
-	+	96	0
-	+	97	0
-	+	98	0
-	+	97	0
-	+	98	0
-	+	99	0
-	+	100	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	81	7
-	+	94	0
-	+	95	0
-	+	82	0
-	+	82	16
-	+	94	0
-	+	3	19
-	+	86	10
-	+	93	0
-	+	86	26
-	+	87	0
-	+	87	21
-	+	88	24
-	+	93	0
-	+	92	12
-	+	84	27
-	+	73	24
-	+	92	29
-	+	91	33
-	+	86	0
+	+	62	0
+	+	69	21
+	+	69	19
+	+	112	0
+	+	124	34
+	+	110	15
+	+	106	12
+	+	107	12
+	+	109	12
+	+	110	12
+	+	115	0
+	+	114	0
+	+	106	0
+	+	109	0
+	+	110	0
+	+	108	16
+	+	106	0
+	+	109	0
+	+	110	0
+	+	108	12
+	+	103	8
+	+	106	11
+	+	107	11
+	+	108	11
+	+	109	11
+	+	110	0
+	+	103	0
+	+	101	6
+	+	102	6
+	+	103	6
+	+	106	11
+	+	107	11
+	+	108	12
+	+	109	11
+	+	101	0
+	+	108	10
+	+	106	12
+	+	107	12
+	+	108	12
+	+	109	12
+	+	110	12
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/imagesearch/elements/fullscreenview.html
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/fullscreen-view.js.erb
+	"	37	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/imagesearch/elements/fullscreensearch.html
+	"	14	74
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/dashsearch.js
+	"	189	0
+
+> /usr/share/vim/vim74/doc/fold.txt
+	"	189	7
+
+> ~/Github/Dashmote/dashmote-rail/.git/MERGE_MSG
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui.js
+	"	22	0
+	.	22	0
+	+	23	49
+	+	76	40
+	+	23	0
+	+	23	0
+	+	22	0
+
+> ~/Github/Dashmote/dashmote-rail/app/views/newui/index.html.erb
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/views/image_search/index.html.erb
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/views/layouts/application.html.erb
+	"	27	0
+
+> ~/Github/Dashmote/dashmote-rail/app/views/layouts/newui.html.erb
+	"	25	22
+	.	25	0
+	+	25	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/elements/sidemenu.html
+	"	6	27
+	^	6	28
+	.	6	27
+	+	6	27
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/cookie-span.js
+	"	7	21
+	^	2	22
+	.	7	0
+	+	1	0
+	+	2	25
+	+	8	0
+	+	2	0
+	+	12	6
+	+	11	0
+	+	8	32
+	+	12	0
+	+	7	51
+	+	8	40
+	+	9	34
+	+	10	34
+	+	2	18
+	+	8	0
+	+	6	0
+	+	8	0
+	+	6	0
+	+	7	0
+	+	2	21
+	+	9	0
+	+	7	0
+	z	8	4
+
+> ~/Github/Dashmote/dashmote-rail/NERD_tree_3
+	"	14	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/collection-image.js.erb
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/playview.js.erb
+	"	6	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/ng-views/elements/playview.html
+	"	1	0
+
+> ~/Github/Dashmote/dashmote-rail/NERD_tree_4
+	"	19	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/application.css.scss
+	"	24	24
+	^	24	25
+	.	24	24
+	+	24	24
+
+> ~/Github/Dashmote/dashlanding/src/scripts/controllers/home.js
+	"	38	0
+	^	9	170
+	.	38	0
+	+	19	60
+	+	20	117
+	+	21	71
+	+	22	86
+	+	23	94
+	+	12	4
+	+	13	4
+	+	14	4
+	+	15	4
+	+	16	4
+	+	17	4
+	+	18	4
+	+	19	4
+	+	20	4
+	+	21	4
+	+	22	4
+	+	23	11
+	+	22	10
+	+	21	10
+	+	20	10
+	+	19	12
+	+	18	15
+	+	17	10
+	+	16	10
+	+	15	11
+	+	14	12
+	+	13	10
+	+	12	11
+	+	30	20
+	+	30	28
+	+	30	14
+	+	30	14
+	+	26	20
+	+	24	14
+	+	8	32
+	+	2	111
+	+	35	24
+	+	35	89
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	0
+	+	23	96
+	+	22	89
+	+	21	74
+	+	20	72
+	+	19	63
+	+	23	0
+	+	23	96
+	+	22	0
+	+	22	88
+	+	21	73
+	+	20	119
+	+	19	62
+	+	17	97
+	+	15	111
+	+	13	112
+	+	20	109
+	+	21	61
+	+	12	51
+	+	20	86
+	+	30	0
+	+	30	0
+	+	30	0
+	+	30	0
+	+	26	0
+	+	30	0
+	+	30	0
+	+	29	24
+	+	30	0
+	+	30	0
+	+	29	0
+	+	30	6
+	+	29	20
+	+	29	0
+	+	29	0
+	+	30	0
+	+	29	0
+	+	62	3
+	+	62	0
+	+	61	30
+	+	62	0
+	+	62	0
+	+	62	18
+	+	61	0
+	+	60	0
+	+	56	0
 	+	59	0
-	+	58	0
-	+	51	23
+	+	62	0
 	+	57	0
-	+	52	16
-	+	53	21
-	+	52	9
-	+	54	10
-	+	52	9
-	+	53	24
-	+	53	11
-	+	55	11
-	+	53	24
+	+	56	18
+	+	58	4
+	+	9	169
+	+	9	169
+	+	45	0
+	+	38	0
+	z	29	6
+
+> ~/Github/Dashmote/dashlanding/src/scripts/directives/navigation.js
+	"	41	33
+	^	41	34
+	.	41	33
+	+	37	68
+	+	33	14
+	+	44	6
+	+	33	0
+	+	44	12
+	+	44	0
+	+	44	13
+	+	29	32
+	+	44	29
+	+	44	30
+	+	31	0
+	+	33	0
+	+	44	0
+	+	36	73
+	+	37	76
+	+	34	27
+	+	33	0
+	+	36	68
+	+	37	68
+	+	31	0
+	+	31	28
+	+	31	25
+	+	34	0
+	+	33	14
+	+	44	6
+	+	33	0
+	+	31	0
+	+	44	0
+	+	44	0
+	+	44	0
+	+	33	24
+	+	28	12
+	+	31	14
+	+	33	16
+	+	33	26
+	+	33	0
+	+	28	0
+	+	33	0
+	+	35	0
+	+	38	0
+	+	44	0
+	+	40	0
+	+	40	0
+	+	33	0
+	+	44	0
+	+	33	0
+	+	31	0
+	+	31	14
+	+	28	6
+	+	35	20
+	+	25	7
+	+	28	0
+	+	22	0
+	+	27	19
+	+	22	0
+	+	22	14
+	+	21	36
+	+	22	42
+	+	23	37
+	+	24	42
+	+	27	23
+	+	24	42
+	+	31	0
+	+	30	26
+	+	39	0
+	+	40	0
+	+	40	0
+	+	33	0
+	+	21	0
+	+	20	0
+	+	9	0
+	+	20	0
+	+	14	0
+	+	13	0
+	+	14	0
+	+	16	41
+	+	16	0
+	+	15	0
+	+	14	28
+	+	19	30
+	+	19	23
+	+	19	15
+	+	19	40
+	+	19	0
+	+	19	0
+	+	19	0
+	+	17	30
+	+	18	23
+	+	38	35
+	+	38	42
+	+	38	0
+	+	38	0
+	+	38	0
+	+	38	0
+	+	36	59
+	+	38	0
+	+	37	72
+	+	38	0
+	+	19	0
+	+	41	33
+	z	13	0
+
+> ~/Github/Dashmote/dashlanding/src/style/_base.scss
+	"	328	41
+	^	328	42
+	.	328	41
+	+	327	0
+	+	327	0
+	+	327	0
+	+	281	0
+	+	327	0
+	+	255	0
+	+	297	32
+	+	297	31
+	+	297	0
+	+	297	2
+	+	297	0
+	+	297	0
+	+	297	9
+	+	297	0
+	+	297	0
+	+	297	33
+	+	297	0
+	+	297	0
+	+	297	30
+	+	298	0
+	+	298	0
+	+	297	0
+	+	297	0
+	+	297	0
+	+	280	0
+	+	280	0
+	+	258	14
+	+	262	17
+	+	259	24
+	+	256	19
+	+	279	0
+	+	269	13
+	+	257	0
+	+	257	12
+	+	259	0
+	+	263	0
+	+	263	0
+	+	259	0
+	+	259	16
+	+	263	16
+	+	258	0
+	+	271	0
+	+	268	0
+	+	271	10
+	+	269	15
+	+	271	0
+	+	269	12
+	+	272	7
+	+	278	0
+	+	273	19
+	+	268	0
+	+	273	0
+	+	258	0
+	+	267	0
+	+	270	19
+	+	273	23
+	+	277	0
+	+	276	28
+	+	267	0
+	+	263	0
+	+	259	0
+	+	68	0
+	+	10	0
+	+	5	0
+	+	6	0
+	+	259	28
+	+	259	16
+	+	259	28
+	+	260	33
+	+	259	0
+	+	263	28
+	+	263	16
+	+	263	39
+	+	259	38
+	+	263	0
+	+	329	0
+	+	329	37
+	+	330	0
+	+	329	0
+	+	328	0
+	+	328	0
+	+	328	40
+	+	332	0
+	+	335	0
+	+	335	0
+	+	332	0
+	+	332	0
+	+	332	0
+	+	350	38
+	+	350	0
+	+	347	43
+	+	343	0
+	+	350	0
+	+	335	0
+	+	332	0
+	+	328	0
+	+	255	0
+	+	254	0
+	+	350	0
+	+	328	41
+	z	350	41
+
+> ~/Github/Dashmote/dashlanding/src/style/_contact.scss
+	"	33	35
+	^	33	36
+	.	33	35
+	+	61	0
+	+	2	19
+	+	8	29
+	+	11	0
+	+	9	0
+	+	9	25
+	+	11	3
+	+	29	0
+	+	13	17
+	+	22	22
+	+	22	0
+	+	22	0
+	+	28	0
+	+	22	0
+	+	14	15
+	+	21	0
+	+	15	15
+	+	60	0
+	+	31	0
+	+	31	0
+	+	31	0
+	+	31	0
+	+	32	21
+	+	15	16
+	+	59	0
+	+	45	16
+	+	44	20
+	+	58	0
+	+	45	0
+	+	49	27
+	+	2	3
+	+	4	33
+	+	59	0
+	+	51	19
+	+	59	24
+	+	59	0
+	+	59	18
+	+	59	6
+	+	59	12
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	0
+	+	59	18
+	+	59	0
+	+	59	0
+	+	59	8
+	+	59	26
+	+	59	0
+	+	59	0
+	+	52	0
+	+	54	0
+	+	55	0
+	+	56	0
+	+	55	0
+	+	54	0
+	+	54	0
+	+	53	35
+	+	55	24
+	+	47	32
+	+	33	40
+	+	42	26
+	+	34	28
+	+	42	22
+	+	16	0
+	+	18	19
+	+	16	37
+	+	33	37
+	+	16	37
+	+	5	0
+	+	7	0
+	+	7	0
+	+	6	25
+	+	5	0
+	+	18	0
+	+	42	0
+	+	23	5
+	+	23	5
+	+	23	29
+	+	23	30
+	+	27	0
+	+	23	5
+	+	26	23
+	+	23	0
+	+	23	0
+	+	24	21
+	+	18	3
+	+	35	0
+	+	42	0
+	+	37	0
+	+	41	0
+	+	39	19
+	+	36	14
+	+	35	22
+	+	39	28
+	+	37	0
+	+	33	35
+	z	39	28
+
+> ~/Github/jorgechato/NERD_tree_1
+	"	13	1
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/jorgechato/lib/youtube/index.js
+	"	14	2
+	^	34	3
+	.	14	0
+	+	23	0
+	+	23	129
+	+	11	0
+	+	46	0
+	+	23	0
+	+	28	0
+	+	9	0
+	+	9	39
+	+	9	0
+	+	23	0
+	+	23	0
+	+	23	7
+	+	11	0
+	+	5	0
+	+	6	0
+	+	10	13
+	+	23	36
+	+	41	29
+	+	13	0
+	+	11	5
+	+	11	48
+	+	11	24
+	+	11	25
+	+	11	25
+	+	11	50
+	+	23	1
+	+	41	20
+	+	43	0
+	+	42	0
+	+	43	0
+	+	30	44
+	+	15	45
+	+	22	0
+	+	15	45
+	+	17	46
+	+	20	0
+	+	16	0
+	+	17	56
+	+	18	4
+	+	17	0
+	+	18	55
+	+	19	51
+	+	30	39
+	+	23	0
+	+	33	0
+	+	40	0
+	+	34	0
+	+	11	0
+	+	11	0
+	+	11	0
+	+	11	0
+	+	11	0
+	+	13	25
+	+	13	0
+	+	22	0
+	+	23	112
+	+	12	0
+	+	23	26
+	+	14	0
+	+	12	0
+	+	12	0
+	+	11	0
+	+	12	0
+	+	22	0
+	+	12	0
+	+	23	0
+	+	23	0
+	+	23	61
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	37
+	+	23	0
+	+	23	0
+	+	11	0
+	+	23	0
+	+	14	0
+	+	13	0
+	+	22	0
+	+	20	3
+	+	34	0
+	+	21	0
+	+	14	0
+
+> ~/Github/jorgechato/package.json
+	"	8	29
+	^	8	30
+	.	8	29
+	+	53	0
+	+	52	34
+	+	8	29
+
+> ~/Github/jorgechato/NERD_tree_2
+	"	36	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Github/jorgechato/config.json
+	"	13	43
+	^	13	44
+	.	13	43
+	+	10	4
+	+	9	64
+	+	10	43
+	+	11	44
+	+	13	15
+	+	12	4
+	+	13	16
+	+	12	32
+	+	13	43
+
+> ~/Github/jorgechato/lib/instagram/index.js
+	"	10	17
+
+> ~/Downloads/apiYoutube.md
+	"	8	12
+	^	43	67
+	.	13	0
+	+	2	2
+	+	6	60
+	+	3	9
+	+	1	19
+	+	2	0
+	+	8	37
+	+	11	6
+	+	43	0
+	+	13	0
+	z	43	66
+
+> ~/Github/Dashmote/dashlanding/src/style/_navigation.scss
+	"	61	0
+	^	81	23
+	.	61	0
+	+	8	0
+	+	9	58
+	+	10	47
+	+	8	0
+	+	10	0
+	+	33	22
+	+	56	17
 	+	53	0
 	+	56	0
 	+	53	0
+	+	53	45
 	+	53	0
-	+	53	9
-	+	85	36
-	+	70	0
-	+	70	18
-	+	76	0
+	+	54	0
+	+	54	62
+	+	54	0
 	+	72	0
+	+	70	27
+	+	71	28
+	+	27	19
+	+	29	0
+	+	36	0
+	+	34	0
+	+	36	0
+	+	43	0
+	+	13	0
+	+	27	0
+	+	13	26
+	+	27	0
+	+	78	28
+	+	34	0
+	+	43	0
+	+	28	20
+	+	6	0
+	+	6	15
+	+	6	18
+	+	6	0
+	+	6	25
+	+	6	0
+	+	6	0
+	+	6	13
+	+	6	14
+	+	6	23
+	+	6	17
+	+	6	23
+	+	6	0
+	+	6	35
+	+	6	0
+	+	6	20
+	+	6	0
+	+	5	19
+	+	27	0
+	+	26	16
+	+	41	45
+	+	41	0
+	+	41	0
+	+	41	29
+	+	41	0
+	+	38	0
+	+	39	0
+	+	39	19
+	+	39	0
+	+	61	0
+	+	54	17
+	+	25	0
+	+	25	0
+	+	6	0
+	+	6	13
+	+	6	0
+	+	15	0
+	+	19	0
+	+	19	0
+	+	19	6
+	+	19	0
+	+	19	0
+	+	19	23
+	+	19	0
+	+	19	0
+	+	19	35
+	+	19	0
+	+	20	0
+	+	40	0
+	+	61	0
+	+	62	0
+	+	63	0
+	+	38	0
+	+	81	19
+	+	88	0
+	+	88	0
+	+	87	0
+	+	84	28
+	+	82	12
+	+	87	0
+	+	86	0
+	+	86	0
+	+	85	0
+	+	39	0
+	+	81	23
+	+	83	0
+	+	84	0
+	+	61	0
+	z	85	10
+
+> ~/Github/Dashmote/dashlanding/src/scripts/app.js
+	"	14	1
+	^	36	2
+	.	36	0
+	+	1	31
+	+	1	0
+	+	2	8
+	+	54	0
+	+	53	0
+	+	54	0
+	+	52	2
+	+	1	95
+	+	4	20
+	+	6	22
+	+	4	16
+	+	6	20
+	+	4	16
+	+	6	20
+	+	4	16
+	+	6	20
+	+	4	19
+	+	20	4
+	+	21	0
+	+	26	0
+	+	31	16
+	+	32	18
+	+	33	0
+	+	28	0
+	+	23	0
+	+	21	13
+	+	22	15
+	+	24	39
+	+	26	10
+	+	27	15
+	+	40	5
+	+	19	31
+	+	24	31
+	+	29	31
+	+	34	31
+	+	7	12
+	+	12	0
+	+	10	18
+	+	8	20
+	+	9	18
+	+	10	26
+	+	11	17
+	+	10	8
+	+	28	0
+	+	33	24
+	+	34	39
+	+	33	0
+	+	14	94
+	+	49	32
+	+	49	0
+	+	47	10
+	+	1	115
+	+	47	0
+	+	48	0
+	+	47	0
+	+	12	3
+	+	33	0
+	+	5	22
+	+	1	199
+	+	51	0
+	+	50	20
+	+	51	0
+	+	14	113
+	+	1	212
+	+	39	4
+	+	38	4
+	+	37	4
+	+	36	0
+	z	36	1
+
+> ~/Github/Dashmote/dashlanding/src/views/element/navigation.html
+	"	45	84
+	^	45	85
+	.	45	84
+	+	1	4
+	+	18	9
+	+	19	6
+	+	3	5
+	+	3	0
+	+	3	0
+	+	3	6
+	+	3	0
+	+	20	0
+	+	3	16
+	+	3	0
+	+	4	0
+	+	20	0
+	+	3	0
+	+	22	0
+	+	23	36
+	+	27	37
+	+	28	0
+	+	29	0
+	+	28	0
+	+	22	0
+	+	28	55
+	+	31	47
+	+	3	52
+	+	27	46
+	+	3	48
+	+	27	50
+	+	3	52
+	+	22	31
+	+	23	31
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	0
+	+	61	51
+	+	61	21
+	+	61	0
+	+	61	0
+	+	61	0
+	+	61	0
+	+	61	0
+	+	61	0
+	+	34	41
+	+	35	39
+	+	34	51
+	+	35	49
+	+	31	36
+	+	4	0
+	+	4	0
+	+	4	0
+	+	18	9
+	+	4	214
+	+	24	47
+	+	26	0
+	+	26	0
+	+	26	0
+	+	24	18
+	+	26	0
+	+	24	41
+	+	27	50
+	+	25	0
+	+	26	0
+	+	25	9
+	+	20	41
+	+	30	37
+	+	40	0
+	+	38	44
+	+	30	57
+	+	38	65
+	+	41	46
+	+	41	0
+	+	41	62
+	+	41	0
+	+	41	0
+	+	41	0
+	+	42	0
+	+	3	42
+	+	44	0
+	+	49	0
+	+	49	0
+	+	39	0
+	+	49	0
+	+	49	8
+	+	49	0
+	+	59	0
+	+	49	0
+	+	59	0
+	+	49	0
+	+	57	0
+	+	49	39
+	+	46	7
+	+	26	9
+	+	45	84
+	+	46	100
+	+	45	84
+	+	46	84
+	+	45	84
+	+	46	84
+	+	45	84
+	z	49	2
+
+> ~/Github/Dashmote/dashlanding/src/style/_header.scss
+	"	66	23
+	^	66	24
+	.	66	23
+	+	2	0
+	+	1	6
+	+	93	0
+	+	50	0
+	+	93	31
+	+	74	7
+	+	75	17
+	+	76	17
+	+	76	17
+	+	92	6
+	+	92	5
+	+	93	0
+	+	92	9
+	+	92	17
+	+	92	3
+	+	92	5
+	+	93	0
+	+	93	0
+	+	92	0
+	+	92	21
+	+	92	0
+	+	92	15
+	+	92	6
+	+	92	19
+	+	91	0
+	+	90	0
+	+	80	21
+	+	92	0
+	+	81	0
+	+	89	0
+	+	89	0
+	+	3	0
+	+	36	0
+	+	25	26
+	+	35	15
+	+	5	0
+	+	28	17
+	+	33	27
+	+	29	0
+	+	33	6
+	+	29	6
+	+	33	0
+	+	30	0
+	+	7	21
+	+	36	7
+	+	36	0
+	+	36	18
+	+	36	28
+	+	36	19
+	+	36	18
+	+	36	10
+	+	36	17
+	+	36	18
+	+	36	0
+	+	36	0
+	+	36	0
+	+	5	0
+	+	23	0
+	+	13	0
+	+	14	0
+	+	15	46
+	+	15	0
+	+	15	0
+	+	15	0
+	+	15	50
+	+	59	25
+	+	61	24
+	+	72	0
+	+	72	0
+	+	60	33
 	+	71	0
+	+	70	21
+	+	62	40
+	+	64	0
+	+	63	21
+	+	22	0
+	+	20	27
+	+	15	0
+	+	18	0
+	+	20	27
+	+	20	33
+	+	21	32
+	+	20	0
+	+	15	0
+	+	19	0
+	+	54	0
+	+	56	0
+	+	55	22
+	+	54	23
+	+	65	0
+	+	66	23
+	z	19	6
+
+> ~/Github/Dashmote/dashlanding/src/scripts/directives/map.js
+	"	2	31
+	^	11	73
+	.	11	72
+	+	1	0
+	+	2	17
+	+	4	17
+	+	6	0
+	+	26	0
+	+	7	39
+	+	13	0
+	+	6	0
+	+	26	269
+	+	26	0
+	+	14	0
+	+	26	0
+	+	20	0
+	+	26	12
+	+	20	0
+	+	2	15
+	+	26	0
+	+	14	0
+	+	22	0
+	+	12	15
+	+	7	41
+	+	12	23
+	+	7	0
+	+	20	0
+	+	25	0
+	+	7	59
+	+	10	0
+	+	10	0
+	+	9	25
+	+	12	0
+	+	11	72
+	z	10	14
+
+> ~/Github/Dashmote/dashlanding/src/scripts/directives/header.js
+	"	16	8
+	^	40	29
+	.	40	28
+	+	22	27
+	+	29	0
+	+	31	0
+	+	32	0
+	+	29	29
+	+	31	25
+	+	31	0
+	+	31	26
+	+	31	0
+	+	30	24
+	+	157	0
+	+	41	21
+	+	170	9
+	+	170	0
+	+	161	17
+	+	162	0
+	+	23	10
+	+	162	15
+	+	166	39
+	+	170	16
+	+	166	17
+	+	162	16
+	+	163	20
+	+	164	21
+	+	170	19
+	+	166	0
+	+	170	41
+	+	166	21
+	+	167	27
+	+	169	11
+	+	170	0
+	+	169	0
+	+	170	5
+	+	168	11
+	+	169	0
+	+	169	0
+	+	168	45
+	+	169	0
+	+	168	45
+	+	168	0
+	+	168	0
+	+	168	20
+	+	168	0
+	+	168	0
+	+	169	0
+	+	170	0
+	+	41	0
+	+	156	12
+	+	156	1012
+	+	42	0
+	+	22	0
+	+	21	33
+	+	7	40
+	+	156	0
+	+	156	0
+	+	42	0
+	+	156	0
+	+	155	1012
+	+	42	0
+	+	8	0
+	+	7	51
+	+	8	73
+	+	10	0
+	+	9	62
+	+	9	0
+	+	7	99
+	+	11	0
+	+	13	25
+	+	15	7
+	+	16	36
+	+	15	35
+	+	16	35
+	+	12	0
+	+	17	0
+	+	15	23
+	+	15	0
+	+	16	21
+	+	16	14
+	+	15	12
+	+	12	18
+	+	7	99
+	+	13	40
+	+	16	0
+	+	16	19
+	+	14	23
+	+	14	18
+	+	15	6
+	+	16	0
+	+	14	23
+	+	15	19
+	+	14	32
+	+	15	36
+	+	15	53
+	+	14	37
+	+	15	29
+	+	17	7
+	+	15	0
+	+	18	0
+	+	16	0
+	+	40	28
+	z	16	11
+
+> ~/Github/Dashmote/dashlanding/src/style/_footer.scss
+	"	148	0
+	^	134	17
+	.	133	0
+	+	65	0
+	+	66	0
+	+	63	8
+	+	61	0
+	+	51	18
+	+	36	0
+	+	35	29
+	+	34	0
+	+	36	39
+	+	59	41
+	+	81	39
+	+	44	0
+	+	44	0
+	+	44	0
+	+	117	0
+	+	107	0
+	+	107	0
+	+	106	11
+	+	40	0
+	+	40	19
+	+	120	23
+	+	59	3
+	+	30	17
+	+	43	0
+	+	58	0
+	+	58	0
+	+	44	8
+	+	44	0
+	+	44	0
 	+	71	0
+	+	74	20
+	+	75	14
+	+	95	20
+	+	110	0
+	+	109	23
+	+	113	0
+	+	112	22
+	+	47	17
+	+	48	18
+	+	52	18
+	+	43	0
+	+	51	0
+	+	60	0
+	+	107	21
+	+	109	0
+	+	41	0
+	+	41	7
+	+	41	0
+	+	41	0
 	+	70	0
-	z	81	8
-
-> ~/Github/Dashmote/dashmote-rail/NERD_tree_3
-	"	19	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Github/Dashmote/dashmote-rail/NERD_tree_4
-	"	56	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Github/Dashmote/dashmote-rail/NERD_tree_5
-	"	19	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result.js
-	"	12	70
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-result-vertical.js
-	"	25	38
-
-> ~/Github/Dashmote/dashmote-rail/NERD_tree_6
-	"	6	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Github/Dashmote/dashmote-rail/NERD_tree_7
-	"	17	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Github/Dashmote/dashmote-rail/NERD_tree_8
-	"	18	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/app.js
-	"	1	81
-
-> ~/Github/Dashmote/dashmote-rail/NERD_tree_9
-	"	13	0
-	.	1	0
-	+	1	0
-	+	1	0
-
-> ~/Github/insulinum-angular/NERD_tree_1
-	"	17	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Github/insulinum-angular/src/scripts/dashboard/my/main.controller.js
-	"	11	0
-	^	2	0
-	.	75	0
-	+	77	23
-	+	77	22
-	+	77	21
-	+	77	20
-	+	77	19
-	+	77	18
-	+	77	17
-	+	78	0
-	+	75	21
-	+	76	24
-	+	75	0
-
-> fugitive:///home/orggue/Github/insulinum-angular/.git//0/src/scripts/dashboard/my/main.controller.js
-	"	11	0
-
-> ~/Github/insulinum-angular/NERD_tree_2
-	"	17	0
-	.	1	0
-	+	1	0
-
-> ~/Github/insulinum-angular/README.md
-	"	119	0
-
-> fugitive:///home/orggue/Github/insulinum-angular/.git//0/README.md
-	"	119	2
-
-> ~/Dropbox/insulinum S.L/README.md
-	"	2	0
-	^	21	0
-	.	3	0
+	+	69	26
+	+	68	0
+	+	55	56
+	+	41	0
+	+	55	48
+	+	54	38
+	+	53	46
+	+	54	38
+	+	14	37
+	+	18	0
+	+	14	17
+	+	18	0
+	+	14	0
+	+	17	0
+	+	14	0
 	+	15	0
 	+	17	0
 	+	15	0
-	+	6	0
+	+	21	25
+	+	15	0
+	+	21	22
+	+	41	0
+	+	36	39
+	+	59	40
+	+	81	38
+	+	114	38
+	+	104	0
+	+	103	0
+	+	101	8
+	+	102	27
+	+	120	0
+	+	37	16
+	+	40	0
+	+	37	0
+	+	88	20
+	+	81	0
+	+	88	0
+	+	89	0
+	+	91	0
+	+	90	20
+	+	89	0
+	+	51	19
+	+	90	18
+	+	124	0
+	+	126	0
+	+	124	0
+	+	133	0
+	+	135	0
+	+	134	16
+	+	133	0
+	z	134	16
+
+> ~/Github/Dashmote/dashlanding/src/views/base/home.html
+	"	27	27
+	^	35	27
+	.	27	27
+	+	130	107
+	+	133	108
+	+	136	108
+	+	138	110
+	+	130	107
+	+	112	113
+	+	118	115
+	+	112	108
+	+	118	109
+	+	121	107
+	+	19	34
+	+	28	34
+	+	36	35
+	+	2	52
+	+	69	38
+	+	3	60
+	+	12	37
+	+	174	15
+	+	23	40
+	+	25	0
+	+	24	113
+	+	40	42
+	+	42	0
+	+	42	0
+	+	41	0
+	+	41	0
+	+	41	0
+	+	41	0
+	+	41	140
+	+	41	0
+	+	169	0
+	+	169	7
+	+	169	18
+	+	169	24
+	+	169	7
+	+	169	0
+	+	169	71
+	+	169	22
+	+	169	0
+	+	169	108
+	+	169	108
+	+	169	0
+	+	169	115
+	+	169	0
+	+	166	0
+	+	167	119
+	+	167	0
+	+	167	91
+	+	167	0
+	+	95	0
+	+	96	80
+	+	167	82
+	+	96	135
+	+	133	0
+	+	138	0
+	+	108	0
+	+	109	0
+	+	108	12
+	+	109	0
+	+	110	0
+	+	108	9
+	+	111	0
+	+	113	0
+	+	116	0
+	+	119	0
+	+	122	0
+	+	125	0
+	+	128	0
+	+	131	0
+	+	137	0
+	+	134	0
+	+	138	0
+	+	108	25
+	+	111	25
+	+	114	25
+	+	117	25
+	+	120	25
+	+	123	25
+	+	126	25
+	+	129	25
+	+	132	25
+	+	135	25
+	+	108	31
+	+	111	34
+	+	114	31
+	+	117	35
+	+	120	28
+	+	123	34
+	+	126	31
+	+	129	36
+	+	132	25
+	+	135	25
+	+	7	8
+	+	103	12
+	+	36	40
+	+	18	27
+	+	35	27
+	+	49	22
+	+	11	8
+	+	27	27
+	n	171	0
+	z	166	21
+
+> ~/Github/jorgechato/index.js
+	"	31	14
+	^	31	15
+	.	31	15
+	+	35	0
+	+	33	12
+	+	34	15
+	+	33	37
 	+	12	0
-	+	11	73
-	+	13	71
-	+	13	59
-	+	3	3
-	+	4	27
-	+	5	42
-	+	6	0
+	+	30	11
+	+	31	15
+	+	30	36
+	+	31	15
+
+> ~/Github/jorgechato/src/scripts/app.js
+	"	16	51
+	^	16	52
+	.	16	0
+	+	25	27
+	+	1	74
+	+	6	76
+	+	32	44
+	+	31	47
+	+	13	15
+	+	14	12
+	+	15	23
+	+	16	51
+	+	15	0
 	+	16	0
-	+	9	0
-	+	8	0
-	+	21	0
-	+	3	0
-	+	3	0
-	+	3	0
 
-> ~/Dropbox/insulinum S.L/Notes/Christian/INSULINUM KEYWORDS.csv
-	"	11	0
-	^	198	2
-	.	200	0
-	+	200	1
-	+	199	0
-	+	200	0
-	z	3	0
-
-> ~/Dropbox/insulinum S.L/Notes/Christian/Apps B2B B2E  y B2C.md
-	"	1	0
-
-> ~/Dropbox/insulinum S.L/Notes/Christian/Posicionar Landing.md
-	"	3	0
-
-> ~/ControlP
-	"	1	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/NERD_tree_1
-	"	17	0
-	.	1	0
-	+	1	0
-
-> ~/Github/insulinum-angular/gulpfile.js
-	"	31	2
-
-> ~/.config/terminator/config
-	"	8	9
-	^	8	10
-	.	8	9
-	+	7	1
-	+	7	0
-	+	7	0
-	+	7	14
-	+	27	0
-	+	7	10
-	+	27	12
-	+	27	0
-	+	27	0
+> ~/Github/Dashmote/dashlanding/readme.md
+	"	23	17
+	^	23	18
+	.	23	18
+	+	14	9
 	+	27	0
 	+	26	0
-	+	19	4
-	+	20	0
-	+	19	0
-	+	23	0
-	+	21	30
-	+	22	4
-	+	18	9
-	+	18	0
-	+	18	3
-	+	18	31
-	+	18	35
-	+	18	3
-	+	18	25
-	+	18	32
-	+	18	0
-	+	18	3
-	+	18	0
-	+	16	0
-	+	9	4
-	+	11	35
-	+	15	4
-	+	17	4
-	+	8	10
-	+	32	11
-	+	8	9
-
-> ~/Github/insulinum-angular/src/views/index.html
-	"	25	0
-	.	25	0
-	+	25	0
-	+	25	0
-	+	25	0
-	z	25	0
-
-> ~/.vim/bundle/vim-airline/doc/airline.txt
-	"	2	0
-
-> ~/Github/insulinum-angular/[Vundle] Installer
-	"	3	0
-	.	1	0
-	+	1	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/_variables.css.scss
-	"	141	29
-	^	141	30
-	.	141	29
-	+	139	27
-	+	140	31
-	+	141	29
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/droppane-thread.js
-	"	1	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/imagesearch/_base.css.scss
-	"	94	1
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/_utility.css.scss
-	"	1	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/imagesearch/_grid.css.scss
-	"	1	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/lib/hint/hint-core.scss
-	"	68	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/lib/hint/hint-variables.scss
-	"	47	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/directives/image-row.js
-	"	38	0
-
-> ~/Github/Dashmote/dashmote-rail/public/views/imagesearch/elements/imageresult.html
-	"	7	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/threadmanager.js
-	"	2	0
-	.	2	0
-	+	2	0
-	+	2	0
-	z	4	4
-
-> ~/Github/Dashmote/dashmote-rail/public/views/threads/base.html
-	"	1	14
-
-> ~/Github/generator-pandoc/NERD_tree_1
-	"	5	0
-	.	1	0
-	+	1	0
-
-> ~/Github/generator-pandoc/ControlP
-	"	10	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/Github/generator-pandoc/.gitignore
-	"	1	12
-	^	1	13
-	.	1	12
-	+	1	12
-
-> ~/Github/generator-pandoc/NERD_tree_2
-	"	4	0
-	.	1	0
-	+	1	0
-
-> ~/Github/insulinum-dash/lib/controls/index.js
-	"	2	0
-	^	11	14
-	.	2	0
-	+	32	0
-	+	27	0
-	+	28	0
-	+	28	0
-	+	10	0
-	+	11	13
-	+	11	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	z	2	0
-
-> ~/Github/insulinum-dash/NERD_tree_1
-	"	7	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Github/insulinum-dash/package.json
-	"	15	4
-	.	15	0
 	+	15	0
-
-> ~/Github/Dashmote/dashmote-rail/Gemfile
-	"	88	0
-
-> ~/Dropbox/insulinum S.L/Ressources/Organization/README.md
-	"	1	0
-
-> ~/Dropbox/insulinum S.L/Ressources/Organization/THP-info.md
-	"	3	19
-	^	3	20
-	.	3	19
-	+	1	16
-	+	2	1
-	+	3	19
-	+	3	117
-	+	3	19
-	+	3	120
-	+	3	19
-	m	3	19
-	w	3	19
-
-> ~/Github/TecnoBot/NERD_tree_1
-	"	6	0
-	.	1	0
-	+	1	0
-	+	1	0
-
-> ~/Github/TecnoBot/lib/bot.js
-	"	14	0
-	^	51	5
-	.	51	0
-	+	7	22
-	+	14	3
-	+	18	25
-	+	18	0
-	+	17	32
-	+	17	0
-	+	20	14
-	+	20	15
-	+	20	15
-	+	20	15
+	+	16	24
+	+	16	35
+	+	18	33
+	+	16	24
+	+	21	15
+	+	22	12
 	+	20	0
+	+	25	53
+	+	24	16
+	+	19	12
+	+	24	56
+	+	26	0
+	+	19	23
+	+	23	18
+
+> ~/Github/Dashmote/dashlanding/src/views/element/header.html
+	"	11	26
+	^	6	96
+	.	6	95
+	+	2	0
 	+	1	0
+	+	2	0
+	+	36	0
+	+	2	0
+	+	36	0
+	+	12	0
+	+	12	0
+	+	12	23
+	+	9	33
+	+	13	46
+	+	9	90
+	+	21	0
+	+	28	0
+	+	21	0
+	+	14	43
+	+	8	51
+	+	31	103
+	+	31	113
+	+	31	2
+	+	31	105
+	+	31	0
+	+	31	106
+	+	32	19
+	+	32	91
+	+	32	0
+	+	32	85
+	+	32	152
+	+	32	229
+	+	32	231
+	+	32	91
+	+	32	91
+	+	32	134
+	+	32	91
+	+	32	87
+	+	32	91
+	+	32	17
+	+	33	0
+	+	32	58
+	+	31	0
+	+	5	0
+	+	3	50
+	+	4	47
+	+	5	0
+	+	3	36
+	+	3	0
+	+	7	42
+	+	5	0
+	+	4	0
+	+	3	0
+	+	6	28
+	+	7	0
+	+	6	26
+	+	11	40
+	+	12	5
+	+	11	40
+	+	12	0
+	+	11	40
+	+	13	0
+	+	11	0
+	+	11	38
+	+	17	52
+	+	25	51
+	+	24	59
+	+	34	0
 	+	19	0
-	+	50	0
-	+	50	3
-	+	51	4
-	+	52	4
+	+	13	0
+	+	29	0
+	+	6	41
+	+	21	57
+	+	6	95
+	z	32	90
+
+> ~/Github/Dashmote/dashlanding/index.js
+	"	52	15
+	^	52	27
+	.	52	0
+	+	58	20
+	+	58	18
+	+	58	23
+	+	58	10
+	+	58	13
+	+	58	6
+	+	58	24
+	+	58	28
+	+	58	30
+	+	58	24
+	+	58	39
+	+	58	0
+	+	58	16
+	+	58	43
+	+	58	20
+	+	58	0
+	+	58	18
+	+	10	51
+	+	10	15
+	+	10	0
+	+	58	0
 	+	51	0
+	+	27	0
+	+	27	0
+	+	10	45
+	+	49	0
+	+	49	22
+	+	49	0
+	+	49	12
+	+	33	0
+	+	29	14
+	+	29	133
+	+	33	14
+	+	49	48
+	+	49	17
+	+	29	0
+	+	10	13
+	+	33	11
+	+	10	15
+	+	33	11
+	+	10	13
+	+	29	17
+	+	33	39
+	+	29	90
+	+	33	14
+	+	29	13
+	+	33	13
+	+	33	30
+	+	33	14
+	+	32	0
+	+	31	43
+	+	33	0
+	+	30	25
+	+	10	16
+	+	10	0
+	+	7	0
+	+	49	0
+	+	9	42
+	+	8	24
+	+	8	67
+	+	6	15
+	+	5	16
+	+	48	0
+	+	48	0
+	+	48	0
+	+	35	0
+	+	36	58
+	+	40	30
+	+	8	0
+	+	40	25
+	+	42	21
+	+	48	0
+	+	48	0
+	+	46	3
+	+	45	4
+	+	47	0
+	+	33	0
+	+	42	16
+	+	43	15
+	+	42	27
+	+	36	88
+	+	42	0
+	+	36	24
+	+	39	7
+	+	37	13
+	+	38	32
+	+	29	95
+	+	38	8
+	+	41	29
+	+	36	23
+	+	55	36
+	+	56	0
+	+	56	37
+	+	27	33
+	+	3	0
+	+	4	22
+	+	27	0
+	+	4	0
+	+	56	28
+	+	52	0
+	z	47	19
 
-> .vim/color/github.vim
-	"	1	0
+> ~/Github/Dashmote/dashlanding/src/views/element/footer.html
+	"	78	70
+	^	78	71
+	.	78	70
+	+	47	0
+	+	28	0
+	+	41	0
+	+	34	0
+	+	35	0
+	+	34	20
+	+	28	0
+	+	41	0
+	+	28	0
+	+	50	0
+	+	34	51
+	+	29	0
+	+	49	0
+	+	52	0
+	+	56	0
+	+	57	55
+	+	58	47
+	+	59	0
+	+	63	47
+	+	64	101
+	+	70	30
+	+	70	33
+	+	55	0
+	+	56	0
+	+	55	0
+	+	55	95
+	+	61	0
+	+	67	0
+	+	70	0
+	+	68	0
+	+	72	0
+	+	66	0
+	+	60	0
+	+	62	0
+	+	56	0
+	+	30	0
+	+	67	42
+	+	61	92
+	+	67	77
+	+	27	0
+	+	26	120
+	+	25	0
+	+	26	0
+	+	25	34
+	+	44	52
+	+	5	40
+	+	4	0
+	+	5	41
+	+	9	40
+	+	13	42
+	+	17	39
+	+	84	39
+	+	83	36
+	+	5	0
+	+	5	0
+	+	5	0
+	+	5	15
+	+	9	0
+	+	13	0
+	+	17	0
+	+	5	0
+	+	7	0
+	+	11	0
+	+	15	0
+	+	19	0
+	+	13	43
+	+	9	40
+	+	5	45
+	+	17	0
+	+	18	0
+	+	13	0
+	+	14	0
+	+	9	0
+	+	10	0
+	+	5	0
+	+	6	0
+	+	5	44
+	+	6	0
+	+	8	0
+	+	12	0
+	+	16	0
+	+	20	0
+	+	17	42
+	+	13	45
+	+	9	43
+	+	54	21
+	+	84	41
+	+	83	36
+	+	84	0
+	+	83	35
+	+	84	41
+	+	83	44
+	+	84	41
+	+	83	22
+	+	84	40
+	+	26	65
+	+	78	0
+	+	79	0
+	+	80	68
+	+	78	70
+	z	56	2
 
-> ~/.vim/color/github.vim
-	"	1	0
+> ~/Github/Dashmote/dashlanding/src/style/_variables.scss
+	"	20	16
+	^	20	17
+	.	20	16
+	+	6	0
+	+	6	15
+	+	9	21
+	+	10	20
+	+	6	0
+	+	3	26
+	+	2	57
+	+	3	18
+	+	3	0
+	+	6	8
+	+	7	6
+	+	9	11
+	+	10	11
+	+	3	7
+	+	15	21
+	+	17	20
+	+	19	17
+	+	20	10
+	+	23	16
+	+	24	0
+	+	24	22
+	+	23	19
+	+	22	17
+	+	21	24
+	+	20	14
+	+	19	21
+	+	19	17
+	+	19	0
+	+	32	32
+	+	28	10
+	+	33	0
+	+	19	0
+	+	33	0
+	+	14	7
+	+	5	7
+	+	19	23
+	+	20	23
+	+	22	20
+	+	24	26
+	+	23	23
+	+	21	26
+	+	18	6
+	+	19	21
+	+	1	61
+	+	21	26
+	+	16	17
+	+	15	0
+	+	30	30
+	+	29	0
+	+	11	8
+	+	12	15
+	+	7	14
+	+	6	16
+	+	9	18
+	+	23	23
+	+	24	0
+	+	23	23
+	+	24	27
+	+	26	0
+	+	26	0
+	+	24	41
+	+	26	20
+	+	26	23
+	+	26	8
+	+	26	0
+	+	25	22
+	+	1	68
+	+	8	21
+	+	2	12
+	+	1	12
+	+	3	0
+	+	20	16
 
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/active_admin.css.scss
-	"	1	0
+> ~/Github/Dashmote/dashlanding/dist/hiring/index.html
+	"	11	40
+	^	11	41
+	.	11	40
+	+	15	0
+	+	12	0
+	+	11	40
 
-> ~/Github/Dashmote/dashmote-rail/__InputList__
-	"	1	1
-	.	1	1
-	+	1	1
+> ~/Github/jorgechato/src/views/email/my-template.html
+	"	2	0
+	^	72	92
+	.	72	91
+	+	72	91
 
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/lib/_dashmote-icons.css.scss
-	"	121	0
-	^	52	0
-	.	69	0
-	+	69	0
+> ~/Github/jorgechato/lib/mandrill/index.js
+	"	45	18
+	^	45	19
+	.	45	18
+	+	2	0
+	+	8	0
+	+	9	0
+	+	53	0
+	+	54	0
+	+	2	0
+	+	2	0
+	+	6	60
+	+	7	40
+	+	11	0
+	+	12	20
+	+	52	2
+	+	50	82
+	+	29	0
+	+	30	61
+	+	37	20
+	+	38	27
+	+	39	49
+	+	10	0
+	+	39	68
+	+	36	0
+	+	34	14
+	+	35	31
+	+	39	24
+	+	42	19
+	+	41	6
+	+	42	23
+	+	41	22
+	+	36	7
+	+	32	45
+	+	12	19
+	+	50	0
+	+	48	19
+	+	40	16
+	+	48	0
+	+	50	0
+	+	50	4
+	+	50	25
+	+	38	0
+	+	49	17
+	+	40	16
+	+	38	44
+	+	39	88
+	+	38	42
+	+	12	7
+	+	48	17
+	+	40	83
+	+	13	0
+	+	14	0
+	+	13	114
+	+	14	0
+	+	51	0
+	+	14	0
+	+	41	13
+	+	28	14
+	+	21	0
+	+	24	13
+	+	23	24
+	+	23	21
+	+	24	28
+	+	15	62
+	+	41	0
+	+	15	6
+	+	28	7
+	+	15	34
+	+	28	7
+	+	23	8
+	+	23	8
+	+	24	13
+	+	23	46
+	+	24	40
+	+	23	38
+	+	21	0
+	+	21	44
+	+	17	0
+	+	21	0
+	+	18	20
+	+	23	0
+	+	19	0
+	+	20	0
+	+	19	44
+	+	20	7
+	+	28	0
+	+	25	0
+	+	24	0
+	+	27	0
+	+	21	0
+	+	22	23
+	+	18	20
+	+	23	15
+	+	26	12
+	+	27	15
+	+	23	48
+	+	29	0
+	+	26	22
+	+	16	22
+	+	18	20
+	+	22	23
+	+	26	20
+	+	45	18
+	z	21	8
 
-> ~/Github/Dashmote/dashmote-rail/app/views/threads/show.html.erb
-	"	1	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/javascripts/newui/services/overlaymanager.js
-	"	106	0
-
-> ~/.vim/bundle/NERD_tree_1
-	"	12	0
+> ~/Downloads/template email/NERD_tree_1
+	"	7	0
 	.	1	0
 	+	1	0
 	+	1	0
 
-> ~/.vim/bundle/ControlP
-	"	10	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	2	0
+> ~/Downloads/template email/sample-template/template-widgets.html
+	"	133	0
 
-> ~/Dropbox/insulinum S.L/[Vundle] Installer
-	"	4	0
-	.	1	0
-	+	1	0
+> ~/Downloads/template email/template.html
+	"	7	58
+	^	7	59
+	.	7	59
+	+	48	0
+	+	48	0
+	+	48	30
+	+	41	0
+	+	48	17
+	+	61	18
+	+	16	1
+	+	28	11
+	+	44	5
+	+	46	11
+	+	61	0
+	+	28	0
+	+	46	23
+	+	28	17
+	+	28	0
+	+	28	0
+	+	28	0
+	+	16	13
+	+	16	14
+	+	16	12
+	+	28	16
+	+	28	17
+	+	28	0
+	+	16	0
+	+	46	0
+	+	27	0
+	+	60	19
+	+	14	0
+	+	80	24
+	+	78	14
+	+	79	14
+	+	80	28
+	+	79	36
+	+	78	0
+	+	79	0
+	+	80	0
+	+	56	4
+	+	54	0
+	+	72	19
+	+	8	0
+	+	8	18
+	+	21	0
+	+	21	0
+	+	21	20
+	+	8	16
+	+	8	17
+	+	8	33
+	+	8	24
+	+	8	0
+	+	10	0
+	+	9	15
+	+	21	0
+	+	8	0
+	+	82	0
+	+	82	14
+	+	82	0
+	+	82	0
+	+	82	0
+	+	83	14
+	+	84	0
+	+	73	120
+	+	85	25
+	+	88	0
+	+	89	0
+	+	88	0
+	+	89	0
+	+	88	44
+	+	58	21
+	+	32	4
+	+	23	0
+	+	22	19
+	+	30	0
+	+	29	7
+	+	33	4
+	+	33	16
+	+	47	10
+	+	48	0
+	+	52	4
+	+	52	0
+	+	51	0
+	+	23	0
+	+	36	4
+	+	34	18
+	+	35	26
+	+	39	4
+	+	38	21
+	+	33	0
+	+	38	30
+	+	33	0
+	+	88	0
+	+	7	60
+	+	21	0
+	+	54	0
+	+	18	0
+	+	15	0
+	+	54	0
+	+	55	20
+	+	20	0
+	+	15	0
+	+	7	59
+	z	1	8
 
-> ~/Dropbox/insulinum S.L/ControlP
-	"	4	0
-	.	2	0
-	+	2	0
+> ~/Downloads/template.html
+	"	10	6
+	.	41	0
+	+	41	0
+	+	41	0
 
-> ~/Github/Dashmote/dashmote-rail/README.md
+> ~/Github/jorgechato/gulpfile.js
+	"	49	8
+
+> ~/Github/jorgechato/dist/scripts/app.min.js
+	"	1	306
+
+> ~/Github/jorgechato/src/scripts/controllers/home.js
+	"	26	2
+	^	3	39
+	.	26	0
+	+	2	16
+	+	27	0
+	+	4	40
+	+	2	38
+	+	27	0
+	+	5	0
+	+	6	0
+	+	27	0
+	+	26	3
+	+	26	0
+	+	17	0
+	+	16	3
+	+	15	30
+	+	2	55
+	+	22	38
+	+	23	0
+	+	24	0
+	+	23	52
+	+	24	0
+	+	26	0
+	+	26	0
+	+	21	0
+	+	25	0
+	+	26	22
+	+	15	0
+	+	20	46
+	+	20	51
+	+	26	4
+	+	20	0
+	+	20	43
+	+	26	0
+	+	20	0
+	+	20	0
+	+	26	0
+	+	20	0
+	+	26	0
+	+	20	0
+	+	20	24
+	+	20	33
+	+	20	30
+	+	20	32
+	+	14	13
+	+	13	12
+	+	20	0
+	+	20	0
+	+	2	66
+	+	3	33
+	+	2	79
+	+	3	34
+	+	3	27
+	+	2	77
+	+	3	29
+	+	3	0
+	+	25	0
+	+	26	0
+	z	20	6
+
+> ~/Github/jorgechato/src/style/_footer.styl
+	"	24	0
+
+> ~/Github/jorgechato/bower.json
+	"	20	0
+
+> ~/Github/jorgechato/bower_components/jquery/bower.json
 	"	2	0
 
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/imagesearch/_fullscreensearch.css.scss
-	"	1	0
-	.	40	0
-	+	40	0
-
-> ~/.vim/janus/vim/tools/ctrlp/doc/ctrlp.txt
-	"	1041	0
-
-> ~/Github/Dashmote/dashmote-rail/app/assets/stylesheets/newui/modules/imagesearch/_fullscreenview.css.scss
-	"	133	3
-	^	133	4
-	.	134	0
-	+	46	0
-	+	47	0
-	+	41	0
-	+	35	0
+> ~/Github/jorgechato/src/views/index.html
+	"	33	34
+	^	33	35
+	.	33	34
+	+	5	188
+	+	5	38
+	+	5	191
+	+	34	0
+	+	33	36
 	+	28	0
-	+	134	0
+	+	33	34
+	z	33	36
 
-> ~/Github/Dashmote/dashmote-rail/jorge.md
+> ~/Github/jorgechato/src/scripts/services/middleware.js
+	"	78	18
+	^	54	30
+	.	54	29
+	+	11	21
+	+	37	0
+	+	50	73
+	+	39	0
+	+	38	11
+	+	45	38
+	+	42	16
+	+	41	10
+	+	40	13
+	+	42	32
+	+	38	7
+	+	49	11
+	+	53	23
+	+	55	0
+	+	54	29
+	z	50	73
+
+> ~/Github/Dashmote/dashlanding/.gitignore
 	"	1	0
 
-> /usr/share/vim/vim74/doc/eval.txt
-	"	4986	35
+> ~/Github/Dashmote/dashlanding/src/style/import.scss
+	"	4	8
+	^	4	9
+	.	4	9
+	+	4	9
 
-> Dropbox/insulinum S.L/README.md
-	"	1	0
+> ~/Github/Dashmote/dashlanding/src/views/base/contact.html
+	"	31	6
+	^	21	45
+	.	31	0
+	+	33	0
+	+	25	0
+	+	33	202
+	+	33	0
+	+	33	126
+	+	33	135
+	+	33	134
+	+	33	0
+	+	33	28
+	+	33	27
+	+	33	49
+	+	33	47
+	+	33	114
+	+	33	109
+	+	33	89
+	+	33	62
+	+	33	66
+	+	33	67
+	+	33	100
+	+	33	0
+	+	33	0
+	+	33	99
+	+	33	95
+	+	33	110
+	+	33	106
+	+	22	43
+	+	23	43
+	+	24	43
+	+	21	31
+	+	22	28
+	+	23	28
+	+	24	28
+	+	25	130
+	+	33	0
+	+	34	62
+	+	34	69
+	+	34	83
+	+	34	98
+	+	34	105
+	+	34	112
+	+	34	0
+	+	34	0
+	+	34	0
+	+	33	0
+	+	14	35
+	+	33	0
+	+	34	0
+	+	34	56
+	+	34	0
+	+	34	140
+	+	34	135
+	+	34	59
+	+	34	56
+	+	34	0
+	+	34	120
+	+	34	117
+	+	34	0
+	+	34	131
+	+	34	128
+	+	14	43
+	+	34	0
+	+	31	0
+	+	25	124
+	+	31	0
+	+	32	40
+	+	31	0
+	+	32	40
+	+	31	47
+	+	32	0
+	+	15	47
+	+	18	0
+	+	17	132
+	+	8	0
+	+	9	0
+	+	8	12
+	+	9	12
+	+	10	12
+	+	11	12
+	+	8	16
+	+	9	21
+	+	10	0
+	+	11	0
+	+	9	0
+	+	8	0
+	+	32	0
+	+	22	142
+	+	21	147
+	+	22	0
+	+	22	142
+	+	23	140
+	+	21	62
+	+	22	41
+	+	23	41
+	+	24	41
+	+	31	18
+	+	22	41
+	+	23	41
+	+	24	41
+	+	21	44
+	+	31	0
+	z	31	4
 
-> ~/Github/insulinum-angular/bower_components/angular/angular.js
-	"	15035	1
+> ~/Github/Dashmote/dashlanding/src/scripts/controllers/contact.js
+	"	7	29
+	^	7	30
+	.	7	29
+	+	2	41
+	+	36	0
+	+	36	0
+	+	5	0
+	+	2	73
+	+	36	29
+	+	36	0
+	+	36	0
+	+	36	0
+	+	36	27
+	+	36	27
+	+	36	30
+	+	35	3
+	+	36	0
+	+	26	0
+	+	32	21
+	+	26	34
+	+	27	33
+	+	28	33
+	+	32	0
+	+	28	50
+	+	27	34
+	+	26	50
+	+	9	3
+	+	9	14
+	+	9	16
+	+	33	15
+	+	29	35
+	+	31	0
+	+	32	0
+	+	30	56
+	+	28	48
+	+	27	48
+	+	26	50
+	+	32	0
+	+	23	0
+	+	9	0
+	+	14	0
+	+	22	13
+	+	29	29
+	+	32	0
+	+	25	32
+	+	34	4
+	+	26	0
+	+	25	23
+	+	25	23
+	+	24	24
+	+	26	0
+	+	25	0
+	+	9	0
+	+	7	0
+	+	7	22
+	+	8	29
+	+	2	94
+	+	4	0
+	+	21	19
+	+	32	0
+	+	14	0
+	+	11	0
+	+	2	103
+	+	21	0
+	+	11	0
+	+	11	0
+	+	11	24
+	+	14	0
+	+	20	0
+	+	14	0
+	+	20	9
+	+	11	0
+	+	12	0
+	+	11	0
+	+	12	0
+	+	13	28
+	+	9	0
+	+	32	0
+	+	7	29
+	z	11	4
+
+> ~/.zshrc
+	"	89	20
+	^	89	21
+	.	89	20
+	+	88	0
+	+	89	14
+	+	88	15
+	+	89	14
+	+	88	50
+	+	89	20
+
+> ~/.oh-my-zsh/NERD_tree_1
+	"	2	0
+	.	1	0
+	+	1	0
