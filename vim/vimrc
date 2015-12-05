@@ -112,7 +112,7 @@ call vundle#begin()
 
 " give us nice EOL (end of line) characters
 set list
-"set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
