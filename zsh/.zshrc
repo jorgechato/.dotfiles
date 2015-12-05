@@ -53,7 +53,9 @@ plugins=(git)
 
 # User configuration
 
-export PATH="$HOME/mongodb/mongodb-linux-x86_64-3.0.3/bin/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/share/python:/usr/local/share/npm/bin"
 # export MANPATH="/usr/local/man:$MANPATH:"
 
 source $ZSH/oh-my-zsh.sh
@@ -83,20 +85,61 @@ stty -ixon
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+uni(){cd ~/Dropbox/'II_2015_2016'/"$*"}
+vuni(){vim ~/Dropbox/'II_2015_2016'/"$*"}
+#alias v="vim"
+v(){vim "$*"}
+book(){
+  if [ "$*" ]; then
+    git clone https://github.com/orggue/nerdbook-studio.git "$*" ; cd "$*" ; npm install ; npm start
+  else
+    git clone https://github.com/orggue/nerdbook-studio.git ; cd nerdbook-studio ; npm install ; npm start
+  fi
+}
+alias gip="ip route"
+alias unisubl="subl ~/Dropbox/'II_2015_2016'"
+alias arduino="APP/arduino-1.6.5-r5/arduino"
+alias py="python"
+alias speed="speedtest-cli"
+alias o="gnome-open"
+alias redis="~/APP/Redis/src/redis-server"
 alias zshconfig="vim ~/.zshrc"
+alias vimcoloradmin="cd /usr/share/vim/vim74/colors"
+alias vimcolor="cd ~/.vim/color"
+alias vimconfig="vim ~/.vimrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias list="sudo vim /etc/apt/sources.list"
 alias stoplight="killall -USR1 redshift"
-# alias startlight="redshift &"
-alias mdb="mongod --dbpath mongodb/data/db"
+alias startlight="redshift &"
 alias herokulog="heroku logs --tail"
 alias terminatorconfig="vim ~/.config/terminator/config"
-alias atompackages="atom ~/.atom/packages"
-alias atomlenguage="cd /usr/share/atom/resources/app.asar.unpacked/node_modules/spell-check/node_modules/spellchecker/vendor/hunspell_dictionaries"
+alias apache="sudo vim /etc/apache2/sites-available/wordpress.conf ; sudo /etc/init.d/apache2 restart"
+alias hosts="sudo vim /etc/hosts"
+alias wifi="kde-nm-connection-editor"
+imp(){
+  if [ "$*" ]; then
+    cd ~/Github/wordpress/site/web/app/themes/imposible ; "$*"
+  else
+      cd ~/Github/wordpress/site/web/app/themes/imposible
+  fi
+}
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+#conection to
+alias unizar="ssh i651348@esquinazo.unizar.es"
+pi(){
+  if [ "$*" ]; then
+    ssh pi@"$*"
+  else
+    ssh pi@10.7.5.229
+  fi
+}
+
+#alias mdb="mongod --dbpath mongodb/data/db"
 
 # terminator with 256 colors to vim
 export TERM="xterm-256color"
 
 # tmux
 if [ "$TMUX" = "" ]; then tmux; fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
