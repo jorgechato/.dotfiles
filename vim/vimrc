@@ -25,20 +25,20 @@ set smarttab
 set shiftwidth=2
 set noexpandtab
 
-"colorate final line in screen
-set colorcolumn=120
-highlight ColorColumn ctermbg=darkgray
-
 """""""""""""""""""""""""""""START C and C++
-"use C instead C++
-augroup project
-  autocmd!
-  autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
-augroup END
-"make system config
-if !filereadable(expand("%:p:h")."/Makefile")
-  setlocal makeprg=gcc\ -lm\ -Wall\ -Wextra\ -o\ %<\ %
-endif
+""use C instead C++
+"augroup project
+  "autocmd!
+  "autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+"augroup END
+""make system config
+"if !filereadable(expand("%:p:h")."/Makefile")
+  "setlocal makeprg=gcc\ -lm\ -Wall\ -Wextra\ -o\ %<\ %
+"endif
+"make c/c++ c.vim
+let  g:C_UseTool_cmake    = 'yes'
+let  g:C_UseTool_doxygen = 'yes'
+let g:C_MapLeader  = ','
 """""""""""""""""""""""""""""END C and C++
 
 " Source janus's core
@@ -76,25 +76,12 @@ call janus#load_pathogen()
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+filetype plugin on
 
 " give us 256 color schemes!
 set term=screen-256color
 se t_Co=256
 let g:solarized_termcolors=256
-
-"""START color scheme selection
-:colorscheme github
-"
-"set background=light
-"colorscheme PaperColor
-"
-"colorscheme mac_classic
-"
-"colorscheme sprinkles
-"
-":colorscheme lucius
-"LuciusWhiteLowContrast
-"""END color scheme selection
 
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
@@ -105,6 +92,7 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/c-support
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -120,10 +108,36 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let NERDTreeQuitOnOpen = 1
 
 " Plugin
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'mattn/emmet-vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'Shutnik/jshint2.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+"Bundle 'edkolev/tmuxline.vim'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'pangloss/vim-javascript'
+Plugin 'shime/vim-livedown'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'wavded/vim-stylus'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-vinegar'
+
 " Linter
 set runtimepath+=~/.vim/bundle/jshint2.vim/
+"""START color scheme selection
+:colorscheme github
+":colorscheme sprinkles
+
+"colorate final line in screen
+set colorcolumn=130
+
 " Map
 map <F7> mzgg=G`z
 map <F8> <leader>cc

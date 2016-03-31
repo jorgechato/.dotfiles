@@ -1,1 +1,0 @@
-/home/orggue/.vim/janus/vim/vimrc

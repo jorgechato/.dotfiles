@@ -5,10 +5,11 @@ export ZSH=/home/orggue/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="geoffgarside"
-ZSH_THEME="awesomepanda"
-# ZSH_THEME="fwalch"
-# ZSH_THEME="kolo"
+#ZSH_THEME="awesomepanda"
+#ZSH_THEME="geoffgarside"
+#ZSH_THEME="fwalch"
+#ZSH_THEME="sorin"
+ ZSH_THEME="kolo"
 # ZSH_THEME="mgutz"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -56,6 +57,10 @@ plugins=(git)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 export PATH="$PATH:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/share/python:/usr/local/share/npm/bin"
+#hombrew
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 # export MANPATH="/usr/local/man:$MANPATH:"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,6 +89,10 @@ stty -ixon
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+# Scripts
+alias number="python ~/APP/scipts/number.py"
+alias name="python ~/APP/scipts/name.py"
+
 # Example aliases
 uni(){cd ~/Dropbox/'II_2015_2016'/"$*"}
 vuni(){vim ~/Dropbox/'II_2015_2016'/"$*"}
@@ -91,9 +100,39 @@ vuni(){vim ~/Dropbox/'II_2015_2016'/"$*"}
 v(){vim "$*"}
 book(){
   if [ "$*" ]; then
-    git clone https://github.com/orggue/nerdbook-studio.git "$*" ; cd "$*" ; npm install ; npm start
+    git clone https://github.com/orggue/nerdbook-studio.git "$*" ; cd "$*" ; npm install ; node init.js
   else
-    git clone https://github.com/orggue/nerdbook-studio.git ; cd nerdbook-studio ; npm install ; npm start
+    git clone https://github.com/orggue/nerdbook-studio.git ; cd nerdbook-studio ; npm install ; node init.js
+  fi
+}
+epubcheck(){
+  if [ "$*" ]; then
+    java -jar ~/APP/epubcheck-4.0.1/epubcheck.jar "$*"
+  else
+    echo "ERROR: You need to send an epub"
+  fi
+}
+imp(){
+  if [ "$*" ]; then
+    cd ~/Github/wordpress/site/web/app/themes/imposible ; "$*"
+  else
+    cd ~/Github/wordpress/site/web/app/themes/imposible
+  fi
+}
+gitoliteconf(){
+  if [ "$*" ]; then
+    ssh -o PubkeyAuthentication=no gitolite@"$*"
+  else
+    ssh -o PubkeyAuthentication=no gitolite@nas.jorgechato.com
+  fi
+}
+#conection to
+alias unizar="ssh i651348@esquinazo.unizar.es"
+pi(){
+  if [ "$*" ]; then
+    ssh pi@"$*"
+  else
+    ssh pi@nas.jorgechato.com
   fi
 }
 alias gip="ip route"
@@ -114,25 +153,9 @@ alias startlight="redshift &"
 alias herokulog="heroku logs --tail"
 alias terminatorconfig="vim ~/.config/terminator/config"
 alias apache="sudo vim /etc/apache2/sites-available/wordpress.conf ; sudo /etc/init.d/apache2 restart"
+alias phpini="sudo vim /etc/php5/cli/php.ini ; sudo /etc/init.d/apache2 restart"
 alias hosts="sudo vim /etc/hosts"
 alias wifi="kde-nm-connection-editor"
-imp(){
-  if [ "$*" ]; then
-    cd ~/Github/wordpress/site/web/app/themes/imposible ; "$*"
-  else
-      cd ~/Github/wordpress/site/web/app/themes/imposible
-  fi
-}
-
-#conection to
-alias unizar="ssh i651348@esquinazo.unizar.es"
-pi(){
-  if [ "$*" ]; then
-    ssh pi@"$*"
-  else
-    ssh pi@10.7.5.229
-  fi
-}
 
 #alias mdb="mongod --dbpath mongodb/data/db"
 
