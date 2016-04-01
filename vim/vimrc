@@ -26,16 +26,6 @@ set shiftwidth=2
 set noexpandtab
 
 """""""""""""""""""""""""""""START C and C++
-""use C instead C++
-"augroup project
-  "autocmd!
-  "autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
-"augroup END
-""make system config
-"if !filereadable(expand("%:p:h")."/Makefile")
-  "setlocal makeprg=gcc\ -lm\ -Wall\ -Wextra\ -o\ %<\ %
-"endif
-"make c/c++ c.vim
 let  g:C_UseTool_cmake    = 'yes'
 let  g:C_UseTool_doxygen = 'yes'
 let g:C_MapLeader  = ','
@@ -59,7 +49,13 @@ if filereadable(expand("~/.vimrc.before"))
 endif
 
 "airline theme
-let g:airline_theme='murmur'
+"let g:airline_theme='murmur'
+"let g:airline_theme='hybridline'
+"let g:airline_theme='jellybeans'
+"let g:airline_theme='laederon'
+"let g:airline_theme='powerlineish'
+"let g:airline_theme='simple'
+let g:airline_theme='term'
 let g:airline_powerline_fonts = 1
 
 " Disable plugins prior to loading pathogen
@@ -94,8 +90,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/c-support
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 " End vundle config
 
 " give us nice EOL (end of line) characters
@@ -118,7 +112,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
-"Bundle 'edkolev/tmuxline.vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
@@ -128,12 +121,12 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'wavded/vim-stylus'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-vinegar'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Linter
 set runtimepath+=~/.vim/bundle/jshint2.vim/
 """START color scheme selection
 :colorscheme github
-":colorscheme sprinkles
 
 "colorate final line in screen
 set colorcolumn=130
