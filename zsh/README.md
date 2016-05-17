@@ -11,3 +11,5 @@ change in your *.zshrc* your theme to:
 ```zsh
 ZSH_THEME="pyzhon"
 ```
+## Screenshot
+![](https://raw.githubusercontent.com/orggue/.dotfiles/master/zsh/demo/git.png)
