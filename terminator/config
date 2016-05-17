@@ -1,97 +1,51 @@
 [global_config]
-  title_receive_bg_color = "#242424"
-  title_hide_sizetext = True
-  window_state = fullscreen
   suppress_multiple_term_dialog = True
+  title_hide_sizetext = True
+  title_receive_bg_color = "#242424"
+  window_state = fullscreen
 [keybindings]
-[profiles]
-  [[dark]]
-    scrollbar_position = hidden
-    alternate_screen_scroll = False
-    show_titlebar = False
-    scrollback_infinite = True
-    background_image = None
-    palette = "#000000:#990000:#00a600:#999900:#0000b2:#b200b2:#00a6b2:#bfbfbf:#666666:#e50000:#00d900:#e5e500:#0000ff:#e500e5:#00e5e5:#e5e5e5"
-    background_color = "#000000"
-    cursor_color = "#23ff18"
-    foreground_color = "#00ff00"
-  [[github]]
-    scrollbar_position = hidden
-    alternate_screen_scroll = False
-    show_titlebar = False
-    scrollback_infinite = True
-    background_image = None
-    palette = "#3e3e3e:#f1e05a:#199f4b:#f8eec7:#003e8a:#701516:#89d1ec:#3572A5:#666666:#de0000:#87d5a2:#f1d007:#2e6cba:#ffa29f:#1cfafe:#3e3e3e"
-    background_color = "#ffffff"
-    cursor_color = "#D81745"
-    foreground_color = "#3e3e3e"
-  [[default]]
-    scrollbar_position = hidden
-    alternate_screen_scroll = False
-    show_titlebar = False
-    scrollback_infinite = True
-    background_image = None
-    palette = "#f8eec7:#9B111E:#9B111E:#244776:#0298c3:#3572A5:#89d1ec:#999999:#999999:#9B111E:#843F5B:#3572A5:#2e6cba:#3572A5:#1cfafe:#3e3e3e"
-    background_color = "#ffffff"
-    cursor_color = "#D81745"
-    foreground_color = "#1F1F1F"
-  [[novel]]
-    scrollbar_position = hidden
-    alternate_screen_scroll = False
-    show_titlebar = False
-    scrollback_infinite = True
-    background_image = None
-    palette = "#000000:#cc0000:#009600:#d06b00:#0000cc:#cc00cc:#0087cc:#cccccc:#808080:#cc0000:#009600:#d06b00:#0000cc:#cc00cc:#0087cc:#ffffff"
-    background_color = "#dfdbc3"
-    cursor_color = "#73635a"
-    foreground_color = "#3b2322"
-  [[spring]]
-    scrollbar_position = hidden
-    alternate_screen_scroll = False
-    show_titlebar = False
-    scrollback_infinite = True
-    background_image = None
-    palette = "#000000:#ff4d83:#1f8c3b:#1fc95b:#1dd3ee:#8959a8:#3e999f:#ffffff:#000000:#ff0021:#1fc231:#d5b807:#15a9fd:#8959a8:#3e999f:#ffffff"
-    background_color = "#ffffff"
-    cursor_color = "#4d4d4c"
-    foreground_color = "#4d4d4c"
-  [[basic]]
-    scrollbar_position = hidden
-    alternate_screen_scroll = False
-    show_titlebar = False
-    scrollback_infinite = True
-    background_image = None
-    palette = "#000000:#990000:#00a600:#999900:#0000b2:#b200b2:#00a6b2:#bfbfbf:#666666:#e50000:#00d900:#e5e500:#0000ff:#e500e5:#00e5e5:#e5e5e5"
-    background_color = "#ffffff"
-    cursor_color = "#7f7f7f"
-    foreground_color = "#000000"
-  [[atom]]
-    scrollbar_position = hidden
-    alternate_screen_scroll = False
-    show_titlebar = False
-    scrollback_infinite = True
-    background_image = None
-    palette = "#000000:#de3e35:#3f953a:#d2b67c:#2f5af3:#950095:#3f953a:#bbbbbb:#000000:#de3e35:#3f953a:#d2b67c:#2f5af3:#a00095:#3f953a:#ffffff"
-    background_color = "#f9f9f9"
-    cursor_color = "#bbbbbb"
-    foreground_color = "#2a2c33"
-  [[clrs]]
-    scrollbar_position = hidden
-    alternate_screen_scroll = False
-    show_titlebar = False
-    scrollback_infinite = True
-    background_image = None
-    palette = "#000000:#f8282a:#328a5d:#fa701d:#135cd0:#9f00bd:#33c3c1:#b3b3b3:#555753:#fb0416:#2cc631:#fdd727:#1670ff:#e900b0:#3ad5ce:#eeeeec"
-    background_color = "#ffffff"
-    cursor_color = "#6fd3fc"
-    foreground_color = "#262626"
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = left
       size = 700, 1200
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    alternate_screen_scroll = False
+    background_color = "#ffffff"
+    background_image = None
+    cursor_color = "#ffd242"
+    foreground_color = "#1f1f1f"
+    palette = "#f8eec7:#ffd242:#244776:#199f4b:#9b111e:#3572a5:#3572a5:#999999:#999999:#ffd242:#244776:#199f4b:#9b111e:#3572a5:#3572a5:#3e3e3e"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[New Profile]]
+    background_image = None
+    foreground_color = "#ffffff"
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
+  [[python]]
+    alternate_screen_scroll = False
+    background_color = "#ffffff"
+    background_image = None
+    cursor_color = "#3572a5"
+    foreground_color = "#1f1f1f"
+    palette = "#f8eec7:#3572a5:#244776:#199f4b:#9b111e:#f1e05a:#f1e05a:#999999:#999999:#3572a5:#3572a5:#199f4b:#9b111e:#f1e05a:#f1e05a:#3e3e3e"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[ruby]]
+    alternate_screen_scroll = False
+    background_color = "#ffffff"
+    background_image = None
+    cursor_color = "#D81745"
+    foreground_color = "#1F1F1F"
+    palette = "#f8eec7:#9b111e:#9b111e:#244776:#199f4b:#3572a5:#89d1ec:#999999:#999999:#9b111e:#843f5b:#3572a5:#2e6cba:#3572a5:#1cfafe:#3e3e3e"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False

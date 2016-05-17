@@ -9,9 +9,10 @@ export ZSH=/home/orggue/.oh-my-zsh
 #ZSH_THEME="geoffgarside"
 #ZSH_THEME="fwalch"
 #ZSH_THEME="sorin"
-ZSH_THEME="minimal"
+#ZSH_THEME="minimal"
 #ZSH_THEME="kolo"
 #ZSH_THEME="mgutz"
+ZSH_THEME="pyzhon"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -63,6 +64,11 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 # export MANPATH="/usr/local/man:$MANPATH:"
+############# virtualenvwrapper start
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+############# virtualenvwrapper end
 
 source $ZSH/oh-my-zsh.sh
 
@@ -136,6 +142,48 @@ pi(){
     ssh pi@nas.jorgechato.com
   fi
 }
+apacheuser(){
+  if [ "$*" ]; then
+  sudo htpasswd /etc/apache2/security/.htpasswd " $*"
+  else
+    echo "You had to add a username:\napacheuser <username>"
+  fi
+}
+phpserver(){
+  if [ "$*" ]; then
+    php -S localhost:"$*"
+  else
+    php -S localhost:9000
+  fi
+}
+php5server(){
+  if [ "$*" ]; then
+    php5 -S localhost:"$*"
+  else
+    php5 -S localhost:9000
+  fi
+}
+rec(){
+  if [ "$*" ]; then
+    ~/APP/asciinema/asciinema rec "$*"
+  else
+    ~/APP/asciinema/asciinema
+  fi
+}
+play(){
+  if [ "$*" ]; then
+    ~/APP/asciinema/asciinema play "$*"
+  else
+    ~/APP/asciinema/asciinema
+  fi
+}
+upload(){
+  if [ "$*" ]; then
+    ~/APP/asciinema/asciinema upload "$*"
+  else
+    ~/APP/asciinema/asciinema
+  fi
+}
 alias gip="ip route"
 alias unisubl="subl ~/Dropbox/'II_2015_2016'"
 alias arduino="APP/arduino-1.6.5-r5/arduino"
@@ -148,15 +196,16 @@ alias vimcoloradmin="cd /usr/share/vim/vim74/colors"
 alias vimcolor="cd ~/.vim/color"
 alias vimconfig="vim ~/.vimrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias list="sudo vim /etc/apt/sources.list"
+alias list="v /etc/apt/sources.list"
 alias stoplight="killall -USR1 redshift"
 alias startlight="redshift &"
 alias herokulog="heroku logs --tail"
 alias terminatorconfig="vim ~/.config/terminator/config"
-alias apache="sudo vim /etc/apache2/sites-available/wordpress.conf ; sudo /etc/init.d/apache2 restart"
-alias phpini="sudo vim /etc/php5/cli/php.ini ; sudo /etc/init.d/apache2 restart"
-alias hosts="sudo vim /etc/hosts"
+alias apache="vim /etc/apache2/sites-available/ ; sudo /etc/init.d/apache2 restart"
+alias phpini="vim /etc/php/7.0/cli/php.ini ; sudo /etc/init.d/apache2 restart"
+alias hosts="vim /etc/hosts"
 alias wifi="kde-nm-connection-editor"
+alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
 
 #alias mdb="mongod --dbpath mongodb/data/db"
 
