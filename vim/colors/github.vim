@@ -47,7 +47,7 @@ hi PreProc      guifg=#A0A0A0 ctermfg=247  gui=BOLD cterm=BOLD
 hi Comment      guifg=#AAAAAA ctermfg=248  gui=ITALIC cterm=NONE
 hi Constant     guifg=#177F80 ctermfg=30   gui=NONE cterm=NONE
 hi String       guifg=#D81745 ctermfg=161  gui=NONE cterm=NONE
-hi Function     guifg=#990000 ctermfg=88   gui=BOLD cterm=BOLD
+hi Function     guifg=#005f87 ctermfg=24   gui=BOLD cterm=BOLD
 hi Statement    guifg=#000000 ctermfg=16   gui=BOLD cterm=BOLD
 hi Type         guifg=#445588 ctermfg=60   gui=BOLD cterm=BOLD
 hi Number       guifg=#1C9898 ctermfg=30   gui=NONE cterm=NONE

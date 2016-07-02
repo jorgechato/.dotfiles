@@ -20,15 +20,23 @@
     background_color = "#ffffff"
     background_image = None
     cursor_color = "#ffd242"
+    font = Nimbus Mono L 10
     foreground_color = "#1f1f1f"
     palette = "#f8eec7:#ffd242:#244776:#199f4b:#9b111e:#3572a5:#3572a5:#999999:#999999:#ffd242:#244776:#199f4b:#9b111e:#3572a5:#3572a5:#3e3e3e"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
-  [[New Profile]]
+  [[hack]]
+    alternate_screen_scroll = False
     background_image = None
-    foreground_color = "#ffffff"
-    palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
+    font = Nimbus Mono L 10
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    palette = "#000000:#990000:#00a600:#999900:#0000b2:#b200b2:#00a6b2:#bfbfbf:#666666:#e50000:#00d900:#e5e500:#0000ff:#e500e5:#00e5e5:#e5e5e5"
+    background_color = "#000000"
+    cursor_color = "#23ff18"
+    foreground_color = "#00ff00"
   [[python]]
     alternate_screen_scroll = False
     background_color = "#ffffff"

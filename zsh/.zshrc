@@ -58,11 +58,12 @@ plugins=(git)
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-export PATH="$PATH:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/share/python:/usr/local/share/npm/bin"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/share/python:/usr/local/share/npm/bin:/home/orggue/.rvm/gems/ruby-2.3.0:/opt/metasploit-framework"
 #hombrew
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+#export NMAP_PRIVILEGED="yes"
 # export MANPATH="/usr/local/man:$MANPATH:"
 ############# virtualenvwrapper start
 export WORKON_HOME=$HOME/.virtualenvs
@@ -96,9 +97,6 @@ stty -ixon
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Scripts
-alias number="python ~/APP/scipts/number.py"
-alias name="python ~/APP/scipts/name.py"
 
 # Example aliases
 uni(){cd ~/Dropbox/'II_2015_2016'/"$*"}
@@ -184,6 +182,7 @@ upload(){
     ~/APP/asciinema/asciinema
   fi
 }
+apktool(){java -jar ~/APP/apktool_2.1.1.jar "$*"}
 alias gip="ip route"
 alias unisubl="subl ~/Dropbox/'II_2015_2016'"
 alias arduino="APP/arduino-1.6.5-r5/arduino"
@@ -206,6 +205,9 @@ alias phpini="vim /etc/php/7.0/cli/php.ini ; sudo /etc/init.d/apache2 restart"
 alias hosts="vim /etc/hosts"
 alias wifi="kde-nm-connection-editor"
 alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
+# Scripts
+alias number="python ~/APP/scipts/number.py"
+alias name="python ~/APP/scipts/name.py"
 
 #alias mdb="mongod --dbpath mongodb/data/db"
 

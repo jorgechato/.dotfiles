@@ -37,8 +37,12 @@ let g:jedi#popup_on_dot = 0
 autocmd FileType python setlocal completeopt-=preview
 """""""""""""""""""""""""""""END python jedi config
 
-"""""""""""""""""""""""""""""START PHP
-"""""""""""""""""""""""""""""END PHP
+"""""""""""""""""""""""""""""START Latex
+let s:extfname = expand("%:e")
+if s:extfname ==? "tex"
+  let g:LatexBox_split_type="new"
+endif
+"""""""""""""""""""""""""""""END Latex
 
 " Source janus's core
 exe 'source ' . g:janus_vim_path . '/core/before/plugin/janus.vim'
@@ -119,7 +123,6 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
-Plugin 'shime/vim-livedown'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wavded/vim-stylus'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -127,6 +130,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 "PHP
 Plugin 'shawncplus/phpcomplete.vim'
 
