@@ -137,12 +137,27 @@ Plugin 'shawncplus/phpcomplete.vim'
 " Linter
 set runtimepath+=~/.vim/bundle/jshint2.vim/
 """START color scheme selection
-:colorscheme github
+":colorscheme github
+:colorscheme ir_black
 
 "colorate final line in screen
-set colorcolumn=130
+set colorcolumn=80
+
+let s:hack = 0
+function! SwitchColor()
+  if(s:hack == 1)
+    :colorscheme ir_black
+    let s:hack = 0
+  else
+    :colorscheme github
+    let s:hack = 1
+  endif
+
+endfunction
 
 " Map
+map <F10> <esc>:call SwitchColor()<CR>
+imap <F10> <esc>:call SwitchColor()<CR>
 map <F7> mzgg=G`z
 map <F8> <leader>cc
 map <F9> <leader>cu
@@ -155,8 +170,6 @@ onoremap <F2> <C-C>za
 vnoremap <F3> zf
 nnoremap td  :tabclose<CR>
 nnoremap tn :tabnew<CR>
-"nnoremap <C-Insert> :tabnew<CR>
-"nnoremap <C-Delete> :tabclose<CR>
 
 "fold
 set foldmethod=syntax

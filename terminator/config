@@ -15,7 +15,17 @@
       type = Window
 [plugins]
 [profiles]
-  [[default]]
+  [[spider]]
+    palette = "#1b1d1e:#e60813:#e22928:#e24756:#2c3fff:#2435db:#3256ff:#fffef6:#505354:#ff0325:#ff3338:#fe3a35:#1d50ff:#747cff:#6184ff:#fffff9"
+    background_color = "#1b1d1e"
+    cursor_color = "#2c3fff"
+    foreground_color = "#e3e3e3"
+    alternate_screen_scroll = False
+    background_image = None
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[custom]]
     alternate_screen_scroll = False
     background_color = "#ffffff"
     background_image = None
@@ -26,7 +36,7 @@
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
-  [[hack]]
+  [[default]]
     alternate_screen_scroll = False
     background_image = None
     font = Nimbus Mono L 10
