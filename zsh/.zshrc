@@ -5,14 +5,8 @@ export ZSH=/home/fragmentado/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="awesomepanda"
-##ZSH_THEME="geoffgarside"
-##ZSH_THEME="fwalch"
-##ZSH_THEME="sorin"
-##ZSH_THEME="minimal"
-##ZSH_THEME="kolo"
-##ZSH_THEME="mgutz"
-ZSH_THEME="pyzhon"
+#ZSH_THEME="pyzhon"
+ZSH_THEME="hack"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -47,7 +41,7 @@ ZSH_THEME="pyzhon"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="dd/MM/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -61,7 +55,10 @@ plugins=(git)
 # User configuration
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-export PATH="$PATH:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/share/python:/home/fragmentado/.rvm/gems/ruby-2.3.1@global:/opt/metasploit-framework"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/share/python:/usr/sbin"
+export PATH="$PATH:/home/fragmentado/.rvm/gems/ruby-2.3.1@global"
+#export PATH="$PATH:/home/fragmentado/.rvm/gems/ruby-2.3.0@beef:/home/fragmentado/.rvm/gems/ruby-2.3.1@metasploit-framework"
+export PATH="$PATH:/opt/metasploit-framework:/opt/beef"
 export EDITOR="/usr/bin/vim"
 ############# virtualenvwrapper start
 export WORKON_HOME=$HOME/.virtualenvs
@@ -88,18 +85,12 @@ book(){
 }
 # conection to
 alias unizar="ssh i651348@esquinazo.unizar.es"
+alias hendrix="TERM=linux ssh -X a651348@hendrix-ssh.cps.unizar.es -t zsh"
 pi(){
   if [ "$*" ]; then
     ssh pi@"$*"
   else
     ssh pi@nas.jorgechato.com
-  fi
-}
-apacheuser(){
-  if [ "$*" ]; then
-    sudo htpasswd /etc/apache2/security/.htpasswd " $*"
-  else
-    echo "You had to add a username:\napacheuser <username>"
   fi
 }
 phpserver(){
@@ -131,13 +122,6 @@ play(){
     ~/APP/asciinema/asciinema
   fi
 }
-upload(){
-  if [ "$*" ]; then
-    ~/APP/asciinema/asciinema upload "$*"
-  else
-    ~/APP/asciinema/asciinema
-  fi
-}
 # psql
 pypsql(){
   if [ "$*" ]; then
@@ -146,33 +130,50 @@ pypsql(){
     echo 'ERROR:: You forgot add the db name in psql -U fragmentado -d <<database name>> -h localhost'
   fi
 }
+# irc
+alias irssi='TERM=screen-256color irssi'
+alias bitchx='TERM=screen-256color bitchx'
 # alias
+alias eject="sudo eject"
 alias gip="ip route"
 alias py="python"
-alias o="evince"
+alias rm="rm -i"
+alias o="xdg-open"
 alias zshconfig="vim ~/.zshrc"
 alias vimcoloradmin="cd /usr/share/vim/vim74/colors"
 alias vimcolor="cd ~/.vim/color"
 alias vimconfig="vim ~/.vimrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias list="v /etc/apt/sources.list"
-#alias stoplight="killall -USR1 redshift"
-#alias startlight="redshift &"
 alias links="links2"
 alias herokulog="heroku logs --tail"
 alias terminatorconfig="vim ~/.config/terminator/config"
-alias apache="vim /etc/apache2/sites-available/ ; sudo /etc/init.d/apache2 restart"
+#alias apache="vim /etc/apache2/sites-available/ ; sudo /etc/init.d/apache2 restart"
 alias hosts="vim /etc/hosts"
 alias ly="teamocil"
+alias cownobel="fortune es/ciencia.fortunes | cowsay | lolcat"
+alias horario="xdg-open ~/Dropbox/II_2016_2017/res/horario/public/horario-2016-17.pdf"
 #alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
 # Scripts
 alias number="python ~/APP/Scipts/number.py"
 alias name="python ~/APP/Scipts/name.py"
+alias talk="~/APP/bash/talk.sh"
+alias bitcoin="~/APP/bash/bitcoin.sh"
 
 # terminator with 256 colors to vim
 export TERM="xterm-256color"
+umask 077
 
 # tmux
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then tmux has-session -t 'Doctor' || tmux new-session -s 'Doctor'; fi
+if [[ -n "$TMUX" ]] && [[ ! -e "/root/.automatic_start_occurred" ]];then
+  fortune es/ciencia.fortunes | cowsay | lolcat
+fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+PATH="/home/fragmentado/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/fragmentado/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/fragmentado/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/fragmentado/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/fragmentado/perl5"; export PERL_MM_OPT;

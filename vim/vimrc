@@ -26,9 +26,11 @@ set shiftwidth=2
 set noexpandtab
 
 """""""""""""""""""""""""""""START C and C++
-let  g:C_UseTool_cmake    = 'yes'
-let  g:C_UseTool_doxygen = 'yes'
+let g:C_UseTool_cmake    = 'yes'
+let g:C_UseTool_doxygen = 'yes'
 let g:C_MapLeader  = ','
+" C++ compiller comment the following line to C compiler
+"let g:C_CplusCompiler
 """""""""""""""""""""""""""""END C and C++
 
 """""""""""""""""""""""""""""START python jedi config
@@ -106,7 +108,7 @@ set list
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "nerdtree close to open a file
-let NERDTreeQuitOnOpen = 1
+"let NERDTreeQuitOnOpen = 1
 
 " Plugin
 Plugin 'VundleVim/Vundle.vim'
@@ -131,6 +133,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'justinmk/vim-syntax-extra'
 "PHP
 Plugin 'shawncplus/phpcomplete.vim'
 
@@ -155,6 +158,10 @@ function! SwitchColor()
 
 endfunction
 
+"spell language
+:set spell spelllang=es_es
+:set nospell
+
 " Map
 map <F10> <esc>:call SwitchColor()<CR>
 imap <F10> <esc>:call SwitchColor()<CR>
@@ -170,6 +177,7 @@ onoremap <F2> <C-C>za
 vnoremap <F3> zf
 nnoremap td  :tabclose<CR>
 nnoremap tn :tabnew<CR>
+nn <F6> :setlocal spell! spell?<CR>
 
 "fold
 set foldmethod=syntax

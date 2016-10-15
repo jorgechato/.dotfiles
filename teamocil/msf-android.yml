@@ -1,0 +1,10 @@
+name: Doctor
+windows:
+  - name: msf-android
+    root: ~/.metasploit/android
+    layout: main-vertical
+    panes:
+      - msfconsole
+      - commands:
+        - ls
+      - msfvenom -h

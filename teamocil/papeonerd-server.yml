@@ -1,0 +1,8 @@
+name: Doctor
+windows:
+  - name: papeonerd-server
+    root: ~/Github/papeonerd
+    layout: main-vertical
+    panes:
+      - workon papeonerd && py manage.py runserver 0.0.0.0:8000
+      - cd compass && compass watch -s compressed | lolcat
