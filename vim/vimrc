@@ -1,151 +1,101 @@
-""
-"" Janus setup
-""
+" .vimrc
+" Author: Jorge Chato <jorgechato1@gmail.com>
+" Source: https://github.com/orggue/.dotfiles
+" Preamble --------------------------------------------------------------- {{{
+set nocompatible                        " I'm using vim not vi
+filetype off
 
-" Define paths
-if has('win32') || has('win64') || has('win32unix')
-  let g:janus_path = expand("~/.vim/janus/vim")
-  let g:janus_vim_path = expand("~/.vim/janus/vim")
-else
-  let g:janus_path = escape(fnamemodify(resolve(expand("<sfile>:p")), ":h"), ' ')
-  let g:janus_vim_path = escape(fnamemodify(resolve(expand("<sfile>:p" . "vim")), ":h"), ' ')
-endif
-let g:janus_custom_path = expand("~/.janus")
+set rtp+=~/.vim/bundle/Vundle.vim/
+" set rtp+=~/.vim/c-support
+call vundle#rc()
 
+filetype plugin indent on
+syntax on
+" }}}
+
+" Basic options ---------------------------------------------------------- {{{
 " size of a hard tabstop
-"set smartindent
+set smartindent
 set tabstop=2
-
 " a combination of spaces and tabs are used to simulate tab stops at a width
 " other than the (hard)tabstop
 set softtabstop=2
 set smarttab
-
 " size of an indent"
 set shiftwidth=2
 set noexpandtab
-
-"""""""""""""""""""""""""""""START C and C++
-let g:C_UseTool_cmake    = 'yes'
-let g:C_UseTool_doxygen = 'yes'
-let g:C_MapLeader  = ','
-" C++ compiller comment the following line to C compiler
-"let g:C_CplusCompiler
-"""""""""""""""""""""""""""""END C and C++
-
-"""""""""""""""""""""""""""""START python jedi config
-"let g:jedi#auto_initialization = 0
-let g:jedi#popup_on_dot = 0
-autocmd FileType python setlocal completeopt-=preview
-"""""""""""""""""""""""""""""END python jedi config
-
-"""""""""""""""""""""""""""""START Latex
-let s:extfname = expand("%:e")
-if s:extfname ==? "tex"
-  let g:LatexBox_split_type="new"
-endif
-"""""""""""""""""""""""""""""END Latex
-
-" Source janus's core
-exe 'source ' . g:janus_vim_path . '/core/before/plugin/janus.vim'
-
-" You should note that groups will be processed by Pathogen in reverse
-" order they were added.
-call janus#add_group("tools")
-call janus#add_group("langs")
-call janus#add_group("colors")
-
-""
-"" Customisations
-""
-
-if filereadable(expand("~/.vimrc.before"))
-  source ~/.vimrc.before
-endif
-
-"airline theme
-let g:airline_theme='term'
-let g:airline_powerline_fonts = 1
-
-" Disable plugins prior to loading pathogen
-exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
-
-""
-"" Pathogen setup
-""
-
-" Load all groups, custom dir, and janus core
-call janus#load_pathogen()
-
-" .vimrc.after is loaded after the plugins have loaded
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-filetype plugin on
-
-" give us 256 color schemes!
-set term=screen-256color
+set encoding=utf-8
+set shell=/bin/zsh
+set nowrap                              " Do not wrap long lines
+set number                              " Show linenumbers
+set showcmd                             " Show info in the right bottom
+set ttyfast
+set textwidth=80
+set colorcolumn=+1                      " Display margin at 81
 se t_Co=256
-let g:solarized_termcolors=256
-
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-
-" Start vundle config
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.vim/c-support
-call vundle#begin()
-" End vundle config
-
-" give us nice EOL (end of line) characters
+set nocursorline                        " Do not hightlight the current line
+set scrolloff=5
+set sidescroll=1
+set sidescrolloff=10
+set formatoptions=qcrn1
+set clipboard+=unnamed                  " Yanks go on clipboard instead.
+set pastetoggle=<F8>
+set novisualbell                        " No blinking .
+set noerrorbells                        " No noise.
+set lazyredraw
+set autoread                            " Reload file if it's modified outside
+set autowrite
+set autoindent
+set ruler                               " Show line and column number
+set showbreak=↪
+set title
+" set listchars=tab:·\ ,trail:·,eol:¬,extends:❯,precedes:❮
+" set listchars=tab:·\ ,trail:·,extends:❯,precedes:❮
 set list
 "set listchars=tab:▸\ ,eol:¬
+set listchars=tab:·\ ,trail:·
+" }}}
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-"nerdtree close to open a file
-"let NERDTreeQuitOnOpen = 1
-
-" Plugin
+" Bundles ----------------------------------------------------------------- {{{
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'twerth/ir_black'
 Plugin 'mattn/emmet-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Yggdroot/indentLine'
 Plugin 'Shutnik/jshint2.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wavded/vim-stylus'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-vinegar'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'justinmk/vim-syntax-extra'
-"PHP
-Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'powerline/powerline'
+Plugin 'elzr/vim-json'
+" }}}
 
-" Linter
-set runtimepath+=~/.vim/bundle/jshint2.vim/
-"""START color scheme selection
+" Color scheme ------------------------------------------------------------ {{{
+set term=screen-256color
+se t_Co=256
+let g:solarized_termcolors=256
+ :colorscheme ir_black
 ":colorscheme github
-:colorscheme ir_black
-
-"colorate final line in screen
 set colorcolumn=80
+" }}}
 
+" Custom functions -------------------------------------------------------- {{{
 let s:hack = 0
 function! SwitchColor()
   if(s:hack == 1)
@@ -153,16 +103,18 @@ function! SwitchColor()
     let s:hack = 0
   else
     :colorscheme github
-    let s:hack = 1
-  endif
-
+		let s:hack = 1
+	endif
 endfunction
+" }}}
 
+" Language ---------------------------------------------------------------- {{{
 "spell language
 :set spell spelllang=es_es
 :set nospell
+" }}}
 
-" Map
+" Mappings ---------------------------------------------------------------- {{{
 map <F10> <esc>:call SwitchColor()<CR>
 imap <F10> <esc>:call SwitchColor()<CR>
 map <F7> mzgg=G`z
@@ -178,8 +130,43 @@ vnoremap <F3> zf
 nnoremap td  :tabclose<CR>
 nnoremap tn :tabnew<CR>
 nn <F6> :setlocal spell! spell?<CR>
+" }}}
 
-"fold
+" Plugin settings --------------------------------------------------------- {{{
+	"airline {{{
+		let g:airline_theme='term'
+		let g:airline_powerline_fonts = 1
+		let g:airline#extensions#tabline#enabled = 1
+		"set laststatus=2
+	" }}}
+	" Powerline {{{
+		if !exists('g:airline_symbols')
+			let g:airline_symbols = {}
+		endif
+	" }}}
+	" Ctrl-P {{{
+	" }}}
+	" C-Support {{{
+		let g:C_UseTool_cmake    = 'yes'
+		let g:C_UseTool_doxygen = 'yes'
+		let g:C_MapLeader  = ','
+		" C++ compiller comment the following line to C compiler
+		"let g:C_CplusCompiler
+	" }}}
+	" Python jadi {{{
+		"let g:jedi#auto_initialization = 0
+		let g:jedi#popup_on_dot = 0
+		autocmd FileType python setlocal completeopt-=preview
+	" }}}
+	" Latex {{{
+		let s:extfname = expand("%:e")
+		if s:extfname ==? "tex"
+  		let g:LatexBox_split_type="new"
+		endif
+	" }}}
+" }}}
+
+" Fold -------------------------------------------------------------------- {{{
 set foldmethod=syntax
 set nofoldenable
 "set foldlevelstart=1
@@ -192,8 +179,4 @@ let ruby_fold=1               " Ruby
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
-
-"powerline font
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
+" }}}
