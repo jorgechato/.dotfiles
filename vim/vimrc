@@ -26,13 +26,12 @@ set shiftwidth=2
 set noexpandtab
 set encoding=utf-8
 set shell=/bin/zsh
-set nowrap                              " Do not wrap long lines
 set number                              " Show linenumbers
 set showcmd                             " Show info in the right bottom
 set ttyfast
 set textwidth=80
 set colorcolumn=+1                      " Display margin at 81
-se t_Co=256
+set t_Co=256
 set nocursorline                        " Do not hightlight the current line
 set scrolloff=5
 set sidescroll=1
@@ -49,18 +48,22 @@ set autoindent
 set ruler                               " Show line and column number
 set showbreak=↪
 set title
+set wrap																" long text with breackline
+set linebreak
 " set listchars=tab:·\ ,trail:·,eol:¬,extends:❯,precedes:❮
 " set listchars=tab:·\ ,trail:·,extends:❯,precedes:❮
 set list
 "set listchars=tab:▸\ ,eol:¬
 set listchars=tab:·\ ,trail:·
+let mapleader = " "
 " }}}
 
 " Bundles ----------------------------------------------------------------- {{{
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'endel/vim-github-colorscheme'
+Plugin 'acarapetis/vim-colors-github'
 Plugin 'twerth/ir_black'
+Plugin 'danro/rename.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Shutnik/jshint2.vim'
@@ -81,31 +84,27 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'justinmk/vim-syntax-extra'
-Plugin 'nvie/vim-flake8'
-Plugin 'powerline/powerline'
 Plugin 'elzr/vim-json'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'kshenoy/vim-signature'
 " }}}
 
 " Color scheme ------------------------------------------------------------ {{{
 set term=screen-256color
-se t_Co=256
 let g:solarized_termcolors=256
- :colorscheme ir_black
-":colorscheme github
+syntax enable                           " Switch syntax highlighting on
 set colorcolumn=80
 " }}}
 
 " Custom functions -------------------------------------------------------- {{{
+let s:mycolors = ['ir_black', 'github']
 let s:hack = 0
 function! SwitchColor()
-  if(s:hack == 1)
-    :colorscheme ir_black
-    let s:hack = 0
-  else
-    :colorscheme github
-		let s:hack = 1
-	endif
+	execute 'colorscheme '.s:mycolors[s:hack]
+	let s:hack = !s:hack
 endfunction
+:call SwitchColor()
 " }}}
 
 " Language ---------------------------------------------------------------- {{{
@@ -115,8 +114,9 @@ endfunction
 " }}}
 
 " Mappings ---------------------------------------------------------------- {{{
+nnoremap <leader>t :bnext<CR>
+nnoremap <leader>w :bd<CR>
 map <F10> <esc>:call SwitchColor()<CR>
-imap <F10> <esc>:call SwitchColor()<CR>
 map <F7> mzgg=G`z
 map <F8> <leader>cc
 map <F9> <leader>cu
@@ -130,6 +130,19 @@ vnoremap <F3> zf
 nnoremap td  :tabclose<CR>
 nnoremap tn :tabnew<CR>
 nn <F6> :setlocal spell! spell?<CR>
+nnoremap cou :set nonumber!<CR>
+vmap <leader>2 gj
+vmap <leader>8 gk
+vmap <leader>6 g$
+vmap <leader>4 g^
+nmap <leader>2 gj
+nmap <leader>8 gk
+nmap <leader>6 g$
+nmap <leader>4 g^
+map <Leader>f <Plug>(easymotion-sn)
+omap <Leader>f <Plug>(easymotion-tn)
+map  ñ <Plug>(easymotion-next)
+map  Ñ <Plug>(easymotion-prev)
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
@@ -138,13 +151,9 @@ nn <F6> :setlocal spell! spell?<CR>
 		let g:airline_powerline_fonts = 1
 		let g:airline#extensions#tabline#enabled = 1
 		"set laststatus=2
-	" }}}
-	" Powerline {{{
 		if !exists('g:airline_symbols')
 			let g:airline_symbols = {}
 		endif
-	" }}}
-	" Ctrl-P {{{
 	" }}}
 	" C-Support {{{
 		let g:C_UseTool_cmake    = 'yes'
