@@ -61,8 +61,13 @@ let mapleader = " "
 " Bundles ----------------------------------------------------------------- {{{
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'acarapetis/vim-colors-github'
-Plugin 'twerth/ir_black'
+"Themes {{{
+	Plugin 'orggue/vim-youcolor'
+	Plugin 'twerth/ir_black'
+	Plugin 'acarapetis/vim-colors-github'
+	Plugin 'zaki/zazen'
+"}}}
+
 Plugin 'danro/rename.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -98,12 +103,35 @@ set colorcolumn=80
 " }}}
 
 " Custom functions -------------------------------------------------------- {{{
-let s:mycolors = ['ir_black', 'github']
+let s:mycolors = ['youcolor', 'zazen', 'github', 'ir_black']
 let s:hack = 0
 function! SwitchColor()
 	execute 'colorscheme '.s:mycolors[s:hack]
-	let s:hack = !s:hack
+
+	if s:hack != 3
+		set background=light
+	endif
+
+	"interface {{{
+		hi Search cterm=underline
+		" Cursor color config
+		hi clear CursorLine
+		augroup CLClear
+			autocmd! ColorScheme * hi clear CursorLine
+		augroup END
+		execute 'hi CursorLineNR cterm=bold ctermfg='.(s:hack % 2 != 0 ? 10 : 160)
+		augroup CLNRSet
+			autocmd! ColorScheme * hi CursorLineNR cterm=bold
+		augroup END
+	" }}}
+
+	let s:hack = s:hack < len(s:mycolors)-1 ? s:hack+1 : 0
 endfunction
+" }}}
+
+" Custom interface -------------------------------------------------------- {{{
+set cursorline
+set hlsearch
 :call SwitchColor()
 " }}}
 
