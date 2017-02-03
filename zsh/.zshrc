@@ -45,7 +45,7 @@ source $ZSH/oh-my-zsh.sh
 stty -ixon
 
 # Aliases
-uni(){cd ~/Dropbox/'II_2016_2017'/"$*"}
+uni(){cd ~/Dropbox/'II_2016_2017'/1-semestre/"$*"}
 # alias v="vim"
 v(){vim "$*"}
 book(){
@@ -60,6 +60,13 @@ alias someter="TERM=linux ssh -X a651348@hendrix01.cps.unizar.es"
 someterup(){
   if [ "$*" ]; then
     scp "$*" a651348@hendrix01.cps.unizar.es:/home/a651348/Documents
+  else
+    echo Error
+  fi
+}
+someterdown(){
+  if [ "$*" ]; then
+		scp -r a651348@hendrix01.cps.unizar.es:"$*" .
   else
     echo Error
   fi
@@ -121,10 +128,12 @@ alias encoder="java -jar ~/.pentest/rubber-ducky/Encoder/encoder.jar"
 alias hosts="vim /etc/hosts"
 alias ly="teamocil"
 alias horario="xdg-open ~/Dropbox/II_2016_2017/res/horario/public/horario-2016-17.pdf"
+alias n4="fortune vN4 | cowsay -f three-eyes -e -- && echo -e '\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n'"
 #alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
 # Scripts
 alias number="python ~/APP/Scipts/number.py"
 alias name="python ~/APP/Scipts/name.py"
+alias color="python ~/APP/Scripts/colortrans.py"
 alias talk="~/APP/bash/talk.sh"
 alias bitcoin="~/APP/bash/bitcoin.sh"
 
@@ -138,7 +147,7 @@ export TERM="xterm-256color"
 umask 077
 
 if [[ -n "$TMUX" ]] && [[ ! -e "/root/.automatic_start_occurred" ]];then
-  fortune es/ciencia.fortunes | cowsay -f beavis.zen
+  fortune vN4 | cowsay -f three-eyes -e -- && echo -e "\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n"
 fi
 
 #PATH="/home/fragmentado/perl5/bin${PATH:+:${PATH}}"; export PATH;

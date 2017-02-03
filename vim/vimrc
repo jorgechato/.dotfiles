@@ -1,6 +1,7 @@
 " .vimrc
 " Author: Jorge Chato <jorgechato1@gmail.com>
 " Source: https://github.com/orggue/.dotfiles
+" Web:		http://jorgechato.com
 " Preamble --------------------------------------------------------------- {{{
 set nocompatible                        " I'm using vim not vi
 filetype off
@@ -50,12 +51,14 @@ set showbreak=↪
 set title
 set wrap																" long text with breackline
 set linebreak
-" set listchars=tab:·\ ,trail:·,eol:¬,extends:❯,precedes:❮
-" set listchars=tab:·\ ,trail:·,extends:❯,precedes:❮
 set list
-"set listchars=tab:▸\ ,eol:¬
-set listchars=tab:·\ ,trail:·
+set listchars=tab:·\ ,trail:·,extends:❯,precedes:❮
+"set listchars=tab:·\ ,trail:·,eol:↩,extends:❯,precedes:❮
+set printoptions=paper:A4,syntax:n
+set pfn=:h8
+set penc="cp1252"
 let mapleader = " "
+set wildignore+=*.pyc,*.swp,*.pdf
 " }}}
 
 " Bundles ----------------------------------------------------------------- {{{
@@ -115,10 +118,6 @@ function! SwitchColor()
 	"interface {{{
 		hi Search cterm=underline
 		" Cursor color config
-		hi clear CursorLine
-		augroup CLClear
-			autocmd! ColorScheme * hi clear CursorLine
-		augroup END
 		execute 'hi CursorLineNR cterm=bold ctermfg='.(s:hack % 2 != 0 ? 10 : 160)
 		augroup CLNRSet
 			autocmd! ColorScheme * hi CursorLineNR cterm=bold
@@ -145,9 +144,10 @@ set hlsearch
 nnoremap <leader>t :bnext<CR>
 nnoremap <leader>w :bd<CR>
 map <F10> <esc>:call SwitchColor()<CR>
-map <F7> mzgg=G`z
+map <F7> mzgg=G'zmz
 map <F8> <leader>cc
 map <F9> <leader>cu
+map <leader>p <esc>:CtrlPBuffer<CR>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>a
 inoremap <F2> <C-O>za
@@ -169,8 +169,6 @@ nmap <leader>6 g$
 nmap <leader>4 g^
 map <Leader>f <Plug>(easymotion-sn)
 omap <Leader>f <Plug>(easymotion-tn)
-map  ñ <Plug>(easymotion-next)
-map  Ñ <Plug>(easymotion-prev)
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
@@ -190,7 +188,7 @@ map  Ñ <Plug>(easymotion-prev)
 		" C++ compiller comment the following line to C compiler
 		"let g:C_CplusCompiler
 	" }}}
-	" Python jadi {{{
+	" Python jedi {{{
 		"let g:jedi#auto_initialization = 0
 		let g:jedi#popup_on_dot = 0
 		autocmd FileType python setlocal completeopt-=preview
