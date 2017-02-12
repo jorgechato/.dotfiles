@@ -27,26 +27,30 @@ HIST_STAMPS="dd.mm.yyyy"
 plugins=(git tmux)
 
 # User configuration
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-export PATH="$PATH:$HOME/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/share/python:/usr/sbin:/usr/bin/python"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/share/python:/usr/sbin:/usr/bin/python"
 export PATH="$PATH:/opt/metasploit-framework"
 export EDITOR="/usr/bin/vim"
-############# virtualenvwrapper start
+# virtualenvwrapper {{{
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
-############# virtualenvwrapper end
+# }}}
+# rbenv (ruby){{{
+export PATH="$PATH:$HOME/.rbenv/shims:$HOME/.rbenv/bin"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+eval "$(rbenv init -)"
+# }}}
+export DISPLAY=:0
 
 source $ZSH/oh-my-zsh.sh
 
 # disable ctrl+s
 stty -ixon
 
-# Aliases
+# Aliases {{{
 uni(){cd ~/Dropbox/'II_2016_2017'/1-semestre/"$*"}
-# alias v="vim"
 v(){vim "$*"}
 book(){
   if [ "$*" ]; then
@@ -55,7 +59,6 @@ book(){
     git clone https://github.com/orggue/nerdbook-studio.git ; cd nerdbook-studio ; npm install ; node init.js
   fi
 }
-# conection to
 alias someter="TERM=linux ssh -X a651348@hendrix01.cps.unizar.es"
 someterup(){
   if [ "$*" ]; then
@@ -78,7 +81,7 @@ pi(){
     ssh pi@nas.jorgechato.com
   fi
 }
-# record
+# record {{{
 rec(){
   if [ "$*" ]; then
     ~/APP/asciinema/asciinema rec "$*"
@@ -93,7 +96,8 @@ play(){
     ~/APP/asciinema/asciinema
   fi
 }
-# psql
+# }}}
+# psql {{{
 pypsql(){
   if [ "$*" ]; then
     psql -U fragmentado -d "$*" -h localhost
@@ -101,14 +105,16 @@ pypsql(){
     echo 'ERROR:: You forgot add the db name in psql -U fragmentado -d <<database name>> -h localhost'
   fi
 }
+# }}}
 # irc
 alias irssi='TERM=screen-256color irssi'
-# sudo
+# sudo {{{
 alias eject="sudo eject"
 alias ifconfig="sudo ifconfig"
 alias airodump-ng="sudo airodump-ng"
 alias airmon-ng="sudo airmon-ng"
-# alias
+# }}}
+alias apt="sudo apt-get"
 alias gip="ip route"
 alias py="python"
 alias pyclean="rm -rf **/*.pyc"
@@ -136,6 +142,7 @@ alias name="python ~/APP/Scipts/name.py"
 alias color="python ~/APP/Scripts/colortrans.py"
 alias talk="~/APP/bash/talk.sh"
 alias bitcoin="~/APP/bash/bitcoin.sh"
+# }}}
 
 #fuck
 eval "$(thefuck --alias)"
@@ -144,14 +151,7 @@ eval "$(thefuck --alias FUCK)"
 
 # terminator with 256 colors to vim
 export TERM="xterm-256color"
-umask 077
 
 if [[ -n "$TMUX" ]] && [[ ! -e "/root/.automatic_start_occurred" ]];then
   fortune vN4 | cowsay -f three-eyes -e -- && echo -e "\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n"
 fi
-
-#PATH="/home/fragmentado/perl5/bin${PATH:+:${PATH}}"; export PATH;
-#PERL5LIB="/home/fragmentado/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-#PERL_LOCAL_LIB_ROOT="/home/fragmentado/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-#PERL_MB_OPT="--install_base \"/home/fragmentado/perl5\""; export PERL_MB_OPT;
-#PERL_MM_OPT="INSTALL_BASE=/home/fragmentado/perl5"; export PERL_MM_OPT;

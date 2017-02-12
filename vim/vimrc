@@ -58,17 +58,27 @@ set printoptions=paper:A4,syntax:n
 set pfn=:h8
 set penc="cp1252"
 let mapleader = " "
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
 set wildignore+=*.pyc,*.swp,*.pdf
+
+" Backups {{{
+	set backupskip=/tmp/*,/private/tmp/*"
+	set undodir=~/.vim/tmp/undo//
+	set backupdir=~/.vim/tmp/backup//
+	set directory=~/.vim/tmp/swap//
+	set backup
+	set noswapfile
+" }}}
 " }}}
 
 " Bundles ----------------------------------------------------------------- {{{
 Plugin 'VundleVim/Vundle.vim'
 
 "Themes {{{
-	Plugin 'orggue/vim-youcolor'
-	Plugin 'twerth/ir_black'
-	Plugin 'acarapetis/vim-colors-github'
-	Plugin 'zaki/zazen'
+Plugin 'orggue/vim-youcolor'
+Plugin 'twerth/ir_black'
+Plugin 'acarapetis/vim-colors-github'
+Plugin 'zaki/zazen'
 "}}}
 
 Plugin 'danro/rename.vim'
@@ -96,6 +106,14 @@ Plugin 'elzr/vim-json'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'kshenoy/vim-signature'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'tpope/vim-repeat'
+
+"Ruby {{{
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-endwise'
+" }}}
 " }}}
 
 " Color scheme ------------------------------------------------------------ {{{
@@ -116,12 +134,12 @@ function! SwitchColor()
 	endif
 
 	"interface {{{
-		hi Search cterm=underline
-		" Cursor color config
-		execute 'hi CursorLineNR cterm=bold ctermfg='.(s:hack % 2 != 0 ? 10 : 160)
-		augroup CLNRSet
-			autocmd! ColorScheme * hi CursorLineNR cterm=bold
-		augroup END
+	hi Search cterm=underline
+	" Cursor color config
+	execute 'hi CursorLineNR cterm=bold ctermfg='.(s:hack % 2 != 0 ? 10 : 160)
+	augroup CLNRSet
+		autocmd! ColorScheme * hi CursorLineNR cterm=bold
+	augroup END
 	" }}}
 
 	let s:hack = s:hack < len(s:mycolors)-1 ? s:hack+1 : 0
@@ -172,33 +190,33 @@ omap <Leader>f <Plug>(easymotion-tn)
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
-	"airline {{{
-		let g:airline_theme='term'
-		let g:airline_powerline_fonts = 1
-		let g:airline#extensions#tabline#enabled = 1
-		"set laststatus=2
-		if !exists('g:airline_symbols')
-			let g:airline_symbols = {}
-		endif
-	" }}}
-	" C-Support {{{
-		let g:C_UseTool_cmake    = 'yes'
-		let g:C_UseTool_doxygen = 'yes'
-		let g:C_MapLeader  = ','
-		" C++ compiller comment the following line to C compiler
-		"let g:C_CplusCompiler
-	" }}}
-	" Python jedi {{{
-		"let g:jedi#auto_initialization = 0
-		let g:jedi#popup_on_dot = 0
-		autocmd FileType python setlocal completeopt-=preview
-	" }}}
-	" Latex {{{
-		let s:extfname = expand("%:e")
-		if s:extfname ==? "tex"
-  		let g:LatexBox_split_type="new"
-		endif
-	" }}}
+"airline {{{
+let g:airline_theme='term'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+"set laststatus=2
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+" }}}
+" C-Support {{{
+let g:C_UseTool_cmake    = 'yes'
+let g:C_UseTool_doxygen = 'yes'
+let g:C_MapLeader  = ','
+" C++ compiller comment the following line to C compiler
+"let g:C_CplusCompiler
+" }}}
+" Python jedi {{{
+"let g:jedi#auto_initialization = 0
+let g:jedi#popup_on_dot = 0
+autocmd FileType python setlocal completeopt-=preview
+" }}}
+" Latex {{{
+let s:extfname = expand("%:e")
+if s:extfname ==? "tex"
+	let g:LatexBox_split_type="new"
+endif
+" }}}
 " }}}
 
 " Fold -------------------------------------------------------------------- {{{
