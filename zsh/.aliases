@@ -1,0 +1,121 @@
+# Aliases ----------------------------------------------------------------- {{{
+book(){
+	if [ "$*" ]; then
+		git clone https://github.com/orggue/nerdbook-studio.git "$*" ; cd "$*" ; npm install ; node init.js
+	else
+		git clone https://github.com/orggue/nerdbook-studio.git ; cd nerdbook-studio ; npm install ; node init.js
+	fi
+}
+alias someter="TERM=linux ssh -X a651348@hendrix01.cps.unizar.es"
+someterup(){
+	if [ "$*" ]; then
+		scp "$*" a651348@hendrix01.cps.unizar.es:/home/a651348/Documents
+	else
+		echo Error
+	fi
+}
+someterdown(){
+	if [ "$*" ]; then
+		scp -r a651348@hendrix01.cps.unizar.es:"$*" .
+	else
+		echo Error
+	fi
+}
+pi(){
+	if [ "$*" ]; then
+		ssh pi@"$*"
+	else
+		ssh pi@nas.jorgechato.com
+	fi
+}
+# Record {{{
+rec(){
+	if [ "$*" ]; then
+		asciinema rec "$*"
+	else
+		asciinema
+	fi
+}
+play(){
+	if [ "$*" ]; then
+		asciinema play "$*"
+	else
+		asciinema
+	fi
+}
+# }}}
+# PSQL {{{
+pypsql(){
+	if [ "$*" ]; then
+		psql -U fragmentado -d "$*" -h localhost
+	else
+		echo 'ERROR:: You forgot add the db name in psql -U fragmentado -d <<database name>> -h localhost'
+	fi
+}
+# }}}
+# Sudo {{{
+alias eject="sudo eject"
+alias ifconfig="sudo ifconfig"
+alias airodump-ng="sudo airodump-ng"
+alias airmon-ng="sudo airmon-ng"
+# }}}
+# Graphical desktop {{{
+alias which-gd="cat /etc/X11/default-display-manager"
+update-gd(){
+if [ "$*" ]; then
+	sudo dpkg-reconfigure "$*"
+else
+	echo 'sudo dpkg-reconfigure <gdm,kdm,...>'
+fi
+}
+# }}}
+# VirtualBox {{{
+vm(){
+	if [ "$*" ]; then
+		vboxmanage startvm "$*" --type headless
+	else
+		vboxmanage list vms
+	fi
+}
+killvm(){
+	if [ "$*" ]; then
+		vboxmanage controlvm "$*" poweroff soft
+	else
+		vboxmanage list runningvms
+	fi
+}
+# }}}
+uni(){cd ~/Dropbox/II_2016_2017/2-semsestre/"$*"}
+v(){vim "$*"}
+alias todo="ikog"
+alias irssi='TERM=screen-256color irssi'
+alias apt="sudo apt-get"
+alias gip="ip route"
+alias py="python"
+alias pyclean="rm -rf **/*.pyc"
+alias rm="rm -i"
+alias o="xdg-open"
+alias tweet="rainbowstream"
+alias zshconfig="vim ~/.zshrc"
+alias vimcolor="cd ~/.vim/color"
+alias vimconfig="vim ~/.vimrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias list="v /etc/apt/sources.list"
+alias links="links2"
+alias ndate="(echo '日本国' && TZ='Japan' date) | cowsay -f beavis.zen"
+alias herokulog="heroku logs --tail"
+alias terminatorconfig="vim ~/.config/terminator/config"
+alias encoder="java -jar ~/.pentest/rubber-ducky/Encoder/encoder.jar"
+alias hosts="vim /etc/hosts"
+alias ly="teamocil"
+alias horario="xdg-open ~/Dropbox/II_2016_2017/res/horario/public/horario-2016-17.pdf"
+alias n4="fortune vN4 | cowsay -f three-eyes -e -- && echo -e '\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n'"
+#alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
+# Scripts {{{
+alias number="python ~/bin/Scipts/number.py"
+alias name="python ~/bin/Scipts/name.py"
+alias color="python ~/bin/Scripts/colortrans.py"
+alias talk="~/bin/bash/talk.sh"
+alias bitcoin="~/bin/bash/bitcoin.sh"
+# }}}
+# }}}
