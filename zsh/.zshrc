@@ -1,16 +1,16 @@
 # Global config ----------------------------------------------------------- {{{
 export ZSH=/home/jorge/.oh-my-zsh
-export TERM="xterm-256color"			# terminator with 256 colors to vim
 export UPDATE_ZSH_DAYS=23
 ZSH_THEME="hack"
-ENABLE_CORRECTION="true"
 HIST_STAMPS="dd.mm.yyyy"
-unsetopt correct									# Disable autocorrect
-source $ZSH/oh-my-zsh.sh
+DISABLE_CORRECTION=true						# Disable autocorrect
 ZSH_TMUX_AUTOSTART=true						# Tmux variable
 ZSH_TMUX_AUTOCONNECT=false				# Tmux variable
+# Plugins
+plugins=(git tmux last-working-dir wd)
 stty -ixon												# Disable ctrl+s
-plugins=(git tmux)
+export TERM="xterm-256color"			# terminator with 256 colors to vim
+source $ZSH/oh-my-zsh.sh
 # }}}
 
 # User config ------------------------------------------------------------- {{{

@@ -4,10 +4,10 @@
 " Web:		http://jorgechato.com
 " Preamble --------------------------------------------------------------- {{{
 set nocompatible                        " I'm using vim not vi
-filetype off
+"filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim/
-" set rtp+=~/.vim/c-support
+set rtp+=~/.vim/c-support
 call vundle#rc()
 
 filetype plugin indent on
@@ -62,12 +62,12 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 set wildignore+=*.pyc,*.swp,*.pdf
 
 " Backups {{{
-	set backupskip=/tmp/*,/private/tmp/*"
-	set undodir=~/.vim/tmp/undo//
-	set backupdir=~/.vim/tmp/backup//
-	set directory=~/.vim/tmp/swap//
-	set backup
-	set noswapfile
+set backupskip=/tmp/*,/private/tmp/*"
+set undodir=~/.vim/tmp/undo//
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+set backup
+set noswapfile
 " }}}
 " }}}
 
@@ -98,7 +98,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'justinmk/vim-syntax-extra'
@@ -108,11 +107,44 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'kshenoy/vim-signature'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'tpope/vim-repeat'
+Plugin 'davidhalter/jedi-vim'
 
 "Ruby {{{
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
+" }}}
+" }}}
+
+" Plugin settings --------------------------------------------------------- {{{
+" Python jedi {{{
+let g:jedi#popup_on_dot = 0
+autocmd FileType python setlocal completeopt-=preview
+" }}}
+"airline {{{
+let g:airline_theme='term'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+"set laststatus=2
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+" }}}
+" C-Support {{{
+let g:C_UseTool_cmake    = 'yes'
+let g:C_UseTool_doxygen = 'yes'
+let g:C_MapLeader  = ','
+" C++ compiller comment the following line to C compiler
+"let g:C_CplusCompiler
+" }}}
+" Latex {{{
+let s:extfname = expand("%:e")
+if s:extfname ==? "tex"
+	let g:LatexBox_split_type="new"
+endif
+" }}}
+" jshint2 {{{
+set runtimepath+=~/.vim/bundle/jshint2.vim/
 " }}}
 " }}}
 
@@ -124,6 +156,7 @@ set colorcolumn=80
 " }}}
 
 " Custom functions -------------------------------------------------------- {{{
+" Switch vim theme {{{
 let s:mycolors = ['youcolor', 'zazen', 'github', 'ir_black']
 let s:hack = 0
 function! SwitchColor()
@@ -145,6 +178,19 @@ function! SwitchColor()
 	let s:hack = s:hack < len(s:mycolors)-1 ? s:hack+1 : 0
 endfunction
 " }}}
+" Twiddle Case {{{
+function! TwiddleCase(str)
+	if a:str ==# toupper(a:str)
+		let result = tolower(a:str)
+	elseif a:str ==# tolower(a:str)
+		let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+	else
+		let result = toupper(a:str)
+	endif
+	return result
+endfunction
+" }}}
+" }}}
 
 " Custom interface -------------------------------------------------------- {{{
 set cursorline
@@ -159,6 +205,7 @@ set hlsearch
 " }}}
 
 " Mappings ---------------------------------------------------------------- {{{
+vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
 nnoremap <leader>t :bnext<CR>
 nnoremap <leader>w :bd<CR>
 map <F10> <esc>:call SwitchColor()<CR>
@@ -187,36 +234,6 @@ nmap <leader>6 g$
 nmap <leader>4 g^
 map <Leader>f <Plug>(easymotion-sn)
 omap <Leader>f <Plug>(easymotion-tn)
-" }}}
-
-" Plugin settings --------------------------------------------------------- {{{
-"airline {{{
-let g:airline_theme='term'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-"set laststatus=2
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
-" }}}
-" C-Support {{{
-let g:C_UseTool_cmake    = 'yes'
-let g:C_UseTool_doxygen = 'yes'
-let g:C_MapLeader  = ','
-" C++ compiller comment the following line to C compiler
-"let g:C_CplusCompiler
-" }}}
-" Python jedi {{{
-"let g:jedi#auto_initialization = 0
-let g:jedi#popup_on_dot = 0
-autocmd FileType python setlocal completeopt-=preview
-" }}}
-" Latex {{{
-let s:extfname = expand("%:e")
-if s:extfname ==? "tex"
-	let g:LatexBox_split_type="new"
-endif
-" }}}
 " }}}
 
 " Fold -------------------------------------------------------------------- {{{
