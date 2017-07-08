@@ -47,9 +47,9 @@ play(){
 # PSQL {{{
 pypsql(){
 	if [ "$*" ]; then
-		psql -U fragmentado -d "$*" -h localhost
+		psql -U "$1" -d "$2" -h localhost
 	else
-		echo 'ERROR:: You forgot add the db name in psql -U fragmentado -d <<database name>> -h localhost'
+		echo 'ERROR:: You forgot add the db name in psql -U <<user name>> -d <<database name>> -h localhost'
 	fi
 }
 # }}}
@@ -58,6 +58,8 @@ alias eject="sudo eject"
 alias ifconfig="sudo ifconfig"
 alias airodump-ng="sudo airodump-ng"
 alias airmon-ng="sudo airmon-ng"
+alias setoolkit="sudo setoolkit"
+alias sqlmap="/usr/bin/python2.7 ~/kali/sqlmap-dev/sqlmap.py"
 # }}}
 # Graphical desktop {{{
 alias which-gd="cat /etc/X11/default-display-manager"
@@ -87,11 +89,22 @@ killvm(){
 # }}}
 uni(){cd ~/Dropbox/II_2016_2017/2-semsestre/"$*"}
 v(){vim "$*"}
+e(){
+	if [ "$*" ]; then
+		emacsclient -t -c -a "" "$*"
+	else
+		emacsclient -t -c -a "" .
+	fi
+}
+alias emacs="emacs -fs"
+alias killemacs="emacsclient -e '(kill-emacs)'"
+alias python=python3
 alias todo="ikog"
-alias irssi='TERM=screen-256color irssi'
+alias ssh-tor="torsocks ssh"
+alias irssi='TERM=screen-256color torsocks irssi'
 alias apt="sudo apt-get"
 alias gip="ip route"
-alias py="python"
+alias py=python3
 alias pyclean="rm -rf **/*.pyc"
 alias rm="rm -i"
 alias o="xdg-open"
@@ -110,6 +123,9 @@ alias hosts="vim /etc/hosts"
 alias ly="teamocil"
 alias horario="xdg-open ~/Dropbox/II_2016_2017/res/horario/public/horario-2016-17.pdf"
 alias n4="fortune vN4 | cowsay -f three-eyes -e -- && echo -e '\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n'"
+alias stopredis="/etc/init.d/redis-server stop"
+alias startredis="/etc/init.d/redis-server start"
+alias fn="sudo vim /sys/module/hid_apple/parameters/fnmode"
 #alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
 alias aliases="vim ~/.zsh/.aliases"
 # Scripts {{{

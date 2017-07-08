@@ -16,6 +16,7 @@ syntax on
 
 " Basic options ---------------------------------------------------------- {{{
 " size of a hard tabstop
+set backspace=indent,eol,start
 set smartindent
 set tabstop=2
 " a combination of spaces and tabs are used to simulate tab stops at a width
@@ -59,7 +60,7 @@ set pfn=:h8
 set penc="cp1252"
 let mapleader = " "
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
-set wildignore+=*.pyc,*.swp,*.pdf
+set wildignore+=*.pyc,*.swp,*.pdf,*.class
 
 " Backups {{{
 set backupskip=/tmp/*,/private/tmp/*"
@@ -76,9 +77,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 "Themes {{{
 Plugin 'orggue/vim-youcolor'
-Plugin 'twerth/ir_black'
-Plugin 'acarapetis/vim-colors-github'
-Plugin 'zaki/zazen'
 "}}}
 
 Plugin 'danro/rename.vim'
@@ -93,7 +91,6 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'wavded/vim-stylus'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-airline/vim-airline'
@@ -108,12 +105,6 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'tpope/vim-repeat'
 Plugin 'davidhalter/jedi-vim'
-
-"Ruby {{{
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-endwise'
-" }}}
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
@@ -125,7 +116,6 @@ autocmd FileType python setlocal completeopt-=preview
 let g:airline_theme='term'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-"set laststatus=2
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
@@ -157,25 +147,22 @@ set colorcolumn=80
 
 " Custom functions -------------------------------------------------------- {{{
 " Switch vim theme {{{
-let s:mycolors = ['youcolor', 'zazen', 'github', 'ir_black']
-let s:hack = 0
+let s:mycolor = "youcolor"
+let s:hack = 1
 function! SwitchColor()
-	execute 'colorscheme '.s:mycolors[s:hack]
+	execute 'colorscheme '.s:mycolor
 
-	if s:hack != 3
+	if s:hack == 0
+		set background=dark
+	else
 		set background=light
 	endif
 
 	"interface {{{
 	hi Search cterm=underline
-	" Cursor color config
-	execute 'hi CursorLineNR cterm=bold ctermfg='.(s:hack % 2 != 0 ? 10 : 160)
-	augroup CLNRSet
-		autocmd! ColorScheme * hi CursorLineNR cterm=bold
-	augroup END
 	" }}}
 
-	let s:hack = s:hack < len(s:mycolors)-1 ? s:hack+1 : 0
+	let s:hack = s:hack < 1 ? s:hack+1 : 0
 endfunction
 " }}}
 " Twiddle Case {{{
@@ -199,7 +186,6 @@ set hlsearch
 " }}}
 
 " Language ---------------------------------------------------------------- {{{
-"spell language
 :set spell spelllang=es_es
 :set nospell
 " }}}
@@ -239,7 +225,6 @@ omap <Leader>f <Plug>(easymotion-tn)
 " Fold -------------------------------------------------------------------- {{{
 set foldmethod=syntax
 set nofoldenable
-"set foldlevelstart=1
 
 let javaScript_fold=1         " JavaScript
 let perl_fold=1               " Perl
