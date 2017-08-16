@@ -18,13 +18,14 @@ syntax on
 " size of a hard tabstop
 set backspace=indent,eol,start
 set smartindent
-set tabstop=2
+set tabstop=4
 " a combination of spaces and tabs are used to simulate tab stops at a width
 " other than the (hard)tabstop
-set softtabstop=2
+set softtabstop=4
 set smarttab
 " size of an indent"
-set shiftwidth=2
+set shiftwidth=4
+autocmd FileType *.yaml *. yml set tabstop=2|set shiftwidth=2|set softtabstop=2
 set noexpandtab
 set encoding=utf-8
 set shell=/bin/zsh
@@ -61,6 +62,7 @@ set penc="cp1252"
 let mapleader = " "
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 set wildignore+=*.pyc,*.swp,*.pdf,*.class
+let g:ctrlp_custom_ignore = 'node_modules|DS_Store|git'
 
 " Backups {{{
 set backupskip=/tmp/*,/private/tmp/*"
@@ -70,6 +72,16 @@ set directory=~/.vim/tmp/swap//
 set backup
 set noswapfile
 " }}}
+" GUI & Terminal settings {{{
+if has("gui_running")
+  "set guifont=Consolas:h9
+
+	set guioptions= " disable all UI options
+	set guicursor+=a:blinkon0 " disable blinking cursor
+	set ballooneval
+	autocmd GUIEnter * set novisualbell t_vb=
+endif
+" }}}
 " }}}
 
 " Bundles ----------------------------------------------------------------- {{{
@@ -77,6 +89,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 "Themes {{{
 Plugin 'orggue/vim-youcolor'
+Plugin 'endel/vim-github-colorscheme'
 "}}}
 
 Plugin 'danro/rename.vim'
@@ -105,6 +118,8 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'tpope/vim-repeat'
 Plugin 'davidhalter/jedi-vim'
+"syntax
+Plugin 'chase/vim-ansible-yaml'
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
@@ -113,11 +128,15 @@ let g:jedi#popup_on_dot = 0
 autocmd FileType python setlocal completeopt-=preview
 " }}}
 "airline {{{
-let g:airline_theme='term'
-let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+if has("gui_running")
+  let g:airline_theme='dark'
+else
+  let g:airline_theme='term'
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+  let g:airline_powerline_fonts = 1
 endif
 " }}}
 " C-Support {{{
@@ -149,6 +168,7 @@ set colorcolumn=80
 " Switch vim theme {{{
 let s:mycolor = "youcolor"
 let s:hack = 1
+
 function! SwitchColor()
 	execute 'colorscheme '.s:mycolor
 
@@ -177,24 +197,38 @@ function! TwiddleCase(str)
 	return result
 endfunction
 " }}}
+
 " }}}
 
 " Custom interface -------------------------------------------------------- {{{
 set cursorline
 set hlsearch
-:call SwitchColor()
+
+" GUI & Terminal settings {{{
+if has("gui_running")
+  colorscheme github
+  set background=light
+  
+  "interface {{{
+    hi Search cterm=underline
+  " }}}
+else
+  :call SwitchColor()
+  map <F10> <esc>:call SwitchColor()<CR>
+endif
+" }}}
 " }}}
 
 " Language ---------------------------------------------------------------- {{{
-:set spell spelllang=es_es
-:set nospell
+set spell spelllang=en_us
+"set nospell
 " }}}
 
 " Mappings ---------------------------------------------------------------- {{{
 vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
+nnoremap <leader>+ :set gfn=*<CR>
 nnoremap <leader>t :bnext<CR>
 nnoremap <leader>w :bd<CR>
-map <F10> <esc>:call SwitchColor()<CR>
 map <F7> mzgg=G'zmz
 map <F8> <leader>cc
 map <F9> <leader>cu
@@ -220,6 +254,26 @@ nmap <leader>6 g$
 nmap <leader>4 g^
 map <Leader>f <Plug>(easymotion-sn)
 omap <Leader>f <Plug>(easymotion-tn)
+" fugitive git bindings
+nnoremap <leader>ga :Git add %:p<CR><CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>gt :Gcommit -v -q %:p<CR>
+nnoremap <leader>gd :Gdiff<Space>
+nnoremap <leader>ge :Gedit<Space>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>gw :Gwrite<CR><CR>
+nnoremap <leader>gp :Git push origin <Space>
+nnoremap <leader>g- :Silent Git stash<CR>:e<CR>
+nnoremap <leader>g+ :Silent Git stash pop<CR>:e<CR>
+nnoremap <leader>gB :Gblame<CR>
+nnoremap <leader>gg :Ggrep<Space>
+nnoremap <leader>gm :Gmove<Space>
+nnoremap <leader>gb :Git branch<Space>
+nnoremap <leader>gC :Git checkout<Space>
+"nnoremap <leader>gl :silent Glog<CR>
+"nnoremap <leader>gL :silent Glog<CR>:set nofoldenable<CR>
+nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
 " }}}
 
 " Fold -------------------------------------------------------------------- {{{
