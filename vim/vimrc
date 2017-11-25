@@ -51,7 +51,7 @@ set autoindent
 set ruler                               " Show line and column number
 set showbreak=↪
 set title
-set wrap																" long text with breackline
+set wrap								" long text with breackline
 set linebreak
 set list
 set listchars=tab:·\ ,trail:·,extends:❯,precedes:❮
@@ -136,8 +136,13 @@ autocmd FileType python setlocal completeopt-=preview
 " }}}
 "airline {{{
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tmuxline#enabled = 0
 if has("gui_running")
-	let g:airline_theme='dark'
+	let g:airline_theme='lucius'
+	"let g:airline_theme='raven'
+	"let g:airline_theme='monochrome'
+	"let g:airline_theme='dark'
+	"let g:airline_theme='jellybeans'
 	let g:airline#extensions#clock#format = '%H:%M'
 else
 	let g:airline_theme='term'
