@@ -22,8 +22,13 @@ export PATH="$PATH:$HOME/kali/set"
 export PATH="$PATH:$HOME/kali/sqlmap-dev"
 export PATH="$PATH:$HOME/kali/john/run"
 export PATH="$PATH:$HOME/kali/encoder"
+export PATH="$PATH:$HOME/Github/darknet"
 
 export EDITOR="/usr/bin/vim"
+# GO path{{{
+export GOPATH=$HOME/Github/go
+export PATH="$PATH:$GOPATH/bin"
+# }}}
 # Virtualenvwrapper (python){{{
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
@@ -48,10 +53,10 @@ if [ -e "$HOME/.zsh/.aliases" ]; then
 fi
 
 # Run on startup terminal
-if [[ -n "$TMUX" ]] && [[ ! -e "/root/.automatic_start_occurred" ]];then
+#if [[ -n "$TMUX" ]] && [[ ! -e "/root/.automatic_start_occurred" ]];then
 	#fortune vN4 | cowsay -f three-eyes -e -- && echo -e "\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n"
-	screenfetch
-fi
+	#screenfetch
+#fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

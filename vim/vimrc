@@ -63,6 +63,7 @@ let mapleader = " "
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 set wildignore+=*.pyc,*.swp,*.pdf,*.class
 let g:ctrlp_custom_ignore = 'node_modules|DS_Store|git'
+set guifont=Monospace\ 9
 
 " Backups {{{
 set backupskip=/tmp/*,/private/tmp/*"
@@ -71,10 +72,14 @@ set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 set backup
 set noswapfile
+set clipboard=unnamedplus
 " }}}
 " GUI & Terminal settings {{{
 if has("gui_running")
-  "set guifont=Consolas:h9
+	autocmd GUIEnter * call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
+	"you need wmctrl to be installed
+	map <silent> <F11>
+	\    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
 	set guioptions= " disable all UI options
 	set guicursor+=a:blinkon0 " disable blinking cursor
@@ -108,6 +113,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'enricobacis/vim-airline-clock'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'justinmk/vim-syntax-extra'
@@ -120,6 +126,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'davidhalter/jedi-vim'
 "syntax
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'fatih/vim-go'
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
@@ -130,13 +137,14 @@ autocmd FileType python setlocal completeopt-=preview
 "airline {{{
 let g:airline#extensions#tabline#enabled = 1
 if has("gui_running")
-  let g:airline_theme='dark'
+	let g:airline_theme='dark'
+	let g:airline#extensions#clock#format = '%H:%M'
 else
-  let g:airline_theme='term'
-  if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-  endif
-  let g:airline_powerline_fonts = 1
+	let g:airline_theme='term'
+	if !exists('g:airline_symbols')
+		let g:airline_symbols = {}
+	endif
+	let g:airline_powerline_fonts = 1
 endif
 " }}}
 " C-Support {{{
@@ -206,15 +214,15 @@ set hlsearch
 
 " GUI & Terminal settings {{{
 if has("gui_running")
-  colorscheme github
-  set background=light
-  
-  "interface {{{
-    hi Search cterm=underline
-  " }}}
+	colorscheme github
+	set background=light
+
+	"interface {{{
+	hi Search cterm=underline
+	" }}}
 else
-  :call SwitchColor()
-  map <F10> <esc>:call SwitchColor()<CR>
+	:call SwitchColor()
+	map <F10> <esc>:call SwitchColor()<CR>
 endif
 " }}}
 " }}}

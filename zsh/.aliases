@@ -91,6 +91,7 @@ killvm(){
 # }}}
 uni(){cd ~/Dropbox/II_2016_2017/2-semsestre/"$*"}
 v(){vim "$*"}
+gv(){gvim "$*"}
 e(){
 	if [ "$*" ]; then
 		emacsclient -t -c -a "" "$*"
@@ -111,25 +112,25 @@ alias pyclean="rm -rf **/*.pyc"
 alias rm="rm -i"
 alias o="xdg-open"
 alias tweet="rainbowstream"
-alias zshconfig="vim ~/.zshrc"
+alias zshconfig="gvim ~/.zshrc"
 alias vimcolor="cd ~/.vim/color"
-alias vimconfig="vim ~/.vimrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vimconfig="gvim ~/.vimrc"
+alias ohmyzsh="gvim ~/.oh-my-zsh"
 alias sourcelist="v /etc/apt/sources.list"
 alias links="links2"
 alias ndate="(echo '日本国' && TZ='Japan' date) | cowsay -f beavis.zen"
 alias herokulog="heroku logs --tail"
-alias terminatorconfig="vim ~/.config/terminator/config"
+alias terminatorconfig="gvim ~/.config/terminator/config"
 alias encoder="java -jar ~/.pentest/rubber-ducky/Encoder/encoder.jar"
-alias hosts="vim /etc/hosts"
+alias hosts="gvim /etc/hosts"
 alias ly="teamocil"
 alias horario="xdg-open ~/Dropbox/II_2016_2017/res/horario/public/horario-2016-17.pdf"
 alias n4="fortune vN4 | cowsay -f three-eyes -e -- && echo -e '\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n'"
 alias stopredis="/etc/init.d/redis-server stop"
 alias startredis="/etc/init.d/redis-server start"
-alias fn="sudo vim /sys/module/hid_apple/parameters/fnmode"
+alias fn="sudo gvim /sys/module/hid_apple/parameters/fnmode"
 #alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
-alias aliases="vim ~/.zsh/.aliases"
+alias aliases="gvim ~/.zsh/.aliases"
 # Scripts {{{
 alias number="python ~/bin/Scipts/number.py"
 alias name="python ~/bin/Scipts/name.py"
