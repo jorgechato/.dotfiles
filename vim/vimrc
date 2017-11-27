@@ -126,7 +126,7 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'tpope/vim-repeat'
 Plugin 'davidhalter/jedi-vim'
 "syntax
-Plugin 'chase/vim-ansible-yaml'
+Plugin 'avakhov/vim-yaml'
 Plugin 'fatih/vim-go'
 " }}}
 
