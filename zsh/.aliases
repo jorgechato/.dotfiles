@@ -54,8 +54,6 @@ pypsql(){
 }
 # }}}
 # Sudo {{{
-alias docker="sudo docker"
-alias docker-compose="sudo docker-compose"
 alias eject="sudo eject"
 alias ifconfig="sudo ifconfig"
 alias airodump-ng="sudo airodump-ng"
