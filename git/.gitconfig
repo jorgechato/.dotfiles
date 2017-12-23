@@ -1,3 +1,6 @@
+[user]
+	name = jorgechato
+	email = jorgechato1@gmail.com
 [url "https://"]
 	insteadOf = git://
 [core]

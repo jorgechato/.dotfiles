@@ -63,7 +63,7 @@ let mapleader = " "
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 set wildignore+=*.pyc,*.swp,*.pdf,*.class
 let g:ctrlp_custom_ignore = 'node_modules|DS_Store|git'
-set guifont=Monospace\ 9
+set guifont=Monospace\ 8
 "set guifont=Inconsolata\ 10
 
 " Backups {{{
@@ -128,9 +128,14 @@ Plugin 'davidhalter/jedi-vim'
 "syntax
 Plugin 'avakhov/vim-yaml'
 Plugin 'fatih/vim-go'
+Plugin 'modille/groovy.vim'
+Plugin 'editorconfig/editorconfig-vim'
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
+"editorconfig {{{
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" }}}
 " Python jedi {{{
 let g:jedi#popup_on_dot = 0
 autocmd FileType python setlocal completeopt-=preview
@@ -268,6 +273,15 @@ nmap <leader>6 g$
 nmap <leader>4 g^
 map <Leader>f <Plug>(easymotion-sn)
 omap <Leader>f <Plug>(easymotion-tn)
+" For local replace
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+" For global replace
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+"Pretty tab
+nmap <Leader>t= :Tabularize /=<CR>
+vmap <Leader>t= :Tabularize /=<CR>
+nmap <Leader>t: :Tabularize /:\zs<CR>
+vmap <Leader>t: :Tabularize /:\zs<CR>
 " fugitive git bindings
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
