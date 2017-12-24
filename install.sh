@@ -48,34 +48,15 @@ init() {
 	sudo apt-get update
 	sudo apt-get upgrade
 
-	CHECK_LIST=[
-	"curl",
-	"wget",
-	"zsh",
-	"vim",
-	"gvim",
-	"git",
-	"tmux",
-	]
-	INSTALL_LIST=[
-	"curl",
-	"wget",
-	"terminator",
-	"zsh",
-	"vim-python-jedi",
-	"gvim",
-	"git",
-	"tmux",
-	"irssi",
-	]
+	CHECK_LIST="curl wget zsh vim gvim git tmux"
+	
+	INSTALL_LIST="curl wget terminator zsh vim-python-jedi git tmux irssi"
 
-	for item in $(seq 1 $INSTALL_LIST); do
-		sudo apt-get install "$item"
-	done
+	sudo apt-get -y install $INSTALL_LIST
 
-	mkdir $HOME/.vim
+	mkdir -p $HOME/.vim
 
-	gitInstall()
+	gitInstall
 
 	for item in $(seq 1 $CHECK_LIST); do
 		checkInstall "$item"
@@ -84,24 +65,26 @@ init() {
 
 config() {
 	ln "$DOTHOME"/git/.gitconfig $HOME/.gitconfig
-	git config --global --unset-all core.editor
-	git config --unset-all core.editor
-	git config --global core.editor "gvim -f"
+	#git config --global --unset-all core.editor
+	#git config --unset-all core.editor
+	#git config --global core.editor "gvim -f"
 
-	ln "$DOTHOME"/vim/vimrc $HOME/.vim/vimrc
-	ln $HOME/.vim/vimrc $HOME/.vimrc
-	ln "$DOTHOME"/vim/vimrc $HOME/.vim/vimrc
 	mkdir -p $HOME/.vim/tmp/backup
 	mkdir -p $HOME/.vim/tmp/swap
 	mkdir -p $HOME/.vim/tmp/undo
+	ln "$DOTHOME"/vim/vimrc $HOME/.vim/vimrc
+	ln $HOME/.vim/vimrc $HOME/.vimrc
 
+	mkdir -p $HOME/.config/terminator
 	ln "$DOTHOME"/terminator/config $HOME/.config/terminator/config
 
 	ln "$DOTHOME"/tmux/.tmux.conf $HOME/.tmux.conf
-
+	
+	mkdir -p $HOME/.irssi/config
 	ln "$DOTHOME"/irssi/config $HOME/.irssi/config
 	ln "$DOTHOME"/irssi/mrrobot.theme $HOME/.irssi/mrrobot.theme
 
+	mkdir -p $HOME/.zsh/
 	ln "$DOTHOME"/zsh/hack.zsh-theme $HOME/.oh-my-zsh/themes/hack.zsh-theme
 	ln "$DOTHOME"/zsh/pyzhon.zsh-theme $HOME/.oh-my-zsh/themes/pyzhon.zsh-theme
 	ln "$DOTHOME"/zsh/.zshrc $HOME/.zsh/.zshrc

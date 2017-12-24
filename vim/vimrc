@@ -62,7 +62,7 @@ set penc="cp1252"
 let mapleader = " "
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 set wildignore+=*.pyc,*.swp,*.pdf,*.class
-let g:ctrlp_custom_ignore = 'node_modules|DS_Store|git'
+let g:ctrlp_custom_ignore = 'node_modules|DS_Store|git|data'
 set guifont=Monospace\ 8
 "set guifont=Inconsolata\ 10
 
