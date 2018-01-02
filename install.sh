@@ -49,7 +49,7 @@ init() {
 	sudo apt-get upgrade
 
 	CHECK_LIST="curl wget zsh vim gvim git tmux"
-	
+
 	INSTALL_LIST="curl wget terminator zsh vim-python-jedi git tmux irssi"
 
 	sudo apt-get -y install $INSTALL_LIST
@@ -64,33 +64,33 @@ init() {
 }
 
 config() {
-	ln "$DOTHOME"/git/.gitconfig $HOME/.gitconfig
-	#git config --global --unset-all core.editor
-	#git config --unset-all core.editor
-	#git config --global core.editor "gvim -f"
+	ln -f "$DOTHOME"/git/.gitconfig $HOME/.gitconfig
+	git config --global --unset-all core.editor
+	git config --unset-all core.editor
+	git config --global core.editor "gvim -f"
 
 	mkdir -p $HOME/.vim/tmp/backup
 	mkdir -p $HOME/.vim/tmp/swap
 	mkdir -p $HOME/.vim/tmp/undo
-	ln "$DOTHOME"/vim/vimrc $HOME/.vim/vimrc
-	ln $HOME/.vim/vimrc $HOME/.vimrc
+	ln -f "$DOTHOME"/vim/vimrc $HOME/.vim/vimrc
+	ln -f $HOME/.vim/vimrc $HOME/.vimrc
 
 	mkdir -p $HOME/.config/terminator
-	ln "$DOTHOME"/terminator/config $HOME/.config/terminator/config
+	ln -f "$DOTHOME"/terminator/config $HOME/.config/terminator/config
 
-	ln "$DOTHOME"/tmux/.tmux.conf $HOME/.tmux.conf
-	
+	ln -f "$DOTHOME"/tmux/.tmux.conf $HOME/.tmux.conf
+
 	mkdir -p $HOME/.irssi/config
-	ln "$DOTHOME"/irssi/config $HOME/.irssi/config
-	ln "$DOTHOME"/irssi/mrrobot.theme $HOME/.irssi/mrrobot.theme
+	ln -f "$DOTHOME"/irssi/config $HOME/.irssi/config
+	ln -f "$DOTHOME"/irssi/mrrobot.theme $HOME/.irssi/mrrobot.theme
 
 	mkdir -p $HOME/.zsh/
-	ln "$DOTHOME"/zsh/hack.zsh-theme $HOME/.oh-my-zsh/themes/hack.zsh-theme
-	ln "$DOTHOME"/zsh/pyzhon.zsh-theme $HOME/.oh-my-zsh/themes/pyzhon.zsh-theme
-	ln "$DOTHOME"/zsh/.zshrc $HOME/.zsh/.zshrc
-	ln $HOME/.zsh/.zshrc $HOME/.zshrc
-	ln "$DOTHOME"/zsh/.aliases $HOME/.zsh/.aliases
-	ln "$DOTHOME"/zsh/.directory $HOME/.zsh/.directory
+	ln -f "$DOTHOME"/zsh/hack.zsh-theme $HOME/.oh-my-zsh/themes/hack.zsh-theme
+	ln -f "$DOTHOME"/zsh/pyzhon.zsh-theme $HOME/.oh-my-zsh/themes/pyzhon.zsh-theme
+	ln -f "$DOTHOME"/zsh/.zshrc $HOME/.zsh/.zshrc
+	ln -f $HOME/.zsh/.zshrc $HOME/.zshrc
+	ln -f "$DOTHOME"/zsh/.aliases $HOME/.zsh/.aliases
+	ln -f "$DOTHOME"/zsh/.directory $HOME/.zsh/.directory
 }
 
 main() {

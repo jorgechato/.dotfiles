@@ -14,7 +14,7 @@ source $ZSH/oh-my-zsh.sh
 # }}}
 
 # User config ------------------------------------------------------------- {{{
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/usr/bin/python:$HOME/bin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/usr/bin/python3.5:$HOME/bin"
 
 export PATH="$PATH:$HOME/kali/metasploit-framework"
 export PATH="$PATH:$HOME/kali/beef"
@@ -32,14 +32,14 @@ export PATH="$PATH:$GOPATH/bin"
 # Virtualenvwrapper (python){{{
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 # }}}
 # Rbenv (ruby){{{
-export PATH="$PATH:$HOME/.rbenv/shims:$HOME/.rbenv/bin"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-eval "$(rbenv init -)"
+#export PATH="$PATH:$HOME/.rbenv/shims:$HOME/.rbenv/bin"
+#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+#eval "$(rbenv init -)"
 # }}}
 # NVM (node){{{
 export NVM_DIR="$HOME/.nvm"

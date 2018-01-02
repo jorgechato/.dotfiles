@@ -15,16 +15,17 @@
       type = Window
 [plugins]
 [profiles]
-  [[spider]]
-    palette = "#1b1d1e:#e60813:#e22928:#e24756:#2c3fff:#2435db:#3256ff:#fffef6:#505354:#ff0325:#ff3338:#fe3a35:#1d50ff:#747cff:#6184ff:#fffff9"
-    background_color = "#1b1d1e"
-    cursor_color = "#2c3fff"
-    foreground_color = "#e3e3e3"
+  [[default]]
     alternate_screen_scroll = False
     background_image = None
+    cursor_color = "#ffffff"
+    font = Monospace 11
+    foreground_color = "#ffffff"
+    palette = "#000000:#990000:#00a600:#999900:#0000b2:#b200b2:#00a6b2:#bfbfbf:#666666:#e50000:#00d900:#e5e500:#0000ff:#e500e5:#00e5e5:#e5e5e5"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
+    use_system_font = False
   [[custom]]
     alternate_screen_scroll = False
     background_color = "#ffffff"
@@ -36,17 +37,6 @@
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
-  [[default]]
-    alternate_screen_scroll = False
-    background_image = None
-    font = Nimbus Mono L 10
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    show_titlebar = False
-    palette = "#000000:#990000:#00a600:#999900:#0000b2:#b200b2:#00a6b2:#bfbfbf:#666666:#e50000:#00d900:#e5e500:#0000ff:#e500e5:#00e5e5:#e5e5e5"
-    background_color = "#000000"
-    cursor_color = "#23ff18"
-    foreground_color = "#ffffff"
   [[python]]
     alternate_screen_scroll = False
     background_color = "#ffffff"
@@ -64,6 +54,16 @@
     cursor_color = "#D81745"
     foreground_color = "#1F1F1F"
     palette = "#f8eec7:#9b111e:#9b111e:#244776:#199f4b:#3572a5:#89d1ec:#999999:#999999:#9b111e:#843f5b:#3572a5:#2e6cba:#3572a5:#1cfafe:#3e3e3e"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+  [[spider]]
+    alternate_screen_scroll = False
+    background_color = "#1b1d1e"
+    background_image = None
+    cursor_color = "#2c3fff"
+    foreground_color = "#e3e3e3"
+    palette = "#1b1d1e:#e60813:#e22928:#e24756:#2c3fff:#2435db:#3256ff:#fffef6:#505354:#ff0325:#ff3338:#fe3a35:#1d50ff:#747cff:#6184ff:#fffff9"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
