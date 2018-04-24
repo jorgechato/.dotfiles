@@ -1,5 +1,5 @@
 # Global config ----------------------------------------------------------- {{{
-export ZSH=/home/jorge/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=23
 ZSH_THEME="hack"
 HIST_STAMPS="dd.mm.yyyy"
@@ -7,15 +7,19 @@ DISABLE_CORRECTION=true						# Disable autocorrect
 ZSH_TMUX_AUTOSTART=true						# Tmux variable
 ZSH_TMUX_AUTOCONNECT=false				# Tmux variable
 # Plugins
-plugins=(git tmux last-working-dir wd)
+plugins=(git last-working-dir wd)
 stty -ixon												# Disable ctrl+s
 export TERM="xterm-256color"			# terminator with 256 colors to vim
 source $ZSH/oh-my-zsh.sh
 # }}}
+. /anaconda3/etc/profile.d/conda.sh
 
 # User config ------------------------------------------------------------- {{{
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/usr/bin/python3.5:$HOME/bin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin"
 
+export PATH="$PATH:/anaconda3/bin"
+export PATH="$PATH:/anaconda3/lib/python3.6/site-packages"
+# export PATH="$PATH:/usr/local/lib/python3.6/site-packages"
 export PATH="$PATH:$HOME/kali/metasploit-framework"
 export PATH="$PATH:$HOME/kali/beef"
 export PATH="$PATH:$HOME/kali/set"
@@ -26,20 +30,11 @@ export PATH="$PATH:$HOME/Github/darknet"
 
 export EDITOR="/usr/bin/vim"
 # GO path{{{
-export GOPATH=$HOME/Github/go
+export GOPATH=$HOME/Projects/go
 export PATH="$PATH:$GOPATH/bin"
 # }}}
-# Virtualenvwrapper (python){{{
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
-# }}}
-# Rbenv (ruby){{{
-#export PATH="$PATH:$HOME/.rbenv/shims:$HOME/.rbenv/bin"
-#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-#eval "$(rbenv init -)"
+# Python {{{
+export PYTHONPATH="$PYTHONPATH:/anaconda3/lib/python3.6/site-packages/"
 # }}}
 # NVM (node){{{
 export NVM_DIR="$HOME/.nvm"
@@ -63,3 +58,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export GPG_TTY=$(tty)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/chatojor/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/chatojor/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/chatojor/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/chatojor/google-cloud-sdk/completion.zsh.inc'; fi

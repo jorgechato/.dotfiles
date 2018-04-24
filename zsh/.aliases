@@ -89,7 +89,20 @@ killvm(){
 # }}}
 uni(){cd ~/Dropbox/II_2016_2017/2-semsestre/"$*"}
 v(){vim "$*"}
-gv(){gvim "$*"}
+vs(){
+	if [ "$*" ]; then
+		code "$*"
+	else
+		code .
+	fi
+}
+c(){
+	if [ "$*" ]; then
+		mvim "$*"
+	else
+		mvim .
+	fi
+	}
 e(){
 	if [ "$*" ]; then
 		emacsclient -t -c -a "" "$*"
@@ -99,7 +112,7 @@ e(){
 }
 alias emacs="emacs -fs"
 alias killemacs="emacsclient -e '(kill-emacs)'"
-#alias python=python3
+alias python=python3
 alias todo="ikog"
 alias ssh-tor="torsocks ssh"
 alias irssi='TERM=screen-256color torsocks irssi'
@@ -107,7 +120,7 @@ alias apt="sudo apt-get"
 alias gip="ip route"
 alias py=python3
 alias pyclean="rm -rf **/*.pyc"
-alias rm="rm -i"
+#alias rm="rm -i"
 alias o="xdg-open"
 alias tweet="rainbowstream"
 alias zshconfig="gvim ~/.zshrc"
@@ -129,6 +142,10 @@ alias startredis="/etc/init.d/redis-server start"
 alias fn="sudo gvim /sys/module/hid_apple/parameters/fnmode"
 #alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
 alias aliases="gvim ~/.zsh/.aliases"
+alias d=docker
+alias cleanhistory="cat /dev/null > ~/.zsh_history"
+
+alias cuda=conda
 # Scripts {{{
 alias number="python ~/bin/Scipts/number.py"
 alias name="python ~/bin/Scipts/name.py"

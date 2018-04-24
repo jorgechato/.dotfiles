@@ -6,9 +6,7 @@
 set nocompatible                        " I'm using vim not vi
 "filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-set rtp+=~/.vim/c-support
-call vundle#rc()
+set rtp+=$HOME/.vim/c-support
 
 filetype plugin indent on
 syntax on
@@ -53,8 +51,8 @@ set showbreak=↪
 set title
 set wrap								" long text with breackline
 set linebreak
-set list
-set listchars=tab:·\ ,trail:·,extends:❯,precedes:❮
+set nolist								" Change to list to enable listchars
+" set listchars=tab:·\ ,trail:·,extends:❯,precedes:❮
 "set listchars=tab:·\ ,trail:·,eol:↩,extends:❯,precedes:❮
 set printoptions=paper:A4,syntax:n
 set pfn=:h8
@@ -63,7 +61,8 @@ let mapleader = " "
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 set wildignore+=*.pyc,*.swp,*.pdf,*.class
 let g:ctrlp_custom_ignore = 'node_modules|DS_Store|git|data'
-set guifont=Monospace\ 10
+set guifont=Menlo:h12
+"set guifont=Bitstream\ Vera\ Sans\ Mono:h12
 "set guifont=Inconsolata\ 10
 
 " Backups {{{
@@ -73,83 +72,91 @@ set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 set backup
 set noswapfile
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 " }}}
 " GUI & Terminal settings {{{
 if has("gui_running")
-	autocmd GUIEnter * call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
-	"you need wmctrl to be installed
-	map <silent> <F11>
-	\    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
-
 	set guioptions= " disable all UI options
 	set guicursor+=a:blinkon0 " disable blinking cursor
 	set ballooneval
-	autocmd GUIEnter * set novisualbell t_vb=
+	"autocmd GUIEnter * set novisualbell t_vb=
 endif
 " }}}
 " }}}
 
 " Bundles ----------------------------------------------------------------- {{{
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('$HOME/.vim/plugged') 
 
 "Themes {{{
-Plugin 'orggue/vim-youcolor'
-Plugin 'endel/vim-github-colorscheme'
+Plug 'orggue/vim-youcolor'
+Plug 'endel/vim-github-colorscheme'
 "}}}
 
-Plugin 'danro/rename.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Shutnik/jshint2.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'
-Plugin 'godlygeek/tabular'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'pangloss/vim-javascript'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tpope/vim-vinegar'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'enricobacis/vim-airline-clock'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'justinmk/vim-syntax-extra'
-Plugin 'elzr/vim-json'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'kshenoy/vim-signature'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'tpope/vim-repeat'
-Plugin 'davidhalter/jedi-vim'
+Plug 'danro/rename.vim'
+Plug 'mattn/emmet-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'edkolev/tmuxline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-vinegar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"Plug 'enricobacis/vim-airline-clock'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'airblade/vim-gitgutter'
+Plug 'easymotion/vim-easymotion'
+Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-repeat'
+Plug 'tell-k/vim-autopep8'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'cjrh/vim-conda'
+
 "syntax
-Plugin 'avakhov/vim-yaml'
-Plugin 'fatih/vim-go'
-Plugin 'modille/groovy.vim'
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'keith/swift.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'elzr/vim-json'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'pangloss/vim-javascript'
+Plug 'Shutnik/jshint2.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'avakhov/vim-yaml'
+Plug 'fatih/vim-go'
+Plug 'modille/groovy.vim'
+Plug 'justinmk/vim-syntax-extra' " C extra
+
+" Initialize plugin system
+call plug#end()
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
-"editorconfig {{{
+" editorconfig {{{
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" }}}
+" syntastic {{{
+let g:syntastic_python_checkers = ['flake8']
 " }}}
 " Python jedi {{{
 let g:jedi#popup_on_dot = 0
+let g:deoplete#sources#jedi#python_path = '/anaconda3/bin/python3.6'
+" let g:jedi#force_py_version = 3
 autocmd FileType python setlocal completeopt-=preview
+" }}}
+" Python autopep8 {{{
+let g:autopep8_disable_show_diff=1
+autocmd FileType python set equalprg=autopep8\ -
+autocmd FileType python autocmd BufWritePre <buffer> call Autopep8()
 " }}}
 "airline {{{
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 0
 if has("gui_running")
 	let g:airline_theme='lucius'
-	"let g:airline_theme='raven'
-	"let g:airline_theme='monochrome'
-	"let g:airline_theme='dark'
-	"let g:airline_theme='jellybeans'
-	let g:airline#extensions#clock#format = '%H:%M'
+	" let g:airline#extensions#clock#format = '%H:%M'
 else
 	let g:airline_theme='term'
 	if !exists('g:airline_symbols')
@@ -172,7 +179,17 @@ if s:extfname ==? "tex"
 endif
 " }}}
 " jshint2 {{{
-set runtimepath+=~/.vim/bundle/jshint2.vim/
+set runtimepath+=$HOME/.vim/bundle/jshint2.vim/
+" }}}
+" nerdcommenter {{{
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
 " }}}
 " }}}
 
@@ -299,8 +316,6 @@ nnoremap <leader>gg :Ggrep<Space>
 nnoremap <leader>gm :Gmove<Space>
 nnoremap <leader>gb :Git branch<Space>
 nnoremap <leader>gC :Git checkout<Space>
-"nnoremap <leader>gl :silent Glog<CR>
-"nnoremap <leader>gL :silent Glog<CR>:set nofoldenable<CR>
 nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
 " }}}
 
