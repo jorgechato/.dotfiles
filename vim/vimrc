@@ -60,7 +60,10 @@ set penc="cp1252"
 let mapleader = " "
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 set wildignore+=*.pyc,*.swp,*.pdf,*.class
-let g:ctrlp_custom_ignore = 'node_modules|DS_Store|git|data'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  'out$\|\.git$\|\.data$\|bower_components$\|node_modules$\|vendor',
+	\ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\DS_Store$',
+	\ }
 set guifont=Menlo:h12
 "set guifont=Bitstream\ Vera\ Sans\ Mono:h12
 "set guifont=Inconsolata\ 10
@@ -97,7 +100,7 @@ Plug 'mattn/emmet-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'godlygeek/tabular'
 Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-fugitive'
@@ -128,12 +131,22 @@ Plug 'avakhov/vim-yaml'
 Plug 'fatih/vim-go'
 Plug 'modille/groovy.vim'
 Plug 'justinmk/vim-syntax-extra' " C extra
+" terraform
+Plug 'hashivim/vim-terraform'
+Plug 'vim-syntastic/syntastic'
+Plug 'juliosueiras/vim-terraform-completion'
 
 " Initialize plugin system
 call plug#end()
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
+" terraform {{{
+let g:terraform_align=1
+let g:syntastic_terraform_tffilter_plan = 1
+let g:terraform_completion_keys = 1
+let g:terraform_registry_module_completion = 0
+" }}}
 " editorconfig {{{
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " }}}

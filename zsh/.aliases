@@ -115,7 +115,7 @@ alias killemacs="emacsclient -e '(kill-emacs)'"
 alias python=python3
 alias todo="ikog"
 alias ssh-tor="torsocks ssh"
-alias irssi='TERM=screen-256color torsocks irssi'
+# alias irssi='TERM=screen-256color torsocks irssi'
 alias apt="sudo apt-get"
 alias gip="ip route"
 alias py=python3

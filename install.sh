@@ -1,6 +1,14 @@
 #!/bin/bash
 
 
+if [ "$(uname)" == "Darwin" ]; then
+	OS="mac"
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+	OS="linux"
+else
+	OS=""
+fi
+
 DOTHOME="$HOME/.dotfiles"
 # Use colors, but only if connected to a terminal, and that terminal
 # supports them.
@@ -29,7 +37,12 @@ set -e
 
 # @param {string} $1 - program to check
 checkInstall() {
-	CHECK_INSTALLED=$(grep /"$1"$ /etc/shells | wc -l)
+	if [ $OS == "mac" ]; then
+		CHECK_INSTALLED=$(which "$1" | grep -v not | wc -l)
+	elif [ $OS == "linux" ]; then
+		CHECK_INSTALLED=$(grep /"$1"$ /etc/shells | wc -l)
+	fi
+
 	if [ ! $CHECK_INSTALLED -ge 1 ]; then
 		printf "${YELLOW}$1 is not installed!${NORMAL} Please install $1 first!\n"
 		exit
@@ -40,11 +53,39 @@ checkInstall() {
 gitInstall() {
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 init() {
+	if [ $OS == "mac" ]; then
+		init_mac
+	elif [ $OS == "linux" ]; then
+		init_linux
+	fi
+}
+
+init_mac() {
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+	INSTALL_LIST="zsh macvim git tree irssi"
+
+	echo "Installing ($INSTALL_LIST)..."
+
+	brew install $INSTALL_LIST
+	# brew cask install iterm2
+
+	gitInstall
+
+	sh -c "$(curl -fsSL https://repo.anaconda.com/archive/Anaconda3-5.2.0-MacOSX-x86_64.sh)"
+
+	CHECK_LIST="zsh mvim git tree irssi"
+
+	for item in $CHECK_LIST; do
+		checkInstall "$item"
+	done
+}
+
+init_linux() {
 	sudo apt-get update
 	sudo apt-get upgrade
 
@@ -52,9 +93,9 @@ init() {
 
 	INSTALL_LIST="curl wget terminator zsh vim-python-jedi git tmux irssi"
 
-	sudo apt-get -y install $INSTALL_LIST
+	echo "Installing ($INSTALL_LIST)..."
 
-	mkdir -p $HOME/.vim
+	sudo apt-get -y install $INSTALL_LIST
 
 	gitInstall
 
@@ -64,10 +105,14 @@ init() {
 }
 
 config() {
+	echo "System configuration..."
+
 	ln -f "$DOTHOME"/git/.gitconfig $HOME/.gitconfig
-	git config --global --unset-all core.editor
-	git config --unset-all core.editor
-	git config --global core.editor "gvim -f"
+	if [ $OS == "linux" ]; then
+		git config --global --unset-all core.editor
+		git config --unset-all core.editor
+		git config --global core.editor "gvim -f"
+	fi
 
 	mkdir -p $HOME/.vim/tmp/backup
 	mkdir -p $HOME/.vim/tmp/swap
@@ -75,10 +120,12 @@ config() {
 	ln -f "$DOTHOME"/vim/vimrc $HOME/.vim/vimrc
 	ln -f $HOME/.vim/vimrc $HOME/.vimrc
 
-	mkdir -p $HOME/.config/terminator
-	ln -f "$DOTHOME"/terminator/config $HOME/.config/terminator/config
+	if [ $OS == "linux" ]; then
+		mkdir -p $HOME/.config/terminator
+		ln -f "$DOTHOME"/terminator/config $HOME/.config/terminator/config
 
-	ln -f "$DOTHOME"/tmux/.tmux.conf $HOME/.tmux.conf
+		ln -f "$DOTHOME"/tmux/.tmux.conf $HOME/.tmux.conf
+	fi
 
 	mkdir -p $HOME/.irssi/config
 	ln -f "$DOTHOME"/irssi/config $HOME/.irssi/config
@@ -95,8 +142,6 @@ config() {
 
 main() {
 	init
-
-	git clone https://github.com/jorgechato/.dotfiles.git "$DOTHOME"
 
 	config
 
