@@ -142,6 +142,8 @@ config() {
 
 main() {
 	init
+	
+	git clone https://github.com/jorgechato/.dotfiles.git "$DOTHOME"
 
 	config
 
