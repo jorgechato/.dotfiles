@@ -12,13 +12,12 @@ stty -ixon												# Disable ctrl+s
 export TERM="xterm-256color"			# terminator with 256 colors to vim
 source $ZSH/oh-my-zsh.sh
 # }}}
-. /anaconda3/etc/profile.d/conda.sh
 
 # User config ------------------------------------------------------------- {{{
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin"
 
-export PATH="$PATH:/anaconda3/bin"
-export PATH="$PATH:/anaconda3/lib/python3.6/site-packages"
+export PATH="$PATH:$HOME/miniconda3/bin"
+export PATH="$PATH:$HOMR/miniconda3/lib/python3.6/site-packages"
 # export PATH="$PATH:/usr/local/lib/python3.6/site-packages"
 export PATH="$PATH:$HOME/kali/metasploit-framework"
 export PATH="$PATH:$HOME/kali/beef"

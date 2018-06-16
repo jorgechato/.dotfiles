@@ -72,11 +72,9 @@ init_mac() {
 	echo "Installing ($INSTALL_LIST)..."
 
 	brew install $INSTALL_LIST
-	# brew cask install iterm2
+	brew cask install iterm2
 
 	gitInstall
-
-	sh -c "$(curl -fsSL https://repo.anaconda.com/archive/Anaconda3-5.2.0-MacOSX-x86_64.sh)"
 
 	CHECK_LIST="zsh mvim git tree irssi"
 
@@ -138,11 +136,14 @@ config() {
 	ln -f $HOME/.zsh/.zshrc $HOME/.zshrc
 	ln -f "$DOTHOME"/zsh/.aliases $HOME/.zsh/.aliases
 	ln -f "$DOTHOME"/zsh/.directory $HOME/.zsh/.directory
+
+	mkdir -p $HOME/Projects/go
+	mkdir -p $HOME/Maker
 }
 
 main() {
 	init
-	
+
 	git clone https://github.com/jorgechato/.dotfiles.git "$DOTHOME"
 
 	config
