@@ -4,9 +4,6 @@
 " Web:		http://jorgechato.com
 " Preamble --------------------------------------------------------------- {{{
 set nocompatible                        " I'm using vim not vi
-"filetype off
-
-set rtp+=$HOME/.vim/c-support
 
 filetype plugin indent on
 syntax on
@@ -52,21 +49,15 @@ set title
 set wrap								" long text with breackline
 set linebreak
 set nolist								" Change to list to enable listchars
-" set listchars=tab:·\ ,trail:·,extends:❯,precedes:❮
-"set listchars=tab:·\ ,trail:·,eol:↩,extends:❯,precedes:❮
-set printoptions=paper:A4,syntax:n
 set pfn=:h8
 set penc="cp1252"
 let mapleader = " "
-let g:ruby_path = system('echo $HOME/.rbenv/shims')
 set wildignore+=*.pyc,*.swp,*.pdf,*.class
 let g:ctrlp_custom_ignore = {
     \ 'dir':  'out$\|\.git$\|\.data$\|bower_components$\|node_modules$\|vendor',
 	\ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\DS_Store$',
 	\ }
 set guifont=Menlo:h12
-"set guifont=Bitstream\ Vera\ Sans\ Mono:h12
-"set guifont=Inconsolata\ 10
 
 " Backups {{{
 set backupskip=/tmp/*,/private/tmp/*"
@@ -75,20 +66,18 @@ set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 set backup
 set noswapfile
-"set clipboard=unnamedplus
 " }}}
 " GUI & Terminal settings {{{
 if has("gui_running")
 	set guioptions= " disable all UI options
 	set guicursor+=a:blinkon0 " disable blinking cursor
 	set ballooneval
-	"autocmd GUIEnter * set novisualbell t_vb=
 endif
 " }}}
 " }}}
 
 " Bundles ----------------------------------------------------------------- {{{
-call plug#begin('$HOME/.vim/plugged') 
+call plug#begin('$HOME/.vim/plugged')
 
 "Themes {{{
 Plug 'orggue/vim-youcolor'
@@ -100,16 +89,11 @@ Plug 'mattn/emmet-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
-" Plug 'scrooloose/syntastic'
 Plug 'godlygeek/tabular'
-Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'enricobacis/vim-airline-clock'
-Plug 'jmcantrell/vim-virtualenv'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'kshenoy/vim-signature'
@@ -119,6 +103,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'cjrh/vim-conda'
 
 "syntax
+Plug 'vim-syntastic/syntastic'
 Plug 'keith/swift.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -130,10 +115,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'avakhov/vim-yaml'
 Plug 'fatih/vim-go'
 Plug 'modille/groovy.vim'
-Plug 'justinmk/vim-syntax-extra' " C extra
-" terraform
 Plug 'hashivim/vim-terraform'
-Plug 'vim-syntastic/syntastic'
 Plug 'juliosueiras/vim-terraform-completion'
 
 " Initialize plugin system
@@ -141,6 +123,9 @@ call plug#end()
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
+" swift {{{
+let g:syntastic_swift_swiftlint_use_defaults = 1
+" }}}
 " terraform {{{
 let g:terraform_align=1
 let g:syntastic_terraform_tffilter_plan = 1
@@ -152,11 +137,11 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " }}}
 " syntastic {{{
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_swift_checkers = ['swiftlint', 'swiftpm']
 " }}}
 " Python jedi {{{
 let g:jedi#popup_on_dot = 0
-let g:deoplete#sources#jedi#python_path = '/anaconda3/bin/python3.6'
-" let g:jedi#force_py_version = 3
+let g:deoplete#sources#jedi#python_path = '$HOME/miniconda3/bin/python3.6'
 autocmd FileType python setlocal completeopt-=preview
 " }}}
 " Python autopep8 {{{
@@ -169,7 +154,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 0
 if has("gui_running")
 	let g:airline_theme='lucius'
-	" let g:airline#extensions#clock#format = '%H:%M'
 else
 	let g:airline_theme='term'
 	if !exists('g:airline_symbols')
@@ -178,13 +162,6 @@ else
 	let g:airline_powerline_fonts = 1
 endif
 " }}}
-" C-Support {{{
-let g:C_UseTool_cmake    = 'yes'
-let g:C_UseTool_doxygen = 'yes'
-let g:C_MapLeader  = ','
-" C++ compiller comment the following line to C compiler
-"let g:C_CplusCompiler
-" }}}
 " Latex {{{
 let s:extfname = expand("%:e")
 if s:extfname ==? "tex"
@@ -192,7 +169,7 @@ if s:extfname ==? "tex"
 endif
 " }}}
 " jshint2 {{{
-set runtimepath+=$HOME/.vim/bundle/jshint2.vim/
+set runtimepath+=$HOME/.vim/plugged/jshint2.vim/
 " }}}
 " nerdcommenter {{{
 " Add spaces after comment delimiters by default
@@ -207,10 +184,8 @@ let g:NERDTrimTrailingWhitespace = 1
 " }}}
 
 " Color scheme ------------------------------------------------------------ {{{
-set term=screen-256color
 let g:solarized_termcolors=256
 syntax enable                           " Switch syntax highlighting on
-set colorcolumn=80
 " }}}
 
 " Custom functions -------------------------------------------------------- {{{
@@ -337,10 +312,6 @@ set foldmethod=syntax
 set nofoldenable
 
 let javaScript_fold=1         " JavaScript
-let perl_fold=1               " Perl
-let php_folding=1             " PHP
-let r_syntax_folding=1        " R
-let ruby_fold=1               " Ruby
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML

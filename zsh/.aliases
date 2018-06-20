@@ -88,7 +88,6 @@ killvm(){
 }
 # }}}
 uni(){cd ~/Dropbox/II_2016_2017/2-semsestre/"$*"}
-v(){vim "$*"}
 vs(){
 	if [ "$*" ]; then
 		code "$*"
@@ -96,11 +95,11 @@ vs(){
 		code .
 	fi
 }
-c(){
+v(){
 	if [ "$*" ]; then
-		gvim "$*"
+		mvim "$*"
 	else
-		gvim .
+		mvim .
 	fi
 	}
 e(){
@@ -123,25 +122,25 @@ alias pyclean="rm -rf **/*.pyc"
 #alias rm="rm -i"
 alias o="xdg-open"
 alias tweet="rainbowstream"
-alias zshconfig="gvim ~/.zshrc"
+alias zshconfig="mvim ~/.zshrc"
 alias vimcolor="cd ~/.vim/color"
-alias vimconfig="gvim ~/.vimrc"
-alias ohmyzsh="gvim ~/.oh-my-zsh"
+alias vimconfig="mvim ~/.vimrc"
+alias ohmyzsh="mvim ~/.oh-my-zsh"
 alias sourcelist="v /etc/apt/sources.list"
 alias links="links2"
 alias ndate="(echo '日本国' && TZ='Japan' date) | cowsay -f beavis.zen"
 alias herokulog="heroku logs --tail"
-alias terminatorconfig="gvim ~/.config/terminator/config"
+alias terminatorconfig="mvim ~/.config/terminator/config"
 alias encoder="java -jar ~/.pentest/rubber-ducky/Encoder/encoder.jar"
-alias hosts="gvim /etc/hosts"
+alias hosts="mvim /etc/hosts"
 alias ly="teamocil"
 alias horario="xdg-open ~/Dropbox/II_2016_2017/res/horario/public/horario-2016-17.pdf"
 alias n4="fortune vN4 | cowsay -f three-eyes -e -- && echo -e '\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n'"
 alias stopredis="/etc/init.d/redis-server stop"
 alias startredis="/etc/init.d/redis-server start"
-alias fn="sudo gvim /sys/module/hid_apple/parameters/fnmode"
+alias fn="sudo mvim /sys/module/hid_apple/parameters/fnmode"
 #alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
-alias aliases="gvim ~/.zsh/.aliases"
+alias aliases="mvim ~/.zsh/.aliases"
 alias d=docker
 alias cleanhistory="cat /dev/null > ~/.zsh_history"
 
