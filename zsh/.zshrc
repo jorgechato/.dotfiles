@@ -15,7 +15,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User config ------------------------------------------------------------- {{{
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin"
-
 export PATH="$PATH:$HOME/miniconda3/bin"
 export PATH="$PATH:$HOME/kali/metasploit-framework"
 export PATH="$PATH:$HOME/kali/beef"
@@ -32,10 +31,12 @@ export PATH="$PATH:$GOPATH/bin"
 # }}}
 # Python {{{
 export PYTHONPATH="$PYTHONPATH:$HOME/miniconda3/lib/python3.6/site-packages/"
+. $HOME/miniconda3/etc/profile.d/conda.sh
 # }}}
 # NVM (node){{{
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 # }}}
 # }}}
 
@@ -49,3 +50,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export GPG_TTY=$(tty)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/.gcloud-sdk/path.zsh.inc" ]; then source "$HOME/.gcloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/.gcloud-sdk/completion.zsh.inc" ]; then source "$HOME/.gcloud-sdk/completion.zsh.inc"; fi

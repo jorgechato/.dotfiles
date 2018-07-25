@@ -13,13 +13,13 @@ syntax on
 " size of a hard tabstop
 set backspace=indent,eol,start
 set smartindent
-set tabstop=4
+set tabstop=2
 " a combination of spaces and tabs are used to simulate tab stops at a width
 " other than the (hard)tabstop
-set softtabstop=4
+set softtabstop=2
 set smarttab
 " size of an indent"
-set shiftwidth=4
+set shiftwidth=2
 autocmd FileType *.yaml *. yml set tabstop=2|set shiftwidth=2|set softtabstop=2
 set noexpandtab
 set encoding=utf-8
@@ -117,6 +117,7 @@ Plug 'fatih/vim-go'
 Plug 'modille/groovy.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'juliosueiras/vim-terraform-completion'
+Plug 'chr4/nginx.vim'
 
 " Initialize plugin system
 call plug#end()

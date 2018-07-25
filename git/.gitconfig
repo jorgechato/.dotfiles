@@ -17,6 +17,7 @@
 	cod = checkout develop
 	cm = commit
 	cma = commit --amend
+	cman = commit --amend --no-edit
 	feto = fetch origin
 	mod = merge origin/develop
 	mob = "!f() { git merge origin/`git rev-parse --abbrev-ref HEAD`; }; f"
