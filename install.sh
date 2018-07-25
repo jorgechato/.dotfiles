@@ -67,7 +67,7 @@ init() {
 init_mac() {
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-	INSTALL_LIST="zsh macvim git tree irssi nmap swiftlint nvm"
+	INSTALL_LIST="zsh macvim git tree irssi nmap swiftlint nvm jenv"
 
 	echo "Installing ($INSTALL_LIST)..."
 
@@ -76,7 +76,7 @@ init_mac() {
 
 	gitInstall
 
-	CHECK_LIST="zsh mvim git tree irssi nmap swiftlint nvm"
+	CHECK_LIST="zsh mvim git tree irssi nmap swiftlint nvm jenv"
 
 	for item in $CHECK_LIST; do
 		checkInstall "$item"
