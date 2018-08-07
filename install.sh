@@ -76,7 +76,7 @@ init_mac() {
 
 	gitInstall
 
-	CHECK_LIST="zsh mvim git tree irssi nmap swiftlint nvm jenv"
+	CHECK_LIST="zsh mvim git tree irssi nmap"
 
 	for item in $CHECK_LIST; do
 		checkInstall "$item"
