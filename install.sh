@@ -67,7 +67,7 @@ init() {
 init_mac() {
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-	INSTALL_LIST="zsh macvim git tree irssi nmap swiftlint nvm jenv"
+	INSTALL_LIST="zsh macvim git tree irssi nmap nvm jenv fortune"
 
 	echo "Installing ($INSTALL_LIST)..."
 
@@ -76,7 +76,7 @@ init_mac() {
 
 	gitInstall
 
-	CHECK_LIST="zsh mvim git tree irssi nmap swiftlint nvm jenv"
+	CHECK_LIST="zsh mvim git tree irssi nmap"
 
 	for item in $CHECK_LIST; do
 		checkInstall "$item"
@@ -106,6 +106,14 @@ config() {
 	echo "System configuration..."
 
 	ln -f "$DOTHOME"/git/.gitconfig $HOME/.gitconfig
+
+	if [ $OS == "linux" ]; then
+		cp -f -R "$DOTHOME"/fortune/* /usr/share/games/fortunes/
+	elif [ $OS == "mac" ]; then
+		fortuneV=$(fortune -V 2>&1 | sed -n 2p | cut -d' ' -f 3)
+		cp -f -R "$DOTHOME"/fortune/* /usr/local/Cellar/fortune/$fortuneV/share/games/fortunes/
+	fi
+
 	if [ $OS == "linux" ]; then
 		git config --global --unset-all core.editor
 		git config --unset-all core.editor
