@@ -80,7 +80,8 @@ endif
 call plug#begin('$HOME/.vim/plugged')
 
 "Themes {{{
-Plug 'orggue/vim-youcolor'
+Plug 'jorgechato/vim-youcolor'
+Plug 'jorgechato/vim-blacktie'
 Plug 'endel/vim-github-colorscheme'
 "}}}
 
@@ -118,6 +119,8 @@ Plug 'modille/groovy.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'chr4/nginx.vim'
+Plug 'posva/vim-vue'
+Plug 'jparise/vim-graphql'
 
 " Initialize plugin system
 call plug#end()
@@ -190,26 +193,6 @@ syntax enable                           " Switch syntax highlighting on
 " }}}
 
 " Custom functions -------------------------------------------------------- {{{
-" Switch vim theme {{{
-let s:mycolor = "youcolor"
-let s:hack = 1
-
-function! SwitchColor()
-	execute 'colorscheme '.s:mycolor
-
-	if s:hack == 0
-		set background=dark
-	else
-		set background=light
-	endif
-
-	"interface {{{
-	hi Search cterm=underline
-	" }}}
-
-	let s:hack = s:hack < 1 ? s:hack+1 : 0
-endfunction
-" }}}
 " Twiddle Case {{{
 function! TwiddleCase(str)
 	if a:str ==# toupper(a:str)
@@ -229,18 +212,11 @@ endfunction
 set cursorline
 set hlsearch
 
-" GUI & Terminal settings {{{
-if has("gui_running")
-	colorscheme github
-	set background=light
+colorscheme blacktie
+" colorscheme github
 
-	"interface {{{
-	hi Search cterm=underline
-	" }}}
-else
-	:call SwitchColor()
-	map <F10> <esc>:call SwitchColor()<CR>
-endif
+"interface {{{
+hi Search cterm=underline
 " }}}
 " }}}
 

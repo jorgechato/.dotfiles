@@ -67,7 +67,9 @@ init() {
 init_mac() {
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-	INSTALL_LIST="zsh macvim git tree irssi nmap nvm jenv fortune"
+	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
+
+	INSTALL_LIST="zsh macvim git tree irssi nmap nvm jenv fortune kubectl"
 
 	echo "Installing ($INSTALL_LIST)..."
 
@@ -86,6 +88,8 @@ init_mac() {
 init_linux() {
 	sudo apt-get update
 	sudo apt-get upgrade
+
+	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
 
 	CHECK_LIST="curl wget zsh vim gvim git tmux"
 
@@ -143,6 +147,7 @@ config() {
 	ln -f "$DOTHOME"/zsh/.zshrc $HOME/.zsh/.zshrc
 	ln -f $HOME/.zsh/.zshrc $HOME/.zshrc
 	ln -f "$DOTHOME"/zsh/.aliases $HOME/.zsh/.aliases
+	ln -f "$DOTHOME"/zsh/.zplug $HOME/.zsh/.zplug
 	ln -f "$DOTHOME"/zsh/.directory $HOME/.zsh/.directory
 
 	mkdir -p $HOME/Projects/go
