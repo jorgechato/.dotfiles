@@ -102,6 +102,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tell-k/vim-autopep8'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'cjrh/vim-conda'
+Plug 'rizzatti/dash.vim'
+Plug 'mileszs/ack.vim'
 
 "syntax
 Plug 'vim-syntastic/syntastic'
@@ -212,8 +214,8 @@ endfunction
 set cursorline
 set hlsearch
 
-colorscheme blacktie
-" colorscheme github
+" colorscheme blacktie
+colorscheme github
 
 "interface {{{
 hi Search cterm=underline

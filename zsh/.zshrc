@@ -24,6 +24,7 @@ fi
 # User config -------------------------------------------------------------
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin"
 export PATH="$PATH:$HOME/miniconda3/bin"
+export PATH="$PATH:$HOME/.jenv/bin"
 export PATH="$PATH:$HOME/kali/metasploit-framework"
 export PATH="$PATH:$HOME/kali/beef"
 export PATH="$PATH:$HOME/kali/set"
@@ -54,6 +55,9 @@ export PATH="$PATH:$GOPATH/bin"
 # Python
 export PYTHONPATH="$PYTHONPATH:$HOME/miniconda3/lib/python3.6/site-packages/"
 . $HOME/miniconda3/etc/profile.d/conda.sh
+
+# jenv (Java)
+eval "$(jenv init -)"
 
 # NVM (node)
 export NVM_DIR="$HOME/.nvm"

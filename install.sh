@@ -69,12 +69,13 @@ init_mac() {
 
 	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
 
-	INSTALL_LIST="zsh macvim git tree irssi nmap nvm jenv fortune kubectl"
+	INSTALL_LIST="zsh macvim git tree irssi nmap nvm jenv fortune kubectl ack"
+	INSTALL_LIST_CASK="iterm2 java"
 
 	echo "Installing ($INSTALL_LIST)..."
 
 	brew install $INSTALL_LIST
-	brew cask install iterm2
+	brew cask install $INSTALL_LIST_CASK
 
 	gitInstall
 
