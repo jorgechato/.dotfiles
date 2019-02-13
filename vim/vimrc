@@ -141,6 +141,9 @@ let g:terraform_registry_module_completion = 0
 " editorconfig {{{
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " }}}
+" ack to ag {{{
+let g:ackprg = 'ag --vimgrep'
+" }}}
 " syntastic {{{
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_swift_checkers = ['swiftlint', 'swiftpm']
@@ -257,6 +260,8 @@ nmap <leader>6 g$
 nmap <leader>4 g^
 map <Leader>f <Plug>(easymotion-sn)
 omap <Leader>f <Plug>(easymotion-tn)
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
 " For local replace
 nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 " For global replace

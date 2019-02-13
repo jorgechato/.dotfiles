@@ -69,7 +69,7 @@ init_mac() {
 
 	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
 
-	INSTALL_LIST="zsh macvim git tree irssi nmap nvm jenv fortune kubectl ack"
+	INSTALL_LIST="zsh macvim git tree irssi nmap nvm jenv fortune kubectl the_silver_searcher"
 	INSTALL_LIST_CASK="iterm2 java"
 
 	echo "Installing ($INSTALL_LIST)..."
