@@ -67,16 +67,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export GPG_TTY=$(tty)
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/.gcloud-sdk/path.zsh.inc" ]; then
-	source "$HOME/.gcloud-sdk/path.zsh.inc"
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/.gcloud-sdk/completion.zsh.inc" ]; then
-	source "$HOME/.gcloud-sdk/completion.zsh.inc"
-fi
-
 # Run on startup terminal
 if [[ ! -e "/root/.automatic_start_occurred" ]]; then
 	fortune vN4
