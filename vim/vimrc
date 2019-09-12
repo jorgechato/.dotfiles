@@ -35,7 +35,6 @@ set scrolloff=5
 set sidescroll=1
 set sidescrolloff=10
 set formatoptions=qcrn1
-set clipboard+=unnamed                  " Yanks go on clipboard instead.
 set pastetoggle=<F8>
 set novisualbell                        " No blinking .
 set noerrorbells                        " No noise.
@@ -93,12 +92,13 @@ Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'kshenoy/vim-signature'
-Plug 'tpope/vim-repeat'
 Plug 'tell-k/vim-autopep8'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'cjrh/vim-conda'
@@ -107,6 +107,7 @@ Plug 'mileszs/ack.vim'
 
 "syntax
 Plug 'vim-syntastic/syntastic'
+Plug 'elixir-editors/vim-elixir'
 Plug 'keith/swift.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -123,6 +124,7 @@ Plug 'juliosueiras/vim-terraform-completion'
 Plug 'chr4/nginx.vim'
 Plug 'posva/vim-vue'
 Plug 'jparise/vim-graphql'
+Plug 'derekwyatt/vim-scala'
 
 " Initialize plugin system
 call plug#end()
@@ -287,7 +289,7 @@ nnoremap <leader>gB :Gblame<CR>
 nnoremap <leader>gg :Ggrep<Space>
 nnoremap <leader>gm :Gmove<Space>
 nnoremap <leader>gb :Git branch<Space>
-nnoremap <leader>gC :Git checkout<Space>
+nnoremap <leader>gsw :Git switch<Space>
 nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
 " }}}
 
