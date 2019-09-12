@@ -6,9 +6,10 @@ HIST_STAMPS="dd.mm.yyyy"
 DISABLE_CORRECTION=true						# Disable autocorrect
 ZSH_TMUX_AUTOSTART=true						# Tmux variable
 ZSH_TMUX_AUTOCONNECT=false				# Tmux variable
-#
+export HISTIGNORE="[ ]*"
+
 # Plugins
-plugins=(git last-working-dir wd osx xcode)
+plugins=(git last-working-dir wd osx iterm2)
 stty -ixon												# Disable ctrl+s
 export TERM="xterm-256color"			# terminator with 256 colors to vim
 source $ZSH/oh-my-zsh.sh
@@ -22,7 +23,7 @@ fi
 # -------------------------------------------------------------------------
 
 # User config -------------------------------------------------------------
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin:/usr/local/sbin"
 export PATH="$PATH:$HOME/miniconda3/bin"
 export PATH="$PATH:$HOME/.jenv/bin"
 export PATH="$PATH:$HOME/kali/metasploit-framework"
@@ -40,21 +41,13 @@ if [ -e "$HOME/.zsh/.aliases" ]; then
 	source "$HOME/.zsh/.aliases"
 fi
 
-# Kubernetes
-KUBEFOLDER=/keybase/team
-if [ -d $KUBEFOLDER ]; then
-	cat $(find $KUBEFOLDER/* -not -name "*.*" -not -name "*adida*" -type f | grep -E "k8s|kubeconfig") > $HOME/.kube/config
-fi
-
-export KUBECONFIG=$KUBECONFIG:$HOME/.kube/config
-
 # GO path
 export GOPATH=$HOME/Projects/go
 export PATH="$PATH:$GOPATH/bin"
 
 # Python
-export PYTHONPATH="$PYTHONPATH:$HOME/miniconda3/lib/python3.6/site-packages/"
-. $HOME/miniconda3/etc/profile.d/conda.sh
+export PYTHONPATH="$PYTHONPATH:/miniconda3/lib/python3.7/site-packages/"
+. /miniconda3/etc/profile.d/conda.sh
 
 # jenv (Java)
 eval "$(jenv init -)"
@@ -67,6 +60,10 @@ export NVM_DIR="$HOME/.nvm"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# asdf virtual machine (ruby, node, elixir)
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
 export GPG_TTY=$(tty)
 
@@ -85,3 +82,6 @@ if [[ ! -e "/root/.automatic_start_occurred" ]]; then
 	fortune vN4
 fi
 # -------------------------------------------------------------------------
+
+# added by travis gem
+[ -f /Users/jorge/.travis/travis.sh ] && source /Users/jorge/.travis/travis.sh

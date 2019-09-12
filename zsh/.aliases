@@ -1,33 +1,3 @@
-# Aliases ----------------------------------------------------------------- {{{
-book(){
-	if [ "$*" ]; then
-		git clone https://github.com/orggue/nerdbook-studio.git "$*" ; cd "$*" ; npm install ; node init.js
-	else
-		git clone https://github.com/orggue/nerdbook-studio.git ; cd nerdbook-studio ; npm install ; node init.js
-	fi
-}
-alias someter="TERM=linux ssh -X a651348@hendrix01.cps.unizar.es"
-someterup(){
-	if [ "$*" ]; then
-		scp "$*" a651348@hendrix01.cps.unizar.es:/home/a651348/Documents
-	else
-		echo Error
-	fi
-}
-someterdown(){
-	if [ "$*" ]; then
-		scp -r a651348@hendrix01.cps.unizar.es:"$*" .
-	else
-		echo Error
-	fi
-}
-pi(){
-	if [ "$*" ]; then
-		ssh pi@"$*"
-	else
-		ssh pi@nas.jorgechato.com
-	fi
-}
 # Record {{{
 rec(){
 	if [ "$*" ]; then
@@ -53,41 +23,6 @@ pypsql(){
 	fi
 }
 # }}}
-# Sudo {{{
-alias eject="sudo eject"
-alias ifconfig="sudo ifconfig"
-alias airodump-ng="sudo airodump-ng"
-alias airmon-ng="sudo airmon-ng"
-alias setoolkit="sudo setoolkit"
-alias sqlmap="workon sqlmap && python ~/kali/sqlmap-dev/sqlmap.py"
-# }}}
-# Graphical desktop {{{
-alias which-gd="cat /etc/X11/default-display-manager"
-update-gd(){
-if [ "$*" ]; then
-	sudo dpkg-reconfigure "$*"
-else
-	echo 'sudo dpkg-reconfigure <gdm,kdm,...>'
-fi
-}
-# }}}
-# VirtualBox {{{
-vm(){
-	if [ "$*" ]; then
-		vboxmanage startvm "$*" --type headless
-	else
-		vboxmanage list vms
-	fi
-}
-killvm(){
-	if [ "$*" ]; then
-		vboxmanage controlvm "$*" poweroff soft
-	else
-		vboxmanage list runningvms
-	fi
-}
-# }}}
-uni(){cd ~/Dropbox/II_2016_2017/2-semsestre/"$*"}
 vs(){
 	if [ "$*" ]; then
 		code "$*"
@@ -109,10 +44,22 @@ e(){
 		emacsclient -t -c -a "" .
 	fi
 }
+awsf(){
+	if [ "$*" ]; then
+		aws ec2 describe-instances --filters "Name=tag:Name,Values=$@"  --query "Reservations[*].Instances[*].[InstanceId,Tags[?Key=='Name'].Value]" --output json
+	else
+		echo "ERROR: parameter <tag-regex> needed for searching instance"
+	fi
+}
+alias tf="terraform"
+alias k="kubectl"
+alias d=docker
+alias g=git
+alias o="open"
+alias awsl="aws ssm start-session --region eu-west-1 --target"
 alias emacs="emacs -fs"
 alias killemacs="emacsclient -e '(kill-emacs)'"
 alias python=python3
-alias todo="ikog"
 alias ssh-tor="torsocks ssh"
 # alias irssi='TERM=screen-256color torsocks irssi'
 alias apt="sudo apt-get"
@@ -120,7 +67,6 @@ alias gip="ip route"
 alias py=python3
 alias pyclean="rm -rf **/*.pyc"
 #alias rm="rm -i"
-alias o="xdg-open"
 alias tweet="rainbowstream"
 alias zshconfig="mvim ~/.zshrc"
 alias vimcolor="cd ~/.vim/color"
@@ -128,28 +74,23 @@ alias vimconfig="mvim ~/.vimrc"
 alias ohmyzsh="mvim ~/.oh-my-zsh"
 alias sourcelist="v /etc/apt/sources.list"
 alias links="links2"
-alias ndate="(echo '日本国' && TZ='Japan' date) | cowsay -f beavis.zen"
+alias ndate="(echo '日本国' && TZ='Japan' date)"
 alias herokulog="heroku logs --tail"
 alias terminatorconfig="mvim ~/.config/terminator/config"
 alias encoder="java -jar ~/.pentest/rubber-ducky/Encoder/encoder.jar"
 alias hosts="mvim /etc/hosts"
 alias ly="teamocil"
-alias horario="xdg-open ~/Dropbox/II_2016_2017/res/horario/public/horario-2016-17.pdf"
 alias n4="fortune vN4 | cowsay -f three-eyes -e -- && echo -e '\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n'"
-alias stopredis="/etc/init.d/redis-server stop"
-alias startredis="/etc/init.d/redis-server start"
 alias fn="sudo mvim /sys/module/hid_apple/parameters/fnmode"
 #alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
 alias aliases="mvim ~/.zsh/.aliases"
-alias d=docker
 alias cleanhistory="cat /dev/null > ~/.zsh_history"
-
 alias cuda=conda
-# Scripts {{{
-alias number="python ~/bin/Scipts/number.py"
-alias name="python ~/bin/Scipts/name.py"
-alias color="python ~/bin/Scripts/colortrans.py"
-alias talk="~/bin/bash/talk.sh"
-alias bitcoin="~/bin/bash/bitcoin.sh"
-# }}}
+# Sudo {{{
+alias eject="sudo eject"
+alias ifconfig="sudo ifconfig"
+alias airodump-ng="sudo airodump-ng"
+alias airmon-ng="sudo airmon-ng"
+alias setoolkit="sudo setoolkit"
+alias sqlmap="workon sqlmap && python ~/kali/sqlmap-dev/sqlmap.py"
 # }}}
