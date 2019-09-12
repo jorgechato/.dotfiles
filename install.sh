@@ -122,7 +122,7 @@ config() {
 	if [ $OS == "linux" ]; then
 		git config --global --unset-all core.editor
 		git config --unset-all core.editor
-		git config --global core.editor "gvim -f"
+		git config --global core.editor "mvim -f"
 	fi
 
 	mkdir -p $HOME/.vim/tmp/backup

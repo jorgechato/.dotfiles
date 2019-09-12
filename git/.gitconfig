@@ -8,7 +8,7 @@
     autocrlf = input
     safecrlf = false
     pager = less
-    editor = macvim
+    editor = mvim
 [alias]
     ada = add -A
     sb = switch

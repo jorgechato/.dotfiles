@@ -1,4 +1,4 @@
-# JORGE CHATO .dorfiles
+# JORGE CHATO .dotfiles
 
 ### Basic Installation
 .dotfiles is installed by running one of the following commands in your terminal. You can install this via the command-line with either `curl` or `wget`.
