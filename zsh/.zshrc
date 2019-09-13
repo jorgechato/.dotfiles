@@ -46,8 +46,8 @@ export GOPATH=$HOME/Projects/go
 export PATH="$PATH:$GOPATH/bin"
 
 # Python
-export PYTHONPATH="$PYTHONPATH:$HOME/miniconda3/lib/python3.7/site-packages/"
-. $HOME/miniconda3/etc/profile.d/conda.sh
+export PYTHONPATH="$PYTHONPATH:/miniconda3/lib/python3.7/site-packages/"
+. /miniconda3/etc/profile.d/conda.sh
 
 # jenv (Java)
 eval "$(jenv init -)"

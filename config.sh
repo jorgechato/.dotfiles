@@ -18,11 +18,9 @@ elif [ $OS == "mac" ]; then
     cp -f -R "$DOTHOME"/fortune/* /usr/local/Cellar/fortune/$fortuneV/share/games/fortunes/
 fi
 
-if [ $OS == "linux" ]; then
-    git config --global --unset-all core.editor
-    git config --unset-all core.editor
-    git config --global core.editor "mvim -f"
-fi
+git config --global --unset-all core.editor
+git config --unset-all core.editor
+git config --global core.editor "mvim -f"
 
 mkdir -p $HOME/.vim/tmp/backup
 mkdir -p $HOME/.vim/tmp/swap
