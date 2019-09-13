@@ -1,3 +1,5 @@
+zplug "~/.zsh", from:local
+
 if ! zplug check; then
     zplug install
 fi

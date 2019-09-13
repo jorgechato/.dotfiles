@@ -3,15 +3,15 @@ export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=23
 ZSH_THEME="hack"
 HIST_STAMPS="dd.mm.yyyy"
-DISABLE_CORRECTION=true						# Disable autocorrect
-ZSH_TMUX_AUTOSTART=true						# Tmux variable
-ZSH_TMUX_AUTOCONNECT=false				# Tmux variable
+DISABLE_CORRECTION=true    # Disable autocorrect
+ZSH_TMUX_AUTOSTART=true    # Tmux variable
+ZSH_TMUX_AUTOCONNECT=false # Tmux variable
 export HISTIGNORE="[ ]*"
 
 # Plugins
 plugins=(git last-working-dir wd osx iterm2)
-stty -ixon												# Disable ctrl+s
-export TERM="xterm-256color"			# terminator with 256 colors to vim
+stty -ixon # Disable ctrl+s
+export TERM="xterm-256color" # terminator with 256 colors to vim
 source $ZSH/oh-my-zsh.sh
 
 # Zplug
@@ -46,8 +46,8 @@ export GOPATH=$HOME/Projects/go
 export PATH="$PATH:$GOPATH/bin"
 
 # Python
-export PYTHONPATH="$PYTHONPATH:/miniconda3/lib/python3.7/site-packages/"
-. /miniconda3/etc/profile.d/conda.sh
+export PYTHONPATH="$PYTHONPATH:$HOME/miniconda3/lib/python3.7/site-packages/"
+. $HOME/miniconda3/etc/profile.d/conda.sh
 
 # jenv (Java)
 eval "$(jenv init -)"
@@ -58,8 +58,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # asdf virtual machine (ruby, node, elixir)
 . $HOME/.asdf/asdf.sh
