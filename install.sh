@@ -1,38 +1,7 @@
 #!/bin/bash
 
 
-if [ "$(uname)" == "Darwin" ]; then
-	OS="mac"
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-	OS="linux"
-else
-	OS=""
-fi
-
-DOTHOME="$HOME/.dotfiles"
-# Use colors, but only if connected to a terminal, and that terminal
-# supports them.
-if which tput >/dev/null 2>&1; then
-	ncolors=$(tput colors)
-fi
-if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
-	RED="$(tput setaf 1)"
-	GREEN="$(tput setaf 2)"
-	YELLOW="$(tput setaf 3)"
-	BLUE="$(tput setaf 4)"
-	BOLD="$(tput bold)"
-	NORMAL="$(tput sgr0)"
-else
-	RED=""
-	GREEN=""
-	YELLOW=""
-	BLUE=""
-	BOLD=""
-	NORMAL=""
-fi
-# Only enable exit-on-error after the non-critical colorization stuff,
-# which may fail on systems lacking tput or terminfo
-set -e
+. base.sh
 
 
 # @param {string} $1 - program to check
@@ -69,7 +38,7 @@ init_mac() {
 
 	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
 
-	INSTALL_LIST="zsh macvim git tree irssi nmap nvm jenv fortune kubectl the_silver_searcher"
+	INSTALL_LIST="awscli zsh macvim git tree irssi nmap nvm jenv fortune kubectl the_silver_searcher"
 	INSTALL_LIST_CASK="iterm2 java"
 
 	echo "Installing ($INSTALL_LIST)..."
@@ -79,7 +48,7 @@ init_mac() {
 
 	gitInstall
 
-	CHECK_LIST="zsh mvim git tree irssi nmap"
+	CHECK_LIST="zsh mvim git tree irssi nmap aws kubectl ag"
 
 	for item in $CHECK_LIST; do
 		checkInstall "$item"
@@ -107,66 +76,18 @@ init_linux() {
 	done
 }
 
-config() {
-	echo "System configuration..."
-
-	ln -f "$DOTHOME"/git/.gitconfig $HOME/.gitconfig
-
-	if [ $OS == "linux" ]; then
-		cp -f -R "$DOTHOME"/fortune/* /usr/share/games/fortunes/
-	elif [ $OS == "mac" ]; then
-		fortuneV=$(fortune -V 2>&1 | sed -n 2p | cut -d' ' -f 3)
-		cp -f -R "$DOTHOME"/fortune/* /usr/local/Cellar/fortune/$fortuneV/share/games/fortunes/
-	fi
-
-	if [ $OS == "linux" ]; then
-		git config --global --unset-all core.editor
-		git config --unset-all core.editor
-		git config --global core.editor "mvim -f"
-	fi
-
-	mkdir -p $HOME/.vim/tmp/backup
-	mkdir -p $HOME/.vim/tmp/swap
-	mkdir -p $HOME/.vim/tmp/undo
-	ln -f "$DOTHOME"/vim/vimrc $HOME/.vim/vimrc
-	ln -f $HOME/.vim/vimrc $HOME/.vimrc
-
-	if [ $OS == "linux" ]; then
-		mkdir -p $HOME/.config/terminator
-		ln -f "$DOTHOME"/terminator/config $HOME/.config/terminator/config
-
-		ln -f "$DOTHOME"/tmux/.tmux.conf $HOME/.tmux.conf
-	fi
-
-	mkdir -p $HOME/.irssi/config
-	ln -f "$DOTHOME"/irssi/config $HOME/.irssi/config
-	ln -f "$DOTHOME"/irssi/mrrobot.theme $HOME/.irssi/mrrobot.theme
-
-	mkdir -p $HOME/.zsh/
-	ln -f "$DOTHOME"/zsh/hack.zsh-theme $HOME/.oh-my-zsh/themes/hack.zsh-theme
-	ln -f "$DOTHOME"/zsh/pyzhon.zsh-theme $HOME/.oh-my-zsh/themes/pyzhon.zsh-theme
-	ln -f "$DOTHOME"/zsh/.zshrc $HOME/.zsh/.zshrc
-	ln -f $HOME/.zsh/.zshrc $HOME/.zshrc
-	ln -f "$DOTHOME"/zsh/.aliases $HOME/.zsh/.aliases
-	ln -f "$DOTHOME"/zsh/.zplug $HOME/.zsh/.zplug
-	ln -f "$DOTHOME"/zsh/.directory $HOME/.zsh/.directory
-
-	mkdir -p $HOME/Projects/go
-	mkdir -p $HOME/Maker
-}
-
 main() {
 	init
 
 	git clone https://github.com/jorgechato/.dotfiles.git "$DOTHOME"
 
-	config
+    . config.sh
 
 	printf "${GREEN}"
 	echo 'https://github.com/jorgechato/.dotfiles ....is now installed!'
 	echo ''
 	echo ''
-	echo 'p.s. Follow me at https://twitter.com/jorgechato.'
+	echo 'p.s. Follow me at https://jorgechato.com'
 	echo ''
 	printf "${NORMAL}"
 }
