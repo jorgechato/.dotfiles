@@ -104,6 +104,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'cjrh/vim-conda'
 Plug 'rizzatti/dash.vim'
 Plug 'mileszs/ack.vim'
+Plug 'terryma/vim-multiple-cursors'
 
 "syntax
 Plug 'vim-syntastic/syntastic'
@@ -114,6 +115,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'elzr/vim-json'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'Shutnik/jshint2.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'avakhov/vim-yaml'
@@ -123,6 +125,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'chr4/nginx.vim'
 Plug 'posva/vim-vue'
+Plug 'othree/html5.vim'
 Plug 'jparise/vim-graphql'
 Plug 'derekwyatt/vim-scala'
 
@@ -131,6 +134,9 @@ call plug#end()
 " }}}
 
 " Plugin settings --------------------------------------------------------- {{{
+" vue {{{
+au BufRead,BufNewFile *.vue set filetype=vue.html
+" }}}
 " swift {{{
 let g:syntastic_swift_swiftlint_use_defaults = 1
 " }}}
