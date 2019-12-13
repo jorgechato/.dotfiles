@@ -45,18 +45,18 @@ e(){
 	fi
 }
 awsf(){
+    FILTER="*"
 	if [ "$*" ]; then
-		aws ec2 describe-instances --filters "Name=tag:Name,Values=$@"  --query "Reservations[*].Instances[*].[InstanceId,Tags[?Key=='Name'].Value]" --output json
-	else
-		echo "ERROR: parameter <tag-regex> needed for searching instance"
+        FILTER="$@"
 	fi
+	aws ec2 describe-instances --filters "Name=tag:Name,Values=$FILTER"  --query "Reservations[*].Instances[*].{Name:Tags[?Key=='Name']|[0].Value,XInstance:InstanceId}" --output table
 }
 alias tf="terraform"
 alias k="kubectl"
 alias d=docker
 alias g=git
 alias o="open"
-alias awsl="aws ssm start-session --region eu-west-1 --target"
+alias awsl="aws ssm start-session --target"
 alias emacs="emacs -fs"
 alias killemacs="emacsclient -e '(kill-emacs)'"
 alias python=python3
