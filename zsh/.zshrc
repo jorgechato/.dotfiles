@@ -7,9 +7,10 @@ DISABLE_CORRECTION=true    # Disable autocorrect
 ZSH_TMUX_AUTOSTART=true    # Tmux variable
 ZSH_TMUX_AUTOCONNECT=false # Tmux variable
 export HISTIGNORE="[ ]*"
+export FZF_BASE=/usr/local/opt/fzf/install
 
 # Plugins
-plugins=(git last-working-dir wd osx iterm2)
+plugins=(git last-working-dir wd osx iterm2 fzf)
 stty -ixon # Disable ctrl+s
 export TERM="xterm-256color" # terminator with 256 colors to vim
 source $ZSH/oh-my-zsh.sh

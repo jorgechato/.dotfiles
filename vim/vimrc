@@ -50,7 +50,7 @@ set linebreak
 set nolist								" Change to list to enable listchars
 set pfn=:h8
 set penc="cp1252"
-let mapleader = " "
+" let mapleader = " "
 set wildignore+=*.pyc,*.swp,*.pdf,*.class
 let g:ctrlp_custom_ignore = {
     \ 'dir':  'out$\|\.git$\|\.data$\|bower_components$\|node_modules$\|vendor',
@@ -105,6 +105,7 @@ Plug 'cjrh/vim-conda'
 Plug 'rizzatti/dash.vim'
 Plug 'mileszs/ack.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'junegunn/fzf', {'do': { -> fzf#install()}}
 
 "syntax
 Plug 'vim-syntastic/syntastic'
@@ -298,6 +299,13 @@ nnoremap <leader>gm :Gmove<Space>
 nnoremap <leader>gb :Git branch<Space>
 nnoremap <leader>gsw :Git switch<Space>
 nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
+" fzf
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 " }}}
 
 " Fold -------------------------------------------------------------------- {{{
