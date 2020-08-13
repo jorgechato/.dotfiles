@@ -48,9 +48,9 @@ export GOPATH=$HOME/Projects/go
 export PATH="$PATH:$GOPATH/bin"
 
 # Python
-export PYTHONPATH="$PYTHONPATH:/miniconda/lib/python3.7/site-packages/"
+export PYTHONPATH="$PYTHONPATH:$HOME/miniconda/lib/python3.8/site-packages/"
 if [ -f "$HOME/miniconda/etc/profile.d/conda.sh" ]; then
-    . "$HOME/miniconda/etc/profile.d/conda.sh"
+# . "$HOME/miniconda/etc/profile.d/conda.sh"  # commented out by conda initialize
 fi
 
 # jenv (Java)
@@ -66,15 +66,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # asdf virtual machine (ruby, node, elixir)
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# . $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
 
 export GPG_TTY=$(tty)
 
 # Run on startup terminal
-if [[ ! -e "/root/.automatic_start_occurred" ]]; then
-	fortune vN4
-fi
+# if [[ ! -e "/root/.automatic_start_occurred" ]]; then
+	# fortune vN4
+# fi
 # -------------------------------------------------------------------------
 
 # added by travis gem
