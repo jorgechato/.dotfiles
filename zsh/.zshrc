@@ -25,7 +25,6 @@ fi
 
 # User config -------------------------------------------------------------
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin:/usr/local/sbin"
-export PATH="$PATH:$HOME/miniconda/bin"
 export PATH="$PATH:$HOME/.jenv/bin"
 export PATH="$PATH:$HOME/kali/metasploit-framework"
 export PATH="$PATH:$HOME/kali/beef"
@@ -49,8 +48,12 @@ export PATH="$PATH:$GOPATH/bin"
 
 # Python
 export PYTHONPATH="$PYTHONPATH:$HOME/miniconda/lib/python3.8/site-packages/"
+export CONDA_AUTO_ACTIVATE_BASE=false
+
 if [ -f "$HOME/miniconda/etc/profile.d/conda.sh" ]; then
-# . "$HOME/miniconda/etc/profile.d/conda.sh"  # commented out by conda initialize
+    . "$HOME/miniconda/etc/profile.d/conda.sh"
+else
+    export PATH="$HOME/miniconda/bin:$PATH"
 fi
 
 # jenv (Java)
