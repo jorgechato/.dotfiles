@@ -32,9 +32,9 @@ vs(){
 }
 v(){
 	if [ "$*" ]; then
-		mvim "$*"
+		vimr "$*"
 	else
-		mvim .
+		vimr .
 	fi
 	}
 e(){
@@ -68,22 +68,22 @@ alias py=python3
 alias pyclean="rm -rf **/*.pyc"
 #alias rm="rm -i"
 alias tweet="rainbowstream"
-alias zshconfig="mvim ~/.zshrc"
+alias zshconfig="vimr ~/.zshrc"
 alias vimcolor="cd ~/.vim/color"
-alias vimconfig="mvim ~/.vimrc"
-alias ohmyzsh="mvim ~/.oh-my-zsh"
+alias vimconfig="vimr ~/.vimrc"
+alias ohmyzsh="vimr ~/.oh-my-zsh"
 alias sourcelist="v /etc/apt/sources.list"
 alias links="links2"
 alias ndate="(echo '日本国' && TZ='Japan' date)"
 alias herokulog="heroku logs --tail"
-alias terminatorconfig="mvim ~/.config/terminator/config"
+alias terminatorconfig="vimr ~/.config/terminator/config"
 alias encoder="java -jar ~/.pentest/rubber-ducky/Encoder/encoder.jar"
-alias hosts="mvim /etc/hosts"
+alias hosts="vimr /etc/hosts"
 alias ly="teamocil"
 alias n4="fortune vN4 | cowsay -f three-eyes -e -- && echo -e '\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n'"
-alias fn="sudo mvim /sys/module/hid_apple/parameters/fnmode"
+alias fn="sudo vimr /sys/module/hid_apple/parameters/fnmode"
 #alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
-alias aliases="mvim ~/.zsh/.aliases"
+alias aliases="vimr ~/.zsh/.aliases"
 alias cleanhistory="cat /dev/null > ~/.zsh_history"
 alias cuda=conda
 # Sudo {{{

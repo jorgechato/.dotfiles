@@ -22,7 +22,9 @@ checkInstall() {
 gitInstall() {
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 }
 
 init() {
@@ -38,8 +40,8 @@ init_mac() {
 
 	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
 
-	INSTALL_LIST="awscli zsh macvim git tree irssi nmap nvm jenv fortune kubectl the_silver_searcher dart fzf"
-	INSTALL_LIST_CASK="iterm2 java"
+	INSTALL_LIST="awscli zsh neovim git tree irssi nmap nvm jenv fortune kubectl the_silver_searcher dart fzf"
+	INSTALL_LIST_CASK="iterm2 java vimr"
 
 	echo "Installing ($INSTALL_LIST)..."
 
@@ -50,7 +52,7 @@ init_mac() {
 
 	gitInstall
 
-	CHECK_LIST="zsh mvim git tree irssi nmap aws kubectl ag dart"
+	CHECK_LIST="zsh nvim vimr git tree irssi nmap aws kubectl ag dart"
 
 	for item in $CHECK_LIST; do
 		checkInstall "$item"
