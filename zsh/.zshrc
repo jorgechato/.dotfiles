@@ -26,13 +26,6 @@ fi
 # User config -------------------------------------------------------------
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin:/usr/local/sbin"
 export PATH="$PATH:$HOME/.jenv/bin"
-export PATH="$PATH:$HOME/kali/metasploit-framework"
-export PATH="$PATH:$HOME/kali/beef"
-export PATH="$PATH:$HOME/kali/set"
-export PATH="$PATH:$HOME/kali/sqlmap-dev"
-export PATH="$PATH:$HOME/kali/john/run"
-export PATH="$PATH:$HOME/kali/encoder"
-export PATH="$PATH:$HOME/Github/darknet"
 export PATH="$PATH:$HOME/Main/tools/flutter/bin"
 
 export EDITOR="/usr/local/bin/mvim"
@@ -45,6 +38,9 @@ fi
 # GO path
 export GOPATH=$HOME/Projects/go
 export PATH="$PATH:$GOPATH/bin"
+
+# Rust
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Python
 export PYTHONPATH="$PYTHONPATH:$HOME/miniconda/lib/python3.8/site-packages/"
