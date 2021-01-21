@@ -53,7 +53,7 @@ set penc="cp1252"
 " let mapleader = " "
 set wildignore+=*.pyc,*.swp,*.pdf,*.class
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  'out$\|\.git$\|\.data$\|bower_components$\|node_modules$\|vendor',
+    \ 'dir':  'out$\|\.git$\|\.data$\|bower_components$\|node_modules$\|vendor$\|target',
 	\ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\DS_Store$',
 	\ }
 
@@ -147,6 +147,9 @@ call plug#end()
 " vue {{{
 au BufRead,BufNewFile *.vue set filetype=vue.html
 " }}}
+" Rust {{{
+let g:rustfmt_autosave = 1
+" }}}
 " swift {{{
 let g:syntastic_swift_swiftlint_use_defaults = 1
 " }}}
@@ -182,11 +185,10 @@ let g:airline#extensions#tmuxline#enabled = 0
 if has("gui_running")
 	let g:airline_theme='lucius'
 else
-	let g:airline_theme='term'
-	if !exists('g:airline_symbols')
-		let g:airline_symbols = {}
-	endif
-	let g:airline_powerline_fonts = 1
+	let g:airline_theme='lucius'
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
 endif
 " }}}
 " Latex {{{
@@ -232,11 +234,12 @@ endfunction
 " }}}
 
 " Custom interface -------------------------------------------------------- {{{
-set cursorline
-set hlsearch
-
 " colorscheme blacktie
 colorscheme github
+
+set cursorline
+hi CursorLine cterm=None term=None
+set hlsearch
 
 "interface {{{
 hi Search cterm=underline
