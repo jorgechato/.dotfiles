@@ -40,19 +40,19 @@ init_mac() {
 
 	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
 
-	INSTALL_LIST="awscli zsh neovim git tree irssi nmap nvm jenv fortune kubectl the_silver_searcher dart fzf rustup-init"
-	INSTALL_LIST_CASK="iterm2 java vimr"
+	INSTALL_LIST="awscli zsh neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv"
+	INSTALL_LIST_CASK="iterm2 java vimr jetbrains-toolbox"
 
 	echo "Installing ($INSTALL_LIST)..."
 
     brew tab aws/tap
     brew tab dart-lang/dart
 	brew install $INSTALL_LIST
-	brew cask install $INSTALL_LIST_CASK
+	brew install --cask $INSTALL_LIST_CASK
 
 	gitInstall
 
-	CHECK_LIST="zsh nvim vimr git tree irssi nmap aws kubectl ag dart fzf rustup-init"
+	CHECK_LIST="zsh nvim vimr git tree nmap aws kubectl ag fzf tfenv"
 
 	for item in $CHECK_LIST; do
 		checkInstall "$item"

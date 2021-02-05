@@ -27,6 +27,7 @@ mkdir -p $HOME/.vim/tmp/swap
 mkdir -p $HOME/.vim/tmp/undo
 ln -f "$DOTHOME"/vim/vimrc $HOME/.vim/vimrc
 ln -f $HOME/.vim/vimrc $HOME/.vimrc
+ln -f "$DOTHOME"/vim/ideavimrc $HOME/.ideavimrc
 
 mkdir -p $HOME/.config/nvim
 ln -f "$DOTHOME"/nvim/init.vim $HOME/.config/nvim/init.vim
