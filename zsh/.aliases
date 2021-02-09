@@ -14,22 +14,6 @@ play(){
 	fi
 }
 # }}}
-# PSQL {{{
-pypsql(){
-	if [ "$*" ]; then
-		psql -U "$1" -d "$2" -h localhost
-	else
-		echo 'ERROR:: You forgot add the db name in psql -U <<user name>> -d <<database name>> -h localhost'
-	fi
-}
-# }}}
-vs(){
-	if [ "$*" ]; then
-		code "$*"
-	else
-		code .
-	fi
-}
 v(){
 	if [ "$*" ]; then
 		vimr "$*"
@@ -37,13 +21,6 @@ v(){
 		vimr .
 	fi
 	}
-e(){
-	if [ "$*" ]; then
-		emacsclient -t -c -a "" "$*"
-	else
-		emacsclient -t -c -a "" .
-	fi
-}
 awsf(){
     FILTER="*"
 	if [ "$*" ]; then
@@ -51,14 +28,13 @@ awsf(){
 	fi
 	aws ec2 describe-instances --filters "Name=tag:Name,Values=$FILTER"  --query "Reservations[*].Instances[*].{Name:Tags[?Key=='Name']|[0].Value,XInstance:InstanceId}" --output table
 }
+alias awsl="aws ssm start-session --target"
+alias awsp="aws_profiles"
 alias tf="terraform"
 alias k="kubectl"
 alias d=docker
 alias g=git
 alias o="open"
-alias awsl="aws ssm start-session --target"
-alias emacs="emacs -fs"
-alias killemacs="emacsclient -e '(kill-emacs)'"
 alias python=python3
 alias ssh-tor="torsocks ssh"
 # alias irssi='TERM=screen-256color torsocks irssi'
@@ -66,7 +42,6 @@ alias apt="sudo apt-get"
 alias gip="ip route"
 alias py=python3
 alias pyclean="rm -rf **/*.pyc"
-#alias rm="rm -i"
 alias tweet="rainbowstream"
 alias zshconfig="vimr ~/.zshrc"
 alias vimcolor="cd ~/.vim/color"
@@ -74,15 +49,11 @@ alias vimconfig="vimr ~/.vimrc"
 alias ohmyzsh="vimr ~/.oh-my-zsh"
 alias sourcelist="v /etc/apt/sources.list"
 alias links="links2"
-alias ndate="(echo '日本国' && TZ='Japan' date)"
-alias herokulog="heroku logs --tail"
 alias terminatorconfig="vimr ~/.config/terminator/config"
-alias encoder="java -jar ~/.pentest/rubber-ducky/Encoder/encoder.jar"
 alias hosts="vimr /etc/hosts"
 alias ly="teamocil"
 alias n4="fortune vN4 | cowsay -f three-eyes -e -- && echo -e '\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n'"
 alias fn="sudo vimr /sys/module/hid_apple/parameters/fnmode"
-#alias two="xrandr --listproviders && xrandr --setprovideroutputsource 1 0 && xrandr --setprovideroutputsource 2 0"
 alias aliases="vimr ~/.zsh/.aliases"
 alias cleanhistory="cat /dev/null > ~/.zsh_history"
 alias cuda=conda
