@@ -40,7 +40,7 @@ init_mac() {
 
 	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
 
-	INSTALL_LIST="awscli zsh neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv"
+	INSTALL_LIST="awscli zsh neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv pyenv pyenv-virtualenv"
 	INSTALL_LIST_CASK="iterm2 java vimr jetbrains-toolbox"
 
 	echo "Installing ($INSTALL_LIST)..."
@@ -52,7 +52,7 @@ init_mac() {
 
 	gitInstall
 
-	CHECK_LIST="zsh nvim vimr git tree nmap aws kubectl ag fzf tfenv"
+	CHECK_LIST="zsh nvim vimr git tree nmap aws kubectl ag fzf tfenv pyenv"
 
 	for item in $CHECK_LIST; do
 		checkInstall "$item"

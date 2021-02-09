@@ -10,7 +10,7 @@ export HISTIGNORE="[ ]*"
 export FZF_BASE=/usr/local/opt/fzf/install
 
 # Plugins
-plugins=(git last-working-dir wd osx iterm2 fzf)
+plugins=(git last-working-dir wd osx iterm2 fzf aws)
 stty -ixon # Disable ctrl+s
 export TERM="xterm-256color" # terminator with 256 colors to vim
 source $ZSH/oh-my-zsh.sh
@@ -43,6 +43,7 @@ export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 # Python
+# # Conda
 export PYTHONPATH="$PYTHONPATH:$HOME/miniconda/lib/python3.8/site-packages/"
 export CONDA_AUTO_ACTIVATE_BASE=false
 
@@ -51,6 +52,14 @@ if [ -f "$HOME/miniconda/etc/profile.d/conda.sh" ]; then
 else
     export PATH="$HOME/miniconda/bin:$PATH"
 fi
+
+# # Pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
 # jenv (Java)
 eval "$(jenv init -)"
