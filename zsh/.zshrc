@@ -44,13 +44,13 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 # Python
 # # Conda
-export PYTHONPATH="$PYTHONPATH:$HOME/miniconda/lib/python3.8/site-packages/"
+export PYTHONPATH="$PYTHONPATH:$HOME/miniconda3/lib/python3.8/site-packages/"
 export CONDA_AUTO_ACTIVATE_BASE=false
 
-if [ -f "$HOME/miniconda/etc/profile.d/conda.sh" ]; then
-    . "$HOME/miniconda/etc/profile.d/conda.sh"
+if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "$HOME/miniconda3/etc/profile.d/conda.sh"
 else
-    export PATH="$HOME/miniconda/bin:$PATH"
+    export PATH="$HOME/miniconda3/bin:$PATH"
 fi
 
 # # Pyenv
@@ -58,9 +58,10 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
-
+# TODO: uncomment on python errors in the installation with pyenv
+# export CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
+# export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
 # jenv (Java)
 eval "$(jenv init -)"
 

@@ -33,6 +33,7 @@ alias awsp="aws_profiles"
 alias tf="terraform"
 alias k="kubectl"
 alias d=docker
+alias dc=docker-compose
 alias g=git
 alias o="open"
 alias python=python3
