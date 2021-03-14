@@ -40,7 +40,7 @@ init_mac() {
 
 	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
 
-	INSTALL_LIST="awscli zsh neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv pyenv pyenv-virtualenv"
+	INSTALL_LIST="awscli zsh neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv pyenv poetry"
 	INSTALL_LIST_CASK="iterm2 java vimr jetbrains-toolbox miniconda"
 
 	echo "Installing ($INSTALL_LIST)..."
