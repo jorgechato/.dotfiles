@@ -5,3 +5,4 @@ if ! zplug check; then
 fi
 
 zplug load
+zplug "darvid/zsh-poetry"

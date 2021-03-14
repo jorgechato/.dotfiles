@@ -57,11 +57,7 @@ fi
 export PATH="$HOME/.pyenv/bin:$PATH"
 
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
-# TODO: uncomment on python errors in the installation with pyenv
-# export CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
-# export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
 # jenv (Java)
 eval "$(jenv init -)"
 
@@ -88,3 +84,6 @@ export GPG_TTY=$(tty)
 
 # added by travis gem
 [ -f /Users/jorge/.travis/travis.sh ] && source /Users/jorge/.travis/travis.sh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
