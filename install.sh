@@ -38,21 +38,20 @@ init() {
 init_mac() {
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
 
-	INSTALL_LIST="awscli zsh neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv pyenv poetry"
-	INSTALL_LIST_CASK="iterm2 java vimr jetbrains-toolbox miniconda"
+	INSTALL_LIST="zplug awscli zsh neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv pyenv poetry bat"
+	INSTALL_LIST_CASK="iterm2 java vimr jetbrains-toolbox miniconda insomnia"
 
 	echo "Installing ($INSTALL_LIST)..."
 
-    brew tab aws/tap
-    brew tab dart-lang/dart
+    brew tap aws/tap
+    brew tap dart-lang/dart
 	brew install $INSTALL_LIST
 	brew install --cask $INSTALL_LIST_CASK
 
 	gitInstall
 
-	CHECK_LIST="zsh nvim vimr git tree nmap aws kubectl ag fzf tfenv pyenv"
+	CHECK_LIST="zsh nvim vimr git tree nmap aws kubectl ag fzf tfenv pyenv poetry"
 
 	for item in $CHECK_LIST; do
 		checkInstall "$item"
