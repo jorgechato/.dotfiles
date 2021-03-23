@@ -52,6 +52,8 @@ ln -f "$DOTHOME"/zsh/.aliases $HOME/.zsh/.aliases
 ln -f "$DOTHOME"/zsh/.zplug $HOME/.zsh/.zplug
 ln -f "$DOTHOME"/zsh/.directory $HOME/.zsh/.directory
 
+ln -f "$DOTHOME"/.editorconfig $HOME/.editorconfig
+
 mkdir -p $HOME/Projects
 mkdir -p $HOME/Maker
 
