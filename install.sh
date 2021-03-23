@@ -39,7 +39,7 @@ init_mac() {
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
-	INSTALL_LIST="zplug awscli zsh neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv pyenv poetry bat"
+	INSTALL_LIST="awscli zsh zplug neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv pyenv poetry bat httpie grex gh"
 	INSTALL_LIST_CASK="iterm2 java vimr jetbrains-toolbox miniconda insomnia"
 
 	echo "Installing ($INSTALL_LIST)..."
@@ -51,7 +51,7 @@ init_mac() {
 
 	gitInstall
 
-	CHECK_LIST="zsh nvim vimr git tree nmap aws kubectl ag fzf tfenv pyenv poetry"
+	CHECK_LIST="zsh zplug nvim vimr git tree nmap aws kubectl ag fzf tfenv pyenv poetry bat http grex gh"
 
 	for item in $CHECK_LIST; do
 		checkInstall "$item"
