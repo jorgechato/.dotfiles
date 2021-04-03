@@ -8,6 +8,8 @@ ZSH_TMUX_AUTOSTART=true    # Tmux variable
 ZSH_TMUX_AUTOCONNECT=false # Tmux variable
 export HISTIGNORE="[ ]*"
 export FZF_BASE=/usr/local/opt/fzf/install
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Plugins
 plugins=(git last-working-dir wd osx iterm2 fzf aws)
@@ -19,7 +21,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zplug/init.zsh
 
 if [ -e "$HOME/.zsh/.zplug" ]; then
-	source "$HOME/.zsh/.zplug"
+    source "$HOME/.zsh/.zplug"
 fi
 # -------------------------------------------------------------------------
 
@@ -32,7 +34,7 @@ export EDITOR="/usr/local/bin/nvim"
 
 # Aliases
 if [ -e "$HOME/.zsh/.aliases" ]; then
-	source "$HOME/.zsh/.aliases"
+    source "$HOME/.zsh/.aliases"
 fi
 
 # GO path
@@ -64,7 +66,7 @@ export GPG_TTY=$(tty)
 
 # Run on startup terminal
 if [[ ! -e "/root/.automatic_start_occurred" ]]; then
-	fortune vN4
+    fortune vN4
 fi
 # -------------------------------------------------------------------------
 
