@@ -20,14 +20,16 @@ fi
 
 git config --global --unset-all core.editor
 git config --unset-all core.editor
-git config --global core.editor "vimr -f"
+git config --global core.editor "nvim -f"
 
 mkdir -p $HOME/.vim/tmp/backup
 mkdir -p $HOME/.vim/tmp/swap
 mkdir -p $HOME/.vim/tmp/undo
+mkdir -p $HOME/.vim/core
 ln -f "$DOTHOME"/vim/vimrc $HOME/.vim/vimrc
 ln -f $HOME/.vim/vimrc $HOME/.vimrc
 ln -f "$DOTHOME"/vim/ideavimrc $HOME/.ideavimrc
+ln -f "$DOTHOME"/vim/core/* $HOME/.vim/core
 
 mkdir -p $HOME/.config/nvim
 ln -f "$DOTHOME"/nvim/init.vim $HOME/.config/nvim/init.vim
