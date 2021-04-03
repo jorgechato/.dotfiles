@@ -16,9 +16,9 @@ play(){
 # }}}
 v(){
 	if [ "$*" ]; then
-		vimr "$*"
+		nvim "$*"
 	else
-		vimr .
+		nvim .
 	fi
 	}
 awsf(){
@@ -45,18 +45,18 @@ alias gip="ip route"
 alias py=python3
 alias pyclean="rm -rf **/*.pyc"
 alias tweet="rainbowstream"
-alias zshconfig="vimr ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 alias vimcolor="cd ~/.vim/color"
-alias vimconfig="vimr ~/.vimrc"
-alias ohmyzsh="vimr ~/.oh-my-zsh"
+alias vimconfig="nvim ~/.vimrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias sourcelist="v /etc/apt/sources.list"
 alias links="links2"
-alias terminatorconfig="vimr ~/.config/terminator/config"
-alias hosts="vimr /etc/hosts"
+alias terminatorconfig="nvim ~/.config/terminator/config"
+alias hosts="nvim /etc/hosts"
 alias ly="teamocil"
 alias n4="fortune vN4 | cowsay -f three-eyes -e -- && echo -e '\e[33m['https://quizlet.com/106562829/vocabulario-noken-4-hiraganakanjiespanol-flash-cards/']\e[0m\n'"
-alias fn="sudo vimr /sys/module/hid_apple/parameters/fnmode"
-alias aliases="vimr ~/.zsh/.aliases"
+alias fn="sudo nvim /sys/module/hid_apple/parameters/fnmode"
+alias aliases="nvim ~/.zsh/.aliases"
 alias cleanhistory="cat /dev/null > ~/.zsh_history"
 alias cuda=conda
 # Sudo {{{

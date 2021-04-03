@@ -24,11 +24,11 @@ fi
 # -------------------------------------------------------------------------
 
 # User config -------------------------------------------------------------
+export DOTHOME="$HOME/.dotfiles"
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin:/usr/local/sbin"
 export PATH="$PATH:$HOME/.jenv/bin"
-export PATH="$PATH:$HOME/Main/tools/flutter/bin"
 
-export EDITOR="/usr/local/bin/mvim"
+export EDITOR="/usr/local/bin/nvim"
 
 # Aliases
 if [ -e "$HOME/.zsh/.aliases" ]; then
@@ -43,16 +43,6 @@ export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 # Python
-# # Conda
-export PYTHONPATH="$PYTHONPATH:$HOME/miniconda3/lib/python3.8/site-packages/"
-export CONDA_AUTO_ACTIVATE_BASE=false
-
-if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-    . "$HOME/miniconda3/etc/profile.d/conda.sh"
-else
-    export PATH="$HOME/miniconda3/bin:$PATH"
-fi
-
 # # Pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 
@@ -70,20 +60,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-# asdf virtual machine (ruby, node, elixir)
-# . $HOME/.asdf/asdf.sh
-# . $HOME/.asdf/completions/asdf.bash
-
 export GPG_TTY=$(tty)
 
 # Run on startup terminal
-# if [[ ! -e "/root/.automatic_start_occurred" ]]; then
-	# fortune vN4
-# fi
+if [[ ! -e "/root/.automatic_start_occurred" ]]; then
+	fortune vN4
+fi
 # -------------------------------------------------------------------------
 
 # added by travis gem
-[ -f /Users/jorge/.travis/travis.sh ] && source /Users/jorge/.travis/travis.sh
+# [ -f /Users/jorge/.travis/travis.sh ] && source /Users/jorge/.travis/travis.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
