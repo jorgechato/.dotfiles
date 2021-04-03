@@ -1,8 +1,57 @@
+"*****************************************************************************
+"" Pre Config
+"*****************************************************************************
+" snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsEditSplit="vertical"
+
+" Tagbar
+nmap <silent> <F4> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
+" Disable visualbell
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+    autocmd GUIEnter * set visualbell t_vb=
+endif
+
+"" Copy/Paste/Cut
+if has('unnamedplus')
+    set clipboard=unnamed,unnamedplus
+endif
+
+"" fzf.vim
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+
+" The Silver Searcher
+if executable('ag')
+    let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+    set grepprg=ag\ --nogroup\ --nocolor
+endif
+let g:ackprg = 'ag --vimgrep'
+
+" ripgrep
+if executable('rg')
+    let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+    set grepprg=rg\ --vimgrep
+    command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+endif
+"*****************************************************************************
+"" Base Config
+"*****************************************************************************
 " bootstrap
 let g:vim_bootstrap_langs = "go,javascript,python"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 let g:vim_bootstrap_theme = "github"
 let g:vim_bootstrap_frams = "vuejs"
+
+"Navigation
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
 
 " coc
 "autocmd FileType python let b:coc_suggest_disable = 1
@@ -71,7 +120,6 @@ let g:ale_linters = {
             \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_autoimport = 1
-"let g:ale_fixers = {'python': ['black', 'isort']}
 
 " go
 " vim-go
