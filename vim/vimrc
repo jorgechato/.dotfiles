@@ -20,8 +20,8 @@ set title
 set ruler                               " Show line and column number
 set number                              " Show linenumbers
 
-set textwidth=80
-set colorcolumn=+1                      " Display margin at 81
+set textwidth=119
+set colorcolumn=+1                      " Display margin at 120
 set linebreak
 set showbreak=↪
 set wrap								" long text with breackline
