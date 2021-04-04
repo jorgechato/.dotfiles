@@ -3,9 +3,10 @@ nmap <C-_> <Plug>NERDCommenterToggle<CR>
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 imap <C-_> <esc><Plug>NERDCommenterToggle<CR>a
 " COC base maping
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gD <Plug>(coc-implementation)
+nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gd <Plug>(coc-definition)
 " Autoindent
 map <leader>L mzgg=G'zmz<CR>
 vmap <leader>L mzgg=G'zmz<CR>gv
