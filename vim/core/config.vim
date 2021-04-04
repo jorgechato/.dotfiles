@@ -50,7 +50,7 @@ let g:vim_bootstrap_theme = "github"
 let g:vim_bootstrap_frams = "vuejs"
 
 "Navigation
-let g:netrw_liststyle = 3
+"let g:netrw_liststyle = 3   " Nerdtree like look
 let g:netrw_banner = 0
 
 " coc
