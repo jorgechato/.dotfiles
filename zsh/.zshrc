@@ -10,11 +10,9 @@ export HISTIGNORE="[ ]*"
 export FZF_BASE=/usr/local/opt/fzf/install
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-
-# Plugins
-plugins=(git last-working-dir wd osx iterm2 fzf aws)
 stty -ixon # Disable ctrl+s
-export TERM="xterm-256color" # terminator with 256 colors to vim
+export TERM="screen-256color" # terminator with 256 colors to vim
+
 source $ZSH/oh-my-zsh.sh
 
 # Zplug
@@ -23,7 +21,6 @@ source $HOME/.zplug/init.zsh
 if [ -e "$HOME/.zsh/.zplug" ]; then
     source "$HOME/.zsh/.zplug"
 fi
-# -------------------------------------------------------------------------
 
 # User config -------------------------------------------------------------
 export DOTHOME="$HOME/.dotfiles"

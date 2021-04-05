@@ -4,5 +4,22 @@ if ! zplug check; then
     zplug install
 fi
 
-zplug load
 zplug "darvid/zsh-poetry"
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions", defer:3
+zplug "jeffreytse/zsh-vi-mode", defer:3
+
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/last-working-dir", from:oh-my-zsh
+zplug "plugins/wd", from:oh-my-zsh
+zplug "plugins/osx", from:oh-my-zsh
+zplug "plugins/iterm2", from:oh-my-zsh
+zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/aws", from:oh-my-zsh
+zplug "plugins/golang", from:oh-my-zsh
+
+zplug load
+
+
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
