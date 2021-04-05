@@ -10,6 +10,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions", defer:3
 zplug "jeffreytse/zsh-vi-mode", defer:3
 
+zplug "plugins/direnv", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/last-working-dir", from:oh-my-zsh
 zplug "plugins/wd", from:oh-my-zsh
@@ -22,4 +23,9 @@ zplug "plugins/golang", from:oh-my-zsh
 zplug load
 
 
+# Plugin config -------------------------------------------------------------
+# fzf hotkeys over vi-mode
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+
+# Disable log on direnv
+export DIRENV_LOG_FORMAT=""
