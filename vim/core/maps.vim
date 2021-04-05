@@ -8,9 +8,9 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gd <Plug>(coc-definition)
 " Autoindent
-map <leader>L mzgg=G'zmz<CR>
+map <leader>L mzgg=G'zmz<CR> <Bar> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
 vmap <leader>L mzgg=G'zmz<CR>gv
-imap <leader>L <esc>mzgg=G'zmz<CR>a
+imap <leader>L <esc>:call CocAction('runCommand', 'editor.action.organizeImport') <Bar> <esc>mzgg=G'zmz<CR>a
 " Escape terminal mode with <ESC>
 tnoremap <ESC> <C-\><C-n>
 " Ack
