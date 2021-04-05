@@ -15,6 +15,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdcommenter'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
+Plug 'tpope/vim-dotenv'
 
 " Autocomplete
 Plug 'sirver/ultisnips'
