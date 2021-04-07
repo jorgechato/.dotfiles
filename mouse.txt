@@ -1,9 +1,0 @@
-I just edited the file /usr/share/X11/xorg.conf.d/40-libinput.conf and added the Option "NaturalScrolling" "true" entry in the first section:
-
-Section "InputClass"
-Identifier "libinput pointer catchall"
-MatchIsPointer "on"
-MatchDevicePath "/dev/input/event*"
-Driver "libinput"
-Option "NaturalScrolling" "true"
-EndSection

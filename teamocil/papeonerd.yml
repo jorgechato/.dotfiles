@@ -1,9 +1,0 @@
-name: Doctor
-windows:
-  - name: papeonerd
-    root: ~/Github/papeonerd
-    layout: main-vertical
-    panes:
-      - commands:
-        - workon papeonerd
-        - v
