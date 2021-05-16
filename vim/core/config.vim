@@ -218,6 +218,9 @@ let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#smart_auto_mappings = 0
 
+" Kite
+let g:kite_supported_languages = ['python', 'javascript', 'go']
+
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
 

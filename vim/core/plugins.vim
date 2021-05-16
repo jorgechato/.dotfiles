@@ -16,6 +16,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdcommenter'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-dotenv'
+Plug 'tpope/vim-abolish'
 
 " Autocomplete
 Plug 'sirver/ultisnips'
@@ -53,6 +54,10 @@ Plug 'vim-airline/vim-airline-themes'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
+" ML
+" " Kite Bundle
+Plug 'kiteco/vim-plugin'
+
 " go
 "" Go Lang Bundle
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
