@@ -19,6 +19,7 @@ zplug "plugins/iterm2", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/aws", from:oh-my-zsh
 zplug "plugins/golang", from:oh-my-zsh
+zplug "plugins/z", from:oh-my-zsh
 
 zplug load
 
