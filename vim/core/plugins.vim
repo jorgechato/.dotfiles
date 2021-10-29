@@ -7,6 +7,7 @@ call plug#begin(expand('$HOME/.vim/plugged'))
 Plug 'cormacrelf/vim-colors-github'
 
 " IDE
+Plug 'github/copilot.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -68,7 +69,7 @@ Plug 'jelera/vim-javascript-syntax'
 
 " python
 "" Python Bundle
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 " vuejs
