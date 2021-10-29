@@ -43,9 +43,10 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 # Python
 # # Pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 # jenv (Java)
 eval "$(jenv init -)"
