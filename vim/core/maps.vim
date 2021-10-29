@@ -34,7 +34,7 @@ vmap <Leader>t= :Tabularize /=<CR>
 nmap <Leader>t: :Tabularize /:\zs<CR>
 vmap <Leader>t: :Tabularize /:\zs<CR>
 " fugitive git bindings
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>g :Git<CR>
 nnoremap <leader>gd :Gdiff<Space>
 nnoremap <leader>ge :Gedit<Space>
 nnoremap <leader>gp :Git push origin <Space>
