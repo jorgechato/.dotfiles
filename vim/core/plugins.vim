@@ -5,6 +5,7 @@ call plug#begin(expand('$HOME/.vim/plugged'))
 "*****************************************************************************
 " Themes
 Plug 'cormacrelf/vim-colors-github'
+Plug 'projekt0n/github-nvim-theme'
 
 " IDE
 Plug 'github/copilot.vim'
