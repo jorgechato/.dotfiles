@@ -39,6 +39,8 @@ alias g=git
 alias o="open"
 alias python=python3
 alias ssh-tor="torsocks ssh"
+alias parquet="parquet-tools"
+alias cc="clickhouse-client"
 # alias irssi='TERM=screen-256color torsocks irssi'
 alias apt="sudo apt-get"
 alias gip="ip route"
