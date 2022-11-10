@@ -12,6 +12,9 @@
 [alias]
     ada = add -A
     sb = switch
+    sbd = switch develop
+    sbm = switch master
+    sbin = switch main
     sbc = switch -c
     co = checkout
     cob = checkout -b
@@ -29,8 +32,9 @@
     l1 = log --oneline
     puta = push --tags
     po = pull origin
-    pod = pull origin develop
-    pom = pull origin master
+    putod = pull origin develop
+    putom = pull origin master
+    puton = pull origin main
     pob = "!f() { git pull origin `git rev-parse --abbrev-ref HEAD`; }; f"
     pu = push origin
     pub = "!f() { git push origin `git rev-parse --abbrev-ref HEAD` $@; }; f"
@@ -38,6 +42,7 @@
     pur = "!f() { git pub; git pr; }; f"
     pussy = push origin develop
     pushy = push origin master
+    putin = push origin main
     rmv = remote -v
     taga = "!f() { git tag -a $1 -m '$1' $2; }; f"
     tal = tag -l
