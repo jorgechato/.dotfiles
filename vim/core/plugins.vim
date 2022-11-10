@@ -19,6 +19,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-abolish'
+Plug 'ap/vim-css-color'
 
 " Autocomplete
 Plug 'sirver/ultisnips'
