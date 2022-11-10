@@ -41,6 +41,10 @@ alias python=python3
 alias ssh-tor="torsocks ssh"
 alias parquet="parquet-tools"
 alias cc="clickhouse-client"
+alias ccpro="clickhouse-client -h clickhouse.production.virtusize.jp --port 9000"
+alias ccpro1="clickhouse-client -h ec2-54-250-36-125.ap-northeast-1.compute.amazonaws.com --port 9000"
+alias ccpro2="clickhouse-client -h ec2-18-183-165-44.ap-northeast-1.compute.amazonaws.com --port 9000"
+alias ccstg="clickhouse-client -h clickhouse.staging.virtusize.jp --port 9000"
 # alias irssi='TERM=screen-256color torsocks irssi'
 alias apt="sudo apt-get"
 alias gip="ip route"
