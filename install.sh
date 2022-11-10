@@ -21,6 +21,7 @@ checkInstall() {
 
 gitInstall() {
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -39,7 +40,7 @@ init_mac() {
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
-	INSTALL_LIST="awscli zsh zplug neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv pyenv poetry bat httpie grex gh direnv z"
+	INSTALL_LIST="awscli fish zsh zplug neovim git tree nmap nvm jenv fortune kubectl the_silver_searcher fzf tfenv pyenv poetry bat httpie grex gh direnv z"
 	INSTALL_LIST_CASK="iterm2 java vimr jetbrains-toolbox miniconda insomnia"
 
 	echo "Installing ($INSTALL_LIST)..."
@@ -51,7 +52,7 @@ init_mac() {
 
 	gitInstall
 
-	CHECK_LIST="zsh zplug nvim vimr git tree nmap aws kubectl ag fzf tfenv pyenv poetry bat http grex gh direnv z"
+	CHECK_LIST="fish zsh zplug nvim vimr git tree nmap aws kubectl ag fzf tfenv pyenv poetry bat http grex gh direnv z"
 
 	for item in $CHECK_LIST; do
 		checkInstall "$item"
@@ -67,9 +68,9 @@ init_linux() {
 
 	sh -c "$(curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh)"
 
-	CHECK_LIST="curl wget zsh vim gvim git tmux"
+	CHECK_LIST="curl wget fish zsh vim gvim git tmux"
 
-	INSTALL_LIST="curl wget terminator zsh vim-python-jedi git tmux irssi"
+	INSTALL_LIST="curl wget terminator fish zsh vim-python-jedi git tmux irssi"
 
 	echo "Installing ($INSTALL_LIST)..."
 

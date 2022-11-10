@@ -3,6 +3,8 @@
 
 . base.sh
 
+sudo bash -c 'echo $(which fish) >> /etc/shells'
+chsh -s $(which fish)
 
 printf "${YELLOW}"
 echo "System configuration..."
@@ -53,6 +55,18 @@ ln -f $HOME/.zsh/.zshrc $HOME/.zshrc
 ln -f "$DOTHOME"/zsh/.aliases $HOME/.zsh/.aliases
 ln -f "$DOTHOME"/zsh/.zplug $HOME/.zsh/.zplug
 ln -f "$DOTHOME"/zsh/.directory $HOME/.zsh/.directory
+
+rm -rf $HOME/.config/fish/*
+rm -rf $HOME/.config/omf/*
+mkdir -p $HOME/.config/fish/functions $HOME/.config/fish/conf.d $HOME/.config/fish/completions
+mkdir -p $HOME/.config/omf
+ln -sf "$DOTHOME"/fish/config.fish $HOME/.config/fish/
+ln -sf "$DOTHOME"/fish/aliases.fish $HOME/.config/fish/
+ln -sf "$DOTHOME"/fish/fish_variables $HOME/.config/fish/
+#ln -sf "$DOTHOME"/fish/functions/* $HOME/.config/fish/functions/
+ln -sf "$DOTHOME"/fish/conf.d/* $HOME/.config/fish/conf.d/
+#ln -sf "$DOTHOME"/fish/completions/* $HOME/.config/fish/completions/
+ln -sf "$DOTHOME"/omf/* $HOME/.config/omf/
 
 ln -f "$DOTHOME"/.editorconfig $HOME/.editorconfig
 
