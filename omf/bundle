@@ -1,0 +1,10 @@
+package config
+package direnv
+package fuck
+package fzf
+package last-working-dir
+package neovim
+package spark
+package z
+theme ivy
+theme sushi
