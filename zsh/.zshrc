@@ -34,6 +34,9 @@ if [ -e "$HOME/.zsh/.aliases" ]; then
     source "$HOME/.zsh/.aliases"
 fi
 
+# CTR-R
+set -Ux FZF_DEFAULT_OPTS "--color=fg:-1,bg:-1,hl:#0086b3 --color=fg+:#c94e6b,bg+:-1,hl+:#d81745 --color=info:#707070,prompt:#0086b3,pointer:#d81745 --color=marker:#960b73,spinner:#707070,header:#999999"
+
 # GO path
 export GOPATH=$HOME/Projects/go
 export PATH="$PATH:$GOPATH/bin"
@@ -45,6 +48,10 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+
+#export PYENV_ROOT="$HOME/.pyenv/shims"
+#export PATH="$PYENV_ROOT:$PATH"
+#export PIPENV_PYTHON="$PYENV_ROOT/python"
 
 eval "$(pyenv init --path)"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
