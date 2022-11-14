@@ -23,7 +23,6 @@ Plug 'ap/vim-css-color'
 
 " Autocomplete
 Plug 'sirver/ultisnips'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc.nvim', {'tag': 'v0.0.81'}
 
 " Debug
@@ -79,6 +78,8 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'posva/vim-vue'
 Plug 'leafOfTree/vim-vue-plugin'
 
+" Rust
+Plug 'rust-lang/rust.vim'
 "*****************************************************************************
 " Initialize plugin system
 call plug#end()
