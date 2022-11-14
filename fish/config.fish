@@ -8,24 +8,33 @@ set -x LC_CTYPE en_US.UTF-8
 set -x LANG en_US.UTF-8
 set -x LANGUAGE en_US.UTF-8
 
-#GO
-set -x -x GOPATH ~/Documents/resources/go
-
 # nnn
-set -x NNN_USE_EDITOR 1
+set -x NNN_USE_EDITOR nvim
 set -x NNN_NOTE $HOME/.scratchpad
 set -x BOOKMARK $HOME/Dropbox/Apps/Bookmarks/
 
 # preload fish
-#function __check_z --on-variable PWD --description 'Setup z on directory change'
-    #status --is-command-substitution
-    #and return
-    #bash -c "source /usr/local/etc/profile.d/z.sh; _z --add `pwd -P`"
-#end
+function __check_z --on-variable PWD --description 'Setup z on directory change'
+    status --is-command-substitution
+    and return
+    bash -c "source /usr/local/etc/profile.d/z.sh; _z --add `pwd -P`"
+end
 
-set -x PATH $HOME/.cargo/bin $PATH
+#User config
+set -x DOTHOME "$HOME/.dotfiles"
+set -x PATH "$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin:/usr/local/sbin"
 test -e {$HOME}/.iterm2_shell_integration.fish
 and source {$HOME}/.iterm2_shell_integration.fish
+
+#GO
+set -x -x GOPATH $HOME/Projects/go
+set -x PATH "$GOPATH/bin" "$PATH"
+
+#Rust
+set -x PATH "$HOME/.cargo/bin" "$PATH"
+
+#FNM
+fnm env --use-on-cd | source
 
 #direnv
 direnv hook fish | source
