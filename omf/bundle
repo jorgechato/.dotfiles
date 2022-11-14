@@ -4,6 +4,7 @@ package fuck
 package fzf
 package last-working-dir
 package neovim
+package rustup
 package spark
 package z
 theme ivy
