@@ -8,7 +8,7 @@ Plug 'cormacrelf/vim-colors-github'
 Plug 'projekt0n/github-nvim-theme'
 
 " IDE
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -23,7 +23,8 @@ Plug 'ap/vim-css-color'
 
 " Autocomplete
 Plug 'sirver/ultisnips'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'tag': 'v0.0.81'}
 
 " Debug
 Plug 'puremourning/vimspector'
@@ -59,7 +60,7 @@ Plug 'vim-airline/vim-airline-themes'
 "*****************************************************************************
 " ML
 " " Kite Bundle
-Plug 'kiteco/vim-plugin'
+"Plug 'kiteco/vim-plugin'
 
 " go
 "" Go Lang Bundle
