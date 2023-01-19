@@ -24,8 +24,8 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 "Search <query> in <path>
-map <Leader>f <Plug>(easymotion-sn)
-omap <Leader>f <Plug>(easymotion-tn)
+map <Leader>s <Plug>(easymotion-s2)
+map  <Leader>f <Plug>(easymotion-s)
 " CtrlP
 map <leader>p <esc>:CtrlPBuffer<CR>
 "Pretty tab
@@ -115,4 +115,4 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
-nnoremap <Leader>o :.Gbrowse<CR>
+nnoremap <Leader>o :.GBrowse<CR>

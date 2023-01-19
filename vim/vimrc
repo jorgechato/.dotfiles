@@ -12,11 +12,16 @@ so ~/.vim/core/maps.vim
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
+"let g:github_colors = {
+            "\ 'bg_visual': '#ebedf0',
+            "\ 'bg_highlight': '#ebedf0'
+            "\ }
+"colorscheme github_light
 let g:github_colors = {
-  \ 'bg': '#0d1117',
-  \ 'bg_visual': '#161b22',
-  \ 'bg_highlight': '#161b22'
-\ }
+            \ 'bg': '#0d1117',
+            \ 'bg_visual': '#161b22',
+            \ 'bg_highlight': '#161b22'
+            \ }
 colorscheme github_dark
 
 syntax on
@@ -42,7 +47,7 @@ set sidescrolloff=10
 set novisualbell                        " No blinking .
 
 if !has('nvim')
-    set guifont=Menlo \11
+    set guifont=Menlo \15
 endif
 
 " Search mappings: These will make it so that going to the next one in a
