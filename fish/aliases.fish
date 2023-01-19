@@ -21,6 +21,7 @@ alias airodump-ng "sudo airodump-ng"
 alias airmon-ng "sudo airmon-ng"
 alias setoolkit "sudo setoolkit"
 alias sqlmap "workon sqlmap && python ~/kali/sqlmap-dev/sqlmap.py"
+alias wireshark "sudo /Applications/Wireshark.app/Contents/MacOS/Wireshark"
 
 #VIM
 alias vim nvim
@@ -63,6 +64,7 @@ alias ccstg "clickhouse-client -h clickhouse.staging.virtusize.jp --port 9000"
 
 #Code
 alias parquet "parquet-tools"
+alias c cargo
 alias python python3
 alias py python3
 alias pyclean "rm -rf **/*.pyc"
