@@ -9,4 +9,7 @@ set ideajoin
 " Plugins {
 set surround
 set multiple-cursors
+set sneak
 " }
+
+map q (multicursor-ms/)
