@@ -20,6 +20,7 @@ Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-abolish'
 Plug 'ap/vim-css-color'
+Plug 'github/copilot.vim'
 
 " Autocomplete
 Plug 'sirver/ultisnips'
