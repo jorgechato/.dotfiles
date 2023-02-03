@@ -33,6 +33,12 @@ set -x PATH "$GOPATH/bin" "$PATH"
 #Rust
 set -x PATH "$HOME/.cargo/bin" "$PATH"
 
+#Java
+set PATH $HOME/.jenv/bin $PATH
+#status --is-interactive; and jenv init - | source
+#eval "$(jenv init - --no-rehash)"
+#status --is-interactive; and jenv init - fish | source
+
 #FNM
 fnm env --use-on-cd | source
 
