@@ -22,6 +22,23 @@ alias airmon-ng "sudo airmon-ng"
 alias setoolkit "sudo setoolkit"
 alias sqlmap "workon sqlmap && python ~/kali/sqlmap-dev/sqlmap.py"
 alias wireshark "sudo /Applications/Wireshark.app/Contents/MacOS/Wireshark"
+function login_item -d "Usage: silence [-h, --hidden] <application_path>"
+    set hidden false
+
+    for option in $argv
+        switch "$option"
+            case -h --hidden
+                set hidden true
+            case \*.app
+                set name (basename $option .app)
+                osascript -e 'tell application "System Events" to make login item at end with properties {path:"'$option'", hidden:'$hidden', name:"'$name'"}'
+                return
+            case \*
+                echo "Usage: login_item [-h, --hidden] <application_path>"
+                return 1
+        end
+    end
+end
 
 #VIM
 alias vim nvim
