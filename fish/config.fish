@@ -20,6 +20,11 @@ function __check_z --on-variable PWD --description 'Setup z on directory change'
     bash -c "source /usr/local/etc/profile.d/z.sh; _z --add `pwd -P`"
 end
 
+#Pyenv
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+pyenv init - | source
+
 #User config
 set -x DOTHOME "$HOME/.dotfiles"
 set -x PATH "$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin:/usr/local/sbin"
