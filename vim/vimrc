@@ -17,12 +17,13 @@ so ~/.vim/core/maps.vim
             "\ 'bg_highlight': '#ebedf0'
             "\ }
 "colorscheme github_light
-let g:github_colors = {
-            \ 'bg': '#0d1117',
-            \ 'bg_visual': '#161b22',
-            \ 'bg_highlight': '#161b22'
-            \ }
-colorscheme github_dark
+"let g:github_colors = {
+"            \ 'bg': '#0d1117',
+"            \ 'bg_visual': '#161b22',
+"            \ 'bg_highlight': '#161b22'
+"            \ }
+"colorscheme github_dark
+colorscheme github_dark_tritanopia
 
 syntax on
 set title

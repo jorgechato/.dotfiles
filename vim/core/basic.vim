@@ -20,7 +20,7 @@ set autoindent
 set smartindent
 set smarttab
 set nolist								" Change to list to enable listchars
-set penc="cp1252"
+"set penc="cp1252"
 set wildignore+=*.pyc,*.swp,*.pdf,*.class
 
 " Backups
