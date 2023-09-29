@@ -17,7 +17,7 @@ if [ $OS == "linux" ]; then
     cp -f -R "$DOTHOME"/fortune/* /usr/share/games/fortunes/
 elif [ $OS == "mac" ]; then
     fortuneV=$(fortune -V 2>&1 | sed -n 2p | cut -d' ' -f 3)
-    cp -f -R "$DOTHOME"/fortune/* /usr/local/Cellar/fortune/$fortuneV/share/games/fortunes/
+    #cp -f -R "$DOTHOME"/fortune/* /usr/local/Cellar/fortune/$fortuneV/share/games/fortunes/
 fi
 
 git config --global --unset-all core.editor
@@ -62,6 +62,7 @@ mkdir -p $HOME/.config/fish/functions $HOME/.config/fish/conf.d $HOME/.config/fi
 mkdir -p $HOME/.config/omf
 ln -sf "$DOTHOME"/fish/config.fish $HOME/.config/fish/
 ln -sf "$DOTHOME"/fish/aliases.fish $HOME/.config/fish/
+ln -sf "$DOTHOME"/fish/aliases-work.fish $HOME/.config/fish/
 ln -sf "$DOTHOME"/fish/fish_variables $HOME/.config/fish/
 #ln -sf "$DOTHOME"/fish/functions/* $HOME/.config/fish/functions/
 ln -sf "$DOTHOME"/fish/conf.d/* $HOME/.config/fish/conf.d/

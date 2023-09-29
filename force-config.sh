@@ -8,6 +8,9 @@ echo "System configuration..."
 printf "Current file directory: ${NORMAL}"
 echo "$DOTHOME"
 
+#Remove login prompt
+touch "$HOME"/.hushlogin
+
 #GIT
 ln -f "$DOTHOME"/git/.gitconfig $HOME/.gitconfig
 
@@ -31,8 +34,9 @@ mkdir -p $HOME/.config/fish/functions $HOME/.config/fish/conf.d $HOME/.config/fi
 mkdir -p $HOME/.config/omf
 ln -sf "$DOTHOME"/fish/config.fish $HOME/.config/fish/
 ln -sf "$DOTHOME"/fish/aliases.fish $HOME/.config/fish/
+ln -sf "$DOTHOME"/fish/aliases-work.fish $HOME/.config/fish/
 ln -sf "$DOTHOME"/fish/fish_variables $HOME/.config/fish/
-#ln -sf "$DOTHOME"/fish/functions/* $HOME/.config/fish/functions/
+ln -sf "$DOTHOME"/fish/functions/* $HOME/.config/fish/functions/
 ln -sf "$DOTHOME"/fish/conf.d/* $HOME/.config/fish/conf.d/
 #ln -sf "$DOTHOME"/fish/completions/* $HOME/.config/fish/completions/
 ln -sf "$DOTHOME"/omf/* $HOME/.config/omf/
