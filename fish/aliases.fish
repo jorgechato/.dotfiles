@@ -43,8 +43,8 @@ end
 #VIM
 alias vim nvim
 function v
-	if test (count $argv) -eq 1
-		nvim "$argv[1]"
+	if test (count $argv) -ge 1
+		nvim "$argv"
 	else
 		nvim .
     end
@@ -53,6 +53,15 @@ function vimff
     nvim (ffind -tf $argv)
 end
 alias vimconfig "nvim ~/.vimrc"
+
+#VSCODE insiders
+function vs
+	if test (count $argv) -eq 1
+		code-insiders "$argv"
+	else
+		code-insiders .
+    end
+end
 
 #Work env
 alias g git
@@ -64,20 +73,41 @@ function da -d "Allow or disallow .envrc after printing it."
     read answer
     direnv allow
 end
-alias k "kubectl"
-alias d docker
-alias dc docker-compose
+
+#Docker/Podman
+function docker
+    if test "$argv[1]" = "compose"
+        if test (count $argv) -gt 1
+            podman-compose "$argv[2..-1]"
+        else
+            podman-compose
+        end
+    else
+        podman "$argv"
+    end
+end
+alias d podman
+alias p podman
+alias dc podman-compose
+alias docker-compose podman-compose
+#alias dc docker-compose
+#alias d docker
+
+#AWS
 alias awsl "aws ssm start-session --target"
 alias awsp "aws_profiles"
+
+#K8S
+alias k "kubectl"
+alias kc "kubie ctx"
+
+#GCP
+alias gc "gcloud"
+alias gcc "gcloud container"
+alias gccc "gcloud container clusters"
+
 alias tf "terraform"
 alias o "open"
-
-#Platform
-alias cc "clickhouse-client"
-alias ccpro "clickhouse-client -h clickhouse.production.virtusize.jp --port 9000"
-alias ccpro1 "clickhouse-client -h ec2-54-250-36-125.ap-northeast-1.compute.amazonaws.com --port 9000"
-alias ccpro2 "clickhouse-client -h ec2-18-183-165-44.ap-northeast-1.compute.amazonaws.com --port 9000"
-alias ccstg "clickhouse-client -h clickhouse.staging.virtusize.jp --port 9000"
 
 #Code
 alias parquet "parquet-tools"
@@ -87,3 +117,5 @@ alias py python3
 alias pyclean "rm -rf **/*.pyc"
 alias sourcelist "v /etc/apt/sources.list"
 alias hosts "nvim /etc/hosts"
+
+. "$HOME/.config/fish/aliases-work.fish"

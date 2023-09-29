@@ -2,8 +2,8 @@ package config
 package direnv
 package fuck
 package fzf
+package https://github.com/blackjid/plugin-kubectl
 package last-working-dir
-package neovim
 package rustup
 package spark
 package z
