@@ -8,6 +8,9 @@ set -x LC_CTYPE en_US.UTF-8
 set -x LANG en_US.UTF-8
 set -x LANGUAGE en_US.UTF-8
 
+#Custom Functions
+set -x KPUF_CONFIG_FILE "$HOME/.config/fish/functions/kpuf.yaml"
+
 # nnn
 set -x NNN_USE_EDITOR nvim
 set -x NNN_NOTE $HOME/.scratchpad
@@ -17,7 +20,7 @@ set -x BOOKMARK $HOME/Dropbox/Apps/Bookmarks/
 function __check_z --on-variable PWD --description 'Setup z on directory change'
     status --is-command-substitution
     and return
-    bash -c "source /usr/local/etc/profile.d/z.sh; _z --add `pwd -P`"
+    bash -c "source /opt/homebrew/etc/profile.d/z.sh; _z --add `pwd -P`"
 end
 
 #Pyenv
