@@ -8,7 +8,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
 " Disable visualbell
@@ -43,6 +42,48 @@ endif
 "*****************************************************************************
 "" Base Config
 "*****************************************************************************
+" Bookmarks
+let g:bookmark_no_default_key_mappings = 1
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
+"" Finds the Git super-project directory.
+function! g:BMWorkDirFileLocation()
+    let filename = 'bookmarks'
+    let location = ''
+    if isdirectory('.git')
+        " Current work dir is git's work tree
+        let location = getcwd().'/.git'
+    else
+        " Look upwards (at parents) for a directory named '.git'
+        let location = finddir('.git', '.;')
+    endif
+    if len(location) > 0
+        return location.'/'.filename
+    else
+        return getcwd().'/.'.filename
+    endif
+endfunction
+"" Finds the Git super-project directory based on the file passed as an argument.
+function! g:BMBufferFileLocation(file)
+    let filename = 'vim-bookmarks'
+    let location = ''
+    if isdirectory(fnamemodify(a:file, ":p:h").'/.git')
+        " Current work dir is git's work tree
+        let location = fnamemodify(a:file, ":p:h").'/.git'
+    else
+        " Look upwards (at parents) for a directory named '.git'
+        let location = finddir('.git', fnamemodify(a:file, ":p:h").'/.;')
+    endif
+    if len(location) > 0
+        return simplify(location.'/.'.filename)
+    else
+        return simplify(fnamemodify(a:file, ":p:h").'/.'.filename)
+    endif
+endfunction
+
+" Copilot
+"let g:copilot_no_tab_map = v:true
+
 " bootstrap
 let g:vim_bootstrap_langs = "go,javascript,python"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
@@ -159,32 +200,6 @@ augroup completion_preview_close
     endif
 augroup END
 
-augroup go
-
-    au!
-    au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-    au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-    au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-    au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-
-    au FileType go nmap <Leader>dd <Plug>(go-def-vertical)
-    au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
-    au FileType go nmap <Leader>db <Plug>(go-doc-browser)
-
-    au FileType go nmap <leader>r  <Plug>(go-run)
-    au FileType go nmap <leader>t  <Plug>(go-test)
-    au FileType go nmap <Leader>gt <Plug>(go-coverage-toggle)
-    au FileType go nmap <Leader>i <Plug>(go-info)
-    au FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
-    au FileType go nmap <C-g> :GoDecls<cr>
-    au FileType go nmap <leader>dr :GoDeclsDir<cr>
-    au FileType go imap <C-g> <esc>:<C-u>GoDecls<cr>
-    au FileType go imap <leader>dr <esc>:<C-u>GoDeclsDir<cr>
-    au FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
-
-augroup END
-
-
 " javascript
 let g:javascript_enable_domhtmlcss = 1
 
@@ -217,9 +232,6 @@ let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#smart_auto_mappings = 0
-
-" Kite
-"let g:kite_supported_languages = ['python', 'javascript', 'go']
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1

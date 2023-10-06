@@ -1,12 +1,22 @@
+"*****************************************************************************
+"" Mappings
+"*****************************************************************************
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " Comment on <cntr>/
 nmap <C-_> <Plug>NERDCommenterToggle<CR>
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 imap <C-_> <esc><Plug>NERDCommenterToggle<CR>a
 " COC base maping
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gd <Plug>(coc-definition)
+"Copilot
+"imap <silent><script><expr> <C-e> copilot#Accept('\<CR>')
 " Autoindent
 map <leader>L mzgg=G'zmz<CR> <Bar> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
 vmap <leader>L mzgg=G'zmz<CR>gv
@@ -27,7 +37,18 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 map <Leader>s <Plug>(easymotion-s2)
 map  <Leader>f <Plug>(easymotion-s)
 " CtrlP
-map <leader>p <esc>:CtrlPBuffer<CR>
+map <leader>b <esc>:CtrlPBookmark<CR>
+" Bookmark
+"nmap <Leader><Leader> <Plug>BookmarkToggle
+nmap <Leader><Leader> <Plug>BookmarkAnnotate
+nmap <Leader>a <Plug>BookmarkShowAll
+nmap <Leader>j <Plug>BookmarkNext
+nmap <Leader>k <Plug>BookmarkPrev
+nmap <Leader>c <Plug>BookmarkClear
+nmap <Leader>x <Plug>BookmarkClearAll
+nmap <Leader>kk <Plug>BookmarkMoveUp
+nmap <Leader>jj <Plug>BookmarkMoveDown
+nmap <Leader>g <Plug>BookmarkMoveToLine
 "Pretty tab
 nmap <Leader>t= :Tabularize /=<CR>
 vmap <Leader>t= :Tabularize /=<CR>
@@ -35,6 +56,8 @@ nmap <Leader>t: :Tabularize /:\zs<CR>
 vmap <Leader>t: :Tabularize /:\zs<CR>
 nmap <Leader>t  :Tabularize / \zs<CR>
 vmap <Leader>t  :Tabularize / \zs<CR>
+" Tagbar
+nmap <silent> <F4> :TagbarToggle<CR>
 " fugitive git bindings
 nnoremap <leader>g :Git<CR>
 nnoremap <leader>gd :Gdiff<Space>
@@ -43,24 +66,22 @@ nnoremap <leader>gp :Git push origin <Space>
 nnoremap <leader>g- :Silent Git stash<CR>:e<CR>
 nnoremap <leader>g+ :Silent Git stash pop<CR>:e<CR>
 nnoremap <leader>gsb :Git switch<Space>
+"" Open current file on github
+nnoremap <Leader>go :.GBrowse<CR>
 
 vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
 
 " For local replace
-nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+nnoremap gR gd[{V%::s/<C-R>///gc<left><left><left>
 " For global replace
-nnoremap gR gD:%s/<C-R>///gc<left><left><left>
-
-"*****************************************************************************
-"" Mappings
-"*****************************************************************************
+nnoremap gr gD:%s/<C-R>///gc<left><left><left>
 "" Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
 "" Tabs
-nnoremap <M-Tab> gt
-nnoremap <S-Tab> gT
+"nnoremap <M-Tab> gt
+"nnoremap <S-Tab> gT
 nnoremap <silent> tn :tabnew<CR>
 
 "" Set working directory
@@ -73,7 +94,7 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-nnoremap <silent> <leader>b :Buffers<CR>
+"nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
@@ -114,5 +135,26 @@ vmap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-"" Open current line on GitHub
-nnoremap <Leader>o :.GBrowse<CR>
+" GO
+augroup go
+    au!
+    au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+    au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+    au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+    au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+    au FileType go nmap <Leader>dd <Plug>(go-def-vertical)
+    au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
+    au FileType go nmap <Leader>db <Plug>(go-doc-browser)
+
+    au FileType go nmap <leader>r  <Plug>(go-run)
+    au FileType go nmap <leader>t  <Plug>(go-test)
+    au FileType go nmap <Leader>gt <Plug>(go-coverage-toggle)
+    au FileType go nmap <Leader>i <Plug>(go-info)
+    au FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
+    au FileType go nmap <C-g> :GoDecls<cr>
+    au FileType go nmap <leader>dr :GoDeclsDir<cr>
+    au FileType go imap <C-g> <esc>:<C-u>GoDecls<cr>
+    au FileType go imap <leader>dr <esc>:<C-u>GoDeclsDir<cr>
+    au FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
+augroup END

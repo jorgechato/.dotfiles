@@ -1,4 +1,5 @@
 call plug#begin(expand('$HOME/.vim/plugged'))
+let g:plug_url_format = 'git@github.com:%s.git'
 
 "*****************************************************************************
 "" Main Plug
@@ -8,9 +9,10 @@ Plug 'cormacrelf/vim-colors-github'
 Plug 'projekt0n/github-nvim-theme'
 
 " IDE
-"Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
@@ -20,11 +22,11 @@ Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-abolish'
 Plug 'ap/vim-css-color'
-Plug 'github/copilot.vim'
+Plug 'MattesGroeger/vim-bookmarks'
 
 " Autocomplete
 Plug 'sirver/ultisnips'
-Plug 'neoclide/coc.nvim', {'tag': 'v0.0.81'}
+"Plug 'neoclide/coc.nvim', {'tag': 'v0.0.81'}
 
 " Debug
 Plug 'puremourning/vimspector'
@@ -43,6 +45,7 @@ Plug 'godlygeek/tabular'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-rhubarb'
 
 " Navigation
 Plug 'tpope/vim-vinegar'
@@ -58,10 +61,6 @@ Plug 'vim-airline/vim-airline-themes'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
-" ML
-" " Kite Bundle
-"Plug 'kiteco/vim-plugin'
-
 " go
 "" Go Lang Bundle
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
@@ -76,8 +75,8 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 " vuejs
-Plug 'posva/vim-vue'
-Plug 'leafOfTree/vim-vue-plugin'
+"Plug 'posva/vim-vue'
+"Plug 'leafOfTree/vim-vue-plugin'
 
 " Rust
 Plug 'rust-lang/rust.vim'
