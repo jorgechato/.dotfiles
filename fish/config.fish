@@ -37,6 +37,9 @@ and source {$HOME}/.iterm2_shell_integration.fish
 #GO
 set -x -x GOPATH $HOME/Projects/go
 set -x PATH "$GOPATH/bin" "$PATH"
+set -x GOPRIVATE "github.com/kouzoh/*"
+set -x GONOPROXY "github.com/kouzoh/*"
+set -x GONOSUMDB "github.com/kouzoh/*"
 
 #Rust
 set -x PATH "$HOME/.cargo/bin" "$PATH"
