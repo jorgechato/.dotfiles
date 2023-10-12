@@ -3,7 +3,7 @@
     email = hack@jorgechato.com
     signingkey = xxx
 [url "git@github.com:"]
-  insteadOf = https://github.com/
+    insteadOf = https://github.com/
 [gpg]
     format = ssh
 [gpg "ssh"]
@@ -15,7 +15,7 @@
     autocrlf = input
     safecrlf = false
     pager = less
-    editor = mvim
+    editor = nvim
 [alias]
     ada = add -A
     sb = switch
