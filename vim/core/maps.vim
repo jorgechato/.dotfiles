@@ -37,10 +37,10 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 map <Leader>s <Plug>(easymotion-s2)
 map  <Leader>f <Plug>(easymotion-s)
 " CtrlP
-map <leader>b <esc>:CtrlPBookmark<CR>
+"map <leader>b <esc>:CtrlPBookmark<CR>
 " Bookmark
 "nmap <Leader><Leader> <Plug>BookmarkToggle
-nmap <Leader><Leader> <Plug>BookmarkAnnotate
+nmap <Leader>b <Plug>BookmarkAnnotate
 nmap <Leader>a <Plug>BookmarkShowAll
 nmap <Leader>j <Plug>BookmarkNext
 nmap <Leader>k <Plug>BookmarkPrev
