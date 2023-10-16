@@ -7,6 +7,11 @@ set -x PAGER bat
 set -x LC_CTYPE en_US.UTF-8
 set -x LANG en_US.UTF-8
 set -x LANGUAGE en_US.UTF-8
+set -g fish_greeting
+set -gx DIRENV_LOG_FORMAT ""
+
+#Starship
+starship init fish | source
 
 #Custom Functions
 set -x KPUF_CONFIG_FILE "$HOME/.config/fish/functions/kpuf.yaml"
