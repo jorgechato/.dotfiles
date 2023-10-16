@@ -13,14 +13,12 @@ error_symbol = '[\$](bold red)'
 
 [directory]
 read_only = " 󰌾"
-#style = 'bold #4078c0'
 style = 'bold #DF440D'
 
 [kubernetes]
-#format = '[$context($namespace)]($style) '
-format = '[$context]($style) '
+format = '[$context( $namespace)]($style) '
+#format = '[$context]($style) '
 disabled = false
-#style = 'bold #3970e4'
 style = 'bold white'
 
 [kubernetes.context_aliases]
