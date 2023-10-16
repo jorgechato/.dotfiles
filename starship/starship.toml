@@ -36,7 +36,7 @@ up_to_date = ''
 untracked = '[](yellow)'
 stashed = '󰏖'
 modified = '󰙏'
-staged = '[++\($count\)](green)'
+staged = '[󱓞](yellow)'
 renamed = ''
 deleted = ''
 
