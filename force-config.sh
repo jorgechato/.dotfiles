@@ -29,17 +29,15 @@ ln -f "$DOTHOME"/nvim/init.vim $HOME/.config/nvim/init.vim
 
 #FISH
 rm -rf $HOME/.config/fish/*
-rm -rf $HOME/.config/omf/*
 mkdir -p $HOME/.config/fish/functions $HOME/.config/fish/conf.d $HOME/.config/fish/completions
-mkdir -p $HOME/.config/omf
 ln -sf "$DOTHOME"/fish/config.fish $HOME/.config/fish/
 ln -sf "$DOTHOME"/fish/aliases.fish $HOME/.config/fish/
 ln -sf "$DOTHOME"/fish/aliases-work.fish $HOME/.config/fish/
-ln -sf "$DOTHOME"/fish/fish_variables $HOME/.config/fish/
+ln -sf "$DOTHOME"/fish/fish_plugins $HOME/.config/fish/
 ln -sf "$DOTHOME"/fish/functions/* $HOME/.config/fish/functions/
 ln -sf "$DOTHOME"/fish/conf.d/* $HOME/.config/fish/conf.d/
-#ln -sf "$DOTHOME"/fish/completions/* $HOME/.config/fish/completions/
-ln -sf "$DOTHOME"/omf/* $HOME/.config/omf/
+
+ln -sf "$DOTHOME"/starship/starship.toml $HOME/.config/starship.toml
 
 ln -f "$DOTHOME"/.editorconfig $HOME/.editorconfig
 
