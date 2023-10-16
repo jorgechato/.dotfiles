@@ -1,5 +1,5 @@
 add_newline = false
-format = '🍁 $kubernetes$directory$git_branch$git_status$golang$python$nodejs$rust${custom.direnv}$character'
+format = '🍁 $directory$git_branch$git_status$golang$python$nodejs$rust${custom.direnv}$kubernetes$character'
 
 [time]
 disabled = true
@@ -15,6 +15,19 @@ error_symbol = '[\$](bold red)'
 read_only = " 󰌾"
 #style = 'bold #4078c0'
 style = 'bold #DF440D'
+
+[kubernetes]
+#format = '[$context($namespace)]($style) '
+format = '[$context]($style) '
+disabled = false
+#style = 'bold #3970e4'
+style = 'bold white'
+
+[kubernetes.context_aliases]
+'gke_mercari-jp-citadel-dev_asia-northeast1_citadel-2g-dev-tokyo-01' = '󰄚'
+'gke_mercari-jp-citadel-prod_asia-northeast1_citadel-2g-prod-tokyo-01' = ' 󰄚'
+'gke_mercari-jp-spaceship-dev_asia-northeast1_spaceship-2g-dev-tokyo-01' = '󱎃'
+'gke_mercari-jp-spaceship-prod_asia-northeast1_spaceship-2g-prod-tokyo-01' = ' 󱎃'
 
 [custom.direnv]
 #command = 'test $(direnv status | tail -2 | head -1) = "Found RC allowed false" && echo ""'
@@ -48,17 +61,6 @@ style = 'bold white'
 [aws]
 symbol = "  "
 
-[buf]
-symbol = " "
-format = '[$symbol($version )]($style)'
-
-[c]
-symbol = " "
-format = '[$symbol($version )]($style)'
-
-[conda]
-symbol = " "
-
 [dart]
 symbol = " "
 format = '[$symbol($version )]($style)'
@@ -83,16 +85,8 @@ format = '[$symbol($version )]($style)'
 symbol = " "
 format = '[$symbol($version )]($style)'
 
-[guix_shell]
-symbol = " "
-format = '[$symbol($version )]($style)'
-
 [haskell]
 symbol = " "
-format = '[$symbol($version )]($style)'
-
-[haxe]
-symbol = " "
 format = '[$symbol($version )]($style)'
 
 [hg_branch]
@@ -105,10 +99,6 @@ ssh_symbol = " "
 symbol = " "
 format = '[$symbol($version )]($style)'
 
-[julia]
-symbol = " "
-format = '[$symbol($version )]($style)'
-
 [lua]
 symbol = " "
 format = '[$symbol($version )]($style)'
@@ -116,61 +106,13 @@ format = '[$symbol($version )]($style)'
 [memory_usage]
 symbol = "󰍛 "
 
-[meson]
-symbol = "󰔷 "
-
 [nim]
 symbol = "󰆥 "
-format = '[$symbol($version )]($style)'
-
-[nix_shell]
-symbol = " "
 format = '[$symbol($version )]($style)'
 
 [nodejs]
 symbol = " "
 format = '[$symbol($version )]($style)'
-
-[os.symbols]
-Alpaquita = " "
-Alpine = " "
-Amazon = " "
-Android = " "
-Arch = " "
-Artix = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Windows = "󰍲 "
 
 [package]
 symbol = "󰏗 "
@@ -181,10 +123,6 @@ format = '[$symbol($version )]($style)'
 
 [python]
 symbol = " "
-format = '[$symbol($version )]($style)'
-
-[rlang]
-symbol = "󰟔 "
 format = '[$symbol($version )]($style)'
 
 [ruby]
