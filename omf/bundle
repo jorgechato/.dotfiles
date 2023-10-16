@@ -7,5 +7,4 @@ package last-working-dir
 package rustup
 package spark
 package z
-theme ivy
 theme sushi
