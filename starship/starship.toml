@@ -1,0 +1,200 @@
+add_newline = false
+format = '🍁 $kubernetes$directory$git_branch$git_status$golang$python$nodejs$rust${custom.direnv}$character'
+
+[time]
+disabled = true
+
+[line_break]
+disabled = true
+
+[character]
+success_symbol = '[\$](bold white)'
+error_symbol = '[\$](bold red)'
+
+[directory]
+read_only = " 󰌾"
+#style = 'bold #4078c0'
+style = 'bold #DF440D'
+
+[custom.direnv]
+#command = 'test $(direnv status | tail -2 | head -1) = "Found RC allowed false" && echo ""'
+#format = '[$symbol[($output)](yellow) ]($style)'
+symbol = ""
+format = '[$symbol ]($style)'
+detect_files = ['.envrc', '.envrc.local', '.env.local' ,'.env']
+detect_extensions = ['envrc', 'env']
+style = 'green'
+
+[git_status]
+style = "#808080"
+format = '([$all_status$ahead_behind]($style) )'
+conflicted = '[󰞇](red)'
+ahead = '[󱓞](green)'
+behind = '[](red)'
+diverged = ''
+up_to_date = ''
+untracked = '[](yellow)'
+stashed = '󰏖'
+modified = '󰙏'
+staged = '[++\($count\)](green)'
+renamed = ''
+deleted = ''
+
+[git_branch]
+symbol = " "
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = 'bold white'
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[c]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[docker_context]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[elixir]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[elm]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[fossil_branch]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[golang]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[guix_shell]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[haskell]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[haxe]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[julia]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[lua]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+format = '[$symbol($version )]($style)'
+
+[nix_shell]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[nodejs]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[pijul_channel]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[python]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[rlang]
+symbol = "󰟔 "
+format = '[$symbol($version )]($style)'
+
+[ruby]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[rust]
+symbol = " "
+format = '[$symbol($version )]($style)'
+
+[scala]
+symbol = " "
+format = '[$symbol($version )]($style)'
