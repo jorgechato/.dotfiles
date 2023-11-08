@@ -1,4 +1,6 @@
 return {
+    'tpope/vim-abolish',
+    'ctrlpvim/ctrlp.vim',
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -8,13 +10,7 @@ return {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {},
-        config = function()
-            require("ibl").setup()
-        end,
     },
-    'tpope/vim-abolish',
-    'MattesGroeger/vim-bookmarks',
-    'ctrlpvim/ctrlp.vim',
     {
         "stevearc/oil.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },

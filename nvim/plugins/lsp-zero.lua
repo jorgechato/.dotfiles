@@ -201,12 +201,16 @@ return {
                 ensure_installed = {
                     'tsserver',
                     'eslint',
-                    'rust_analyzer',
                     'gopls',
+                    -- 'golangci_lint_ls',
                     'lua_ls',
                     'jsonls',
-                    'bashls',
-                    'vimls',
+                    'terraformls',
+                    'dockerls',
+                    'bufls',
+                    'cmake',
+                    'cssls',
+                    'tailwindcss',
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -225,13 +229,6 @@ return {
                             },
                         },
                     }),
-                    lspconfig.solidity.setup({
-                        cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
-                        filetypes = { "solidity", "sol" },
-                        root_dir = require("lspconfig.util").find_git_ancestor,
-                        single_file_support = true,
-                    }),
-
                     lspconfig.jsonls.setup({
                         settings = {
                             json = {
@@ -256,37 +253,9 @@ return {
                         },
                     }),
 
-                    lspconfig.rust_analyzer.setup({
-                        settings = {
-                            ["rust-analyzer"] = {
-                                lens = {
-                                    enable = true,
-                                },
-                                cargo = {
-                                    allFeatures = true,
-                                    loadOutDirsFromCheck = true,
-                                    runBuildScripts = true,
-                                },
-                                -- Add clippy lints for Rust.
-                                check = {
-                                    enable = true,
-                                    allFeatures = true,
-                                    command = "clippy",
-                                    extraArgs = { "--no-deps" },
-                                },
-                                procMacro = {
-                                    enable = true,
-                                    ignored = {
-                                        ["async-trait"] = { "async_trait" },
-                                        ["napi-derive"] = { "napi" },
-                                        ["async-recursion"] = { "async_recursion" },
-                                    },
-                                },
-                            },
-                        },
-                    }),
-
                     lspconfig.gopls.setup({
+                        filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+                        root_dir = lspconfig.util.root_pattern("go.mod", ".git", "go.work"),
                         settings = {
                             gopls = {
                                 gofumpt = true,
@@ -326,7 +295,6 @@ return {
                     lspconfig.terraformls.setup({
                         cmd = { "terraform-ls", "serve" },
                         filetypes = { "terraform", "tf", "terraform-vars" },
-                        -- root_dir = lspconfig.util.root_pattern(".terraform", ".git"),
                         root_dir = lspconfig.util.root_pattern("*.tf", "*.terraform", "*.tfvars", "*.hcl", "*.config"),
                     })
                 },
@@ -339,7 +307,6 @@ return {
                 },
                 servers = {
                     ['lua_ls'] = { 'lua' },
-                    ['rust_analyzer'] = { 'rust' },
                     ['tsserver'] = { 'javascript', 'typescript' },
                     ['gopls'] = { 'go' },
                 }
@@ -350,10 +317,10 @@ return {
             })
 
             lsp_zero.set_sign_icons({
-                error = " ",
-                warn = " ",
-                hint = " 󱜺",
-                info = " ",
+                error = " ",
+                warn = " ",
+                hint = "󱜺 ",
+                info = " ",
             })
 
             vim.diagnostic.config({

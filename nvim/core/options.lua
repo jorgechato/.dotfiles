@@ -9,9 +9,10 @@ local options = {
     smartcase = true,                        -- smart case
     smarttab = true,
     title = true,                            -- set the title of window to the value of the titlestring
-    ruler = true,
+    ruler = true,                            -- show the cursor position all the time (line, column)
     number = true,                           -- set numbered lines
-    wrap = false,                            -- display lines as one long line
+    wrap = true,                             -- display lines as one long line
+    linebreak = true,                        -- wrap lines at convenient points
     termguicolors = true,                    -- set term gui colors (most terminals support this)
     scrolloff = 5,                           -- Makes sure there are always n lines of context
     sidescrolloff = 10,                      -- Makes sure there are always n lines of context
@@ -37,8 +38,13 @@ local options = {
     cursorline = true,                       -- highlight the current line
     breakindent = true,                      -- wrap lines with indent
     cursorlineopt = "number",                -- set the cursorline
-    textwidth = 120,
+    textwidth = 120,                         -- set width for text
     colorcolumn = '+1',                      -- Display margin at 120
+    errorbells = false,                      -- disable error bells
+    visualbell = false,                      -- disable visual bells
+
+    -- character to break the line
+    showbreak = "󱞵 ",
 }
 
 vim.g.loaded_netrw = 1

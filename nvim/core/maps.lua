@@ -19,8 +19,8 @@ map('n', 'N', 'Nzzzv', opts)
 map('t', '<Esc>', '<C-\\><C-n>', opts)
 
 -- Ack
-vim.cmd('cnoreabbrev Ack Ack!')
-map('n', '<leader>a', ':Ack!<Space>', opts)
+-- vim.cmd('cnoreabbrev Ack Ack!')
+-- map('n', '<leader>a', ':Ack!<Space>', opts)
 
 -- Save
 map('n', '<C-s>', '<Esc>:w<CR>', opts)
@@ -31,17 +31,6 @@ map('i', '<C-x><C-k>', '<Plug>(fzf-complete-word)', { silent = true })
 map('i', '<C-x><C-f>', '<Plug>(fzf-complete-path)', { silent = true })
 map('i', '<C-x><C-l>', '<Plug>(fzf-complete-line)', { silent = true })
 
--- Bookmark
-map('n', '<Leader>b', '<Plug>BookmarkAnnotate', opts)
-map('n', '<Leader>bl', '<Plug>BookmarkShowAll', opts)
-map('n', '<Leader>j', '<Plug>BookmarkNext', opts)
-map('n', '<Leader>k', '<Plug>BookmarkPrev', opts)
-map('n', '<Leader>c', '<Plug>BookmarkClear', opts)
-map('n', '<Leader>x', '<Plug>BookmarkClearAll', opts)
-map('n', '<Leader>kk', '<Plug>BookmarkMoveUp', opts)
-map('n', '<Leader>jj', '<Plug>BookmarkMoveDown', opts)
-map('n', '<Leader>g', '<Plug>BookmarkMoveToLine', opts)
-
 -- fugitive git bindings
 map('n', '<Leader>g', ':Git<CR>', opts)
 map('n', '<Leader>gd', ':Gdiff<Space>', opts)
@@ -50,9 +39,7 @@ map('n', '<Leader>gp', ':Git push origin <Space>', opts)
 map('n', '<Leader>g-', ':Silent Git stash<CR>:e<CR>', opts)
 map('n', '<Leader>g+', ':Silent Git stash pop<CR>:e<CR>', opts)
 map('n', '<Leader>gsb', ':Git switch<Space>', opts)
-
--- Open current file on github
-map('n', '<Leader>go', ':.GBrowse<CR>', opts)
+map('n', '<Leader>go', ':.GBrowse<CR>', opts) -- Open current file on github
 
 -- TwiddleCase
 map('v', '~', 'y:call setreg("", TwiddleCase(@"), getregtype(""))<CR>gv"Pgv', opts)

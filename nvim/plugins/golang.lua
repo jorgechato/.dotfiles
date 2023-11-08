@@ -29,8 +29,8 @@ return {
         dependencies = { -- optional packages
             "ray-x/guihua.lua",
             "neovim/nvim-lspconfig",
-            -- "nvim-treesitter/nvim-treesitter",
-            -- "leoluz/nvim-dap-go"
+            "nvim-treesitter/nvim-treesitter",
+            "leoluz/nvim-dap-go"
         },
         config = function()
             require("go").setup({

@@ -1,13 +1,6 @@
 --------------------------------------------------------------
 -- Pre Config
 --------------------------------------------------------------
--- Tagbar
-vim.g.tagbar_autofocus = 1
-
--- Disable visualbell
-vim.opt.errorbells = false
-vim.opt.visualbell = false
-
 if vim.fn.has("autocmd") then
     vim.cmd("autocmd GUIEnter * set visualbell t_vb=")
 end
@@ -40,53 +33,6 @@ end
 --------------------------------------------------------------
 -- Base Config
 --------------------------------------------------------------
--- Bookmarks
-vim.g.bookmark_no_default_key_mappings = 1
-vim.g.bookmark_save_per_working_dir = 1
-vim.g.bookmark_auto_save = 1
-
--- Finds the Git super-project directory.
-function BMWorkDirFileLocation()
-    local filename = 'bookmarks'
-    local location = ''
-    if vim.fn.isdirectory('.git') == 1 then
-        -- Current work dir is git's work tree
-        location = vim.fn.getcwd() .. '/.git'
-    else
-        -- Look upwards (at parents) for a directory named '.git'
-        location = vim.fn.finddir('.git', '.;')
-    end
-    if #location > 0 then
-        return location .. '/' .. filename
-    else
-        return vim.fn.getcwd() .. '/.' .. filename
-    end
-end
-
--- Finds the Git super-project directory based on the file passed as an argument.
-function BMBufferFileLocation(file)
-    local filename = 'vim-bookmarks'
-    local location = ''
-    if vim.fn.isdirectory(vim.fn.fnamemodify(file, ":p:h") .. '/.git') == 1 then
-        -- Current work dir is git's work tree
-        location = vim.fn.fnamemodify(file, ":p:h") .. '/.git'
-    else
-        -- Look upwards (at parents) for a directory named '.git'
-        location = vim.fn.finddir('.git', vim.fn.fnamemodify(file, ":p:h") .. '/.;')
-    end
-    if #location > 0 then
-        return vim.fn.simplify(location .. '/' .. filename)
-    else
-        return vim.fn.simplify(vim.fn.fnamemodify(file, ":p:h") .. '/.' .. filename)
-    end
-end
-
--- bootstrap
-vim.g.vim_bootstrap_langs = "go,javascript,python"
-vim.g.vim_bootstrap_editor = "nvim" -- nvim or vim
-vim.g.vim_bootstrap_theme = "github"
-vim.g.vim_bootstrap_frams = "vuejs"
-
 -- ctrlp
 vim.g.ctrlp_custom_ignore = {
     ['dir'] = 'out$|\\.git$|\\.data$|bower_components$|node_modules$|vendor$|target$|gen$|third_party',
