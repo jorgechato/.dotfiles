@@ -18,10 +18,11 @@
     editor = nvim
 [alias]
     ada = add -A
+    b = branch
     sb = switch
     sbd = switch develop
-    sbm = switch master
-    sbin = switch main
+    sbam = switch master
+    sbm = switch main
     sbc = switch -c
     co = checkout
     cob = checkout -b
