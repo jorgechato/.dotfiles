@@ -41,7 +41,7 @@ map  <Leader>f <Plug>(easymotion-s)
 " Bookmark
 "nmap <Leader><Leader> <Plug>BookmarkToggle
 nmap <Leader>b <Plug>BookmarkAnnotate
-nmap <Leader>a <Plug>BookmarkShowAll
+nmap <Leader>bl <Plug>BookmarkShowAll
 nmap <Leader>j <Plug>BookmarkNext
 nmap <Leader>k <Plug>BookmarkPrev
 nmap <Leader>c <Plug>BookmarkClear

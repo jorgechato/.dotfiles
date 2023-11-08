@@ -6,7 +6,7 @@ filetype plugin indent on
 "*****************************************************************************
 set encoding=utf-8
 set hidden
-set shell=/opt/homebrew/bin/fish
+set shell=/usr/local/bin/fish
 set showcmd                             " Show info in the right bottom
 set ttyfast
 set formatoptions=qcrn1

@@ -83,6 +83,7 @@ endfunction
 
 " Copilot
 "let g:copilot_no_tab_map = v:true
+let g:copilot_filetypes = {'markdown': v:true}
 
 " bootstrap
 let g:vim_bootstrap_langs = "go,javascript,python"
