@@ -36,7 +36,7 @@ return {
                     },
                     previewer = false,
                     -- hidden = true,
-                    prompt_prefix = "   ",
+                    prompt_prefix = " 󰅭  ",
                     file_ignore_patterns = { "node_modules", "package-lock.json" },
                     initial_mode = "insert",
                     select_strategy = "reset",

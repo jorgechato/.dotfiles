@@ -24,11 +24,12 @@ ln -f $HOME/.vim/vimrc $HOME/.vimrc
 ln -f "$DOTHOME"/vim/ideavimrc $HOME/.ideavimrc
 ln -f "$DOTHOME"/vim/core/* $HOME/.vim/core
 
-mkdir -p $HOME/.config/nvim/lua/core
+mkdir -p $HOME/.config/nvim/lua/core/which-key
 mkdir -p $HOME/.config/nvim/lua/plugins
 ln -f "$DOTHOME"/nvim/init.lua $HOME/.config/nvim/init.lua
 ln -f "$DOTHOME"/nvim/plugins/*.lua $HOME/.config/nvim/lua/plugins
 ln -f "$DOTHOME"/nvim/core/*.lua $HOME/.config/nvim/lua/core
+ln -f "$DOTHOME"/nvim/core/which-key/*.lua $HOME/.config/nvim/lua/core/which-key
 
 #FISH
 rm -rf $HOME/.config/fish/*
