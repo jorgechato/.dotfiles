@@ -6,7 +6,6 @@ return {
         lazy = true,
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'jvgrootveld/telescope-zoxide',
             'nvim-tree/nvim-web-devicons',
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
             -- 'kkharji/sqlite.lua',
@@ -29,37 +28,39 @@ return {
                         n = { ["<C-t>"] = trouble.open_with_trouble },
                     },
                     previewer = false,
-                    -- hidden = true,
-                    prompt_prefix = " $  ",
+                    hidden = true,
+                    prompt_prefix = "   ",
                     file_ignore_patterns = { "node_modules", "package-lock.json" },
                     initial_mode = "insert",
                     select_strategy = "reset",
                     sorting_strategy = "ascending",
-                    -- layout_strategy = "horizontal",
+                    layout_strategy = "vertical",
                     layout_config = {
-                        --   width = 0.5,
-                        --   height = 0.4,
-                        prompt_position = "top",
-                        preview_cutoff = 120,
+                        horizontal = {
+                            width = 0.8,
+                            height = 0.6,
+                        },
+                        vertical = {
+                            width = 0.8,
+                            height = 0.8,
+                        },
                     },
                 },
                 pickers = {
                     find_files = {
-                        -- theme = "dropdown",
-                        previewer = true,
+                        previewer = false,
                         layout_config = {
-                            -- width = 0.5,
-                            height = 0.8,
-                            prompt_position = "top",
-                            preview_cutoff = 120,
+                            vertical = {
+                                height = 0.4,
+                            },
                         },
                     },
                     git_files = {
-                        previewer = true,
+                        previewer = false,
                         layout_config = {
-                            height = 0.8,
-                            prompt_position = "top",
-                            preview_cutoff = 120,
+                            vertical = {
+                                height = 0.4,
+                            },
                         },
                     },
                     buffers = {
@@ -71,69 +72,22 @@ return {
                                 ["<c-d>"] = actions.delete_buffer,
                             },
                         },
-                        previewer = false,
                         initial_mode = "insert",
-                        theme = "dropdown",
-                        layout_config = {
-                            width = 0.5,
-                            height = 0.4,
-                            prompt_position = "top",
-                            preview_cutoff = 120,
-                        },
                     },
                     current_buffer_fuzzy_find = {
                         previewer = true,
-                        -- theme = "dropdown",
-                        layout_config = {
-                            -- width = 0.5,
-                            height = 0.8,
-                            prompt_position = "top",
-                            preview_cutoff = 120,
-                        },
                     },
                     live_grep = {
-                        only_sort_text = true,
+                        only_sort_text = false,
                         previewer = true,
-                        layout_config = {
-                            horizontal = {
-                                width = 0.9,
-                                height = 0.75,
-                                preview_width = 0.6,
-                            },
-                        },
-                    },
-                    grep_string = {
-                        only_sort_text = true,
-                        previewer = true,
-                        layout_config = {
-                            horizontal = {
-                                width = 0.9,
-                                height = 0.75,
-                                preview_width = 0.6,
-                            },
-                        },
                     },
                     lsp_references = {
                         show_line = false,
                         previewer = true,
-                        layout_config = {
-                            horizontal = {
-                                width = 0.9,
-                                height = 0.75,
-                                preview_width = 0.6,
-                            },
-                        },
                     },
                     treesitter = {
                         show_line = false,
                         previewer = true,
-                        layout_config = {
-                            horizontal = {
-                                width = 0.9,
-                                height = 0.75,
-                                preview_width = 0.6,
-                            },
-                        },
                     },
                 },
                 extensions = {
@@ -154,24 +108,9 @@ return {
                             "*/lua-language-server/*",
                         },
                     },
-                    -- file_browser = {
-                    --   -- theme = "",
-                    --   previewer = true,
-                    --   -- disables netrw and use telescope-file-browser in its place
-                    --   hijack_netrw = true,
-                    --   -- mappings = {
-                    --   --   ["i"] = {
-                    --   --     -- your custom insert mode mappings
-                    --   --   },
-                    --   --   ["n"] = {
-                    --   --     -- your custom normal mode mappings
-                    --   --   },
-                    --   -- },
-                    -- },
                 }
             }
             telescope.load_extension('fzf')
-            telescope.load_extension("zoxide")
             telescope.load_extension("frecency")
         end
     },

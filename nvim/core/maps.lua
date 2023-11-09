@@ -31,49 +31,15 @@ map('i', '<C-x><C-k>', '<Plug>(fzf-complete-word)', { silent = true })
 map('i', '<C-x><C-f>', '<Plug>(fzf-complete-path)', { silent = true })
 map('i', '<C-x><C-l>', '<Plug>(fzf-complete-line)', { silent = true })
 
--- fugitive git bindings
-map('n', '<Leader>g', ':Git<CR>', opts)
-map('n', '<Leader>gd', ':Gdiff<Space>', opts)
-map('n', '<Leader>ge', ':Gedit<Space>', opts)
-map('n', '<Leader>gp', ':Git push origin <Space>', opts)
-map('n', '<Leader>g-', ':Silent Git stash<CR>:e<CR>', opts)
-map('n', '<Leader>g+', ':Silent Git stash pop<CR>:e<CR>', opts)
-map('n', '<Leader>gsb', ':Git switch<Space>', opts)
-map('n', '<Leader>go', ':.GBrowse<CR>', opts) -- Open current file on github
-
 -- TwiddleCase
 map('v', '~', 'y:call setreg("", TwiddleCase(@"), getregtype(""))<CR>gv"Pgv', opts)
-
--- For local replace
-map('n', 'gR', 'gd[{V%::s/<C-R>///gc<left><left><left>', opts)
-
--- For global replace
-map('n', 'gr', 'gD:%s/<C-R>///gc<left><left><left>', opts)
-
--- Split
-map('n', '<Leader>h', ':<C-u>split<CR>', opts)
-map('n', '<Leader>v', ':<C-u>vsplit<CR>', opts)
 
 -- Tabs
 map('n', 'tn', ':tabnew<CR>', silent_opts)
 
--- Set working directory
-map('n', '<leader>.', ':lcd %:p:h<CR>', opts)
-
--- Opens an edit command with the path of the currently edited file filled in
-map('n', '<Leader>e', ':e <C-R>=expand("%:p:h") . "/" <CR>', opts)
-
--- Opens a tab edit command with the path of the currently edited file filled
-map('n', '<Leader>te', ':tabe <C-R>=expand("%:p:h") . "/" <CR>', opts)
-
 map('c', '<C-P>', '<C-R>=expand("%:p:h") . "/" <CR>', opts)
-map('n', '<leader>e', ':FZF -m<CR>', silent_opts)
-
--- Recovery commands from history through FZF
-map('n', '<leader>y', ':History:<CR>', opts)
 
 map('n', 'YY', '"+y<CR>', opts)
-map('n', '<leader>p', '"+gP<CR>', opts)
 map('n', 'XX', '"+x<CR>', opts)
 
 if vim.fn.has('macunix') == 1 then
@@ -81,18 +47,6 @@ if vim.fn.has('macunix') == 1 then
     map('v', '<C-x>', ':!pbcopy<CR>', opts)
     map('v', '<C-c>', ':w !pbcopy<CR><CR>', opts)
 end
-
--- Buffer nav
-map('n', '<leader>z', ':bp<CR>', opts)
-map('n', '<leader>q', ':bp<CR>', opts)
-map('n', '<leader>x', ':bn<CR>', opts)
-map('n', '<leader>w', ':bn<CR>', opts)
-
--- Close buffer
-map('n', '<leader>c', ':bd<CR>', opts)
-
--- Clean search (highlight)
-map('n', '<leader><space>', ':noh<cr>', silent_opts)
 
 -- Switching windows
 map('n', '<C-j>', '<C-w>j', opts)
