@@ -149,8 +149,8 @@ return {
                     { name = "tmux" },
                 },
                 mapping = {
-                    ['<Tab>'] = cmp_action.luasnip_supertab(),
-                    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+                    -- ['<Tab>'] = cmp_action.luasnip_supertab(),
+                    -- ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
                     ["<C-Space>"] = cmp_mapping.complete(),
                     ['<CR>'] = cmp.mapping.confirm({ select = false }),
                 }

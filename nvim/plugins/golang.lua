@@ -2,10 +2,7 @@ return {
     -- gopher
     {
         "olexsmir/gopher.nvim",
-        enabled = false,
-        dependencies = {
-            "leoluz/nvim-dap-go"
-        },
+        enabled = true,
         lazy = false,
         config = function()
             local gopher = require("gopher")
@@ -30,7 +27,6 @@ return {
             "ray-x/guihua.lua",
             "neovim/nvim-lspconfig",
             "nvim-treesitter/nvim-treesitter",
-            "leoluz/nvim-dap-go"
         },
         config = function()
             require("go").setup({

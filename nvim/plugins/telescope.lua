@@ -9,14 +9,8 @@ return {
             'jvgrootveld/telescope-zoxide',
             'nvim-tree/nvim-web-devicons',
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-            'nvim-telescope/telescope-ui-select.nvim',
-            'telescope-dap.nvim',
-            'kkharji/sqlite.lua',
+            -- 'kkharji/sqlite.lua',
             'nvim-telescope/telescope-frecency.nvim',
-            -- {
-            --   "nvim-telescope/telescope-file-browser.nvim",
-            --   dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-            -- }
         },
         config = function()
             local telescope = require('telescope')
@@ -36,7 +30,7 @@ return {
                     },
                     previewer = false,
                     -- hidden = true,
-                    prompt_prefix = " 󰅭  ",
+                    prompt_prefix = " $  ",
                     file_ignore_patterns = { "node_modules", "package-lock.json" },
                     initial_mode = "insert",
                     select_strategy = "reset",
@@ -149,21 +143,6 @@ return {
                         override_file_sorter = true,    -- override the file sorter
                         case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
                     },
-                    ["ui-select"] = {
-                        require("telescope.themes").get_dropdown({
-                            previewer        = false,
-                            initial_mode     = "normal",
-                            sorting_strategy = 'ascending',
-                            layout_strategy  = 'horizontal',
-                            layout_config    = {
-                                horizontal = {
-                                    width = 0.5,
-                                    height = 0.4,
-                                    preview_width = 0.6,
-                                },
-                            },
-                        })
-                    },
                     frecency = {
                         default_workspace = 'CWD',
                         show_scores = true,
@@ -192,12 +171,8 @@ return {
                 }
             }
             telescope.load_extension('fzf')
-            telescope.load_extension('ui-select')
-            telescope.load_extension('refactoring')
-            telescope.load_extension('dap')
             telescope.load_extension("zoxide")
             telescope.load_extension("frecency")
-            -- telescope.load_extension("file_browser")
         end
     },
 }
