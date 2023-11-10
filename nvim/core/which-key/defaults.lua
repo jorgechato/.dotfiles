@@ -24,9 +24,8 @@ return {
         W = { "<cmd>noautocmd w<cr>", "Save without formatting (noautocmd)" },
     },
     g = {
-        name = "+Git",
+        name = "Git",
         -- fugitive git bindings
-        -- map('n', '<Leader>g', ':Git<CR>', opts)
         -- map('n', '<Leader>ge', ':Gedit<Space>', opts)
         -- map('n', '<Leader>gp', ':Git push origin <Space>', opts)
         -- map('n', '<Leader>g-', ':Silent Git stash<CR>:e<CR>', opts)
@@ -56,7 +55,8 @@ return {
             "Git Diff",
         },
         s = {
-            name = "+Search",
+            name = "Search",
+            t = { ":Git<cr>", "Git interactive (ST)" },
             c = { "<cmd>Telescope git_commits<cr>", "Git commits" },
             B = { "<cmd>Telescope git_branches<cr>", "Git branches" },
             s = { "<cmd>Telescope git_status<cr>", "Git status" },
@@ -64,7 +64,7 @@ return {
         },
     },
     j = {
-        name = "+Jump",
+        name = "Jump",
         u = { "<cmd>Telescope lsp_references<cr>", "References" },
         d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
         D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration" },
@@ -82,7 +82,7 @@ return {
         h = { "<cmd>lua require('core.utils').toggle_inlay_hints()<CR>", "Toggle Inlay Hints" },
     },
     s = {
-        name = "+Search",
+        name = "Search",
         f = { "<cmd>Telescope find_files<cr>", "Find File (CWD)" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
@@ -98,7 +98,7 @@ return {
         b = { "<cmd>Telescope buffers<cr>", "Buffers" },
     },
     t = {
-        name = "+Todo",
+        name = "Todo",
         t = { "<cmd>TodoTelescope previewer=false layout_config={vertical={height=0.4}}<cr>", "Todo" },
         T = { "<cmd>TodoTelescope previewer=false layout_config={vertical={height=0.4}} keywords=TODO,FIX,FIXME<cr>", "Todo/Fix/Fixme" },
         x = { "<cmd>TodoTrouble<cr>", "Todo (Trouble)" },
