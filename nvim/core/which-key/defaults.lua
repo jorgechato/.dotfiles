@@ -104,4 +104,10 @@ return {
         x = { "<cmd>TodoTrouble<cr>", "Todo (Trouble)" },
         X = { "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr><cr>", "Todo/Fix/Fixme (Trouble)" },
     },
+    m = {
+        name = "Markdown",
+        p = { "<cmd>MarkdownPreviewToggle<cr>", "Preview" },
+        P = { "<cmd>MarkdownPreview<cr>", "Preview (Split)" },
+        s = { "<cmd>MarkdownPreviewStop<cr>", "Preview Stop" },
+    },
 }

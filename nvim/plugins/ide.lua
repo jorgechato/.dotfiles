@@ -29,6 +29,14 @@ return {
                     { "type", "asc" },
                     { "name", "asc" },
                 },
+                show_hidden = true,
+                is_hidden_file = function(name, bufnr)
+                    return vim.startswith(name, ".")
+                end,
+                -- This function defines what will never be shown, even when `show_hidden` is set
+                is_always_hidden = function(name, bufnr)
+                    return vim.startswith(name, "..")
+                end,
             },
             win_options = {
                 wrap = false,
@@ -56,6 +64,12 @@ return {
                 create_mappings = true,
             })
         end,
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
     },
     {
         "folke/todo-comments.nvim",

@@ -25,7 +25,7 @@ set -x BOOKMARK $HOME/Dropbox/Apps/Bookmarks/
 function __check_z --on-variable PWD --description 'Setup z on directory change'
     status --is-command-substitution
     and return
-    bash -c "source /opt/homebrew/etc/profile.d/z.sh; _z --add `pwd -P`"
+    bash -c "source /usr/local/etc/profile.d/z.sh; _z --add `pwd -P`"
 end
 
 #Pyenv
