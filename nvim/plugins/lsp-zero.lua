@@ -166,7 +166,8 @@ return {
         dependencies = {
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'williamboman/mason-lspconfig.nvim' },
-            { 'b0o/schemastore.nvim' }
+            { 'b0o/schemastore.nvim' },
+            { 'WhoIsSethDaniel/mason-tool-installer.nvim' }
         },
         config = function()
             local lsp_zero = require('lsp-zero')
@@ -197,20 +198,31 @@ return {
             local lspconfig = require('lspconfig')
 
             require('mason').setup({})
+            require('mason-tool-installer').setup {
+                ensure_installed = {
+                    'sqlfmt',
+                },
+            }
+
             require('mason-lspconfig').setup({
                 ensure_installed = {
-                    'tsserver',
-                    'eslint',
-                    'gopls',
-                    -- 'golangci_lint_ls',
+                    'autotools-language-server',
+                    'sqlls',
+                    'spectral',
                     'lua_ls',
+                    -- 'rust_analyzer',
+                    'gopls',
+                    'bufls',
+                    'cmake',
                     'jsonls',
                     'terraformls',
                     'dockerls',
-                    'bufls',
-                    'cmake',
+                    'tsserver',
+                    'eslint',
+                    'astro',
                     'cssls',
                     'tailwindcss',
+                    'marksman',
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -253,6 +265,11 @@ return {
                         },
                     }),
 
+                    lspconfig.sqlls.setup({
+                        filetypes = { 'sql', 'mysql', 'postgres' },
+                        cmd = { "sql-language-server", "up", "--method", "stdio" },
+                    }),
+
                     lspconfig.gopls.setup({
                         filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
                         root_dir = lspconfig.util.root_pattern("go.mod", ".git", "go.work"),
@@ -292,6 +309,7 @@ return {
                             }
                         }
                     }),
+
                     lspconfig.terraformls.setup({
                         cmd = { "terraform-ls", "serve" },
                         filetypes = { "terraform", "tf", "terraform-vars" },
@@ -309,6 +327,7 @@ return {
                     ['lua_ls'] = { 'lua' },
                     ['tsserver'] = { 'javascript', 'typescript' },
                     ['gopls'] = { 'go' },
+                    ['sqlls'] = { 'sql' },
                 }
             })
 
