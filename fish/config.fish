@@ -34,8 +34,10 @@ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 pyenv init - | source
 
 #User config
+set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x DOTHOME "$HOME/.dotfiles"
-set -x PATH "$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin:/usr/local/sbin"
+set -x PATH "$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin:/usr/local/sbin:/usr/local/opt/libpq/bin"
+set -x PATH "$PATH:$HOME/.config/fish/config.fish"
 test -e {$HOME}/.iterm2_shell_integration.fish
 and source {$HOME}/.iterm2_shell_integration.fish
 
@@ -56,7 +58,11 @@ set PATH $HOME/.jenv/bin $PATH
 #status --is-interactive; and jenv init - fish | source
 
 #FNM
-fnm env --use-on-cd | source
+#fnm env --use-on-cd | source
+
+# BUN
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
 
 #direnv
 direnv hook fish | source

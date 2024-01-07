@@ -206,7 +206,6 @@ return {
 
             require('mason-lspconfig').setup({
                 ensure_installed = {
-                    'autotools-language-server',
                     'sqlls',
                     'spectral',
                     'lua_ls',
@@ -324,6 +323,7 @@ return {
                     timeout_ms = 10000,
                 },
                 servers = {
+                    ["rust-analyzer"] = { "rust" },
                     ['lua_ls'] = { 'lua' },
                     ['tsserver'] = { 'javascript', 'typescript' },
                     ['gopls'] = { 'go' },
