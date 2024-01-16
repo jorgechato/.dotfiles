@@ -222,6 +222,7 @@ return {
                     'cssls',
                     'tailwindcss',
                     'marksman',
+                    'typos_lsp',
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -313,6 +314,12 @@ return {
                         cmd = { "terraform-ls", "serve" },
                         filetypes = { "terraform", "tf", "terraform-vars" },
                         root_dir = lspconfig.util.root_pattern("*.tf", "*.terraform", "*.tfvars", "*.hcl", "*.config"),
+                    }),
+
+                    lspconfig.astro.setup({
+                        cmd = { "astro-ls", "--stdio" },
+                        filetypes = { "astro" },
+                        root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
                     })
                 },
             })
@@ -328,6 +335,7 @@ return {
                     ['tsserver'] = { 'javascript', 'typescript' },
                     ['gopls'] = { 'go' },
                     ['sqlls'] = { 'sql' },
+                    ['astro'] = { 'astro' },
                 }
             })
 
