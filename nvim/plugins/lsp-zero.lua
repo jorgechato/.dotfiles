@@ -43,7 +43,7 @@ return {
                         if max_width ~= 0 and #vim_item.abbr > max_width then
                             vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. icons.ui.Ellipsis
                         end
-                        vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+                        -- vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
                         if entry.source.name == "copilot" then
                             vim_item.kind = icons.git.Octoface
@@ -223,6 +223,7 @@ return {
                     'tailwindcss',
                     'marksman',
                     'typos_lsp',
+                    'mdx_analyzer',
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -320,7 +321,14 @@ return {
                         cmd = { "astro-ls", "--stdio" },
                         filetypes = { "astro" },
                         root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
-                    })
+                    }),
+
+                    lspconfig.mdx_analyzer.setup({
+                        cmd = { 'mdx-language-server', '--stdio' },
+                        filetypes = { 'markdown.mdx' },
+                        single_file_support = true,
+                        root_dir = lspconfig.util.root_pattern("package.json"),
+                    }),
                 },
             })
 
@@ -336,6 +344,10 @@ return {
                     ['gopls'] = { 'go' },
                     ['sqlls'] = { 'sql' },
                     ['astro'] = { 'astro' },
+                    ['mdx_analyzer'] = { 'markdown.mdx' },
+                    ['jsonls'] = { 'json', 'jsonc' },
+                    ['terraformls'] = { 'terraform' },
+                    ['dockerls'] = { 'dockerfile' },
                 }
             })
 

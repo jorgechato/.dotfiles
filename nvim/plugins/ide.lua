@@ -1,6 +1,12 @@
 return {
     'tpope/vim-abolish',
-    'ctrlpvim/ctrlp.vim',
+    {
+        'ctrlpvim/ctrlp.vim',
+        config = function()
+            vim.g.ctrlp_show_hidden = true
+            vim.g.ctrlp_custom_ignore = '\\.git\\|third_party\\|node_modules\\|tmp/cache'
+        end
+    },
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -10,6 +16,28 @@ return {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {},
+    },
+    {
+        "nvim-tree/nvim-web-devicons",
+        lazy = true,
+        config = function()
+            require("nvim-web-devicons").setup({
+                default = true,
+                override_by_extension = {
+                    ["astro"] = {
+                        icon = "",
+                        color = "#FF3838",
+                        name = "Astro"
+                    },
+                    ["proto"] = {
+                        icon = "󰅱",
+                        color = "#6e5494",
+                        name = "Proto"
+                    },
+                },
+            })
+            require("nvim-web-devicons").set_default_icon('󰢚', '#808080', 80)
+        end
     },
     {
         "stevearc/oil.nvim",

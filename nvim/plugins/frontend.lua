@@ -1,6 +1,9 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        dependencies = {
+            "MDeiml/tree-sitter-markdown",
+        },
         build = ":TSUpdate",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
@@ -21,6 +24,9 @@ return {
                     "json",
                     "typescript",
                     "tsx",
+                    "markdown.mdx",
+                    "markdown",
+                    "mdx",
                 },
             })
         end
