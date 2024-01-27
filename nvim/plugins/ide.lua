@@ -4,7 +4,8 @@ return {
         'ctrlpvim/ctrlp.vim',
         config = function()
             vim.g.ctrlp_show_hidden = true
-            vim.g.ctrlp_custom_ignore = '\\.git\\|third_party\\|node_modules\\|tmp/cache'
+            vim.g.ctrlp_custom_ignore =
+            '\\.git\\|third_party\\|node_modules\\|tmp/cache\\|bin\\|gen\\|google\\|out\\|target\\|vendor\\|validate'
         end
     },
     {

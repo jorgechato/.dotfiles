@@ -18,12 +18,3 @@ vim.cmd([[
 -- Terminal emulation
 --------------------------------------------------------------
 vim.api.nvim_set_keymap('n', '<leader>sh', ':terminal<CR>', { silent = true })
-
---------------------------------------------------------------
--- Filetype specific mappings
---------------------------------------------------------------
-vim.filetype.add({
-    extension = {
-        mdx = 'mdx'
-    }
-})

@@ -1,3 +1,10 @@
+local util = require 'lspconfig.util'
+
+local function get_typescript_server_path(root_dir)
+    local project_root = util.find_node_modules_ancestor(root_dir)
+    return project_root and (util.path.join(project_root, 'node_modules', 'typescript', 'lib')) or ''
+end
+
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -223,7 +230,7 @@ return {
                     'tailwindcss',
                     'marksman',
                     'typos_lsp',
-                    'mdx_analyzer',
+                    -- 'phpactor',
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -317,18 +324,49 @@ return {
                         root_dir = lspconfig.util.root_pattern("*.tf", "*.terraform", "*.tfvars", "*.hcl", "*.config"),
                     }),
 
+                    lspconfig.marksman.setup({
+                        cmd = { "marksman", "server" },
+                        filetypes = { "markdown", "markdown.mdx" },
+                        root_dir = lspconfig.util.root_pattern(".git", ".marksman.toml"),
+                        single_file_support = true,
+                        init_options = {
+                            typescript = {},
+                        },
+                        on_new_config = function(new_config, new_root_dir)
+                            if vim.tbl_get(new_config.init_options, 'typescript') and not new_config.init_options.typescript.tsdk then
+                                new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+                            end
+                        end
+                    }),
+
                     lspconfig.astro.setup({
                         cmd = { "astro-ls", "--stdio" },
                         filetypes = { "astro" },
                         root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+                        init_options = {
+                            typescript = {},
+                        },
+                        on_new_config = function(new_config, new_root_dir)
+                            if vim.tbl_get(new_config.init_options, 'typescript') and not new_config.init_options.typescript.tsdk then
+                                new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+                            end
+                        end
                     }),
 
-                    lspconfig.mdx_analyzer.setup({
-                        cmd = { 'mdx-language-server', '--stdio' },
-                        filetypes = { 'markdown.mdx' },
+                    lspconfig.typos_lsp.setup({
+                        cmd = { 'typos-lsp' },
+                        filetypes = { '*' },
                         single_file_support = true,
-                        root_dir = lspconfig.util.root_pattern("package.json"),
+                        init_options = {
+                            diagnosticSeverity = 'Warning',
+                        },
                     }),
+
+                    -- lspconfig.phpactor.setup({
+                    -- cmd = { "phpactor", "language-server" },
+                    -- filetypes = { "php" },
+                    -- root_dir = lspconfig.util.root_pattern("composer.json", ".git"),
+                    -- }),
                 },
             })
 
@@ -344,10 +382,11 @@ return {
                     ['gopls'] = { 'go' },
                     ['sqlls'] = { 'sql' },
                     ['astro'] = { 'astro' },
-                    ['mdx_analyzer'] = { 'markdown.mdx' },
-                    ['jsonls'] = { 'json', 'jsonc' },
                     ['terraformls'] = { 'terraform' },
                     ['dockerls'] = { 'dockerfile' },
+                    ['typos_lsp'] = { '*' },
+                    ['marksman'] = { "markdown", "markdown.mdx" },
+                    -- ['phpactor'] = { 'php' },
                 }
             })
 
