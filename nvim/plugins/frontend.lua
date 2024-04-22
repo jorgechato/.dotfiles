@@ -11,6 +11,7 @@ return {
                 extension = {
                     mdx = "markdown",
                     tfvars = 'terraform',
+                    templ = 'templ',
                 },
             })
             vim.treesitter.language.register("markdown", "mdx")
@@ -21,7 +22,7 @@ return {
             configs.setup({
                 highlight = {
                     enable = true,
-                    additional_vim_regex_highlighting = { 'markdown' },
+                    additional_vim_regex_highlighting = { 'markdown', 'templ' },
                 },
                 indent = { enable = true },
                 auto_install = false,
@@ -35,6 +36,7 @@ return {
                     "json",
                     "typescript",
                     "tsx",
+                    "templ",
                     "markdown",
                     "markdown_inline",
                 },

@@ -211,6 +211,8 @@ return {
                 },
             }
 
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
             require('mason-lspconfig').setup({
                 ensure_installed = {
                     'sqlls',
@@ -218,6 +220,8 @@ return {
                     'lua_ls',
                     -- 'rust_analyzer',
                     'gopls',
+                    'templ',
+                    'htmx',
                     'bufls',
                     'cmake',
                     'jsonls',
@@ -230,6 +234,7 @@ return {
                     'tailwindcss',
                     'marksman',
                     'typos_lsp',
+                    'dagger',
                     -- 'phpactor',
                 },
                 handlers = {
@@ -249,6 +254,32 @@ return {
                             },
                         },
                     }),
+
+                    lspconfig.dagger.setup({
+                        cmd = { "cuelsp" },
+                        filetypes = { "cue" },
+                        root_dir = lspconfig.util.root_pattern("cue.mod", ".git"),
+                        single_file_support = true,
+                    }),
+
+                    lspconfig.tailwindcss.setup({
+                        capabilities = capabilities,
+                        filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "astro", "astro-markdown", "gohtml", "gohtmltmpl", "markdown", "mdx", "templ" },
+                        init_options = { userLanguages = { templ = "html" } },
+                    }),
+
+                    lspconfig.templ.setup({
+                        cmd = { "templ", "lsp" },
+                        filetypes = { "templ" },
+                        root_dir = lspconfig.util.root_pattern('go.work', 'go.mod', '.git'),
+                    }),
+
+                    lspconfig.htmx.setup({
+                        cmd = { "htmx-lsp" },
+                        filetypes = { "html", "templ" },
+                        single_file_support = true,
+                    }),
+
                     lspconfig.jsonls.setup({
                         settings = {
                             json = {
@@ -380,6 +411,8 @@ return {
                     ['lua_ls'] = { 'lua' },
                     ['tsserver'] = { 'javascript', 'typescript' },
                     ['gopls'] = { 'go' },
+                    ['templ'] = { 'templ' },
+                    ['htmx'] = { 'html', 'templ' },
                     ['sqlls'] = { 'sql' },
                     ['astro'] = { 'astro' },
                     ['terraformls'] = { 'terraform' },
