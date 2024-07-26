@@ -3,7 +3,7 @@ local silent_opts = { noremap = true, silent = true }
 local map = vim.keymap.set
 
 --------------------------------------------------------------
--- Mappping
+-- Mapping
 --------------------------------------------------------------
 -- Comment on <cntr>/
 --map('n', '<C-_>', '<cmd>lua require("nerdcommenter").toggle()<CR>', opts)
