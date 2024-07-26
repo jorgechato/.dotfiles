@@ -27,6 +27,10 @@ return {
                 indent = { enable = true },
                 auto_install = false,
                 ensure_installed = {
+                    "cue",
+                    "terraform",
+                    "hcl",
+                    "lua",
                     "astro",
                     "css",
                     "scss",

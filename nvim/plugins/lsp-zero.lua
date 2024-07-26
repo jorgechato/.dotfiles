@@ -291,17 +291,24 @@ return {
 
                     lspconfig.tsserver.setup({
                         root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
-                        filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte' },
+                        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
                         cmd = { "typescript-language-server", "--stdio" },
+                        single_file_support = true,
                     }),
 
                     lspconfig.eslint.setup({
-                        filestypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'svelte' },
+                        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
                         settings = {
                             workingDirectory = { mode = 'auto' },
                             format = { enable = true },
                             lint = { enable = true },
                         },
+                        on_attach = function(client, bufnr)
+                            vim.api.nvim_create_autocmd("BufWritePre", {
+                                buffer = bufnr,
+                                command = "EslintFixAll",
+                            })
+                        end,
                     }),
 
                     lspconfig.sqlls.setup({
@@ -351,7 +358,7 @@ return {
 
                     lspconfig.terraformls.setup({
                         cmd = { "terraform-ls", "serve" },
-                        filetypes = { "terraform", "tf", "terraform-vars" },
+                        filetypes = { "terraform", "tf", "terraform-vars", "hcl" },
                         root_dir = lspconfig.util.root_pattern("*.tf", "*.terraform", "*.tfvars", "*.hcl", "*.config"),
                     }),
 
@@ -409,16 +416,18 @@ return {
                 servers = {
                     ["rust-analyzer"] = { "rust" },
                     ['lua_ls'] = { 'lua' },
-                    ['tsserver'] = { 'javascript', 'typescript' },
+                    ['eslint'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
+                    -- ['tsserver'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
                     ['gopls'] = { 'go' },
                     ['templ'] = { 'templ' },
                     ['htmx'] = { 'html', 'templ' },
                     ['sqlls'] = { 'sql' },
                     ['astro'] = { 'astro' },
-                    ['terraformls'] = { 'terraform' },
+                    ['terraformls'] = { 'hcl', 'terraform' },
                     ['dockerls'] = { 'dockerfile' },
                     ['typos_lsp'] = { '*' },
                     ['marksman'] = { "markdown", "markdown.mdx" },
+                    ['dagger'] = { 'cue' },
                     -- ['phpactor'] = { 'php' },
                 }
             })
