@@ -59,7 +59,7 @@ set PATH $HOME/.jenv/bin $PATH
 #status --is-interactive; and jenv init - fish | source
 
 #FNM
-#fnm env --use-on-cd | source
+fnm env --use-on-cd | source
 
 # BUN
 set --export BUN_INSTALL "$HOME/.bun"
