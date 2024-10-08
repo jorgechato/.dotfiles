@@ -1,9 +1,0 @@
-{
-    "settings": {
-        "bwtest": false,
-        "key": "live_250194492_6ADrcBoox3XCix14NyFj2VLXldHD0g",
-        "server": "auto",
-        "service": "Twitch"
-    },
-    "type": "rtmp_common"
-}

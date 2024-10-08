@@ -1,6 +1,0 @@
-├── spell
-├── syntax
-└── tmp
-    ├── backup
-    ├── swap
-    └── undo

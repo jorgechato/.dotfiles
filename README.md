@@ -1,12 +1,16 @@
 # JORGE CHATO .dotfiles
 
 ### Basic Installation
-.dotfiles is installed by running one of the following commands in your terminal. You can install this via the command-line with either `curl` or `wget`.
-#### via curl
-```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/jorgechato/.dotfiles/master/install.sh)"
-```
-#### via wget
-```shell
-sh -c "$(wget https://raw.githubusercontent.com/jorgechato/.dotfiles/master/install.sh -O -)"
-```
+
+1. Install Nix
+    ```shell
+    $ curl -L https://nixos.org/nix/install | sh
+    ```
+2. Download configuration
+    ```shell
+    $ nix-shell -p git --run 'git clone git@github.com:jorgechato/.dotfiles.git ~/.dotfiles'
+    ```
+3. Install configuration
+    ```shell
+    $ nix-shell run nix-darwin --experimental-features 'nix-command flakes' -- switch --flake ~/.dotfiles/nix/darwin#ichi # change ichi with the device name
+    ```
