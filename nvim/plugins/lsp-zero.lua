@@ -227,7 +227,7 @@ return {
                     'jsonls',
                     'terraformls',
                     'dockerls',
-                    'tsserver',
+                    'ts_ls',
                     'eslint',
                     'astro',
                     'cssls',
@@ -289,7 +289,7 @@ return {
                         }
                     }),
 
-                    lspconfig.tsserver.setup({
+                    lspconfig.ts_ls.setup({
                         root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
                         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
                         cmd = { "typescript-language-server", "--stdio" },
