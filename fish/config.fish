@@ -39,6 +39,7 @@ set -x DOTHOME "$HOME/.dotfiles"
 set -x PATH "$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin:/usr/local/sbin:/usr/local/opt/libpq/bin"
 set -x PATH "$PATH:$HOME/.config/fish/config.fish"
 set -x PATH "$PATH:/usr/local/opt/findutils/libexec/gnubin"
+set -x PATH "$PATH:/Users/jorge/.local/bin"
 test -e {$HOME}/.iterm2_shell_integration.fish
 and source {$HOME}/.iterm2_shell_integration.fish
 
