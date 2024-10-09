@@ -235,6 +235,7 @@ return {
                     'marksman',
                     'typos_lsp',
                     'dagger',
+                    'rnix',
                     -- 'phpactor',
                 },
                 handlers = {
@@ -400,6 +401,11 @@ return {
                         },
                     }),
 
+                    lspconfig.rnix.setup({
+                        cmd = { "rnix-lsp" },
+                        filetypes = { "nix" },
+                    }),
+
                     -- lspconfig.phpactor.setup({
                     -- cmd = { "phpactor", "language-server" },
                     -- filetypes = { "php" },
@@ -428,6 +434,7 @@ return {
                     ['typos_lsp'] = { '*' },
                     ['marksman'] = { "markdown", "markdown.mdx" },
                     ['dagger'] = { 'cue' },
+                    ['rnix'] = { 'nix' },
                     -- ['phpactor'] = { 'php' },
                 }
             })
