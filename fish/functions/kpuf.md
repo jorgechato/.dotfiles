@@ -20,7 +20,3 @@ This script will modify your config file to add a context and namespace for each
 ```sh
 set -x KPUF_CONFIG_FILE "$HOME/.config/fish/functions/kpuf.yaml"
 ```
-
-## TODOs
-
-- [ ] ADD login if needed on context switch

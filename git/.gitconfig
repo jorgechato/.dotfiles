@@ -1,7 +1,6 @@
 [user]
     name = jorgechato
     email = hack@jorgechato.com
-    signingkey = xxx
 [url "git@github.com:"]
     insteadOf = https://github.com/
 [gpg]

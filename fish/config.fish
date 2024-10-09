@@ -73,5 +73,5 @@ direnv hook fish | source
 set -Ux FZF_DEFAULT_OPTS "--color=fg:-1,bg:-1,hl:#0086b3 --color=fg+:#c94e6b,bg+:-1,hl+:#d81745 --color=info:#707070,prompt:#0086b3,pointer:#d81745 --color=marker:#960b73,spinner:#707070,header:#999999"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/jorge/.rd/bin"
+# set --export --prepend PATH "/Users/jorge/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
