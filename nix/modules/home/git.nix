@@ -6,8 +6,8 @@
       # Sign all commits using ssh key
       commit.gpgsign = true;
       gpg.format = "ssh";
-      gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
-      user.signingkey = "~/.ssh/id_github_signinkey.pub";
+      gpg.ssh.allowedSignersFile = "/Users/jorge/.ssh/allowed_signers";
+      user.signingkey = "/Users/jorge/.ssh/id_github_signinkey.pub";
     };
   };
 }

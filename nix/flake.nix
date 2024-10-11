@@ -12,77 +12,40 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
     {
       darwinConfigurations."ichi" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/configuration.nix
-          {
-            nixpkgs.hostPlatform = "x86_64-darwin";
-          }
+          ./hosts/intel/configuration.nix
+          ./modules/nixos
           nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              user = "jorge";
-              autoMigrate = true; # Automatically migrate existing Homebrew installations
-            };
-          }
           home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jorge = import ./modules/home/core.nix;
-          }
         ];
       };
       darwinConfigurations."ni" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/configuration.nix
-          {
-            nixpkgs.hostPlatform = "aarch64-darwin";
-          }
+          ./hosts/silicon/configuration.nix
+          ./modules/nixos
           nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              user = "jorge";
-            };
-          }
           home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jorge = import ./modules/home/core.nix;
-          }
         ];
       };
 
       darwinConfigurations."work" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/work/configuration.nix
-          {
-            nixpkgs.hostPlatform = "aarch64-darwin";
-          }
+          ./modules/nixos
           nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              user = "jorge";
-            };
-          }
           home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jorge = import ./modules/home/core.nix;
-          }
         ];
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."ichi".pkgs;
-      darwinPackages = self.darwinConfigurations."ni".pkgs;
-      darwinPackages = self.darwinConfigurations."work".pkgs;
+      darwinPackages."ichi" = self.darwinConfigurations."ichi".pkgs;
+      darwinPackages."ni" = self.darwinConfigurations."ni".pkgs;
+      darwinPackages."work" = self.darwinConfigurations."work".pkgs;
     };
 }

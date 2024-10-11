@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, self, ... }: {
   # Add apps to spotlight for mac
   system.activationScripts.applications.text =
     let

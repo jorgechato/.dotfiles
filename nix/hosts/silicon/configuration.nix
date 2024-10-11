@@ -1,7 +1,4 @@
 { pkgs, lib, config, nixpkgs, nix-homebrew, home-manager, ... }: {
-  defaults.withChrome = true;
-  brew.isWork = true;
-
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   nix-homebrew = {

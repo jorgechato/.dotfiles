@@ -1,12 +1,10 @@
 { pkgs, lib, config, nixpkgs, nix-homebrew, home-manager, ... }: {
-  defaults.withChrome = true;
-  brew.isWork = true;
-
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.hostPlatform = "x86_64-darwin";
 
   nix-homebrew = {
     enable = true;
     user = "jorge";
+    autoMigrate = true; # Automatically migrate existing Homebrew installations
   };
 
   home-manager.useGlobalPkgs = true;
