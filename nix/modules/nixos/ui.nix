@@ -1,23 +1,38 @@
-{ pkgs, lib, config, ... }: {
+{ self, pkgs, lib, config, ... }:
+let
+  persistentApps = [
+    "/Applications/Brave Browser.app"
+    "${pkgs.iterm2}/Applications/iTerm.app"
+  ];
+
+  workPersistentApps = [
+    "/Applications/Google Chrome.app"
+  ];
+in
+{
   options = {
-    defaults.withChrome = lib.mkEnableOption "Add Chrome to the doc";
+    isWork = {
+      enable = lib.mkOption {
+        default = false;
+        type = with lib.types; bool;
+        description = "Is this a work machine?";
+      };
+    };
   };
 
-  system.defaults = {
-    dock.autohide = true;
-    dock.orientation = "right";
-    dock.persistent-apps = [
-      "/Applications/Brave Browser.app"
-      "${pkgs.iterm2}/Applications/iTerm.app"
-    ];
+  config = {
+    system.defaults = {
+      dock.autohide = true;
+      dock.orientation = "right";
+      dock.persistent-apps = lib.mkMerge [
+        persistentApps
+        (lib.mkIf config.isWork workPersistentApps)
+      ];
 
-    dock = lib.mkIf config.defaults.withChrome {
-      persistent-apps = dock.persistent-apps ++ [ "/Applications/Google Chrome.app" ];
+      finder.FXPreferredViewStyle = "Nlsv";
+      NSGlobalDomain.AppleICUForce24HourTime = true;
+      NSGlobalDomain.AppleInterfaceStyle = "Dark";
+      NSGlobalDomain."com.apple.keyboard.fnState" = true;
     };
-
-    finder.FXPreferredViewStyle = "Nlsv";
-    NSGlobalDomain.AppleICUForce24HourTime = true;
-    NSGlobalDomain.AppleInterfaceStyle = "Dark";
-    NSGlobalDomain."com.apple.keyboard.fnState" = true;
   };
 }
