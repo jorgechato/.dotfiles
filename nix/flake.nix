@@ -44,8 +44,8 @@
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages."ichi" = self.darwinConfigurations."ichi".pkgs;
-      darwinPackages."ni" = self.darwinConfigurations."ni".pkgs;
-      darwinPackages."work" = self.darwinConfigurations."work".pkgs;
+      # darwinPackages."ichi" = self.darwinConfigurations."ichi".pkgs;
+      # darwinPackages."ni" = self.darwinConfigurations."ni".pkgs;
+      # darwinPackages."work" = self.darwinConfigurations."work".pkgs;
     };
 }

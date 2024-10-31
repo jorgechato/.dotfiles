@@ -41,11 +41,11 @@
       pkgs.transmission
       pkgs.vscode
       # Fish plugins
-      fishPlugins.z
-      fishPlugins.fzf
-      fishPlugins.grc
-      fishPlugins.sponge
-      fishPlugins.plugin-git
+      pkgs.fishPlugins.z
+      pkgs.fishPlugins.fzf
+      pkgs.fishPlugins.grc
+      pkgs.fishPlugins.sponge
+      pkgs.fishPlugins.plugin-git
     ];
 
   fonts.packages = [

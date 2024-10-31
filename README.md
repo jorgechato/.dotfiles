@@ -16,7 +16,7 @@
     ```
 3. Install configuration
     ```shell
-    $ nix-shell run nix-darwin --experimental-features 'nix-command flakes' -- switch --flake ~/.dotfiles/nix/darwin#ichi # change ichi with the device name
+    $ nix run nix-darwin --experimental-features 'nix-command flakes' -- switch --flake ~/.dotfiles/nix#ichi # change ichi with the device name
     ```
 
 ## Add new package
@@ -32,3 +32,19 @@
 ### error: path '/nix/store/pq2iwm2pxn19nikkxfk0b87p817lcn2l-source/nix/flake.nix' does not exist
 
 This error is due to the use of a git folder for nix flakes. To fix it, you need to commit your changes before running the command.
+
+### error: I need to back up /etc/bashrc to /etc/bashrc.backup-before-nix, but the latter already exists.
+
+```bash
+$ sudo rm -rf /etc/bashrc /etc/bashrc.backup-before-nix /etc/bashrc.before-nix-darwin /etc/bash.bashrc.backup-before-nix /etc/zshrc /etc/zshrc.backup-before-nix && \
+  sudo touch /etc/bashrc && \
+  sudo touch /etc/zshrc && \
+  sudo unlink /etc/bashrc && \
+  sudo unlink /etc/zshrc
+```
+
+### error: unable to download xxx : Problem with the SSL CA cert (path? access rights?) (77)
+
+[solution](https://github.com/NixOS/nix/issues/3261)
+
+### Uninstall [steps](https://github.com/NixOS/nix/blob/master/doc/manual/source/installation/uninstall.md)
