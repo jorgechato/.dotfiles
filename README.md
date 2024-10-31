@@ -5,10 +5,14 @@
 1. Install Nix
     ```shell
     $ curl -L https://nixos.org/nix/install | sh
+    # or
+    $ sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
     ```
 2. Download configuration
     ```shell
     $ nix-shell -p git --run 'git clone git@github.com:jorgechato/.dotfiles.git ~/.dotfiles'
+    # and install flake with nix-darwin
+    $ cd ~/.dotfiles/nix/ && nix flake update --extra-experimental-features "nix-command flakes" && cd ~
     ```
 3. Install configuration
     ```shell

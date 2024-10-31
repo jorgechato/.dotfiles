@@ -5,6 +5,7 @@ let
     "/Applications/iTerm2.app"
     "/Applications/Scrivener.app"
     "/Applications/DaVinci Resolve.app"
+    "/Applications/MacFamilyTree 10.app"
   ];
 
   workPersistentApps = [

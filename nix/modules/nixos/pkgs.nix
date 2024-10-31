@@ -33,6 +33,8 @@
       pkgs.rustup
       pkgs.nix
       pkgs.turso-cli
+      pkgs.maltego
+      pkgs.sqlitebrowser
       # GUI
       pkgs.iterm2
       pkgs.iina
