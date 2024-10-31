@@ -1,27 +1,6 @@
 { pkgs, ... }: {
   programs.fish.plugins = [
     {
-      name = "spark";
-      src = pkgs.fetchFromGitHub {
-        owner = "jorgebucaran";
-        repo = "spark.fish";
-      };
-    }
-    {
-      name = "fzf";
-      src = pkgs.fetchFromGitHub {
-        owner = "PatrickF1";
-        repo = "fzf.fish";
-      };
-    }
-    {
-      name = "z";
-      src = pkgs.fetchFromGitHub {
-        owner = "jethrokuan";
-        repo = "z";
-      };
-    }
-    {
       name = "last-working-dir";
       src = pkgs.fetchFromGitHub {
         owner = "kfkonrad";
@@ -33,13 +12,6 @@
       src = pkgs.fetchFromGitHub {
         owner = "oh-my-fish";
         repo = "plugin-direnv";
-      };
-    }
-    {
-      name = "rustup";
-      src = pkgs.fetchFromGitHub {
-        owner = "oh-my-fish";
-        repo = "plugin-rustup";
       };
     }
     {

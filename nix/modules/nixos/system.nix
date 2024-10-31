@@ -1,4 +1,4 @@
-{ pkgs, config, self, ... }: {
+{ pkgs, config, self, nixpkgs, home-manager, ... }: {
   # Add apps to spotlight for mac
   system.activationScripts.applications.text =
     let
@@ -41,4 +41,11 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 5;
+
+  nixpkgs.config.allowUnfree = true; # allow install paid apps (require to add license manually in each app)
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.auto-optimise-store = true;
+
+  home-manager.backupFileExtension = "backup";
 }

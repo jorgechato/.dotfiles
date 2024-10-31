@@ -2,7 +2,9 @@
 let
   persistentApps = [
     "/Applications/Brave Browser.app"
-    "${pkgs.iterm2}/Applications/iTerm.app"
+    "/Applications/iTerm2.app"
+    "/Applications/Scrivener.app"
+    "/Applications/DaVinci Resolve.app"
   ];
 
   workPersistentApps = [
@@ -29,7 +31,11 @@ in
         (lib.mkIf config.isWork workPersistentApps)
       ];
 
+      screencapture.location = "~/Pictures/screenshots";
+
       finder.FXPreferredViewStyle = "Nlsv";
+      finder.AppleShowAllFiles = true;
+
       NSGlobalDomain.AppleICUForce24HourTime = true;
       NSGlobalDomain.AppleInterfaceStyle = "Dark";
       NSGlobalDomain."com.apple.keyboard.fnState" = true;

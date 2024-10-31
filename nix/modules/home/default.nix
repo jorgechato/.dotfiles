@@ -13,7 +13,8 @@
   imports = [
     ./pkgs.nix
     ./file.nix
-    ./fish.nix
+    ./programs.nix
+    # ./fish.nix
     ./git.nix
   ];
 }

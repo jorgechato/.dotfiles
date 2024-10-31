@@ -26,10 +26,24 @@
       pkgs.cuelsp
       pkgs.rectangle
       pkgs.ollama
+      pkgs.dbmate
+      pkgs.fnm
+      pkgs.gh
+      pkgs.ripgrep
+      pkgs.rustup
+      pkgs.nix
+      pkgs.turso-cli
       # GUI
       pkgs.iterm2
       pkgs.iina
       pkgs.transmission
+      pkgs.vscode
+      # Fish plugins
+      fishPlugins.z
+      fishPlugins.fzf
+      fishPlugins.grc
+      fishPlugins.sponge
+      fishPlugins.plugin-git
     ];
 
   fonts.packages = [

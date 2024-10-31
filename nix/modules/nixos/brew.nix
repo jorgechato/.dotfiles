@@ -7,6 +7,8 @@ let
   brews = import ./deps/brews.nix;
   brewsWork = import ./deps/brews-work.nix;
   brewsHome = import ./deps/brews-home.nix;
+
+  appstoreHome = import ./deps/appstore-home.nix;
 in
 {
   options = {
@@ -22,7 +24,9 @@ in
   config = {
     homebrew = {
       enable = true;
-      # masApps = [];
+      masApps = lib.mkMerge [
+        (lib.mkIf (config.isWork == false) appstoreHome)
+      ];
       onActivation.cleanup = "zap";
       onActivation.autoUpdate = true;
       onActivation.upgrade = true;

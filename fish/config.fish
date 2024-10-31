@@ -62,10 +62,6 @@ set PATH $HOME/.jenv/bin $PATH
 #FNM
 fnm env --use-on-cd | source
 
-# BUN
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
 #direnv
 direnv hook fish | source
 
