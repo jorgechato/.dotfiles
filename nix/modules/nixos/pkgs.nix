@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ self, pkgs, ... }: {
   environment.systemPackages =
     [
       # TERMINAL
@@ -38,7 +38,7 @@
       # GUI
       pkgs.iterm2
       pkgs.iina
-      pkgs.transmission
+      pkgs.transmission_4
       pkgs.vscode
       # Fish plugins
       pkgs.fishPlugins.z

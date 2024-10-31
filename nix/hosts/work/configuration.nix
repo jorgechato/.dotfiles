@@ -1,4 +1,4 @@
-{ pkgs, lib, config, nixpkgs, nix-homebrew, home-manager, ... }: {
+{ self, pkgs, lib, config, nixpkgs, nix-homebrew, home-manager, ... }: {
   ui.isWork = true;
   brew.isWork = true;
 

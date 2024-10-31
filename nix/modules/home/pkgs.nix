@@ -1,11 +1,9 @@
-{ pkgs, pkgs-unstable, ... }:
+{ self, pkgs, ... }:
 
 {
   home.packages = [
-    pkgs-unstable.discord
     pkgs.fish
     pkgs.git
-    pkgs.nvim
     pkgs.starship
     pkgs.direnv
     pkgs.fzf

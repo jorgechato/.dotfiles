@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ self, pkgs, lib, config, ... }:
 let
   casks = import ./deps/casks.nix;
   casksWork = import ./deps/casks-work.nix;
@@ -11,37 +11,25 @@ let
   appstoreHome = import ./deps/appstore-home.nix;
 in
 {
-  options = {
-    isWork = {
-      enable = lib.mkOption {
-        default = false;
-        type = with lib.types; bool;
-        description = "Is this a work machine?";
-      };
-    };
-  };
-
   config = {
     homebrew = {
       enable = true;
-      masApps = lib.mkMerge [
-        (lib.mkIf (config.isWork == false) appstoreHome)
-      ];
+      masApps = lib.mkIf (!config.isWork) appstoreHome;
       onActivation.cleanup = "zap";
       onActivation.autoUpdate = true;
       onActivation.upgrade = true;
       brews = lib.mkMerge [
         brews
         (lib.mkIf config.isWork brewsWork)
-        (lib.mkIf (config.isWork == false) brewsHome)
+        (lib.mkIf (!config.isWork) brewsHome)
       ];
       casks = lib.mkMerge [
         casks
         (lib.mkIf config.isWork casksWork)
-        (lib.mkIf (config.isWork == false) casksHome)
+        (lib.mkIf (!config.isWork) casksHome)
       ];
     };
-
   };
+
 }
 

@@ -15,7 +15,7 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
     {
       darwinConfigurations."ichi" = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit self; };
         modules = [
           ./hosts/intel/configuration.nix
           ./modules/nixos
@@ -24,7 +24,7 @@
         ];
       };
       darwinConfigurations."ni" = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit self; };
         modules = [
           ./hosts/silicon/configuration.nix
           ./modules/nixos
@@ -34,7 +34,7 @@
       };
 
       darwinConfigurations."work" = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit self; };
         modules = [
           ./hosts/work/configuration.nix
           ./modules/nixos

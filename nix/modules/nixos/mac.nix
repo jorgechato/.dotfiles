@@ -13,16 +13,6 @@ let
   ];
 in
 {
-  options = {
-    isWork = {
-      enable = lib.mkOption {
-        default = false;
-        type = with lib.types; bool;
-        description = "Is this a work machine?";
-      };
-    };
-  };
-
   config = {
     system.defaults = {
       dock.autohide = true;
