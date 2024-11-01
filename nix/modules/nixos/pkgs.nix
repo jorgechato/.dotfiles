@@ -25,7 +25,6 @@
       pkgs.cue
       pkgs.cuelsp
       pkgs.rectangle
-      pkgs.ollama
       pkgs.dbmate
       pkgs.fnm
       pkgs.gh
@@ -33,13 +32,15 @@
       pkgs.rustup
       pkgs.nix
       pkgs.turso-cli
-      pkgs.maltego
-      pkgs.sqlitebrowser
+      pkgs.yabai
+      pkgs.skhd
       # GUI
       pkgs.iterm2
       pkgs.iina
-      pkgs.transmission_4
+      pkgs.transmission_3
       pkgs.vscode
+      pkgs.maltego
+      pkgs.sqlitebrowser
       # Fish plugins
       pkgs.fishPlugins.z
       pkgs.fishPlugins.fzf

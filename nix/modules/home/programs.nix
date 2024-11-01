@@ -7,5 +7,7 @@
     };
 
     fish.enable = true;
+
+    git.enable = true;
   };
 }

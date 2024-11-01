@@ -2,13 +2,13 @@
 
 {
   home.file = {
-    ".config/fish".source = ../../../fish;
-    ".gitconfig".source = ../../../git/.gitconfig;
-    ".editorconfig".source = ../../../.editorconfig;
-    ".config/nvim".source = ../../../nvim;
-    ".config/nix".source = ../../../nix;
-    ".config/1Password".source = ../../../1Password;
-    ".config/starship.toml".source = ../../../starship/starship.toml;
-    ".npmrc".source = ../../../.npmrc;
+    ".config/1Password".source = ~/.dotfiles/1Password;
+    ".config/fish".source = ~/.dotfiles/fish;
+    ".config/nvim".source = ~/.dotfiles/nvim;
+    ".config/skhd".source = ~/.dotfiles/skhd;
+    ".config/starship.toml".source = ~/.dotfiles/starship.toml;
+    ".gitconfig".source = ~/.dotfiles/.gitconfig;
+    ".editorconfig".source = ~/.dotfiles/.editorconfig;
+    ".npmrc".source = ~/.dotfiles/.npmrc;
   };
 }

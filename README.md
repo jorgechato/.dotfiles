@@ -1,5 +1,11 @@
 # JORGE CHATO .dotfiles
 
+## Devices
+
+- `ichi` - MacBook Pro (Intel)
+- `ni` - MacBook Pro (M4)
+- `work` - MacBook Pro (Mx) - Work device
+
 ## Basic Installation
 
 1. Install Nix
@@ -16,7 +22,7 @@
     ```
 3. Install configuration
     ```shell
-    $ nix run nix-darwin --experimental-features 'nix-command flakes' -- switch --flake ~/.dotfiles/nix#ichi # change ichi with the device name
+    $ nix run nix-darwin --experimental-features 'nix-command flakes' -- switch --impure --flake ~/.dotfiles/nix#ni # change ni with the device name
     ```
 
 ## Add new package
@@ -24,7 +30,7 @@
 1. Add package to `environment.systemPackages` in `nix/flake.nix`
 2. Install package
     ```shell
-    $ darwin-rebuild switch --flake ~/.dotfiles/nix#ichi # change ichi with the device name
+    $ darwin-rebuild switch --flake ~/.dotfiles/nix#ni # change ni with the device name
     ```
 
 ## Common errors

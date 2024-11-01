@@ -14,6 +14,7 @@ in
   config = {
     homebrew = {
       enable = true;
+      global.brewfile = true;
       masApps = lib.mkIf (!config.isWork) appstoreHome;
       onActivation.cleanup = "zap";
       onActivation.autoUpdate = true;
