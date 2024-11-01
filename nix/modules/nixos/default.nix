@@ -13,6 +13,6 @@
     ./system.nix
     ./mac.nix
     ./security.nix
-    # ./brew.nix
+    ./brew.nix
   ];
 }
