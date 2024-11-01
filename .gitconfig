@@ -1,0 +1,76 @@
+[user]
+    name = jorgechato
+    email = hack@jorgechato.com
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+    gpgsign = true
+[core]
+    eol = lf
+    autocrlf = input
+    safecrlf = false
+    pager = less
+    editor = nvim
+[alias]
+    ada = add -A
+    b = branch
+    sb = switch
+    sbd = switch develop
+    sbam = switch master
+    sbm = switch main
+    sbc = switch -c
+    co = checkout
+    cob = checkout -b
+    cobd = checkout -b develop
+    cod = checkout develop
+    cm = commit
+    cvc = commit -v
+    cma = commit --amend
+    cva = commit -v --amend
+    cman = commit --amend --no-edit
+    cvn = commit -v --amend --no-edit
+    feto = fetch origin
+    mod = merge origin/develop
+    mob = "!f() { git merge origin/`git rev-parse --abbrev-ref HEAD`; }; f"
+    l1 = log --oneline
+    puta = push --tags
+    po = pull origin
+    putod = pull origin develop
+    putom = pull origin master
+    puton = pull origin main
+    pob = "!f() { git pull origin `git rev-parse --abbrev-ref HEAD`; }; f"
+    pu = push origin
+    pub = "!f() { git push origin `git rev-parse --abbrev-ref HEAD` $@; }; f"
+    puf = "!f() { git push origin `git rev-parse --abbrev-ref HEAD` --force; }; f"
+    pur = "!f() { git pub; git pr; }; f"
+    pussy = push origin develop
+    pushy = push origin master
+    putin = push origin main
+    rmv = remote -v
+    taga = "!f() { git tag -a $1 -m '$1' $2; }; f"
+    tal = tag -l
+    st = status -s
+    stu = status -uno
+    sta = stash
+    stam = "!f() { git stash save '$@' }; f"
+    stal = stash list
+    stap = stash apply
+
+    pr = "!f() {\
+        remote=`git rmv | grep origin | grep push | awk '{print $2}'`;\
+        project=`echo $remote | awk -F/ '{ print $(NF-1) }'`;\
+        repo=`echo $remote | awk -F/ '{ print $NF }' | cut -d. -f1`;\
+        branch=`git rev-parse --abbrev-ref HEAD`;\
+        browser=chrome;\
+        case $1 in\
+        github | gh) start $browser https://github.com/$project/$repo/compare/$branch...develop?expand=1;;\
+        gitlab | gl) start $browser https://gitlab.com/$project/$repo/merge_requests/new?merge_request[source_branch]=$branch;;\
+        bitbucket | bb) start $browser https://bitbucket.org/$project/$repo/pull-requests/new;;\
+        echo) echo https://host:port/path/$project/$repo?branch=$branch;;\
+        *) start $browser https://github.com/$project/$repo/compare/$branch...develop?expand=1;;\
+        esac;\
+        }; f"

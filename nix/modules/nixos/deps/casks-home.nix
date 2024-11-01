@@ -1,0 +1,11 @@
+[
+  "discord"
+  "dropbox"
+  "telegram"
+  "ente"
+  "ledger-live"
+  "proton-drive"
+  "steam"
+  "qflipper"
+  "yubico-authenticator"
+]
