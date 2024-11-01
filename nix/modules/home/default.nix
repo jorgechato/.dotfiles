@@ -16,7 +16,7 @@ in
     ./pkgs.nix
     ./file.nix
     ./programs.nix
-    ./1password.nix
     ./fish.nix
+    ./1password.nix
   ];
 }

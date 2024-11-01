@@ -34,7 +34,7 @@
       pkgs.turso-cli
       pkgs.yabai
       pkgs.skhd
-      pkgs.z-lua
+      pkgs.grc
       # GUI
       pkgs.iterm2
       pkgs.iina

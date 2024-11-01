@@ -9,5 +9,6 @@
     pkgs.fzf
     pkgs.vscode
     pkgs.z-lua
+    pkgs.grc
   ];
 }
