@@ -7,7 +7,7 @@
     pkgs.starship
     pkgs.direnv
     pkgs.fzf
-    pkgs.z-lua
     pkgs.vscode
+    pkgs.z-lua
   ];
 }

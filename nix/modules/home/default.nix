@@ -17,5 +17,6 @@ in
     ./file.nix
     ./programs.nix
     ./1password.nix
+    ./fish.nix
   ];
 }
