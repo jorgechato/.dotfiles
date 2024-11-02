@@ -21,12 +21,6 @@ in
       keyboard.enableKeyMapping = true;
       keyboard.remapCapsLockToControl = true;
 
-      # Wallpaper
-      activationScripts.Wallpaper.text = ''
-        echo >&2 "Setting up wallpaper..."
-        osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Stone.png"'
-      '';
-
       defaults = {
         loginwindow.GuestEnabled = false;
         loginwindow.LoginwindowText = "If lost, contact lost.8euto@passmail.net";
@@ -53,6 +47,7 @@ in
         trackpad.Clicking = true;
         NSGlobalDomain."com.apple.trackpad.forceClick" = true;
         NSGlobalDomain."com.apple.trackpad.scaling" = 3.0;
+        ".GlobalPreferences"."com.apple.mouse.scaling" = 3.0;
 
         # Finder
         finder.FXPreferredViewStyle = "Nlsv";
@@ -63,19 +58,12 @@ in
         finder._FXSortFoldersFirst = true;
 
         # Global
+        NSGlobalDomain.AppleKeyboardUIMode = 3;
         NSGlobalDomain.AppleICUForce24HourTime = true;
         NSGlobalDomain.AppleInterfaceStyle = "Dark";
         NSGlobalDomain."com.apple.keyboard.fnState" = true;
         NSGlobalDomain.AppleShowAllFiles = true;
         NSGlobalDomain.AppleShowAllExtensions = true;
-        NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false;
-        NSGlobalDomain.AppleKeyboardUIMode = 3;
-        NSGlobalDomain.NSDocumentSaveNewDocumentsToCloud = false;
-        NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
-        NSGlobalDomain.NSAutomaticInlinePredictionEnabled = false;
-        NSGlobalDomain.NSAutomaticDashSubstitutionEnabled = false;
-        NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
-        NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
 
         # ScreenSaver
         screensaver = {
@@ -83,11 +71,16 @@ in
           askForPasswordDelay = 0;
         };
 
+        # Custom
+        # CustomSystemPreferences = { };
+
         # Window Manager
         WindowManager = {
+          # Wallpaper click to show desktop
+          EnableStandardClickToShowDesktop = true;
+          # hide desktop items
           StandardHideDesktopIcons = true;
-          HideDesktop = true;
-          StageManagerHideWidgets = true;
+          # hide desktop widgets
           StandardHideWidgets = true;
         };
       };
