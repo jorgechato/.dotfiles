@@ -4,4 +4,5 @@
   "tfenv"
   "pyenv"
   "z"
+  "grc"
 ]
