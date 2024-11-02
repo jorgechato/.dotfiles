@@ -18,27 +18,31 @@ in
   config = {
     system = {
       # Keyboard
-      keyboard.enableKeyMapping = true;
-      keyboard.remapCapsLockToControl = true;
+      keyboard = {
+        enableKeyMapping = true;
+        remapCapsLockToControl = true;
+      };
 
       defaults = {
         loginwindow.GuestEnabled = false;
         loginwindow.LoginwindowText = "If lost, contact lost.8euto@passmail.net";
 
         # Dock
-        dock.autohide = true;
-        dock.orientation = "right";
-        dock.persistent-apps = lib.mkMerge [
-          persistentApps
-          (lib.mkIf config.isWork workPersistentApps)
-        ];
-        dock.persistent-others = [
-          "${home}/Downloads"
-        ];
-        dock.show-recents = false;
-        dock.largesize = 50;
-        dock.tilesize = 40;
-        dock.mru-spaces = false;
+        dock = {
+          autohide = true;
+          orientation = "right";
+          persistent-apps = lib.mkMerge [
+            persistentApps
+            (lib.mkIf config.isWork workPersistentApps)
+          ];
+          persistent-others = [
+            "${home}/Downloads"
+          ];
+          show-recents = false;
+          largesize = 50;
+          tilesize = 40;
+          mru-spaces = false;
+        };
 
         SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
         screencapture.location = "${home}/Pictures/screenshots";
@@ -50,29 +54,40 @@ in
         ".GlobalPreferences"."com.apple.mouse.scaling" = 3.0;
 
         # Finder
-        finder.FXPreferredViewStyle = "Nlsv";
-        finder.AppleShowAllFiles = true;
-        finder.AppleShowAllExtensions = true;
-        finder.CreateDesktop = false;
-        finder.FXDefaultSearchScope = "SCcf"; # Search current folder
-        finder._FXSortFoldersFirst = true;
+        finder = {
+          FXPreferredViewStyle = "Nlsv";
+          AppleShowAllFiles = true;
+          AppleShowAllExtensions = true;
+          CreateDesktop = false;
+          FXDefaultSearchScope = "SCcf"; # Search current folder
+          _FXSortFoldersFirst = true;
+        };
 
         # Global
-        NSGlobalDomain.AppleKeyboardUIMode = 3;
-        NSGlobalDomain.AppleICUForce24HourTime = true;
-        NSGlobalDomain.AppleInterfaceStyle = "Dark";
-        NSGlobalDomain."com.apple.keyboard.fnState" = true;
-        NSGlobalDomain.AppleShowAllFiles = true;
-        NSGlobalDomain.AppleShowAllExtensions = true;
+        NSGlobalDomain = {
+          AppleKeyboardUIMode = 3;
+          AppleICUForce24HourTime = true;
+          AppleInterfaceStyle = "Dark";
+          "com.apple.keyboard.fnState" = true;
+          AppleShowAllFiles = true;
+          AppleShowAllExtensions = true;
+
+          AppleMeasurementUnits = "Centimeters";
+          AppleMetricUnits = 1;
+          AppleTemperatureUnit = "Celsius";
+          NSAutomaticCapitalizationEnabled = false;
+          NSAutomaticDashSubstitutionEnabled = false;
+          NSAutomaticPeriodSubstitutionEnabled = false;
+          NSAutomaticQuoteSubstitutionEnabled = false;
+          NSAutomaticInlinePredictionEnabled = false;
+          NSAutomaticSpellingCorrectionEnabled = false;
+        };
 
         # ScreenSaver
         screensaver = {
           askForPassword = true;
           askForPasswordDelay = 0;
         };
-
-        # Custom
-        # CustomSystemPreferences = { };
 
         # Window Manager
         WindowManager = {

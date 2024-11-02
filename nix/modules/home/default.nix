@@ -16,19 +16,9 @@ in
 
       "com.googlecode.iterm2".CopySelection = true;
 
-      "com.apple.desktopservices".DSDontWriteNetworkStores = true;
-      "com.apple.desktopservices".DSDontWriteUSBStores = true;
-
-      NSGlobalDomain = {
-        AppleMeasurementUnits = "Centimeters";
-        AppleMetricUnits = true;
-        AppleTemperatureUnit = "Celsius";
-        NSAutomaticCapitalizationEnabled = false;
-        NSAutomaticDashSubstitutionEnabled = false;
-        NSAutomaticPeriodSubstitutionEnabled = false;
-        NSAutomaticQuoteSubstitutionEnabled = false;
-        NSAutomaticInlinePredictionEnabled = false;
-        NSAutomaticSpellingCorrectionEnabled = false;
+      "com.apple.desktopservices" = {
+        DSDontWriteNetworkStores = true;
+        DSDontWriteUSBStores = true;
       };
     };
   };
