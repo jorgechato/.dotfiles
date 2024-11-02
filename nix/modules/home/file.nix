@@ -1,5 +1,7 @@
 { self, ... }:
-
+let
+  content = "NixOs hack to create folders ;)";
+in
 {
   home.file = {
     ".config/1Password" = {
@@ -22,5 +24,14 @@
     ".gitconfig".source = ~/.dotfiles/.gitconfig;
     ".editorconfig".source = ~/.dotfiles/.editorconfig;
     ".npmrc".source = ~/.dotfiles/.npmrc;
+
+    "screenshots" = {
+      text = content;
+      target = "Pictures/screenshots/.keep";
+    };
+    "github" = {
+      text = content;
+      target = "/Projects/github/.keep";
+    };
   };
 }

@@ -25,11 +25,6 @@ in
       done
     '';
 
-  system.activationScripts.createFolders.text = pkgs.lib.mkForce ''
-    mkdir -p $HOME/Pictures/screenshots
-    mkdir -p $HOME/Projects/github
-  '';
-
   system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
 
   # Keyboard settings
@@ -67,3 +62,4 @@ in
   services.yabai.package = pkgs.yabai;
   services.skhd.enable = true;
 }
+
