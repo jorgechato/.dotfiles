@@ -5,6 +5,7 @@
   "ente"
   "ledger-live"
   "proton-drive"
+  "proton-pass"
   "steam"
   "qflipper"
   "yubico-authenticator"
