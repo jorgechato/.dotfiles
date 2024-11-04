@@ -24,7 +24,7 @@
       pkgs.gnused
       pkgs.cue
       pkgs.cuelsp
-      pkgs.rectangle
+      # pkgs.rectangle
       pkgs.dbmate
       pkgs.fnm
       pkgs.gh

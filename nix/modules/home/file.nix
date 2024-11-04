@@ -20,6 +20,10 @@ in
       source = ~/.dotfiles/skhd;
       recursive = true;
     };
+    ".config/yabai" = {
+      source = ~/.dotfiles/yabai;
+      recursive = true;
+    };
     ".config/starship.toml".source = ~/.dotfiles/starship.toml;
     ".gitconfig".source = ~/.dotfiles/.gitconfig;
     ".editorconfig".source = ~/.dotfiles/.editorconfig;

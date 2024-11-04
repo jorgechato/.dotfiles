@@ -58,7 +58,7 @@ in
   home-manager.backupFileExtension = "backup";
 
   # Services
-  services.yabai.enable = false;
+  services.yabai.enable = true;
   services.yabai.package = pkgs.yabai;
   services.skhd.enable = true;
 }
