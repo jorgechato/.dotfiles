@@ -40,6 +40,7 @@ set -x PATH "$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$HOME/bin:/usr/local/s
 set -x PATH "$PATH:$HOME/.config/fish/config.fish"
 set -x PATH "$PATH:/usr/local/opt/findutils/libexec/gnubin"
 set -x PATH "$PATH:/Users/jorge/.local/bin"
+set -x PATH "$PATH:/run/current-system/sw/bin" # NixOS
 test -e {$HOME}/.iterm2_shell_integration.fish
 and source {$HOME}/.iterm2_shell_integration.fish
 

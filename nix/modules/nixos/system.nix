@@ -61,5 +61,6 @@ in
   services.yabai.enable = true;
   services.yabai.package = pkgs.yabai;
   services.skhd.enable = true;
+  services.skhd.package = pkgs.skhd;
 }
 
