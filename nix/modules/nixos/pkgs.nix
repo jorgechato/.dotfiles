@@ -35,7 +35,7 @@
       pkgs.yabai
       pkgs.skhd
       pkgs.grc
-      # pkgs.kubectl
+      pkgs.kubectl
       # GUI
       pkgs.iterm2
       pkgs.iina

@@ -30,7 +30,7 @@
 1. Add package to `environment.systemPackages` in `nix/flake.nix`
 2. Install package
     ```shell
-    $ darwin-rebuild switch --flake ~/.dotfiles/nix#ni # change ni with the device name
+    $ darwin-rebuild switch --impure --flake ~/.dotfiles/nix#ni # change ni with the device name
     ```
 
 ## Common errors
