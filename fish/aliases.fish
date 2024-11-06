@@ -74,22 +74,10 @@ function da -d "Allow or disallow .envrc after printing it."
     direnv allow
 end
 
-#Docker/Podman
-# function docker
-#     if test "$argv[1]" = "compose"
-#         if test (count $argv) -gt 1
-#             podman-compose "$argv[2..-1]"
-#         else
-#             podman-compose
-#         end
-#     else
-#         podman "$argv"
-#     end
-# end
-# alias d podman
+#Docker
 alias p podman
-# alias dc podman-compose
-# alias docker-compose podman-compose
+alias dc podman-compose
+alias docker-compose podman-compose
 alias dc docker-compose
 alias d docker
 
@@ -117,5 +105,12 @@ alias py python3
 alias pyclean "rm -rf **/*.pyc"
 alias sourcelist "v /etc/apt/sources.list"
 alias hosts "nvim /etc/hosts"
+
+#Screen
+alias yr "yabai --restart-service"
+alias sr "skhd --restart-service"
+
+#Nix
+alias dr "darwin-rebuild switch --impure --flake"
 
 . "$HOME/.config/fish/aliases-work.fish"

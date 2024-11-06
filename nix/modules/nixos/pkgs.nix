@@ -36,6 +36,7 @@
       pkgs.skhd
       pkgs.grc
       pkgs.kubectl
+      pkgs.nushell
       # GUI
       pkgs.iterm2
       pkgs.iina

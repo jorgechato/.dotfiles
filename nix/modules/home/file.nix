@@ -24,6 +24,14 @@ in
       source = ~/.dotfiles/yabai;
       recursive = true;
     };
+    ".config/ghostty" = {
+      source = ~/.dotfiles/ghostty;
+      recursive = true;
+    };
+    # ".config/nushell" = {
+    # source = ~/.dotfiles/nushell;
+    # recursive = true;
+    # };
     ".config/starship.toml".source = ~/.dotfiles/starship.toml;
     ".gitconfig".source = ~/.dotfiles/.gitconfig;
     ".editorconfig".source = ~/.dotfiles/.editorconfig;
