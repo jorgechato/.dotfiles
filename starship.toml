@@ -1,5 +1,6 @@
 add_newline = false
-format = '🍁 $directory$git_branch$git_status$golang$python$nodejs$rust${custom.direnv}$kubernetes$character'
+format = '$directory$git_branch$git_status$golang$python$nodejs$rust${custom.direnv}$character'
+# format = '🍁 $directory$git_branch$git_status$golang$python$nodejs$rust${custom.direnv}$kubernetes$character'
 
 [time]
 disabled = true
@@ -13,7 +14,8 @@ error_symbol = '[\$](bold red)'
 
 [directory]
 read_only = " 󰌾"
-style = 'bold #DF440D'
+style = 'bold green'
+# style = 'bold #DF440D'
 
 [kubernetes]
 format = '[$context( $namespace)]($style) '

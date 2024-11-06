@@ -1,0 +1,4 @@
+theme = GithubDark
+font-family = Meslo LGS Nerd Font Mono
+font-size = 14
+gtk-titlebar = false
