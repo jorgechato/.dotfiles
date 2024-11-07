@@ -2,5 +2,5 @@
   "mas"
   "jenv"
   "tfenv"
-  "pyenv"
+  "font-sf-pro"
 ]

@@ -27,6 +27,9 @@ in
         loginwindow.GuestEnabled = false;
         loginwindow.LoginwindowText = "If lost, contact lost.8euto@passmail.net";
 
+        # MenuBar
+        NSGlobalDomain._HIHideMenuBar = false;
+
         # Dock
         dock = {
           autohide = true;

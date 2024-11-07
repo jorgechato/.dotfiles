@@ -36,6 +36,10 @@ in
       source = ~/.dotfiles/wezterm;
       recursive = true;
     };
+    # ".config/sketchybar" = {
+    # source = ~/.dotfiles/sketchybar;
+    # recursive = true;
+    # };
     ".config/starship.toml".source = ~/.dotfiles/starship.toml;
     ".gitconfig".source = ~/.dotfiles/.gitconfig;
     ".editorconfig".source = ~/.dotfiles/.editorconfig;
@@ -44,6 +48,10 @@ in
     "screenshots" = {
       text = content;
       target = "Pictures/screenshots/.keep";
+    };
+    "go" = {
+      text = content;
+      target = ".go/.keep";
     };
     "github" = {
       text = content;

@@ -1,6 +1,19 @@
 { self, pkgs, ... }: {
   environment.systemPackages =
     [
+      # CODE
+      pkgs.go
+      pkgs.zig
+      pkgs.lua
+      pkgs.protobuf
+      pkgs.cue
+      pkgs.cuelsp
+      pkgs.rustup
+      pkgs.fnm
+      pkgs.nix
+      pkgs.pyenv
+      # LSP
+      pkgs.lua-language-server
       # TERMINAL
       pkgs.curl
       pkgs.neovim
@@ -18,20 +31,11 @@
       pkgs.jq
       pkgs.yq
       pkgs.starship
-      pkgs.go
-      pkgs.zig
-      pkgs.protobuf
       pkgs.jwt-cli
       pkgs.gnused
-      pkgs.cue
-      pkgs.cuelsp
-      # pkgs.rectangle
       pkgs.dbmate
-      pkgs.fnm
       pkgs.gh
       pkgs.ripgrep
-      pkgs.rustup
-      pkgs.nix
       pkgs.turso-cli
       pkgs.yabai
       pkgs.skhd
@@ -41,7 +45,7 @@
       pkgs.zoxide
       pkgs.carapace
       # GUI
-      pkgs.iterm2
+      pkgs.sketchybar
       pkgs.kitty
       # pkgs.wezterm
       pkgs.iina
@@ -55,6 +59,15 @@
       pkgs.fishPlugins.grc
       pkgs.fishPlugins.sponge
       pkgs.fishPlugins.plugin-git
+      # Nvim
+      pkgs.tree-sitter
+      # Lua (for nvim)
+      pkgs.luajitPackages.luarocks
+      # Go (for nvim)
+      pkgs.gomodifytags
+      pkgs.impl
+      pkgs.iferr
+      pkgs.gotests
     ];
 
   fonts.packages = [

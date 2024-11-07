@@ -203,6 +203,9 @@ return {
 
 
             local lspconfig = require('lspconfig')
+            lspconfig.nushell.setup({
+                cmd = { "nu", "--lsp", "-I" },
+            })
 
             require('mason').setup({})
             require('mason-tool-installer').setup {
@@ -222,7 +225,7 @@ return {
                     'gopls',
                     'templ',
                     'htmx',
-                    'buf_ls',
+                    -- 'buf_ls',
                     'cmake',
                     'jsonls',
                     'terraformls',
@@ -236,10 +239,7 @@ return {
                     'typos_lsp',
                     'dagger',
                     'rnix',
-                    'nushell',
-                    'ziggy',
-                    -- 'ziggy_schema',
-                    -- 'phpactor',
+                    'zls',
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -409,29 +409,17 @@ return {
                         filetypes = { "nix" },
                     }),
 
-                    lspconfig.nushell.setup({
-                        cmd = { "nu", "--lsp" },
-                        filetypes = { "nu" },
-                        single_file_support = true,
-                    }),
-
-                    lspconfig.ziggy.setup({
-                        cmd = { "ziggy", "lsp" },
-                        filetypes = { "ziggy" },
-                        single_file_support = true,
-                    }),
-
-                    lspconfig.ziggy_schema.setup({
-                        cmd = { "ziggy", "lsp", "--schema" },
-                        filetypes = { "ziggy_schema" },
-                        single_file_support = true,
-                    }),
-
-                    -- lspconfig.phpactor.setup({
-                    -- cmd = { "phpactor", "language-server" },
-                    -- filetypes = { "php" },
-                    -- root_dir = lspconfig.util.root_pattern("composer.json", ".git"),
+                    -- lspconfig.nushell.setup({
+                    -- cmd = { "nu", "--lsp" },
+                    -- filetypes = { "nu" },
+                    -- single_file_support = true,
                     -- }),
+
+                    lspconfig.zls.setup({
+                        cmd = { "zls" },
+                        filetypes = { "zig", "zir" },
+                        single_file_support = true,
+                    }),
                 },
             })
 
@@ -444,7 +432,6 @@ return {
                     ["rust-analyzer"] = { "rust" },
                     ['lua_ls'] = { 'lua' },
                     ['eslint'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
-                    -- ['tsserver'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
                     ['gopls'] = { 'go' },
                     ['templ'] = { 'templ' },
                     ['htmx'] = { 'html', 'templ' },
@@ -457,9 +444,7 @@ return {
                     ['dagger'] = { 'cue' },
                     ['rnix'] = { 'nix' },
                     ['nushell'] = { 'nu' },
-                    ['ziggy'] = { 'ziggy' },
-                    ['ziggy_schema'] = { 'ziggy_schema' },
-                    -- ['phpactor'] = { 'php' },
+                    ['zls'] = { 'zig', 'zir' },
                 }
             })
 

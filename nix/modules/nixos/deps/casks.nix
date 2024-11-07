@@ -10,4 +10,5 @@
   "appcleaner"
   "runjs"
   "wezterm"
+  "sf-symbols"
 ]

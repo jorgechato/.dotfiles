@@ -43,6 +43,7 @@ return {
                     "templ",
                     "markdown",
                     "markdown_inline",
+                    "nu",
                 },
             })
         end

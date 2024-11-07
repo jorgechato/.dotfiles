@@ -62,5 +62,7 @@ in
   services.yabai.package = pkgs.yabai;
   services.skhd.enable = true;
   services.skhd.package = pkgs.skhd;
+  # services.sketchybar.enable = true;
+  # services.sketchybar.package = pkgs.sketchybar;
 }
 
