@@ -36,3 +36,21 @@ alias sr = skhd --restart-service
 
 #Nix
 alias dr = darwin-rebuild switch --impure --flake
+
+#Sudo
+# save a file, with sudo
+export def "sudo save" [
+  --raw(-r), # save file as raw binary
+  --append(-a), # append input to the end of the file
+  --force(-f), # overwrite the destination file if it exists
+  --progress(-p), # enable progress bar
+  filename: path # The filename to use
+]: string -> nothing {
+  let flags = [
+    (if $raw { "--raw" })
+    (if $append { "--append" })
+    (if $force { "--force" })
+    (if $progress { "--progress" })
+  ] | compact
+  $in | sudo $nu.current-exe --stdin -c $"save ($flags | str join ' ') ($filename)"
+}

@@ -1,4 +1,3 @@
-# The default config record. This is where much of your global configuration is setup.
 source ~/.config/nushell/alias.nu
 
 $env.config = {
@@ -749,3 +748,9 @@ $env.config = {
 
 # STARSHIP
 use ~/.cache/starship/init.nu
+
+# Z
+source ~/.zoxide.nu
+
+# Autocomplete with Carapace
+source ~/.cache/carapace/init.nu

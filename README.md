@@ -32,6 +32,17 @@
     ```shell
     $ darwin-rebuild switch --impure --flake ~/.dotfiles/nix#ni # change ni with the device name
     ```
+## Extra configuration
+
+### Nushell
+```sh
+$ export XDG_CONFIG_HOME="/Users/jorge/.config" #or if you are in fish: $ set XDG_CONFIG_HOME "/Users/jorge/.config"
+$ sudo echo $(which nu) >> /etc/shells
+$ chsh -s $(which nu)
+# If the new term doesn't use the correct XDG_CONFIG_HOME, run:
+$ echo "source ~/.config/nushell/config.nu" | sudo $nu.current-exe --stdin -c "save -f $nu.config-path"
+$ echo "source ~/.config/nushell/env.nu" | sudo $nu.current-exe --stdin -c "save -f $nu.env-path"
+```
 
 ## Common errors
 

@@ -3,5 +3,4 @@
   "jenv"
   "tfenv"
   "pyenv"
-  "z"
 ]

@@ -75,9 +75,6 @@ function da -d "Allow or disallow .envrc after printing it."
 end
 
 #Docker
-alias p podman
-alias dc podman-compose
-alias docker-compose podman-compose
 alias dc docker-compose
 alias d docker
 

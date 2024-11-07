@@ -2,7 +2,6 @@
   programs = {
     direnv = {
       enable = true;
-      # enableFishIntegration = true;
       nix-direnv.enable = true;
     };
 
@@ -11,5 +10,7 @@
     git.enable = true;
 
     z-lua.enable = true;
+
+    nushell.enable = true;
   };
 }

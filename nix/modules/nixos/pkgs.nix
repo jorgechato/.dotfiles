@@ -37,6 +37,8 @@
       pkgs.grc
       pkgs.kubectl
       pkgs.nushell
+      pkgs.zoxide
+      pkgs.carapace
       # GUI
       pkgs.iterm2
       pkgs.iina
