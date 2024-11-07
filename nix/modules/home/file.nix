@@ -32,6 +32,10 @@ in
       source = ~/.dotfiles/nushell;
       recursive = true;
     };
+    ".config/wezterm" = {
+      source = ~/.dotfiles/wezterm;
+      recursive = true;
+    };
     ".config/starship.toml".source = ~/.dotfiles/starship.toml;
     ".gitconfig".source = ~/.dotfiles/.gitconfig;
     ".editorconfig".source = ~/.dotfiles/.editorconfig;

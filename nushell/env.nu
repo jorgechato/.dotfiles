@@ -31,9 +31,20 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 # PATH
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '$HOME/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/sbin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/opt/libpq/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin') # Brew
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/Users/jorge/.local/bin') # .local
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/run/current-system/sw/bin') # NixOS
+
+# GO
+$env.GOPATH = "$HOME/Projects/go"
+$env.PATH = ($env.PATH | split row (char esep) | prepend '$GOPATH/bin')
+$env.GOPRIVATE = "github.com/garajonai/*,github.com/kouzoh/*"
+$env.GONOPROXY = "github.com/garajonai/*,github.com/kouzoh/*"
+$env.GONOSUMDB = "github.com/garajonai/*,github.com/kouzoh/*"
 
 # PROMPT INDICATORS
 $env.PROMPT_INDICATOR = ""

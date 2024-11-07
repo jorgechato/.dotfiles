@@ -19,6 +19,7 @@
       pkgs.yq
       pkgs.starship
       pkgs.go
+      pkgs.zig
       pkgs.protobuf
       pkgs.jwt-cli
       pkgs.gnused
@@ -41,6 +42,8 @@
       pkgs.carapace
       # GUI
       pkgs.iterm2
+      pkgs.kitty
+      # pkgs.wezterm
       pkgs.iina
       pkgs.transmission_3
       pkgs.vscode

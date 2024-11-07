@@ -2,7 +2,7 @@
 let
   persistentApps = [
     "/Applications/Brave Browser.app"
-    "/Applications/iTerm.app"
+    "/Applications/WezTerm.app"
     "/Applications/Scrivener.app"
     "/Applications/DaVinci Resolve.app"
     "/Applications/MacFamilyTree 10.app"

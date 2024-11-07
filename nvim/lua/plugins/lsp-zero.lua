@@ -222,7 +222,7 @@ return {
                     'gopls',
                     'templ',
                     'htmx',
-                    'bufls',
+                    'buf_ls',
                     'cmake',
                     'jsonls',
                     'terraformls',
@@ -236,6 +236,9 @@ return {
                     'typos_lsp',
                     'dagger',
                     'rnix',
+                    'nushell',
+                    'ziggy',
+                    -- 'ziggy_schema',
                     -- 'phpactor',
                 },
                 handlers = {
@@ -406,6 +409,24 @@ return {
                         filetypes = { "nix" },
                     }),
 
+                    lspconfig.nushell.setup({
+                        cmd = { "nu", "--lsp" },
+                        filetypes = { "nu" },
+                        single_file_support = true,
+                    }),
+
+                    lspconfig.ziggy.setup({
+                        cmd = { "ziggy", "lsp" },
+                        filetypes = { "ziggy" },
+                        single_file_support = true,
+                    }),
+
+                    lspconfig.ziggy_schema.setup({
+                        cmd = { "ziggy", "lsp", "--schema" },
+                        filetypes = { "ziggy_schema" },
+                        single_file_support = true,
+                    }),
+
                     -- lspconfig.phpactor.setup({
                     -- cmd = { "phpactor", "language-server" },
                     -- filetypes = { "php" },
@@ -435,6 +456,9 @@ return {
                     ['marksman'] = { "markdown", "markdown.mdx" },
                     ['dagger'] = { 'cue' },
                     ['rnix'] = { 'nix' },
+                    ['nushell'] = { 'nu' },
+                    ['ziggy'] = { 'ziggy' },
+                    ['ziggy_schema'] = { 'ziggy_schema' },
                     -- ['phpactor'] = { 'php' },
                 }
             })

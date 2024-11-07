@@ -9,4 +9,5 @@
   "logi-options+"
   "appcleaner"
   "runjs"
+  "wezterm"
 ]
