@@ -11,4 +11,5 @@
   "runjs"
   "wezterm"
   "sf-symbols"
+  "nikitabobko/tap/aerospace"
 ]

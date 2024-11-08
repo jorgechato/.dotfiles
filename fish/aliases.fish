@@ -103,10 +103,6 @@ alias pyclean "rm -rf **/*.pyc"
 alias sourcelist "v /etc/apt/sources.list"
 alias hosts "nvim /etc/hosts"
 
-#Screen
-alias yr "yabai --restart-service"
-alias sr "skhd --restart-service"
-
 #Nix
 alias dr "darwin-rebuild switch --impure --flake"
 

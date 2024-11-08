@@ -16,12 +16,8 @@ in
       source = ~/.dotfiles/nvim;
       recursive = true;
     };
-    ".config/skhd" = {
-      source = ~/.dotfiles/skhd;
-      recursive = true;
-    };
-    ".config/yabai" = {
-      source = ~/.dotfiles/yabai;
+    ".config/aerospace" = {
+      source = ~/.dotfiles/aerospace;
       recursive = true;
     };
     ".config/ghostty" = {
@@ -36,10 +32,6 @@ in
       source = ~/.dotfiles/wezterm;
       recursive = true;
     };
-    # ".config/sketchybar" = {
-    # source = ~/.dotfiles/sketchybar;
-    # recursive = true;
-    # };
     ".config/starship.toml".source = ~/.dotfiles/starship.toml;
     ".gitconfig".source = ~/.dotfiles/.gitconfig;
     ".editorconfig".source = ~/.dotfiles/.editorconfig;

@@ -37,15 +37,12 @@
       pkgs.gh
       pkgs.ripgrep
       pkgs.turso-cli
-      pkgs.yabai
-      pkgs.skhd
       pkgs.grc
       pkgs.kubectl
       pkgs.nushell
       pkgs.zoxide
       pkgs.carapace
       # GUI
-      pkgs.sketchybar
       pkgs.kitty
       # pkgs.wezterm
       pkgs.iina
