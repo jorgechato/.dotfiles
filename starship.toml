@@ -1,7 +1,7 @@
 add_newline = false
 format = '🏔  $directory$git_branch$git_status$golang$python$nodejs$rust${custom.direnv}$character'
 # format = '🍁 $directory$git_branch$git_status$golang$python$nodejs$rust${custom.direnv}$kubernetes$character'
-command_timeout = 1000
+command_timeout = 2000
 
 [time]
 disabled = true
