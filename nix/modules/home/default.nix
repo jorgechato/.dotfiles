@@ -31,5 +31,6 @@ in
     ./programs.nix
     ./fish.nix
     ./1password.nix
+    ./raycast.nix
   ];
 }

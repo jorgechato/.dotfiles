@@ -64,5 +64,12 @@ in
   services.skhd.package = pkgs.skhd;
   # services.sketchybar.enable = true;
   # services.sketchybar.package = pkgs.sketchybar;
+
+  environment.variables = {
+    XDG_CACHE_HOME = "$HOME/.cache";
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    XDG_STATE_HOME = "$HOME/.local/state";
+  };
 }
 
