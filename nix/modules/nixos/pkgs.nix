@@ -53,6 +53,7 @@
       pkgs.vscode
       pkgs.maltego
       pkgs.sqlitebrowser
+      # pkgs.raycast
       # Fish plugins
       pkgs.fishPlugins.z
       pkgs.fishPlugins.fzf
