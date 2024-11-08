@@ -58,8 +58,8 @@ in
   home-manager.backupFileExtension = "backup";
 
   # Services
-  services.aerospace.enable = true;
-  services.aerospace.package = pkgs.aerospace;
+  # services.aerospace.enable = true;
+  # services.aerospace.package = pkgs.aerospace;
 
   environment.variables = {
     XDG_CACHE_HOME = "$HOME/.cache";
