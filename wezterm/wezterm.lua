@@ -41,6 +41,10 @@ config.window_frame = {
     inactive_titlebar_bg = "black"
 }
 
+config.window_padding = {
+    top = 45,
+}
+
 config.use_fancy_tab_bar = true
 config.color_scheme = 'Github Dark (Gogh)'
 
@@ -50,7 +54,7 @@ config.font_size = 14.0
 
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
-config.window_decorations = "RESIZE"
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
 config.keys = {
     { key = '-', mods = 'CTRL',       action = wezterm.action.DisableDefaultAssignment },
