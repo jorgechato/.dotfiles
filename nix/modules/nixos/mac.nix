@@ -45,7 +45,11 @@ in
           largesize = 50;
           tilesize = 40;
           mru-spaces = false;
+          expose-group-by-app = true;
         };
+
+        # Monitors with different spaces (for aerospace)
+        spaces.spans-displays = true;
 
         SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
         screencapture.location = "${home}/Pictures/screenshots";

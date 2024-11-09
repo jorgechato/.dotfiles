@@ -41,11 +41,7 @@ alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
 
-tab = 'move-workspace-to-monitor --wrap-around next'
-
-# Size
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+# alt-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # Workspaces
 alt-1 = 'workspace 1'
@@ -75,6 +71,12 @@ alt-tab = 'workspace-back-and-forth'
 
 # Modes
 alt-w = 'mode window'
+alt-r = 'mode replace'
+
+[mode.replace.binding]
+# Size
+minus = 'resize smart -50'
+equal = 'resize smart +50'
 
 [mode.window.binding]
 esc = ['reload-config', 'mode main']
@@ -101,6 +103,18 @@ shift-l = ['join-with right', 'mode main']
 slash = ['layout tiles horizontal vertical', 'mode main'] # split nome
 w = ['layout accordion horizontal vertical', 'mode main'] # wide mode
 f = ['fullscreen', 'mode main'] # fullscreen mode
+
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'secondary'
+5 = 'secondary'
+F = 'main'
+B = 'main'
+T = 'main'
+S = 'secondary'
+E = 'main'
 
 # Terminal
 [[on-window-detected]]
