@@ -67,13 +67,17 @@ alt-shift-t = ['move-node-to-workspace T', 'workspace T'] # Terminal
 alt-shift-s = ['move-node-to-workspace S', 'workspace S'] # Slack
 alt-shift-e = ['move-node-to-workspace E', 'workspace E'] # Photo/Video Edit
 
+# Move between workspaces
 alt-tab = 'workspace-back-and-forth'
+alt-n = ['workspace prev']
+alt-shift-n = ['workspace next']
 
 # Modes
 alt-w = 'mode window'
 alt-r = 'mode replace'
 
 [mode.replace.binding]
+esc = ['reload-config', 'mode main']
 # Size
 minus = 'resize smart -50'
 equal = 'resize smart +50'
@@ -103,6 +107,11 @@ shift-l = ['join-with right', 'mode main']
 slash = ['layout tiles horizontal vertical', 'mode main'] # split nome
 w = ['layout accordion horizontal vertical', 'mode main'] # wide mode
 f = ['fullscreen', 'mode main'] # fullscreen mode
+
+# Move between workspaces
+tab = 'workspace-back-and-forth'
+n = ['workspace prev']
+shift-n = ['workspace next']
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'
