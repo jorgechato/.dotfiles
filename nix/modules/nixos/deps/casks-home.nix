@@ -3,6 +3,7 @@
   "discord"
   "dropbox"
   "telegram"
+  "signal"
   "ente"
   "ledger-live"
   "proton-drive"
