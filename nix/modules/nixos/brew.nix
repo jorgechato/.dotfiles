@@ -29,6 +29,11 @@ in
         (lib.mkIf config.isWork casksWork)
         (lib.mkIf (!config.isWork) casksHome)
       ];
+
+      taps = [
+        # custom
+        "nikitabobko/tap" # aerospace
+      ];
     };
   };
 

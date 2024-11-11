@@ -12,4 +12,6 @@
   "wezterm"
   "sf-symbols"
   "nikitabobko/tap/aerospace"
+  "font-meslo-lg-nerd-font"
+  "font-sf-pro"
 ]

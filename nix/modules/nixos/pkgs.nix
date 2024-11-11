@@ -7,13 +7,16 @@
       pkgs.lua
       pkgs.protobuf
       pkgs.cue
-      pkgs.cuelsp
       pkgs.rustup
       pkgs.fnm
       pkgs.nix
       pkgs.pyenv
+      pkgs.pnpm
+      pkgs.rustup
       # LSP
       pkgs.lua-language-server
+      pkgs.cuelsp
+      pkgs.htmx-lsp
       # TERMINAL
       pkgs.curl
       pkgs.neovim

@@ -47,7 +47,11 @@ in
     };
     "github" = {
       text = content;
-      target = "/Projects/github/.keep";
+      target = "Projects/github/.keep";
+    };
+    "fnm" = {
+      text = content;
+      target = ".fnm/.keep";
     };
   };
 }
