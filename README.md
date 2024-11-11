@@ -2,39 +2,44 @@
 
 ## Devices
 
-- `ichi` - MacBook Pro (Intel)
-- `ni` - MacBook Pro (M4)
-- `work` - MacBook Pro (Mx) - Work device
+- `ichi` - Apple (Intel)
+- `ni` - Apple (M)
+- `work` - Apple (M) - Work device
 
 ## Basic Installation
 
 1. Install Nix
     ```shell
-    $ curl -L https://nixos.org/nix/install | sh
+    $ sh <(curl -L https://nixos.org/nix/install)
     # or
-    $ sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+    $ curl -L https://nixos.org/nix/install | sh
     ```
 2. Download configuration
     ```shell
     $ nix-shell -p git --run 'git clone git@github.com:jorgechato/.dotfiles.git ~/.dotfiles'
-    # and install flake with nix-darwin
-    $ cd ~/.dotfiles/nix/ && nix flake update --extra-experimental-features "nix-command flakes" && cd ~
     ```
 3. Install configuration
     ```shell
     $ nix run nix-darwin --experimental-features 'nix-command flakes' -- switch --impure --flake ~/.dotfiles/nix#ni # change ni with the device name
     ```
 
-## Add new package
-
-1. Add package to `environment.systemPackages` in `nix/flake.nix`
-2. Install package
-    ```shell
-    $ darwin-rebuild switch --impure --flake ~/.dotfiles/nix#ni # change ni with the device name
-    ```
 ## Extra configuration
 
+1. Enable `1Password` **ssh**
+2. Enable Dock magnify and run the configuration again with `darwin-rebuild switch`
+3. Set up [nushell](#nushell)
+4. Import `raycast` configuration
+    - Disable spotlight hotkeys
+5. Import `streamdeck` configuration
+6. Disable mission control hot corners
+7. Add Keyboard input sources (*System settings > Keyboard > Text input > Input Sources*)
+8. Install `node` with `fnm install 22.11`
+9. Setup rust version `rustup default stable`
+
 ### Nushell
+
+If `nu` is not in your path, most likely it's in `/run/current-system/sw/bin/nu` folder.
+
 ```sh
 $ export XDG_CONFIG_HOME="/Users/jorge/.config" #or if you are in fish: $ set XDG_CONFIG_HOME "/Users/jorge/.config"
 $ sudo echo $(which nu) >> /etc/shells
@@ -43,6 +48,14 @@ $ chsh -s $(which nu)
 $ echo "source ~/.config/nushell/config.nu" | sudo $nu.current-exe --stdin -c "save -f $nu.config-path"
 $ echo "source ~/.config/nushell/env.nu" | sudo $nu.current-exe --stdin -c "save -f $nu.env-path"
 ```
+
+## Add new package
+
+1. Add package to `environment.systemPackages` in `nix/modules/nixos/pkgs.nix` or `nix/modules/nixos/deps/*`
+2. Install package
+    ```shell
+    $ darwin-rebuild switch --impure --flake ~/.dotfiles/nix#ni # change ni with the device name
+    ```
 
 ## Common errors
 
