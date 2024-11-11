@@ -13,6 +13,7 @@
       pkgs.pyenv
       pkgs.pnpm
       pkgs.rustup
+      pkgs.pre-commit
       # LSP
       pkgs.lua-language-server
       pkgs.cuelsp
