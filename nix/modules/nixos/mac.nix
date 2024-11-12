@@ -3,6 +3,9 @@ let
   persistentApps = [
     "/Applications/Brave Browser.app"
     "/Applications/WezTerm.app"
+  ];
+
+  homePersistentApps = [
     "/Applications/Scrivener.app"
     "/Applications/DaVinci Resolve.app"
     "/Applications/MacFamilyTree 10.app"
@@ -35,8 +38,9 @@ in
           autohide = true;
           orientation = "right";
           persistent-apps = lib.mkMerge [
-            persistentApps
             (lib.mkIf config.isWork workPersistentApps)
+            persistentApps
+            (lib.mkIf (!config.isWork) homePersistentApps)
           ];
           persistent-others = [
             "${home}/Downloads"

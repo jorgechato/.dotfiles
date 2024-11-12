@@ -1,4 +1,5 @@
 [
+  "ollama"
   "the-unarchiver"
   "docker"
   "1password"

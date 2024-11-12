@@ -1,5 +1,4 @@
 [
-  "ollama"
   "discord"
   "dropbox"
   "telegram"
