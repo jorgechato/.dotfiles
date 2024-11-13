@@ -1,7 +1,12 @@
 { self, pkgs, lib, ... }:
 {
   options = {
-    isWork = lib.mkOption {
+    dep.isWork = lib.mkOption {
+      default = false;
+      type = lib.types.bool;
+      description = "Is this a work machine?";
+    };
+    ui.isWork = lib.mkOption {
       default = false;
       type = lib.types.bool;
       description = "Is this a work machine?";

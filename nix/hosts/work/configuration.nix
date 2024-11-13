@@ -1,6 +1,6 @@
 { self, pkgs, lib, config, nixpkgs, nix-homebrew, home-manager, ... }: {
   ui.isWork = true;
-  brew.isWork = true;
+  dep.isWork = true;
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 

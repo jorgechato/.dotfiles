@@ -15,19 +15,19 @@ in
     homebrew = {
       enable = true;
       global.brewfile = true;
-      masApps = lib.mkIf (!config.isWork) appstoreHome;
+      masApps = lib.mkIf (!config.dep.isWork) appstoreHome;
       onActivation.cleanup = "zap";
       onActivation.autoUpdate = true;
       onActivation.upgrade = true;
       brews = lib.mkMerge [
         brews
-        (lib.mkIf config.isWork brewsWork)
-        (lib.mkIf (!config.isWork) brewsHome)
+        (lib.mkIf config.dep.isWork brewsWork)
+        (lib.mkIf (!config.dep.isWork) brewsHome)
       ];
       casks = lib.mkMerge [
         casks
-        (lib.mkIf config.isWork casksWork)
-        (lib.mkIf (!config.isWork) casksHome)
+        (lib.mkIf config.dep.isWork casksWork)
+        (lib.mkIf (!config.dep.isWork) casksHome)
       ];
 
       taps = [

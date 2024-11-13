@@ -1,10 +1,6 @@
-{ self, pkgs, lib, config, ... }:
-let
-  nixPkgsWork = import ./deps/nix-pkgs-work.nix;
-in
-{
+{ self, pkgs, lib, config, ... }: {
   config = {
-    environment.systemPackages =
+    environment.systemPackages = lib.mkMerge [
       [
         # CODE
         pkgs.go
@@ -75,10 +71,14 @@ in
         pkgs.impl
         pkgs.iferr
         pkgs.gotests
+      ]
 
-        # Work
-        (lib.mkIf config.isWork nixPkgsWork)
-      ];
+      # Work
+      (lib.mkIf config.dep.isWork [
+        pkgs.grpcurl
+        pkgs.gosec
+      ])
+    ];
 
     fonts.packages = [
       pkgs.meslo-lgs-nf

@@ -38,9 +38,9 @@ in
           autohide = true;
           orientation = "right";
           persistent-apps = lib.mkMerge [
-            (lib.mkIf config.isWork workPersistentApps)
+            (lib.mkIf config.ui.isWork workPersistentApps)
             persistentApps
-            (lib.mkIf (!config.isWork) homePersistentApps)
+            (lib.mkIf (!config.ui.isWork) homePersistentApps)
           ];
           persistent-others = [
             "${home}/Downloads"

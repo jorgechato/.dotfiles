@@ -2,7 +2,6 @@
   "ollama"
   "the-unarchiver"
   "docker"
-  "1password"
   "1password-cli"
   "brave-browser"
   "jetbrains-toolbox"

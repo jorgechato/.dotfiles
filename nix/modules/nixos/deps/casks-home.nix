@@ -1,4 +1,5 @@
 [
+  "1password"
   "discord"
   "dropbox"
   "telegram"
