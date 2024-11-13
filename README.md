@@ -1,5 +1,7 @@
 # JORGE CHATO .dotfiles
 
+> :warning: Set up the repository with the proper hooks: `pre-commit`
+
 ## Devices
 
 - `ichi` - Apple (Intel)

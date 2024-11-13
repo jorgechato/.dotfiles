@@ -1,12 +1,23 @@
-{ self, ... }:
+{ self, config, ... }:
 let
   content = "NixOs hack to create folders ;)";
+  onePasswordHome = ''
+    [[ssh-keys]]
+    vault = "Maker"
+
+    [[ssh-keys]]
+    vault = "Private"
+  '';
+  onePasswordWork = ''
+    [[ssh-keys]]
+    vault = "Private"
+  '';
 in
 {
   home.file = {
     ".config/1Password" = {
-      source = ~/.dotfiles/1Password;
-      recursive = true;
+      target = ".config/1Password/ssh/agent.toml";
+      text = if config.isWork then onePasswordWork else onePasswordHome;
     };
     ".config/fish" = {
       source = ~/.dotfiles/fish;

@@ -1,7 +1,9 @@
-{ lib
-, pkgs
-, ...
-}: {
+{ lib, pkgs, config, ... }:
+let
+  homePK = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEhMWeOqYCi0yIiAxv58TVUQycWu4v3z0qz89I0Wg4a";
+  workPK = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII4oPEdKmaRnMkP2CMpK5HyqMdYHYOj/fzDXKoSWWl6T";
+in
+{
   programs.ssh = {
     enable = true;
     extraConfig = lib.mkMerge [
@@ -16,7 +18,7 @@
 
   programs.git = {
     signing = {
-      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEhMWeOqYCi0yIiAxv58TVUQycWu4v3z0qz89I0Wg4a";
+      key = if config.isWork then workPK else homePK;
       signByDefault = true;
     };
     extraConfig = {

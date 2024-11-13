@@ -12,6 +12,9 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.jorge = import ../../modules/home;
+  home-manager.users.jorge = {
+    imports = [ ../../modules/home ];
+    isWork = true;
+  };
   home-manager.extraSpecialArgs = { inherit self; };
 }
