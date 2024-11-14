@@ -13,6 +13,7 @@ let
 
   workPersistentApps = [
     "/Applications/Google Chrome.app"
+    "/Applications/Slack.app"
   ];
 
   home = "/Users/jorge";

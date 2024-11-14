@@ -43,7 +43,6 @@
         pkgs.ripgrep
         pkgs.turso-cli
         pkgs.grc
-        pkgs.kubectl
         pkgs.nushell
         pkgs.zoxide
         pkgs.carapace
@@ -72,6 +71,11 @@
         pkgs.iferr
         pkgs.gotests
       ]
+
+      # Home
+      (lib.mkIf (!config.dep.isWork) [
+        pkgs.kubectl
+      ])
 
       # Work
       (lib.mkIf config.dep.isWork [
