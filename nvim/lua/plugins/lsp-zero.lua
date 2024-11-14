@@ -52,10 +52,10 @@ return {
                         end
                         -- vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
-                        if entry.source.name == "copilot" then
-                            vim_item.kind = icons.git.Octoface
-                            vim_item.kind_hl_group = "CmpItemKindCopilot"
-                        end
+                        -- if entry.source.name == "codeium" then
+                        -- vim_item.kind = icons.git.Octoface
+                        -- vim_item.kind_hl_group = "CmpItemKindCopilot"
+                        -- end
 
                         if entry.source.name == "crates" then
                             vim_item.kind = icons.misc.Package
@@ -75,7 +75,7 @@ return {
                             luasnip = "(Snippet)",
                             buffer = "(Buffer)",
                             tmux = "(TMUX)",
-                            copilot = "(Copilot)",
+                            codeium = "(Codeium)",
                             treesitter = "(TreeSitter)",
                         })[entry.source.name]
                         vim_item.dup = ({
@@ -102,7 +102,7 @@ return {
                 },
                 sources = {
                     {
-                        name = "copilot",
+                        name = "codeium",
                         -- keyword_length = 0,
                         max_item_count = 3,
                         trigger_characters = {
