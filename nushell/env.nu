@@ -65,6 +65,10 @@ $env.PATH = ($env.PATH | prepend $"($env.FNM_MULTISHELL_PATH)/bin")
 # Rust
 $env.PATH = ($env.PATH | prepend $"($env.HOME)/.cargo/bin")
 
+# Work Kubectl
+$env.USE_GKE_GCLOUD_AUTH_PLUGIN = true
+$env.KPUF_CONFIG_FILE = $"($env.HOME)/.config/kpuf.yaml"
+
 # STARSHIP
 $env.STARSHIP_SHELL = "nu"
 mkdir ~/.cache/starship

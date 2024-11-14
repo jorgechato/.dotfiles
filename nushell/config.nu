@@ -1,4 +1,5 @@
 source ~/.config/nushell/alias.nu
+source ~/.config/nushell/functions/kpuf/kpuf.nu
 
 $env.config = {
     show_banner: false
