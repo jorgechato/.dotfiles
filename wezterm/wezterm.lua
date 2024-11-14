@@ -61,6 +61,7 @@ config.keys = {
     { key = '+', mods = 'CTRL',       action = wezterm.action.DisableDefaultAssignment },
     { key = '|', mods = 'CTRL|SHIFT', action = wezterm.action.SplitHorizontal },
     { key = '_', mods = 'CTRL|SHIFT', action = wezterm.action.SplitVertical },
+    { key = 'k', mods = 'SUPER',      action = wezterm.action.ClearScrollback("ScrollbackAndViewport") },
 }
 
 return config
