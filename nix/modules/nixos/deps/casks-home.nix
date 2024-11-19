@@ -11,4 +11,5 @@
   "steam"
   "qflipper"
   "yubico-authenticator"
+  "cloudflare-warp"
 ]
