@@ -463,10 +463,10 @@ return {
 
             lsp_zero.ui({
                 sign_text = {
-                    error = " ",
-                    warn = " ",
-                    hint = "󱜺 ",
-                    info = " ",
+                    error = "",
+                    warn = "",
+                    hint = "󱜺",
+                    info = "",
                 }
             })
 
@@ -474,16 +474,8 @@ return {
                 title            = false,
                 underline        = true,
                 virtual_text     = false,
-                signs            = true,
                 update_in_insert = false,
                 severity_sort    = true,
-                float            = {
-                    source = "always",
-                    style = "minimal",
-                    border = "rounded",
-                    header = "",
-                    prefix = "",
-                },
             })
         end
     }
