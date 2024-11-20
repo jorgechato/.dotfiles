@@ -8,14 +8,8 @@ end
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        branch = 'v4.x',
         lazy = true,
-        config = false,
-        init = function()
-            -- Disable automatic setup, we are doing it manually
-            vim.g.lsp_zero_extend_cmp = 0
-            vim.g.lsp_zero_extend_lspconfig = 0
-        end,
     },
     {
         'williamboman/mason.nvim',
@@ -203,11 +197,16 @@ return {
 
 
             local lspconfig = require('lspconfig')
-            lspconfig.nushell.setup({
-                cmd = { "nu", "--lsp", "-I" },
-            })
 
-            require('mason').setup({})
+            require('mason').setup({
+                ui = {
+                    icons = {
+                        package_installed = "",
+                        package_pending = "",
+                        package_uninstalled = "",
+                    },
+                }
+            })
             require('mason-tool-installer').setup {
                 ensure_installed = {
                     'sqlfmt',
@@ -221,7 +220,7 @@ return {
                     'sqlls',
                     'spectral',
                     'lua_ls',
-                    -- 'rust_analyzer',
+                    'rust_analyzer',
                     'gopls',
                     'templ',
                     'htmx',
@@ -240,6 +239,7 @@ return {
                     'dagger',
                     'rnix',
                     'zls',
+                    'taplo', -- toml
                 },
                 handlers = {
                     lsp_zero.default_setup,
@@ -313,6 +313,10 @@ return {
                                 command = "EslintFixAll",
                             })
                         end,
+                    }),
+
+                    lspconfig.nushell.setup({
+                        cmd = { "nu", "--lsp", "-I" },
                     }),
 
                     lspconfig.sqlls.setup({
@@ -409,17 +413,24 @@ return {
                         filetypes = { "nix" },
                     }),
 
-                    -- lspconfig.nushell.setup({
-                    -- cmd = { "nu", "--lsp" },
-                    -- filetypes = { "nu" },
-                    -- single_file_support = true,
-                    -- }),
-
                     lspconfig.zls.setup({
                         cmd = { "zls" },
                         filetypes = { "zig", "zir" },
                         single_file_support = true,
                     }),
+
+                    lspconfig.rust_analyzer.setup({
+                        capabilities = capabilities,
+                        filetypes = { "rust" },
+                        root_dir = util.root_pattern("Cargo.toml"),
+                        settings = {
+                            ['rust_analyzer'] = {
+                                cargo = {
+                                    allFeatures = true,
+                                },
+                            },
+                        },
+                    })
                 },
             })
 
@@ -429,7 +440,7 @@ return {
                     timeout_ms = 10000,
                 },
                 servers = {
-                    ["rust-analyzer"] = { "rust" },
+                    ["rust_analyzer"] = { "rust" },
                     ['lua_ls'] = { 'lua' },
                     ['eslint'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
                     ['gopls'] = { 'go' },
@@ -445,18 +456,18 @@ return {
                     ['rnix'] = { 'nix' },
                     ['nushell'] = { 'nu' },
                     ['zls'] = { 'zig', 'zir' },
+                    ['taplo'] = { 'toml' },
+                    -- ['buf_ls'] = { 'protobuf' },
                 }
             })
 
-            lsp_zero.set_preferences({
-                suggest_lsp_servers = false,
-            })
-
-            lsp_zero.set_sign_icons({
-                error = " ",
-                warn = " ",
-                hint = "󱜺 ",
-                info = " ",
+            lsp_zero.ui({
+                sign_text = {
+                    error = " ",
+                    warn = " ",
+                    hint = "󱜺 ",
+                    info = " ",
+                }
             })
 
             vim.diagnostic.config({

@@ -27,6 +27,10 @@ return {
                 indent = { enable = true },
                 auto_install = false,
                 ensure_installed = {
+                    "rust",
+                    "sql",
+                    "nix",
+                    "zig",
                     "cue",
                     "terraform",
                     "hcl",
@@ -44,6 +48,7 @@ return {
                     "markdown",
                     "markdown_inline",
                     "nu",
+                    "toml",
                 },
             })
         end
