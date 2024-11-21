@@ -115,7 +115,7 @@ return {
         "folke/todo-comments.nvim",
         enabled = true,
         dependencies = "nvim-lua/plenary.nvim",
-        cmd = { "TodoTrouble", "TodoTelescope" },
+        cmd = { "TodoTelescope" },
         event = { "BufReadPost", "BufNewFile" },
         config = function()
             require("todo-comments").setup({

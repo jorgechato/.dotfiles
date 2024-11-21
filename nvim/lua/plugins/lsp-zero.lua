@@ -1,4 +1,5 @@
-local util = require 'lspconfig.util'
+local util  = require 'lspconfig.util'
+local icons = require('core.icons')
 
 local function get_typescript_server_path(root_dir)
     local project_root = util.find_node_modules_ancestor(root_dir)
@@ -30,7 +31,6 @@ return {
 
             local cmp         = require('cmp')
             local lspkind     = require('lspkind')
-            local icons       = require('core.icons')
             local cmp_action  = require('lsp-zero.cmp').action()
             local cmp_mapping = cmp.mapping
             local cmp_types   = require('cmp.types.cmp')
@@ -44,12 +44,12 @@ return {
                         if max_width ~= 0 and #vim_item.abbr > max_width then
                             vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. icons.ui.Ellipsis
                         end
-                        -- vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
+                        vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
-                        -- if entry.source.name == "codeium" then
-                        -- vim_item.kind = icons.git.Octoface
-                        -- vim_item.kind_hl_group = "CmpItemKindCopilot"
-                        -- end
+                        if entry.source.name == "codeium" then
+                            vim_item.kind = icons.git.Codeium
+                            vim_item.kind_hl_group = "CmpItemKindCodeium"
+                        end
 
                         if entry.source.name == "crates" then
                             vim_item.kind = icons.misc.Package
@@ -77,6 +77,7 @@ return {
                             path = 1,
                             nvim_lsp = 0,
                             luasnip = 1,
+                            codeium = 0,
                         })[entry.source.name] or 0
                         return vim_item
                     end,
@@ -97,7 +98,6 @@ return {
                 sources = {
                     {
                         name = "codeium",
-                        -- keyword_length = 0,
                         max_item_count = 3,
                         trigger_characters = {
                             {
@@ -148,6 +148,7 @@ return {
                     { name = "treesitter" },
                     { name = "crates" },
                     { name = "tmux" },
+                    { name = "codeium" },
                 },
                 mapping = {
                     -- ['<Tab>'] = cmp_action.luasnip_supertab(),
@@ -215,6 +216,25 @@ return {
 
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+            -- Diagnostics UI
+            local signs = icons.diagnostics
+            for type, icon in pairs(signs) do
+                local hl = 'DiagnosticSign' .. type
+                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+            end
+
+            lsp_zero.ui({
+                virtual_text = false,
+            })
+
+            vim.diagnostic.config({
+                virtual_text = false,
+                update_in_insert = true,
+                severity_sort = true,
+                -- on_save = true,
+            })
+
+            -- Setup lsp servers
             require('mason-lspconfig').setup({
                 ensure_installed = {
                     'sqlls',
@@ -243,12 +263,10 @@ return {
                 },
                 handlers = {
                     lsp_zero.default_setup,
+
                     lspconfig.lua_ls.setup({
                         settings = {
                             Lua = {
-                                diagnostics = {
-                                    globals = { "vim", "custom_nvim" },
-                                },
                                 workspace = {
                                     library = vim.api.nvim_get_runtime_file("", true),
                                     checkThirdParty = false,
@@ -259,29 +277,10 @@ return {
                         },
                     }),
 
-                    lspconfig.dagger.setup({
-                        cmd = { "cuelsp" },
-                        filetypes = { "cue" },
-                        root_dir = lspconfig.util.root_pattern("cue.mod", ".git"),
-                        single_file_support = true,
-                    }),
-
                     lspconfig.tailwindcss.setup({
                         capabilities = capabilities,
                         filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "astro", "astro-markdown", "gohtml", "gohtmltmpl", "markdown", "mdx", "templ" },
                         init_options = { userLanguages = { templ = "html" } },
-                    }),
-
-                    lspconfig.templ.setup({
-                        cmd = { "templ", "lsp" },
-                        filetypes = { "templ" },
-                        root_dir = lspconfig.util.root_pattern('go.work', 'go.mod', '.git'),
-                    }),
-
-                    lspconfig.htmx.setup({
-                        cmd = { "htmx-lsp" },
-                        filetypes = { "html", "templ" },
-                        single_file_support = true,
                     }),
 
                     lspconfig.jsonls.setup({
@@ -296,8 +295,6 @@ return {
                     lspconfig.ts_ls.setup({
                         root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
                         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
-                        cmd = { "typescript-language-server", "--stdio" },
-                        single_file_support = true,
                     }),
 
                     lspconfig.eslint.setup({
@@ -315,13 +312,8 @@ return {
                         end,
                     }),
 
-                    lspconfig.nushell.setup({
-                        cmd = { "nu", "--lsp", "-I" },
-                    }),
-
                     lspconfig.sqlls.setup({
                         filetypes = { 'sql', 'mysql', 'postgres' },
-                        cmd = { "sql-language-server", "up", "--method", "stdio" },
                     }),
 
                     lspconfig.gopls.setup({
@@ -365,63 +357,34 @@ return {
                     }),
 
                     lspconfig.terraformls.setup({
-                        cmd = { "terraform-ls", "serve" },
                         filetypes = { "terraform", "tf", "terraform-vars", "hcl" },
                         root_dir = lspconfig.util.root_pattern("*.tf", "*.terraform", "*.tfvars", "*.hcl", "*.config"),
                     }),
 
                     lspconfig.marksman.setup({
-                        cmd = { "marksman", "server" },
-                        filetypes = { "markdown", "markdown.mdx" },
                         root_dir = lspconfig.util.root_pattern(".git", ".marksman.toml"),
                         single_file_support = true,
                         init_options = {
                             typescript = {},
                         },
-                        on_new_config = function(new_config, new_root_dir)
-                            if vim.tbl_get(new_config.init_options, 'typescript') and not new_config.init_options.typescript.tsdk then
-                                new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
-                            end
-                        end
                     }),
 
                     lspconfig.astro.setup({
-                        cmd = { "astro-ls", "--stdio" },
-                        filetypes = { "astro" },
                         root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
                         init_options = {
                             typescript = {},
                         },
-                        on_new_config = function(new_config, new_root_dir)
-                            if vim.tbl_get(new_config.init_options, 'typescript') and not new_config.init_options.typescript.tsdk then
-                                new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
-                            end
-                        end
                     }),
 
                     lspconfig.typos_lsp.setup({
-                        cmd = { 'typos-lsp' },
                         filetypes = { '*' },
-                        single_file_support = true,
                         init_options = {
                             diagnosticSeverity = 'Warning',
                         },
                     }),
 
-                    lspconfig.rnix.setup({
-                        cmd = { "rnix-lsp" },
-                        filetypes = { "nix" },
-                    }),
-
-                    lspconfig.zls.setup({
-                        cmd = { "zls" },
-                        filetypes = { "zig", "zir" },
-                        single_file_support = true,
-                    }),
-
                     lspconfig.rust_analyzer.setup({
                         capabilities = capabilities,
-                        filetypes = { "rust" },
                         root_dir = util.root_pattern("Cargo.toml"),
                         settings = {
                             ['rust_analyzer'] = {
@@ -459,23 +422,6 @@ return {
                     ['taplo'] = { 'toml' },
                     -- ['buf_ls'] = { 'protobuf' },
                 }
-            })
-
-            lsp_zero.ui({
-                sign_text = {
-                    error = "",
-                    warn = "",
-                    hint = "󱜺",
-                    info = "",
-                }
-            })
-
-            vim.diagnostic.config({
-                title            = false,
-                underline        = true,
-                virtual_text     = false,
-                update_in_insert = false,
-                severity_sort    = true,
             })
         end
     }

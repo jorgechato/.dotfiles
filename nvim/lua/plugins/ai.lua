@@ -8,11 +8,9 @@ return {
         config = function()
             require("codeium").setup({
                 -- Optionally disable cmp source if using virtual text only
-                enable_cmp_source = false,
+                enable_cmp_source = true,
                 virtual_text = {
                     enabled = true,
-
-                    -- These are the defaults
 
                     -- Set to true if you never want completions to be shown automatically.
                     manual = false,

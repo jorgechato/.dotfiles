@@ -4,6 +4,9 @@ return {
     lazy = true,
     opts = {
         preset = "modern",
+        delay = function(ctx)
+            return ctx.plugin and 0 or 800
+        end,
         icons = {
             breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
             separator = "➜", -- symbol used between a key and it's label

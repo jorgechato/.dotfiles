@@ -49,6 +49,7 @@ return {
         Diff = "",
         Repo = "",
         Octoface = "",
+        Codeium = "󱃸",
         Branch = "",
     },
     ui = {
@@ -130,17 +131,20 @@ return {
     },
     diagnostics = {
         BoldError = "",
-        Error = "",
         BoldWarning = "",
-        Warning = "",
+        Warning = "",
         BoldInformation = "",
-        Information = "",
+        Information = "",
         BoldQuestion = "",
         Question = "",
         BoldHint = "",
-        Hint = "",
         Debug = "",
         Trace = "✎",
+
+        Error = "",
+        Warn = "",
+        Hint = "",
+        Info = "",
     },
     misc = {
         Robot = "ﮧ",
@@ -152,4 +156,3 @@ return {
         CircuitBoard = "",
     },
 }
-

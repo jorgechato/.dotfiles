@@ -68,8 +68,6 @@ return {
     { "<leader>t",       group = "Todo" },
     { "<leader>tt",      "<cmd>TodoTelescope previewer=false layout_config={vertical={height=0.4}}<cr>",                         name = "Todo" },
     { "<leader>tT",      "<cmd>TodoTelescope previewer=false layout_config={vertical={height=0.4}} keywords=TODO,FIX,FIXME<cr>", name = "Todo/Fix/Fixme" },
-    { "<leader>tx",      "<cmd>TodoTrouble<cr>",                                                                                 name = "Todo (Trouble)" },
-    { "<leader>tX",      "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr><cr>",                                                     name = "Todo/Fix/Fixme (Trouble)" },
     -- Markdown
     { "<leader>m",       group = "Markdown" },
     { "<leader>mm",      "<cmd>MarkdownPreviewToggle<cr>",                                                                       name = "Preview" },
