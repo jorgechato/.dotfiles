@@ -31,11 +31,8 @@ return {
 
             local cmp         = require('cmp')
             local lspkind     = require('lspkind')
-            local cmp_action  = require('lsp-zero.cmp').action()
             local cmp_mapping = cmp.mapping
-            local cmp_types   = require('cmp.types.cmp')
             local luasnip     = require('luasnip')
-            local utils       = require('core.utils')
             cmp.setup({
                 formatting = {
                     fields = { "kind", "abbr", "menu" },
@@ -224,14 +221,19 @@ return {
             end
 
             lsp_zero.ui({
-                virtual_text = false,
+                virtual_text = true,
             })
 
             vim.diagnostic.config({
-                virtual_text = false,
-                update_in_insert = true,
-                severity_sort = true,
-                -- on_save = true,
+                -- update_in_insert = true,
+                float = {
+                    focusable = false,
+                    style = "minimal",
+                    border = "rounded",
+                    source = "always",
+                    header = "",
+                    prefix = "",
+                },
             })
 
             -- Setup lsp servers

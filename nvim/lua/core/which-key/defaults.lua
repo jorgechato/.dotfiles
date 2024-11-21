@@ -3,7 +3,7 @@ return {
     { "<leader><space>", ":noh<cr>",                                                                                             name = "Clean search (highlight)" },
     { "<leader>.",       ":lcd %:p:h<CR>",                                                                                       name = "Set working directory" },
     { "<leader>e",       ':e <C-R>=expand("%:p:h") . "/" <CR>',                                                                  name = "Open an edit command" },
-    { "<leader>p",       '"+gP<CR>',                                                                                             name = "Paste from clipboard" },
+    -- { "<leader>p",       '"+gP<CR>',                                                                                             name = "Paste from clipboard" },
     { "<leader>te",      ':tab <C-R>=expand("%:p:h") . "/" <CR>',                                                                name = "Open a tab edit command" },
     { "<leader>c",       ":bd<CR>",                                                                                              name = "Close Buffer" },
     { "<leader>w",       ":w!<CR>",                                                                                              name = "Save" },
@@ -73,4 +73,5 @@ return {
     { "<leader>mm",      "<cmd>MarkdownPreviewToggle<cr>",                                                                       name = "Preview" },
     { "<leader>mP",      "<cmd>MarkdownPreview<cr>",                                                                             name = "Preview (Split)" },
     { "<leader>ms",      "<cmd>MarkdownPreviewStop<cr>",                                                                         name = "Preview Stop" },
+    { "<leader>u",       "<cmd>UndotreeToggle<cr>",                                                                              name = "Undo tree",                          mode = "n" },
 }

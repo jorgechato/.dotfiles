@@ -5,21 +5,15 @@ local map = vim.keymap.set
 --------------------------------------------------------------
 -- Mapping
 --------------------------------------------------------------
--- Comment on <cntr>/
---map('n', '<C-_>', '<cmd>lua require("nerdcommenter").toggle()<CR>', opts)
---map('v', '<C-_>', '<cmd>lua require("nerdcommenter").toggle()<CR>gv', opts)
---map('i', '<C-_>', '<Esc><cmd>lua require("nerdcommenter").toggle()<CR>a', opts)
-
 -- Escape terminal mode with <ESC>
 map('t', '<Esc>', '<C-\\><C-n>', opts)
-
--- Ack
--- vim.cmd('cnoreabbrev Ack Ack!')
--- map('n', '<leader>a', ':Ack!<Space>', opts)
 
 -- Save
 map('n', '<C-s>', '<Esc>:w<CR>', opts)
 map('i', '<C-s>', '<Esc>:w<CR>a', opts)
+
+-- Best pasting ever (keeps the copied text)
+map("x", "<leader>p", [["_dP]])
 
 -- fzf
 map('i', '<C-x><C-k>', '<Plug>(fzf-complete-word)', { silent = true })
