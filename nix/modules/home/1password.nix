@@ -1,6 +1,6 @@
 { lib, pkgs, config, ... }:
 let
-  homePK = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMEhMWeOqYCi0yIiAxv58TVUQycWu4v3z0qz89I0Wg4a";
+  homePK = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINvmtszHUi0Na/nhc4rNQJu1YVhwRcS6Qt2ZOjDEOUa6";
   workPK = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII4oPEdKmaRnMkP2CMpK5HyqMdYHYOj/fzDXKoSWWl6T";
 in
 {

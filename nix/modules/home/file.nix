@@ -3,9 +3,6 @@ let
   content = "NixOs hack to create folders ;)";
   onePasswordHome = ''
     [[ssh-keys]]
-    vault = "Maker"
-
-    [[ssh-keys]]
     vault = "Private"
   '';
   onePasswordWork = ''
