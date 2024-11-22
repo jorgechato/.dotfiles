@@ -26,12 +26,6 @@ def kpuf [] {
     }
 }
 
-def eval_esc [args] {
-    if $args == "" {
-        exit 1
-    }
-}
-
 def gke_gcloud_login [context] {
     if ($context | str contains "gke") {
         gcloud auth login --no-launch-browser --update-adc
@@ -41,3 +35,8 @@ def gke_gcloud_login [context] {
     }
 }
 
+def "kpuf restart" [
+    deployment?: string = "mercari-pacman-jp"
+] {
+    kubectl rollout restart deployment $deployment
+}
