@@ -19,6 +19,7 @@
         pkgs.cuelsp
         pkgs.htmx-lsp
         # TERMINAL
+        pkgs.tmux
         pkgs.curl
         pkgs.neovim
         pkgs.mkalias
