@@ -2,4 +2,5 @@
   "mas"
   "jenv"
   "tfenv"
+  "openssl"
 ]

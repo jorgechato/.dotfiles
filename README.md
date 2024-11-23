@@ -1,6 +1,7 @@
 # JORGE CHATO .dotfiles
 
-> :warning: Set up the repository with the proper hooks: `pre-commit`
+> [!WARNING]
+> Set up the repository with the proper hooks. Run `pre-commit install` in the root directory of the repository.
 
 ## Devices
 
@@ -18,7 +19,7 @@
     ```
 2. Download configuration
     ```shell
-    $ nix-shell -p git --run 'git clone git@github.com:jorgechato/.dotfiles.git ~/.dotfiles'
+    $ nix-shell -p git --run 'git clone https://github.com/jorgechato/.dotfiles.git ~/.dotfiles'
     ```
 3. Install configuration
     ```shell
