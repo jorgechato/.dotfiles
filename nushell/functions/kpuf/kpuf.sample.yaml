@@ -1,10 +1,10 @@
 - cluster: ctx-name1
-  alias: my-alias1 # optional
+  alias: my-alias1
   namespaces:
     - np-name1
     - np-name2
 - cluster: ctx-name2
-  alias: my-alias2 # optional
+  alias: my-alias2
   namespaces:
     - np-name1
     - np-name2
