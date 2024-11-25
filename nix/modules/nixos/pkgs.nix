@@ -47,6 +47,9 @@
         pkgs.nushell
         pkgs.zoxide
         pkgs.carapace
+        # pkgs.doctl
+        pkgs.atlas
+        pkgs.awscli2
         # GUI
         pkgs.kitty
         # pkgs.wezterm
