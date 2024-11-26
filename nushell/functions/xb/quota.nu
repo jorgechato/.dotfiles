@@ -31,7 +31,7 @@ def "quotas compare" [
     let id = if $id == null { if $production { "5dtibmulo4li2tfeogpt6hnqiq" } else { "rgzusoecr4ykmycvxqw4i2cdyi" } } else { $id }
 
     quotas $id | save -f $"/tmp/xb-($id).json"
-    diff --color -c -C 3 $"/tmp/xb-($id).json" $file
+    diff --color -c -C 4 $"/tmp/xb-($id).json" $file
     rm $"/tmp/xb-($id).json"
 }
 
@@ -52,11 +52,8 @@ def "quotas plan" [
     let file = if $production { $"/tmp/xb-($partner)-prod.json" } else { $"/tmp/xb-($partner)-sandbox.json" }
     let new_quota = {$partner: $values}
 
-    if $production {
-        quotas -j -p $id | update partners { |$it | merge $new_quota } | to json | save -f $file
-    } else {
-        quotas -j $id | update partners { |$it | merge $new_quota } | to json | save -f $file
-    }
+    quotas -j $id | update partners { |$it | merge $new_quota } | to json | save -f $file
+
     print $"Full file saved to: ($file)"
     print "---"
     print "1) Send a message to #xb-team-engineering for approval:"
@@ -68,7 +65,7 @@ def "quotas plan" [
     print ""
     print $"(ansi yellow)ServiceID: (ansi yellow_bold)kouzoh-quota-jp(ansi reset)"
     print $"(ansi yellow)Role: (ansi yellow_bold)roles/secretmanager.admin(ansi reset)"
-    print $"(ansi yellow)Kubernetes roles: (ansi yellow_bold)roles/edit(ansi reset)"
+    print $"(ansi yellow)Kubernetes roles: (ansi yellow_bold)edit(ansi reset)"
     print ""
     print $"3) Make sure you are in the right cluster with (ansi blue_bold)kpuf(ansi reset), only then, update the quotas in 1password and gcloud: (ansi blue_bold)quotas apply (if $production { "-p" }) -f ($file)(ansi reset)"
     print ""
