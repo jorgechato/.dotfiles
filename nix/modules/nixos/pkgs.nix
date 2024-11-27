@@ -14,6 +14,7 @@
         pkgs.pyenv
         pkgs.pnpm
         pkgs.pre-commit
+        pkgs.bun
         # LSP
         pkgs.lua-language-server
         pkgs.cuelsp
