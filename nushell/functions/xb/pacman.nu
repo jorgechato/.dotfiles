@@ -52,7 +52,7 @@ def "pacman plan" [
     }
     let id = if $id == null { if $production { "3h3bgoachgz73jak2zaztir7se" } else { "3fe2pshzfloonbmy3tsluj6lga" } } else { $id }
     let file = if $production { $"/tmp/xb-pacman-($partner)-prod.json" } else $"/tmp/xb-pacman-($partner)-sandbox.json"
-    let data = pacman -j
+    let data = pacman -j $id
 
     if $onboarding {
         let onboarding_data = {
@@ -71,10 +71,10 @@ def "pacman plan" [
 
     print $"Full file saved to: ($file)"
     print "---"
-    print "1) Send a message to #xb-team-engineering for approval:"
+    print "1) Send a message to #xb-secret-manager for approval:"
     print ""
     print $"(ansi white)@xb-demand-growth-be-eng please review. This is (if $production { "production" } else { "sandbox" }):"
-    print $"(if $onboarding { ":plus:" } else { ":equal:" }) ($partner)"
+    print $"(if $onboarding { ":plus:" } else { ":equal:" }) Partner: ($partner)"
     $users | each {|it|print $"    :plus: ($it)"}
     print $"(ansi reset)"
     print $"2) Clutch request: https://clutch.(if $production { "prod" } else { "dev" }).citadelapps.com/carrier/request/service/create"

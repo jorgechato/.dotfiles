@@ -56,7 +56,7 @@ def "quotas plan" [
 
     print $"Full file saved to: ($file)"
     print "---"
-    print "1) Send a message to #xb-team-engineering for approval:"
+    print "1) Send a message to #xb-secret-manager for approval:"
     print ""
     print $"(ansi white)@xb-demand-growth-be-eng please review. This is (if $production { "production" } else { "sandbox" }):"
     print $":plus: ($partner)(ansi reset)"
@@ -100,7 +100,7 @@ def "quotas apply" [
 
     try {
         print $"gcloud secrets versions add ($partners_config) --data-file=($file) --project ($project_id)"
-        let output = gcloud secrets versions add $partners_config --data-file=$"($file)" --project $project_id  o+e> /tmp/xb.log
+        gcloud secrets versions add $partners_config --data-file=$"($file)" --project $project_id o+e> /tmp/xb.log
         print $"Secret updated on ($project)-($suffix)"
     } catch {
         print $"Error updating ($project)-($suffix), for details see /tmp/xb.log"
@@ -109,7 +109,7 @@ def "quotas apply" [
 
     try {
         let content = cat $file
-        op item edit $id $"notesPlain=($content)"
+        op item edit $id $"notesPlain=($content)" o+e> /tmp/xb.log
         print "Secret updated on 1password"
     } catch {
         print $"Error updating 1password"
