@@ -2,7 +2,7 @@
 #
 # Use to get the full pacman quotas for a specific environment from 1password.
 def "pacman" [
-    id?: string # 1Password Item ID (defaults: https://t.ly/JLokY).
+    id?: string # 1Password Item ID (defaults: https://x.jrg.tools/gsW0Nk).
     --production (-p) # Get production pacman quota. if id is provided, this will be ignored (defaults: false).
     --json (-j) # Output as JSON.
 ] {
@@ -19,7 +19,7 @@ def "pacman" [
 #
 # Use to compare the pacman quotas from 1password and a given local file.
 def "pacman compare" [
-    id?: string # 1Password Item ID (defaults: https://t.ly/JLokY).
+    id?: string # 1Password Item ID (defaults: https://x.jrg.tools/gsW0Nk).
     --production (-p) # Get production pacman quota. if id is provided, this will be ignored (defaults: false).
     --file (-f): string # Local file to compare to.
 ] {
@@ -38,7 +38,7 @@ def "pacman compare" [
 def "pacman plan" [
     partner: string # Partner ID.
     --users (-u): list = [] # List of users.
-    --id: string # 1Password Item ID (defaults: https://t.ly/JLokY).
+    --id: string # 1Password Item ID (defaults: https://x.jrg.tools/gsW0Nk).
     --production (-p) # Get production quota. if id is provided, this will be ignored.
     --onboarding (-o) # Whether the partner is onboarding and does not have a pacman yet.
     --type (-t): int = 1 # Partner type.
@@ -97,7 +97,7 @@ def "pacman plan" [
 # A deployment restart is required after applying the new pacnam quotas.
 # If you have kpuf installed, you can use it to restart the deployment (kpuf restart).
 def "pacman apply" [
-    id?: string # 1Password Item ID (defaults: https://t.ly/JLokY).
+    id?: string # 1Password Item ID (defaults: https://x.jrg.tools/gsW0Nk).
     --production (-p) # Get production pacman quota. if id is provided, this will be ignored (defaults: false).
     --file (-f): string # Local file to compare to.
 ] {

@@ -2,7 +2,7 @@
 #
 # Use to get the full quotas for a specific environment from 1password.
 def "quotas" [
-    id?: string # 1Password Item ID (defaults: https://t.ly/JLokY).
+    id?: string # 1Password Item ID (defaults: https://x.jrg.tools/gsW0Nk).
     --production (-p) # Get production quota. if id is provided, this will be ignored (defaults: false).
     --json (-j) # Output as JSON.
 ] {
@@ -20,7 +20,7 @@ def "quotas" [
 #
 # Use to compare the quotas from 1password and a given local file.
 def "quotas compare" [
-    id?: string # 1Password Item ID (defaults: https://t.ly/JLokY).
+    id?: string # 1Password Item ID (defaults: https://x.jrg.tools/gsW0Nk).
     --production (-p) # Get production quota. if id is provided, this will be ignored (defaults: false).
     --file (-f): string # Local file to compare to.
 ] {
@@ -40,7 +40,7 @@ def "quotas compare" [
 # Use to plan the quotas from 1password and a given partner ID.
 def "quotas plan" [
     partner: string # Partner ID.
-    --id: string # 1Password Item ID (defaults: https://t.ly/JLokY).
+    --id: string # 1Password Item ID (defaults: https://x.jrg.tools/gsW0Nk).
     --values (-v): any = {short_max_count: 2400, long_max_count: 144000, short_width_secs: 60, long_width_secs: 3600}
     --production (-p) # Get production quota. if id is provided, this will be ignored (defaults: false).
 ] {
@@ -81,7 +81,7 @@ def "quotas plan" [
 # A deployment restart is required after applying the new quotas.
 # If you have kpuf installed, you can use it to restart the deployment (kpuf restart).
 def "quotas apply" [
-    id?: string # 1Password Item ID (defaults: https://t.ly/JLokY).
+    id?: string # 1Password Item ID (defaults: https://x.jrg.tools/gsW0Nk).
     --production (-p) # Get production quota. if id is provided, this will be ignored (defaults: false).
     --file (-f): string # Local file to compare to.
     --project: string = "kouzoh-quota-jp" # Project ID, (defaults: kouzoh-quota-jp).
