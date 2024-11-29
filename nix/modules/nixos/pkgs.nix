@@ -43,17 +43,12 @@
         pkgs.dbmate
         pkgs.gh
         pkgs.ripgrep
-        pkgs.turso-cli
         pkgs.grc
         pkgs.nushell
         pkgs.zoxide
         pkgs.carapace
-        # pkgs.doctl
-        pkgs.atlas
-        pkgs.awscli2
         # GUI
         pkgs.kitty
-        # pkgs.wezterm
         pkgs.iina
         pkgs.transmission_3
         pkgs.vscode
@@ -80,6 +75,9 @@
       # Home
       (lib.mkIf (!config.dep.isWork) [
         pkgs.kubectl
+        pkgs.turso-cli
+        pkgs.atlas
+        pkgs.awscli2
       ])
 
       # Work
