@@ -20,6 +20,7 @@
         pkgs.cuelsp
         pkgs.htmx-lsp
         # TERMINAL
+        pkgs.qrencode
         pkgs.tmux
         pkgs.curl
         pkgs.neovim
