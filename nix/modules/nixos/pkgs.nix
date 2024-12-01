@@ -20,6 +20,7 @@
         pkgs.cuelsp
         pkgs.htmx-lsp
         # TERMINAL
+        pkgs.sqlite
         pkgs.qrencode
         pkgs.tmux
         pkgs.curl
@@ -51,7 +52,6 @@
         # GUI
         pkgs.kitty
         pkgs.iina
-        pkgs.transmission_3
         pkgs.vscode
         pkgs.maltego
         pkgs.sqlitebrowser
