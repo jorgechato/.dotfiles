@@ -27,5 +27,5 @@ def "x search" [
     query: string # Query to search for.
 ] {
     let platform_url = "https://x.jrg.tools/"
-    http get $"($platform_url)search?q=($query)"
+    http get $"($platform_url)search?q=($query)" | update cells -c ["Alias"] {|i| $"($platform_url)($i)" }
 }
