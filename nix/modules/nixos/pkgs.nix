@@ -85,6 +85,7 @@
       (lib.mkIf config.dep.isWork [
         pkgs.grpcurl
         pkgs.gosec
+        pkgs.pwgen
       ])
     ];
 
