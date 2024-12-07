@@ -49,6 +49,7 @@
         pkgs.nushell
         pkgs.zoxide
         pkgs.carapace
+        pkgs.k9s
         # GUI
         pkgs.kitty
         pkgs.iina
