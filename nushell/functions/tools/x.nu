@@ -29,3 +29,24 @@ def "x search" [
     let platform_url = "https://x.jrg.tools/"
     http get $"($platform_url)search?q=($query)" | update cells -c ["Alias"] {|i| $"($platform_url)($i)" }
 }
+
+# List all of the short URLs.
+#
+# Use to list all of the short URLs.
+def "x list" [
+    --page (-p): int = 1 # Page number.
+    --size (-s): int = 10 # Page size.
+] {
+    let platform_url = "https://x.jrg.tools/"
+    http get $"($platform_url)list?page=($page)&size=($size)" | update cells -c ["Alias"] {|i| $"($platform_url)($i)" }
+}
+
+# Delete a short URL.
+#
+# Use to delete a short URL.
+def "x delete" [
+    alias: string # Alias to delete.
+] {
+    let platform_url = "https://x.jrg.tools/"
+    ^http DELETE $"($platform_url)($alias)" o> /tmp/x.log
+}
