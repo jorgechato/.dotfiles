@@ -5,10 +5,11 @@ def "x" [
     url: string # URL to shorten.
     --qr # Generate a QR code.
 ] {
-    let platform_url = "https://x.jrg.tools/admin/"
+    let platform_url = "https://x.jrg.tools/"
+    let admin_url = $"($platform_url)admin/"
     let token = x jwt
 
-    let alias = http post --content-type application/json --headers [Authorization $"Bearer ($token)"] $platform_url {originUrl:$url} | get Alias
+    let alias = http post --content-type application/json --headers [Authorization $"Bearer ($token)"] $"($admin_url)new" {originUrl:$url} | get Alias
 
     echo $"($platform_url)($alias)" | pbcopy
     print $"Short URL: (ansi yellow_bold)($platform_url)($alias)(ansi reset)"
@@ -27,9 +28,10 @@ def "x" [
 def "x search" [
     query: string # Query to search for.
 ] {
-    let platform_url = "https://x.jrg.tools/admin/"
+    let platform_url = "https://x.jrg.tools/"
+    let admin_url = $"($platform_url)admin/"
     let token = x jwt
-    http get --headers [Authorization $"Bearer ($token)"] $"($platform_url)search?q=($query)" | update cells -c ["Alias"] {|i| $"($platform_url)($i)" }
+    http get --headers [Authorization $"Bearer ($token)"] $"($admin_url)search?q=($query)" | update cells -c ["Alias"] {|i| $"($platform_url)($i)" }
 }
 
 # List all of the short URLs.
@@ -39,9 +41,10 @@ def "x list" [
     --page (-p): int = 1 # Page number.
     --size (-s): int = 10 # Page size.
 ] {
-    let platform_url = "https://x.jrg.tools/admin/"
+    let platform_url = "https://x.jrg.tools/"
+    let admin_url = $"($platform_url)admin/"
     let token = x jwt
-    http get --headers [Authorization $"Bearer ($token)"] $"($platform_url)list?page=($page)&size=($size)" | update cells -c ["Alias"] {|i| $"($platform_url)($i)" }
+    http get --headers [Authorization $"Bearer ($token)"] $"($admin_url)list?page=($page)&size=($size)" | update cells -c ["Alias"] {|i| $"($platform_url)($i)" }
 }
 
 # Delete a short URL.
