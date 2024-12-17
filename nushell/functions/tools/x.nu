@@ -6,7 +6,7 @@ def "x" [
     --qr # Generate a QR code.
 ] {
     let platform_url = "https://x.jrg.tools/"
-    let admin_url = $"($platform_url)admin/"
+    let admin_url = $"($platform_url)ops/"
     let token = x jwt
 
     let alias = http post --content-type application/json --headers [Authorization $"Bearer ($token)"] $"($admin_url)new" {originUrl:$url} | get Alias
@@ -29,7 +29,7 @@ def "x search" [
     query: string # Query to search for.
 ] {
     let platform_url = "https://x.jrg.tools/"
-    let admin_url = $"($platform_url)admin/"
+    let admin_url = $"($platform_url)ops/"
     let token = x jwt
     http get --headers [Authorization $"Bearer ($token)"] $"($admin_url)search?q=($query)" | update cells -c ["Alias"] {|i| $"($platform_url)($i)" }
 }
@@ -42,7 +42,7 @@ def "x list" [
     --size (-s): int = 10 # Page size.
 ] {
     let platform_url = "https://x.jrg.tools/"
-    let admin_url = $"($platform_url)admin/"
+    let admin_url = $"($platform_url)ops/"
     let token = x jwt
     http get --headers [Authorization $"Bearer ($token)"] $"($admin_url)list?page=($page)&size=($size)" | update cells -c ["Alias"] {|i| $"($platform_url)($i)" }
 }
@@ -53,9 +53,9 @@ def "x list" [
 def "x delete" [
     alias: string # Alias to delete.
 ] {
-    let platform_url = "https://x.jrg.tools/admin/"
+    let url = $"https://x.jrg.tools/ops/($alias)"
     let token = x jwt
-    ^http DELETE -A bearer -a $token $"($platform_url)($alias)" o> /tmp/x.log
+    ^http DELETE $url -A bearer -a $token o> /tmp/x.log
 }
 
 # Generate JWT tokens.
