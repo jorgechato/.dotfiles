@@ -15,6 +15,8 @@
     safecrlf = false
     pager = less
     editor = nvim
+[init]
+    defaultBranch = main
 [alias]
     ada = add -A
     b = branch
