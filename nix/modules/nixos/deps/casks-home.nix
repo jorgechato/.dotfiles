@@ -12,5 +12,4 @@
   "qflipper"
   "yubico-authenticator"
   "cloudflare-warp"
-  "darktable"
 ]

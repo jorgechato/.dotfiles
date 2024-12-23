@@ -3,4 +3,5 @@
   "jenv"
   "tfenv"
   "openssl"
+  "cmake"
 ]
