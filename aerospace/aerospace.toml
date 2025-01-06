@@ -148,6 +148,10 @@ S = 'secondary'
 if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace T'
 
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace T'
+
 # Coding
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.PhpStorm'

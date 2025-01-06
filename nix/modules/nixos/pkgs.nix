@@ -1,4 +1,4 @@
-{ self, pkgs, lib, config, ... }: {
+{ self, pkgs, ghostty, lib, config, ... }: {
   config = {
     environment.systemPackages = lib.mkMerge [
       [
@@ -15,6 +15,7 @@
         pkgs.pnpm
         pkgs.pre-commit
         pkgs.bun
+        # ghostty.packages.${pkgs.system}.default # not working for darwin yet, need to use brew for now
         # LSP
         pkgs.lua-language-server
         pkgs.cuelsp

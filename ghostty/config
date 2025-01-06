@@ -1,4 +1,9 @@
-theme = GithubDark
+theme = GitHub Dark
 font-family = Meslo LGS Nerd Font Mono
 font-size = 14
+macos-titlebar-style = tabs
 gtk-titlebar = false
+confirm-close-surface = false
+
+keybind = global:cmd+shift+t=toggle_quick_terminal
+keybind = cmd+r=reload_config

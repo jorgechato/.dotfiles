@@ -15,4 +15,5 @@
   "font-meslo-lg-nerd-font"
   "font-sf-pro"
   "transmission"
+  "ghostty"
 ]
