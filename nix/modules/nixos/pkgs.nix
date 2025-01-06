@@ -52,6 +52,8 @@
         pkgs.carapace
         pkgs.k9s
         pkgs.presenterm
+        pkgs.imagemagick
+        pkgs.luajitPackages.magick
         # GUI
         pkgs.kitty
         pkgs.iina

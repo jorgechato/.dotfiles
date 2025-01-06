@@ -12,5 +12,11 @@
     z-lua.enable = true;
 
     nushell.enable = true;
+
+    neovim = {
+      enable = true;
+      extraLuaPackages = ps: [ ps.magick ];
+      extraPackages = [ pkgs.imagemagick ];
+    };
   };
 }
