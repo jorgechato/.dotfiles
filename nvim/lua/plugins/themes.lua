@@ -10,8 +10,9 @@ local function diff_source()
 end
 
 local function set_theme()
+    local enabled = false
     local theme = vim.fn.system('defaults read -g AppleInterfaceStyle')
-    if theme:match('Dark') then
+    if theme:match('Dark') or enabled == false then -- if not enabled by default dark mode
         vim.cmd('colorscheme github_dark_tritanopia')
     else
         vim.cmd('colorscheme github_light_tritanopia')
