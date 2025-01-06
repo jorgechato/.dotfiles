@@ -4,7 +4,14 @@ font-size = 14
 macos-titlebar-style = tabs
 gtk-titlebar = false
 confirm-close-surface = false
+mouse-hide-while-typing = true
+cursor-style-blink = false
+cursor-style = block
+quit-after-last-window-closed = true
 
 keybind = global:alt+q=toggle_quick_terminal
-keybind = cmd+r=reload_config
-# keybind = cmd+f=find:backward
+keybind = super+r=reload_config
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+l=goto_split:right
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+j=goto_split:bottom
