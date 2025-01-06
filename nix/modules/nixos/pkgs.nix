@@ -51,6 +51,7 @@
         pkgs.zoxide
         pkgs.carapace
         pkgs.k9s
+        pkgs.presenterm
         # GUI
         pkgs.kitty
         pkgs.iina
