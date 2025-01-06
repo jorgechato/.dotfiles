@@ -45,6 +45,10 @@ in
     ".editorconfig".source = ~/.dotfiles/.editorconfig;
     ".npmrc".source = ~/.dotfiles/.npmrc;
 
+    ".hushlogin" = {
+      text = content;
+      target = ".hushlogin";
+    };
     "screenshots" = {
       text = content;
       target = "Pictures/screenshots/.keep";
