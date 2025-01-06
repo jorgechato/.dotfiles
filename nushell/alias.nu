@@ -7,7 +7,6 @@ alias .... = cd ../../..
 alias ..... = cd ../../../..
 alias cx = chmod +x
 alias c-x = chmod -x
-alias o = open
 
 #Code
 alias vim = nvim
@@ -30,10 +29,7 @@ def v [path?] {
 alias sourcelist = nvim /etc/apt/sources.list
 alias hosts = nvim /etc/hosts
 
-#Nix
-alias dr = darwin-rebuild switch --impure --flake
-
-#Sudo
+# Sudo
 # save a file, with sudo
 export def "sudo save" [
   --raw(-r), # save file as raw binary
@@ -49,4 +45,28 @@ export def "sudo save" [
     (if $progress { "--progress" })
   ] | compact
   $in | sudo $nu.current-exe --stdin -c $"save ($flags | str join ' ') ($filename)"
+}
+
+# Presenterm
+export def "presenterm" [
+    presentation: path
+] {
+    ^presenterm --image-protocol kitty-local $presentation
+}
+
+# image
+export def "image" [
+    image: path
+] {
+    kitty +kitten icat $image
+}
+
+# nix reload
+# reload nix configuration for a specific host
+def "nix reload" [
+    host: string
+] {
+    let nix_path = $env.HOME + $"/.dotfiles/nix#($host)"
+
+    ^darwin-rebuild switch --impure --flake $nix_path
 }

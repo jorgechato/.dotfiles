@@ -18,7 +18,7 @@ def "x" [
         let file = "/tmp/qr.png"
         qrencode -s 6 -l H -o $file $"($platform_url)($alias)" o+e> /tmp/x.log
         print $"QR code:"
-        wezterm imgcat $file e> /tmp/x.log
+        kitty +kitten icat --align left $file e> /tmp/x.log
     }
 }
 
