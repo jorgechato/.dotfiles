@@ -24,8 +24,6 @@ let
   };
 in
 {
-  home.packages = [ pkgs.raycast ];
-
   home.file.".config/raycast/settings.json".text = builtins.toJSON raycastSettings;
 
   home.file.".config/raycast/config.json".text = builtins.toJSON {
