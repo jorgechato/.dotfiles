@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local config = {}
 
 local palette = {
-    bg = '#0d1016',
+    bg = '#101216',
 }
 
 config.colors = {

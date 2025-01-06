@@ -53,7 +53,7 @@ context_alias = ''
 #format = '[$symbol[($output)](yellow) ]($style)'
 symbol = ""
 format = '[$symbol ]($style)'
-detect_files = ['.envrc', '.envrc.local', '.env.local' ,'.env']
+detect_files = ['.envrc', '.envrc.local', '.env.local', '.env']
 detect_extensions = ['envrc', 'env']
 style = 'green'
 
