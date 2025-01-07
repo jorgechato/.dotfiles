@@ -7,6 +7,7 @@
   "ente"
   "ledger-live"
   "proton-drive"
+  "proton-mail"
   "proton-pass"
   "steam"
   "qflipper"
