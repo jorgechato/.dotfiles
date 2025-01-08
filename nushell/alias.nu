@@ -63,10 +63,23 @@ export def "image" [
 
 # nix reload
 # reload nix configuration for a specific host
-def "nix reload" [
-    host: string
+export def "nix reload" [
+    host: string # host name, one of: `ichi, ni, work`
+    --update (-u) # update flake
+    --clean (-c) # clean nix store
 ] {
-    let nix_path = $env.HOME + $"/.dotfiles/nix#($host)"
+    let nix_path = $env.HOME + $"/.dotfiles/nix"
+    let nix_host = $"($nix_path)#($host)"
 
-    ^darwin-rebuild switch --impure --flake $nix_path
+    if $update {
+        ^nix-channel --update
+        ^nix-env -u
+        ^nix flake update --flake $nix_path
+    }
+
+    if $clean {
+        ^nix-collect-garbage -d
+    }
+
+    ^darwin-rebuild switch --flake $nix_host
 }
