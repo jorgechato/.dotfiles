@@ -18,7 +18,7 @@ in
       rm -rf /Applications/Nix\ Apps
       mkdir -p /Applications/Nix\ Apps
       find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-      while read src; do
+      while IFS= read -r src; do
         app_name=$(basename "$src")
         echo "copying $src" >&2
         ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
@@ -53,7 +53,7 @@ in
   nixpkgs.config.allowUnfree = true; # allow install paid apps (require to add license manually in each app)
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.auto-optimise-store = true;
+  nix.optimise.automatic = true;
 
   home-manager.backupFileExtension = "backup";
 

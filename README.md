@@ -57,14 +57,12 @@ $ echo "source ~/.config/nushell/env.nu" | sudo $nu.current-exe --stdin -c "save
 1. Add package to `environment.systemPackages` in `nix/modules/nixos/pkgs.nix` or `nix/modules/nixos/deps/*`
 2. Install package
     ```shell
-    $ darwin-rebuild switch --impure --flake ~/.dotfiles/nix#ni # change ni with the device name
+    $ darwin-rebuild switch --flake ~/.dotfiles/nix#ni # change ni with the device name
+    # if you have nushell already set up, run:
+    $ nix reload <host>
     ```
 
 ## Common errors
-
-### error: path '/nix/store/pq2iwm2pxn19nikkxfk0b87p817lcn2l-source/nix/flake.nix' does not exist
-
-This error is due to the use of a git folder for nix flakes. To fix it, you need to commit your changes before running the command.
 
 ### error: I need to back up /etc/bashrc to /etc/bashrc.backup-before-nix, but the latter already exists.
 

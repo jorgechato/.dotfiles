@@ -1,4 +1,4 @@
-{ self, config, ... }:
+{ self, config, lib, ... }:
 let
   content = "NixOs hack to create folders ;)";
   onePasswordHome = ''
@@ -9,6 +9,8 @@ let
     [[ssh-keys]]
     vault = "Private"
   '';
+
+  safePath = path: lib.cleanSource (self + "/../${path}");
 in
 {
   home.file = {
@@ -17,33 +19,33 @@ in
       text = if config.isWork then onePasswordWork else onePasswordHome;
     };
     ".config/fish" = {
-      source = ~/.dotfiles/fish;
+      source = safePath "fish";
       recursive = true;
     };
     ".config/nvim" = {
-      source = ~/.dotfiles/nvim;
+      source = safePath "nvim";
       recursive = true;
     };
     ".config/aerospace" = {
-      source = ~/.dotfiles/aerospace;
+      source = safePath "aerospace";
       recursive = true;
     };
     ".config/ghostty" = {
-      source = ~/.dotfiles/ghostty;
+      source = safePath "ghostty";
       recursive = true;
     };
     ".config/nushell" = {
-      source = ~/.dotfiles/nushell;
+      source = safePath "nushell";
       recursive = true;
     };
     ".config/wezterm" = {
-      source = ~/.dotfiles/wezterm;
+      source = safePath "wezterm";
       recursive = true;
     };
-    ".config/starship.toml".source = ~/.dotfiles/starship.toml;
-    ".gitconfig".source = ~/.dotfiles/.gitconfig;
-    ".editorconfig".source = ~/.dotfiles/.editorconfig;
-    ".npmrc".source = ~/.dotfiles/.npmrc;
+    ".config/starship.toml".source = safePath "starship.toml";
+    ".gitconfig".source = safePath ".gitconfig";
+    ".editorconfig".source = safePath ".editorconfig";
+    ".npmrc".source = safePath ".npmrc";
 
     ".hushlogin" = {
       text = content;

@@ -15,7 +15,7 @@ in
     home = {
       username = "jorge";
       homeDirectory = home;
-      stateVersion = "24.11"; # https://github.com/nix-community/home-manager/blob/master/modules/misc/version.nix#L10
+      stateVersion = "25.05"; # https://github.com/nix-community/home-manager/blob/master/modules/misc/version.nix#L10
     };
 
     targets.darwin = {

@@ -51,7 +51,7 @@ in
           largesize = 50;
           tilesize = 40;
           mru-spaces = false;
-          expose-group-by-app = true;
+          expose-group-apps = true;
         };
 
         # Monitors with different spaces (for aerospace)
