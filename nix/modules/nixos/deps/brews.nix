@@ -4,4 +4,5 @@
   "tfenv"
   "openssl"
   "cmake"
+  "llvm"
 ]

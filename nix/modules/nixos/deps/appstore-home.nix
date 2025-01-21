@@ -4,4 +4,5 @@
   "MacFamilyTree 10" = 1567970985;
   "Goodnotes 6" = 1444383602;
   "WhatsApp" = 310633997;
+  "Xcode" = 497799835;
 }
