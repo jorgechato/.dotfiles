@@ -91,6 +91,7 @@
         pkgs.grpcurl
         pkgs.gosec
         pkgs.pwgen
+        pkgs.php81
       ])
     ];
 
