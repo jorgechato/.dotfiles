@@ -21,6 +21,9 @@
         pkgs.cuelsp
         pkgs.htmx-lsp
         # TERMINAL
+        pkgs.cocoapods # Tauri iOS
+        pkgs.libimobiledevice # Tauri iOS
+        pkgs.ios-deploy # Tauri iOS
         pkgs.sqlite
         pkgs.qrencode
         pkgs.tmux
