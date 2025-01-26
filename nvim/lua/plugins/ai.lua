@@ -1,5 +1,74 @@
 return {
     {
+        "olimorris/codecompanion.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require("codecompanion").setup({
+                display = {
+                    chat = {
+                        diff = {
+                            enabled = true,
+                            close_chat_at = 240,  -- Close an open chat buffer if the total columns of your display are less than...
+                            layout = "vertical",  -- vertical|horizontal split for default provider
+                            opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
+                            provider = "default", -- default|mini_diff
+                        },
+                        slash_commands = {
+                            ["file"] = {
+                                callback = "strategies.chat.slash_commands.file",
+                                description = "Select a file using Telescope",
+                                opts = {
+                                    provider = "telescope", -- Other options include 'default', 'mini_pick', 'fzf_lua'
+                                    contains_code = true,
+                                },
+                            },
+                        },
+                    },
+                },
+                strategies = {
+                    chat = {
+                        adapter = "custom",
+                    },
+                    inline = {
+                        adapter = "custom",
+                        layout = "buffer",
+                        keymaps = {
+                            accept_change = {
+                                modes = { n = "co" },
+                                description = "Accept the suggested change",
+                            },
+                            reject_change = {
+                                modes = { n = "kh" },
+                                description = "Reject the suggested change",
+                            },
+                        },
+                    },
+                },
+                adapters = {
+                    custom = function()
+                        return require("codecompanion.adapters").extend("ollama", {
+                            name = "custom",
+                            schema = {
+                                model = {
+                                    default = "qwen2.5-coder",
+                                },
+                                num_ctx = {
+                                    default = 16384,
+                                },
+                                num_predict = {
+                                    default = -1,
+                                },
+                            },
+                        })
+                    end,
+                },
+            })
+        end,
+    },
+    {
         "Exafunction/codeium.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",

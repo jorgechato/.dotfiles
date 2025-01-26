@@ -5,10 +5,12 @@ return {
     { "<leader>e",       ':e <C-R>=expand("%:p:h") . "/" <CR>',                                                                  name = "Open an edit command" },
     -- { "<leader>p",       '"+gP<CR>',                                                                                             name = "Paste from clipboard" },
     { "<leader>te",      ':tab <C-R>=expand("%:p:h") . "/" <CR>',                                                                name = "Open a tab edit command" },
-    { "<leader>c",       ":bd<CR>",                                                                                              name = "Close Buffer" },
     { "<leader>w",       ":w!<CR>",                                                                                              name = "Save" },
     { "<leader>q",       ":confirm q<CR>",                                                                                       name = "Quit" },
     { "<leader>f",       "<cmd>lua require('core.utils').telescope_git_or_file()<CR>",                                           name = "Find Files (Root)" },
+    { "<leader>a",       group = "AI" },
+    { "<leader>ac",      ":CodeCompanionChat<cr>",                                                                               name = "Open AI Chat",                       mode = { "n" }, noremap = true, silent = true },
+    { "<leader>aa",      ":'<,'>CodeCompanionChat /chat ",                                                                       name = "Ask selection to AI",                mode = { "v" } },
     -- Replace
     { "<leader>r",       group = "Replace" },
     { "<leader>rr",      "<cmd>lua require('spectre').open()<cr>",                                                               name = "Replace" },
