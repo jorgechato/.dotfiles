@@ -53,7 +53,9 @@ return {
                             name = "custom",
                             schema = {
                                 model = {
-                                    default = "qwen2.5-coder",
+                                    default = "deepseek-coder:6.7b",
+                                    -- default = "deepseek-coder-v2",
+                                    -- default = "qwen2.5-coder",
                                 },
                                 num_ctx = {
                                     default = 16384,
@@ -78,6 +80,7 @@ return {
             require("codeium").setup({
                 -- Optionally disable cmp source if using virtual text only
                 enable_cmp_source = true,
+                -- quiet = true,
                 virtual_text = {
                     enabled = true,
 
