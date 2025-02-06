@@ -42,6 +42,15 @@ in
       source = safePath "wezterm";
       recursive = true;
     };
+    ".config/presenterm" = {
+      text = ''
+        defaults:
+          theme: terminal-dark
+          terminal_font_size: 20
+          image_protocol: kitty-local
+      '';
+      target = ".config/presenterm/config.yaml";
+    };
     ".config/starship.toml".source = safePath "starship.toml";
     ".gitconfig".source = safePath ".gitconfig";
     ".editorconfig".source = safePath ".editorconfig";

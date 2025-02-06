@@ -7,6 +7,7 @@ $env.LC_CTYPE = "en_US.UTF-8"
 $env.LANG = "en_US.UTF-8"
 $env.LANGUAGE = "en_US.UTF-8"
 $env.DIRENV_LOG_FORMAT = ""
+$env.LC_TERMINAL = "Ghostty"
 
 $env.DOTHOME = $"($env.HOME)/.dotfiles"
 
@@ -67,6 +68,12 @@ $env.PATH = ($env.PATH | prepend $"($env.HOME)/.cargo/bin")
 
 # Nvim mason
 $env.PATH = ($env.PATH | prepend $"($env.HOME)/.local/share/nvim/mason/bin")
+
+# Mermaid
+$env.PUPPETEER_CACHE_DIR = $"($env.HOME)/.cache/puppeteer"
+
+# Presenterm
+$env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
 
 # Work Kubectl
 $env.USE_GKE_GCLOUD_AUTH_PLUGIN = true

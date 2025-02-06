@@ -53,9 +53,9 @@ return {
                             name = "custom",
                             schema = {
                                 model = {
-                                    default = "deepseek-coder:6.7b",
+                                    -- default = "deepseek-coder:latest",
                                     -- default = "deepseek-coder-v2",
-                                    -- default = "qwen2.5-coder",
+                                    default = "qwen2.5-coder:latest",
                                 },
                                 num_ctx = {
                                     default = 16384,

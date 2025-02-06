@@ -47,11 +47,16 @@ export def "sudo save" [
   $in | sudo $nu.current-exe --stdin -c $"save ($flags | str join ' ') ($filename)"
 }
 
-# Presenterm
-export def "presenterm" [
-    presentation: path
+# me
+# present my resume
+export def "me" [
+    --pdf # export to pdf
 ] {
-    ^presenterm --image-protocol kitty-local $presentation
+    if $pdf {
+        ^presenterm --export-pdf -t light /Users/jorge/Projects/github/jorgechato/INTRODUCTION.md
+    } else {
+        ^presenterm /Users/jorge/Projects/github/jorgechato/INTRODUCTION.md
+    }
 }
 
 # image
