@@ -13,4 +13,5 @@
   "qflipper"
   "yubico-authenticator"
   "cloudflare-warp"
+  "freecad"
 ]
