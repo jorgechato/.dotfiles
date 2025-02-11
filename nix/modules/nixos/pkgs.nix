@@ -80,7 +80,7 @@
         pkgs.iferr
         pkgs.gotests
         # Python (for presenterm)
-        pkgs.python312Packages.presenterm-export
+        # pkgs.python312Packages.presenterm-export
       ]
 
       # Home

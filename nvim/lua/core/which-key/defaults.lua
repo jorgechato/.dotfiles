@@ -76,4 +76,16 @@ return {
     { "<leader>mP",      "<cmd>MarkdownPreview<cr>",                                                                             name = "Preview (Split)" },
     { "<leader>ms",      "<cmd>MarkdownPreviewStop<cr>",                                                                         name = "Preview Stop" },
     { "<leader>u",       "<cmd>UndotreeToggle<cr>",                                                                              name = "Undo tree",                          mode = "n" },
+    -- Telekasten note taking app
+    { "<leader>z",       group = "Telekasten" },
+    { "<leader>zp",      "<cmd>Telekasten panel<cr>",                                                                            name = "Panel" },
+    { "<leader>zf",      "<cmd>Telekasten find_notes<cr>",                                                                       name = "Find notes" },
+    { "<leader>zg",      "<cmd>Telekasten search_notes<cr>",                                                                     name = "Search notes" },
+    { "<leader>zd",      "<cmd>Telekasten goto_today<cr>",                                                                       name = "Go to today" },
+    { "<leader>zz",      "<cmd>Telekasten follow_link<cr>",                                                                      name = "Follow link" },
+    { "<leader>zn",      "<cmd>Telekasten new_note<cr>",                                                                         name = "New note" },
+    { "<leader>zc",      "<cmd>Telekasten show_calendar<cr>",                                                                    name = "Show calendar" },
+    { "<leader>zb",      "<cmd>Telekasten show_backlinks<cr>",                                                                   name = "Show backlinks" },
+    { "<leader>zI",      "<cmd>Telekasten insert_img_link<cr>",                                                                  name = "Insert image link" },
+    { "[[",              "<cmd>Telekasten insert_img_link<cr>",                                                                  name = "Insert image link",                  mode = "i" },
 }
