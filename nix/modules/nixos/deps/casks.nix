@@ -16,4 +16,5 @@
   "font-sf-pro"
   "transmission"
   "ghostty@tip"
+  "libreoffice"
 ]
