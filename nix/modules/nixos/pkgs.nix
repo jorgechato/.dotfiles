@@ -64,12 +64,7 @@
         pkgs.maltego
         pkgs.sqlitebrowser
         pkgs.raycast
-        # Fish plugins
-        pkgs.fishPlugins.z
-        pkgs.fishPlugins.fzf
-        pkgs.fishPlugins.grc
-        pkgs.fishPlugins.sponge
-        pkgs.fishPlugins.plugin-git
+        pkgs.gimp
         # Nvim
         pkgs.tree-sitter
         # Lua (for nvim)
