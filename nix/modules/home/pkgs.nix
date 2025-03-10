@@ -3,7 +3,6 @@
 {
   home.packages = [
     pkgs.raycast
-    pkgs.fish
     pkgs.git
     pkgs.starship
     pkgs.direnv

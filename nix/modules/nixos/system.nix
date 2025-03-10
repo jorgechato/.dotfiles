@@ -39,7 +39,6 @@ in
 
   users.users.jorge.home = home;
 
-  programs.fish.enable = true;
   programs.zsh.enable = false;
   programs.bash.enable = false;
 

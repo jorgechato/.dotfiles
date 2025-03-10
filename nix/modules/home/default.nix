@@ -37,7 +37,6 @@ in
     ./pkgs.nix
     ./file.nix
     ./programs.nix
-    ./fish.nix
     ./1password.nix
     ./raycast.nix
   ];

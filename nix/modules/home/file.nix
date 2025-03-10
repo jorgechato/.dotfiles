@@ -18,10 +18,6 @@ in
       target = ".config/1Password/ssh/agent.toml";
       text = if config.isWork then onePasswordWork else onePasswordHome;
     };
-    ".config/fish" = {
-      source = safePath "fish";
-      recursive = true;
-    };
     ".config/nvim" = {
       source = safePath "nvim";
       recursive = true;
