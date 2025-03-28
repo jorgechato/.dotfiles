@@ -3,4 +3,5 @@
   "composer"
   "skaffold"
   "helm"
+  "golang-migrate"
 ]
