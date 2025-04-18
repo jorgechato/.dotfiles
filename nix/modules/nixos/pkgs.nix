@@ -92,6 +92,7 @@
         pkgs.gosec
         pkgs.pwgen
         pkgs.php81
+        pkgs.telepresence2
       ])
     ];
 
