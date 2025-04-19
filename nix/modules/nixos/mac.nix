@@ -3,7 +3,6 @@ let
   persistentApps = [
     "/Applications/Brave Browser.app"
     "/Applications/Ghostty.app"
-    "/Applications/WezTerm.app"
   ];
 
   homePersistentApps = [
