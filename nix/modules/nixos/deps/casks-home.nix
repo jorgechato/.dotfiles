@@ -17,4 +17,5 @@
   "calibre"
   "kindle-previewer" # to use it with KCC https://github.com/ciromattia/kcc/releases
   "google-chrome"
+  "yacreader"
 ]
