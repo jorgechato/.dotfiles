@@ -74,15 +74,18 @@
         pkgs.impl
         pkgs.iferr
         pkgs.gotests
-        # Python (for presenterm)
-        # pkgs.python312Packages.presenterm-export
+        # Python
+        pkgs.uv
+        pkgs.python312
+        # pkgs.python312Packages.presenterm-export # for presenterm
       ]
 
       # Home
       (lib.mkIf (!config.dep.isWork) [
         pkgs.kubectl
         pkgs.turso-cli
-        pkgs.atlas
+        pkgs.atlas # DB migration
+        pkgs.goose # DB migration
         pkgs.awscli2
       ])
 
