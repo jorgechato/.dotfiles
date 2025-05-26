@@ -57,6 +57,7 @@
         pkgs.presenterm
         pkgs.imagemagick
         pkgs.luajitPackages.magick
+        pkgs.sqlc
         # GUI
         pkgs.kitty
         pkgs.iina
