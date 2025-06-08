@@ -30,7 +30,7 @@ in
 
       defaults = {
         loginwindow.GuestEnabled = false;
-        loginwindow.LoginwindowText = "If lost, contact lost.8euto@passmail.net";
+        loginwindow.LoginwindowText = "If lost, contact lost@jrg.tools";
 
         # MenuBar
         NSGlobalDomain._HIHideMenuBar = false;
