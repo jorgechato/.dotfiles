@@ -57,7 +57,7 @@ def "kpuf login" [
     context: string # Context to login to.
 ] {
     if ($context | str contains "gke") {
-        do -p { gcloud auth login --update-adc o+e> /tmp/kpuf.log}
+        gcloud auth login --update-adc o+e> /tmp/kpuf.log
         try {
             gcloud container clusters get-credentials ($context | split row "_" | last ) --region ($context | split row "_" | get 2) --project ($context | split row "_" | get 1) o+e> /tmp/kpuf.log
         } catch {

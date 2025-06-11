@@ -25,6 +25,7 @@ in
       done
     '';
 
+  system.primaryUser = "jorge";
   system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
 
   # Keyboard settings

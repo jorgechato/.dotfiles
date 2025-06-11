@@ -86,5 +86,5 @@ export def "nix reload" [
         ^nix-collect-garbage -d
     }
 
-    ^darwin-rebuild switch --flake $nix_host
+    sudo darwin-rebuild switch --flake $nix_host
 }
