@@ -8,7 +8,7 @@ let
   homePersistentApps = [
     "/Applications/Outerbase Studio.app"
     "/Applications/Scrivener.app"
-    "/Applications/DaVinci Resolve.app"
+    "/Applications/Proton Mail.app"
     "/Applications/MacFamilyTree 10.app"
   ];
 
