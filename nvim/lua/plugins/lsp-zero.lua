@@ -1,11 +1,6 @@
 local util  = require 'lspconfig.util'
 local icons = require('core.icons')
 
-local function get_typescript_server_path(root_dir)
-    local project_root = util.find_node_modules_ancestor(root_dir)
-    return project_root and (util.path.join(project_root, 'node_modules', 'typescript', 'lib')) or ''
-end
-
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -43,8 +38,8 @@ return {
                         end
                         -- vim_item.kind = lspkind.presets.default[vim_item.kind] .. " " .. vim_item.kind
 
-                        if entry.source.name == "codeium" then
-                            vim_item.kind = icons.git.Codeium
+                        if entry.source.name == "copilot" then
+                            vim_item.kind = icons.git.Copilot
                             vim_item.kind_hl_group = "CmpItemKindCodeium"
                         end
 
@@ -66,7 +61,7 @@ return {
                             luasnip = "(Snippet)",
                             buffer = "(Buffer)",
                             tmux = "(TMUX)",
-                            codeium = "(Codeium)",
+                            copilot = "(Copilot)",
                             treesitter = "(TreeSitter)",
                         })[entry.source.name]
                         vim_item.dup = ({
@@ -74,7 +69,7 @@ return {
                             path = 1,
                             nvim_lsp = 0,
                             luasnip = 1,
-                            codeium = 0,
+                            copilot = 0,
                         })[entry.source.name] or 0
                         return vim_item
                     end,
@@ -94,7 +89,7 @@ return {
                 },
                 sources = {
                     {
-                        name = "codeium",
+                        name = "copilot",
                         max_item_count = 3,
                         trigger_characters = {
                             {
@@ -145,7 +140,7 @@ return {
                     { name = "treesitter" },
                     { name = "crates" },
                     { name = "tmux" },
-                    { name = "codeium" },
+                    { name = "copilot" },
                 },
                 mapping = {
                     -- ['<Tab>'] = cmp_action.luasnip_supertab(),
