@@ -10,7 +10,10 @@ let
     vault = "Private"
   '';
 
-  safePath = path: lib.cleanSource (self + "/../${path}");
+  safePath = path: builtins.path {
+    name = "safe-${lib.strings.sanitizeDerivationName path}";
+    path = self + "/../${path}";
+  };
 in
 {
   home.file = {

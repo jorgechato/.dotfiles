@@ -88,6 +88,7 @@
         pkgs.atlas # DB migration
         pkgs.goose # DB migration
         pkgs.awscli2
+        pkgs.cloudflared
       ])
 
       # Work
