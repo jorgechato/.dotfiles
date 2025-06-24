@@ -30,42 +30,13 @@ return {
                 },
                 strategies = {
                     chat = {
-                        adapter = "custom",
-                    },
-                    inline = {
-                        adapter = "custom",
-                        layout = "buffer",
-                        keymaps = {
-                            accept_change = {
-                                modes = { n = "co" },
-                                description = "Accept the suggested change",
-                            },
-                            reject_change = {
-                                modes = { n = "kh" },
-                                description = "Reject the suggested change",
-                            },
+                        name = "copilot",
+                        model = "claude-sonnet-4-20250514",
+                        icons = {
+                            buffer_pin = " ",
+                            buffer_watch = "👀 ",
                         },
                     },
-                },
-                adapters = {
-                    custom = function()
-                        return require("codecompanion.adapters").extend("ollama", {
-                            name = "custom",
-                            schema = {
-                                model = {
-                                    -- default = "deepseek-coder:latest",
-                                    -- default = "deepseek-coder-v2",
-                                    default = "qwen2.5-coder:latest",
-                                },
-                                num_ctx = {
-                                    default = 16384,
-                                },
-                                num_predict = {
-                                    default = -1,
-                                },
-                            },
-                        })
-                    end,
                 },
             })
         end,
@@ -78,7 +49,7 @@ return {
         config = function()
             require("copilot").setup({
                 filetypes = {
-                    markdown = true,
+                    ["*"] = true
                 },
                 panel = {
                     enabled = true,

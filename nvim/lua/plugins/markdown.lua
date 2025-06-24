@@ -20,7 +20,10 @@ return {
     },
     {
         'nvim-telekasten/telekasten.nvim',
-        dependencies = { 'nvim-telescope/telescope-media-files.nvim' },
+        dependencies = {
+            'nvim-telescope/telescope-media-files.nvim',
+            'nvim-telekasten/calendar-vim',
+        },
         lazy = false,
         config = function()
             local home = vim.fn.expand('~/Library/CloudStorage/ProtonDrive-hack@jorgechato.com-folder/03 Personal/notes')
@@ -35,7 +38,7 @@ return {
                 template_new_note   = home .. "/templates/note.md",
                 template_new_daily  = home .. "/templates/daily.md",
                 template_new_weekly = home .. "/templates/weekly.md",
-                image_subdir        = "aseets",
+                image_subdir        = "assets",
                 image_link_style    = "markdown",
                 journal_auto_open   = false,
                 plug_into_calendar  = true,
