@@ -89,6 +89,7 @@
         pkgs.goose # DB migration
         pkgs.awscli2
         pkgs.cloudflared
+        pkgs.stripe-cli
       ])
 
       # Work
