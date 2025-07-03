@@ -80,7 +80,8 @@ in
         NSGlobalDomain = {
           AppleKeyboardUIMode = 3;
           AppleICUForce24HourTime = true;
-          AppleInterfaceStyle = "Dark";
+          # AppleInterfaceStyle = "Dark"; # Uncomment to force dark mode
+          AppleInterfaceStyleSwitchesAutomatically = true; # Automatically switch between light and dark mode
           "com.apple.keyboard.fnState" = true;
           AppleShowAllFiles = true;
           AppleShowAllExtensions = true;

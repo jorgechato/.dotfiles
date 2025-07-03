@@ -58,7 +58,7 @@ $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.PROMPT_MULTILINE_INDICATOR = ""
 
 # Node
-let FNM_MULTISHELL_PATH = (fnm env --shell bash | lines | split column '"' | get 1 | get Column2)
+let FNM_MULTISHELL_PATH = (fnm env --shell bash | lines | split column '"' | get 1 | get column2)
 $env.FNM_MULTISHELL_PATH = $FNM_MULTISHELL_PATH
 $env.PATH = ($env.PATH | split row (char esep) | prepend $"($env.HOME)/.fnm")
 $env.PATH = ($env.PATH | prepend $"($env.FNM_MULTISHELL_PATH)/bin")
