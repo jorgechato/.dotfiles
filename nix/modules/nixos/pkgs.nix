@@ -58,6 +58,7 @@
         pkgs.imagemagick
         pkgs.luajitPackages.magick
         pkgs.sqlc
+        pkgs.hunspell # spell check
         # GUI
         pkgs.kitty
         pkgs.iina
