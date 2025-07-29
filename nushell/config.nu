@@ -1,7 +1,7 @@
 source ~/.config/nushell/alias.nu
 source ~/.config/nushell/functions/kpuf/kpuf.nu
 source ~/.config/nushell/functions/tools/x.nu
-source ~/.config/nushell/functions/tools/lt.nu
+source ~/.config/nushell/functions/tools/main.nu
 
 $env.config = {
     show_banner: false

@@ -37,6 +37,10 @@ in
       source = safePath "nushell";
       recursive = true;
     };
+    ".config/nushell/functions" = {
+      source = safePath "nushell/functions";
+      recursive = true;
+    };
     ".config/wezterm" = {
       source = safePath "wezterm";
       recursive = true;

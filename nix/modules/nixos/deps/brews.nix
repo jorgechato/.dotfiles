@@ -5,4 +5,5 @@
   "openssl"
   "cmake"
   "llvm"
+  "ntfy"
 ]

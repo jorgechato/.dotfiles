@@ -29,3 +29,16 @@ ingress:
 
     ^cloudflared tunnel --config $config_file run $tunnel_name
 }
+
+# NTFY shortcut with auth by default
+def n [
+    --topic (-t): string = "procesos", # The topic to publish to
+    --priority (-p): int = 3, # The priority of the message (1-5)
+    message: string, # The message to send
+    ...args # Captures the remaining input as a list
+] {
+    let url = $"ntfy.jrg.tools/($topic)"
+    let token = (op read "op://JRG/Ntfy Procesos/password")
+
+    ntfy publish --token $token --priority $priority --tag "computer" --title "Nushell Notification" ...$args $url $message
+}
