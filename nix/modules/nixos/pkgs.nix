@@ -15,6 +15,9 @@
         pkgs.pnpm
         pkgs.pre-commit
         pkgs.bun
+        pkgs.ansible
+        pkgs.cf-terraforming
+        pkgs.nixpacks
         # ghostty.packages.${pkgs.system}.default # not working for darwin yet, need to use brew for now
         # LSP
         pkgs.lua-language-server
