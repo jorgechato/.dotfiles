@@ -1,6 +1,7 @@
 { pkgs, config, self, nixpkgs, home-manager, ... }:
 let
-  home = "/Users/jorge";
+  user = config.nix-homebrew.user;
+  home = "/Users/${user}";
 in
 {
   # Add apps to spotlight for mac
@@ -25,7 +26,7 @@ in
       done
     '';
 
-  system.primaryUser = "jorge";
+  system.primaryUser = user;
   system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
 
   # Keyboard settings
@@ -38,7 +39,7 @@ in
   nix.enable = true;
   # nix.package = pkgs.nix;
 
-  users.users.jorge.home = home;
+  users.users.${user}.home = home;
 
   programs.zsh.enable = false;
   programs.bash.enable = false;

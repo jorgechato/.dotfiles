@@ -1,7 +1,7 @@
 $env.EDITOR = "nvim"
 $env.VISUAL = "nvim"
 $env.PAGER = "bat"
-$env.XDG_CONFIG_HOME = "/Users/jorge/.config"
+$env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
 $env.SVN_EDITOR = "nvim"
 $env.LC_CTYPE = "en_US.UTF-8"
 $env.LANG = "en_US.UTF-8"
@@ -37,7 +37,7 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend $"($env.HOME)/bin")
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/sbin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/opt/libpq/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin') # Brew
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/Users/jorge/.local/bin') # .local
+$env.PATH = ($env.PATH | split row (char esep) | prepend $"($env.HOME)/.local/bin") # .local
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/run/current-system/sw/bin') # NixOS
 
 # GO

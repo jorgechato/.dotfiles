@@ -53,9 +53,9 @@ export def "me" [
     --pdf # export to pdf
 ] {
     if $pdf {
-        ^presenterm --export-pdf -t light /Users/jorge/Projects/github/jorgechato/INTRODUCTION.md
+        ^presenterm --export-pdf -t light $"($env.HOME)/Projects/github/jorgechato/INTRODUCTION.md"
     } else {
-        ^presenterm /Users/jorge/Projects/github/jorgechato/INTRODUCTION.md
+        ^presenterm $"($env.HOME)/Projects/github/jorgechato/INTRODUCTION.md"
     }
 }
 

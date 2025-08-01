@@ -17,7 +17,8 @@ let
     "/Applications/Slack.app"
   ];
 
-  home = "/Users/jorge";
+  user = config.nix-homebrew.user;
+  home = "/Users/${user}";
 in
 {
   config = {
