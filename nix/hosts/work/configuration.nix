@@ -1,4 +1,8 @@
-{ self, pkgs, lib, config, nixpkgs, nix-homebrew, home-manager, ... }: {
+{ self, pkgs, lib, config, nixpkgs, nix-homebrew, home-manager, ... }:
+let
+  user = "mbp287";
+in
+{
   ui.isWork = true;
   dep.isWork = true;
 
@@ -6,17 +10,17 @@
 
   nix-homebrew = {
     enable = true;
-    user = "mbp287";
+    user = user;
     enableRosetta = true;
   };
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.mbp287 = {
+  home-manager.users.${user} = {
     imports = [ ../../modules/home ];
     isWork = true;
-    home.homeDirectory = builtins.getEnv "HOME";
-    home.username = "mbp287";
+    home.homeDirectory = lib.mkForce "/Users/${user}";
+    home.username = user;
   };
 
   home-manager.extraSpecialArgs = { inherit self; };
