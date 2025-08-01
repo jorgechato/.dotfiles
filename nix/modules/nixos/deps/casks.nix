@@ -3,6 +3,7 @@
   "the-unarchiver"
   "docker"
   "1password-cli"
+  "1password"
   "brave-browser"
   "jetbrains-toolbox"
   "elgato-stream-deck"
