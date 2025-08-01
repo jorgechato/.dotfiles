@@ -1,8 +1,4 @@
-{ self, lib, ... }:
-let
-  home = "/Users/jorge";
-in
-{
+{ self, lib, ... }: {
   options = {
     isWork = lib.mkOption {
       default = false;
@@ -13,8 +9,6 @@ in
 
   config = {
     home = {
-      username = "jorge";
-      homeDirectory = home;
       stateVersion = "25.05"; # https://github.com/nix-community/home-manager/blob/master/modules/misc/version.nix#L10
     };
 

@@ -9,6 +9,12 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.jorge = import ../../modules/home;
-  home-manager.extraSpecialArgs = { inherit self; };
+  home-manager.users.jorge = {
+    imports = [ ../../modules/home ];
+    home.homeDirectory = "/Users/jorge";
+    home.username = "jorge";
+  };
+  home-manager.extraSpecialArgs = {
+    inherit self;
+  };
 }

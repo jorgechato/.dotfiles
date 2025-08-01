@@ -21,4 +21,5 @@
   "outerbase-studio" # A lightweight Database GUI
   "twingate" # connect to private networks
   "standard-notes"
+  "raspberry-pi-imager"
 ]
