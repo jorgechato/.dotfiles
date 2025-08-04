@@ -15,6 +15,7 @@ let
   workPersistentApps = [
     "/Applications/Google Chrome.app"
     "/Applications/Slack.app"
+    "/Applications/Microsoft Outlook.app"
   ];
 
   user = config.nix-homebrew.user;

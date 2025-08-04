@@ -104,6 +104,7 @@
         pkgs.php81
         pkgs.telepresence2
         pkgs.zoom-us
+        pkgs.notion-app
       ])
     ];
 

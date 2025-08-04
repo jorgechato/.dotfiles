@@ -7,7 +7,7 @@ let
   '';
   onePasswordWork = ''
     [[ssh-keys]]
-    vault = "Private"
+    vault = "Zeals"
   '';
 
   safePath = path: builtins.path {

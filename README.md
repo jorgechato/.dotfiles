@@ -5,7 +5,6 @@
 
 ## Devices
 
-- `ichi` - Apple (Intel)
 - `ni` - Apple (M)
 - `work` - Apple (M) - Work device
 
