@@ -62,6 +62,8 @@
         pkgs.luajitPackages.magick
         pkgs.sqlc
         pkgs.hunspell # spell check
+        pkgs.mkcert
+        pkgs.fd
         # GUI
         pkgs.kitty
         pkgs.iina

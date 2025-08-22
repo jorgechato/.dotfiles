@@ -29,6 +29,8 @@ def v [path?] {
 alias sourcelist = nvim /etc/apt/sources.list
 alias hosts = nvim /etc/hosts
 
+alias find = fd
+alias f = fd
 # Sudo
 # save a file, with sudo
 export def "sudo save" [
