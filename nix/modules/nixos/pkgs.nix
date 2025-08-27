@@ -24,6 +24,7 @@
         pkgs.cuelsp
         pkgs.htmx-lsp
         # TERMINAL
+        pkgs.kubectl
         pkgs.cocoapods # Tauri iOS
         pkgs.libimobiledevice # Tauri iOS
         pkgs.ios-deploy # Tauri iOS
@@ -89,7 +90,6 @@
 
       # Home
       (lib.mkIf (!config.dep.isWork) [
-        pkgs.kubectl
         pkgs.turso-cli
         pkgs.atlas # DB migration
         pkgs.goose # DB migration
