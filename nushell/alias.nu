@@ -1,12 +1,12 @@
 alias l = ls -a
 alias ll = ls -la
-alias cd.. = cd ..
-alias .. = cd ..
-alias ... = cd ../..
-alias .... = cd ../../..
-alias ..... = cd ../../../..
-alias cx = chmod +x
-alias c-x = chmod -x
+alias cd.. = z ..
+alias .. = z ..
+alias ... = z ../..
+alias .... = z ../../..
+alias ..... = z ../../../..
+alias cx = chmod u+x
+alias c-x = chmod u-x
 
 #Code
 alias vim = nvim
