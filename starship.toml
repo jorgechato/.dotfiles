@@ -18,35 +18,10 @@ style = 'bold green'
 # style = 'bold #DF440D'
 
 [kubernetes]
-format = '[$symbol( $namespace)]($style) '
+format = '[$symbol($namespace)]($style) '
 #format = '[$context]($style) '
 disabled = false
 style = 'bold white'
-[[kubernetes.contexts]]
-context_pattern = 'gke_mercari-jp-citadel-dev_asia-northeast1_citadel-2g-dev-tokyo-01'
-symbol = '󰄚'
-style = 'bold white'
-context_alias = ''
-[[kubernetes.contexts]]
-context_pattern = 'gke_mercari-jp-citadel-prod_asia-northeast1_citadel-2g-prod-tokyo-01'
-symbol = '󰄚'
-style = 'bold blue'
-context_alias = ''
-[[kubernetes.contexts]]
-context_pattern = 'gke_mercari-jp-spaceship-dev_asia-northeast1_spaceship-2g-dev-tokyo-01'
-symbol = '󱎃'
-style = 'bold white'
-context_alias = ''
-[[kubernetes.contexts]]
-context_pattern = 'gke_mercari-jp-spaceship-prod_asia-northeast1_spaceship-2g-prod-tokyo-01'
-symbol = '󱎃'
-style = 'bold blue'
-context_alias = ''
-[[kubernetes.contexts]]
-context_pattern = '^(?!.*gke_mercari).*$'
-symbol = '󱎓'
-style = 'bold white'
-context_alias = ''
 
 [custom.direnv]
 #command = 'test $(direnv status | tail -2 | head -1) = "Found RC allowed false" && echo ""'
