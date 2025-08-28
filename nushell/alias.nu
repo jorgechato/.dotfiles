@@ -81,12 +81,12 @@ export def "nix reload" [
     if $update {
         ^nix-channel --update
         ^nix-env -u
-        ^nix flake update --flake $nix_path
+        ^nix flake update --impure --flake $nix_path
     }
 
     if $clean {
         ^nix-collect-garbage -d
     }
 
-    sudo darwin-rebuild switch --flake $nix_host
+    sudo darwin-rebuild switch --impure --flake $nix_host
 }
