@@ -1,4 +1,4 @@
-{ self, config, lib, ... }:
+{ self, config, lib, pkgs, ... }:
 let
   content = "NixOs hack to create folders ;)";
   onePasswordHome = ''
@@ -10,10 +10,15 @@ let
     vault = "Employee"
   '';
 
-  safePath = path: builtins.path {
-    name = "safe-${lib.strings.sanitizeDerivationName path}";
-    path = self + "/../${path}";
+  tpm = pkgs.fetchFromGitHub {
+    owner = "tmux-plugins";
+    repo = "tpm";
+    rev = "master";
+    hash = "sha256-hW8mfwB8F9ZkTQ72WQp/1fy8KL1IIYMZBtZYIwZdMQc="; # pragma: allowlist secret
   };
+
+  dotfilesDir = "${config.home.homeDirectory}/.dotfiles";
+  safePath = path: "${dotfilesDir}/${path}";
 in
 {
   home.file = {
@@ -27,6 +32,14 @@ in
     };
     ".config/aerospace" = {
       source = safePath "aerospace";
+      recursive = true;
+    };
+    ".config/tmux" = {
+      source = safePath "tmux";
+      recursive = true;
+    };
+    ".config/tmux/plugins/tpm" = {
+      source = tpm;
       recursive = true;
     };
     ".config/ghostty" = {
@@ -58,7 +71,6 @@ in
     ".gitconfig".source = safePath ".gitconfig";
     ".editorconfig".source = safePath ".editorconfig";
     ".npmrc".source = safePath ".npmrc";
-
     ".hushlogin" = {
       text = content;
       target = ".hushlogin";
