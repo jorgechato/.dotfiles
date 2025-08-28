@@ -81,7 +81,7 @@ export def "nix reload" [
     if $update {
         ^nix-channel --update
         ^nix-env -u
-        ^nix flake update --impure --flake $nix_path
+        ^nix flake update --flake $nix_path
     }
 
     if $clean {
