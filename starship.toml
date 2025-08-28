@@ -1,5 +1,5 @@
 add_newline = false
-format = '🏔  $directory$git_branch$git_status$golang$nodejs$zig$lua$nix_shell$rust$php$python${custom.direnv}$kubernetes$character'
+format = '$directory$git_branch$git_status$golang$nodejs$zig$lua$nix_shell$rust$php$python${custom.direnv}$kubernetes$character'
 command_timeout = 2000
 
 [time]
