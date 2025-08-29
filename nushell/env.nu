@@ -58,13 +58,8 @@ $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.PROMPT_MULTILINE_INDICATOR = ""
 
 # TMUX
-if (which tmux | is-not-empty) and ($env.TMUX? | is-empty) {
-    let sessions = (try { tmux list-sessions o+e> /tmp/tmux.log } catch { [] })
-    if ($sessions | is-empty) {
-        tmux new-session -s main
-    } else {
-        tmux attach-session
-    }
+if ($env.TMUX? | is-empty) and (which tmux | is-not-empty) {
+    tmux new-session -A -s main
 }
 
 # Node
