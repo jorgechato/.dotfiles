@@ -24,6 +24,8 @@
         pkgs.cuelsp
         pkgs.htmx-lsp
         # TERMINAL
+        pkgs.mpd # Music Player Daemon
+        pkgs.rmpc # MPD client
         pkgs.kubectl
         pkgs.cocoapods # Tauri iOS
         pkgs.libimobiledevice # Tauri iOS
