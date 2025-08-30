@@ -57,11 +57,6 @@ $env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.PROMPT_MULTILINE_INDICATOR = ""
 
-# TMUX
-if ($env.TMUX? | is-empty) and (which tmux | is-not-empty) {
-    tmux new-session -A -s main
-}
-
 # Node
 let FNM_MULTISHELL_PATH = (fnm env --shell bash | lines | split column '"' | get 1 | get column2)
 $env.FNM_MULTISHELL_PATH = $FNM_MULTISHELL_PATH

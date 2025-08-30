@@ -31,6 +31,15 @@ alias hosts = nvim /etc/hosts
 
 alias find = fd
 alias f = fd
+
+# TMUX
+alias t = tmux
+alias ta = tmux attach-session
+alias tn = tmux new-session -s
+alias tm = tmux new-session -s main
+alias tls = tmux ls
+alias tk = tmux kill-session -t
+
 # Sudo
 # save a file, with sudo
 export def "sudo save" [
