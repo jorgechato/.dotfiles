@@ -98,6 +98,8 @@
         pkgs.awscli2
         pkgs.cloudflared
         pkgs.stripe-cli
+        # pkgs.audible-cli
+        # pkgs.aaxtomp3
       ])
 
       # Work
