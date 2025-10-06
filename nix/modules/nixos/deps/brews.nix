@@ -6,4 +6,5 @@
   "cmake"
   "llvm"
   "ntfy"
+  "cheat"
 ]

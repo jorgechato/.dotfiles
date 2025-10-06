@@ -5,7 +5,7 @@
         # CODE
         pkgs.go
         pkgs.zig
-        pkgs.lua
+        pkgs.lua5_4_compat
         pkgs.protobuf
         pkgs.cue
         pkgs.rustup
@@ -34,6 +34,7 @@
         pkgs.qrencode
         pkgs.tmux
         pkgs.curl
+        pkgs.wget
         pkgs.neovim
         pkgs.mkalias
         pkgs.nmap

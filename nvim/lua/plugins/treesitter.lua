@@ -36,6 +36,7 @@ return {
                     "hcl",
                     "lua",
                     "astro",
+                    "svelte",
                     "css",
                     "scss",
                     "html",

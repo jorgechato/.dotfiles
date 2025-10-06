@@ -165,38 +165,13 @@ return {
         },
         config = function()
             local lsp_zero = require('lsp-zero')
-            lsp_zero.extend_lspconfig()
-
-            lsp_zero.on_attach(function(client, bufnr)
-                lsp_zero.default_keymaps({ buffer = bufnr })
-                opts = { buffer = bufnr, silent = true }
-
-                vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-                vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-                vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-                vim.keymap.set('n', 'gi', ':Telescope lsp_implementations<cr>', opts)
-                vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-                vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
-                -- vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-                vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-                vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-                vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-                vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-
-                vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
-                vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
-                vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
-            end)
-
-
-            local lspconfig = require('lspconfig')
 
             require('mason').setup({
                 ui = {
                     icons = {
-                        package_installed = "",
-                        package_pending = "",
-                        package_uninstalled = "",
+                        package_installed = "",
+                        package_pending = "",
+                        package_uninstalled = "",
                     },
                 }
             })
@@ -215,12 +190,8 @@ return {
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
 
-            lsp_zero.ui({
-                virtual_text = true,
-            })
-
             vim.diagnostic.config({
-                -- update_in_insert = true,
+                virtual_text = true,
                 float = {
                     focusable = false,
                     style = "minimal",
@@ -231,7 +202,157 @@ return {
                 },
             })
 
-            -- Setup lsp servers
+            -- Configure LSP servers using new vim.lsp.config API
+            vim.lsp.config.lua_ls = {
+                settings = {
+                    Lua = {
+                        workspace = {
+                            library = vim.api.nvim_get_runtime_file("", true),
+                            checkThirdParty = false,
+                        },
+                        hint = { enable = true },
+                        telemetry = { enable = false },
+                    },
+                },
+            }
+
+            vim.lsp.config.tailwindcss = {
+                capabilities = capabilities,
+                filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "astro", "astro-markdown", "gohtml", "gohtmltmpl", "markdown", "mdx", "templ", "vue", "svelte" },
+                init_options = { userLanguages = { templ = "html" } },
+            }
+
+            vim.lsp.config.jsonls = {
+                settings = {
+                    json = {
+                        schema = require('schemastore').json.schemas(),
+                        validate = { enable = true },
+                    }
+                }
+            }
+
+            vim.lsp.config.ts_ls = {
+                root_dir = vim.fs.root(0, { "package.json", "tsconfig.json", "jsconfig.json" }),
+                filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
+            }
+
+            vim.lsp.config.eslint = {
+                filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
+                settings = {
+                    workingDirectory = { mode = 'auto' },
+                    format = { enable = true },
+                    lint = { enable = true },
+                },
+                on_attach = function(client, bufnr)
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        buffer = bufnr,
+                        command = "EslintFixAll",
+                    })
+                end,
+            }
+
+            vim.lsp.config.sqlls = {
+                filetypes = { 'sql', 'mysql', 'postgres' },
+            }
+
+            vim.lsp.config.gopls = {
+                filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+                root_dir = vim.fs.root(0, { "go.mod", ".git", "go.work" }),
+                settings = {
+                    gopls = {
+                        gofumpt = true,
+                        codelenses = {
+                            gc_details = false,
+                            generate = true,
+                            regenerate_cgo = true,
+                            run_govulncheck = true,
+                            test = true,
+                            tidy = true,
+                            upgrade_dependency = true,
+                            vendor = true,
+                        },
+                        hints = {
+                            assignVariableTypes = true,
+                            compositeLiteralFields = true,
+                            compositeLiteralTypes = true,
+                            constantValues = true,
+                            functionTypeParameters = true,
+                            parameterNames = true,
+                            rangeVariableTypes = true,
+                        },
+                        analyses = {
+                            fieldalignment = false,
+                            nilness = true,
+                            unusedparams = true,
+                            unusedwrite = true,
+                            useany = true,
+                        },
+                        usePlaceholders = true,
+                        completeUnimported = true,
+                        staticcheck = true,
+                        directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+                    }
+                }
+            }
+
+            vim.lsp.config.terraformls = {
+                filetypes = { "terraform", "tf", "terraform-vars", "hcl" },
+                root_dir = vim.fs.root(0, { "*.tf", "*.terraform", "*.tfvars", "*.hcl", "*.config" }),
+            }
+
+            vim.lsp.config.marksman = {
+                root_dir = vim.fs.root(0, { ".git", ".marksman.toml" }),
+                single_file_support = true,
+                init_options = {
+                    typescript = {},
+                },
+            }
+
+            vim.lsp.config.astro = {
+                root_dir = vim.fs.root(0, { "package.json", "tsconfig.json", "jsconfig.json", ".git" }),
+                init_options = {
+                    typescript = {},
+                },
+            }
+
+            vim.lsp.config.typos_lsp = {
+                filetypes = { '*' },
+                init_options = {
+                    diagnosticSeverity = 'Warning',
+                },
+            }
+
+            vim.lsp.config.svelte = {
+                cmd = { 'svelteserver', '--stdio' },
+                root_dir = vim.fs.root(0,
+                    { 'svelte.config.js', 'svelte.config.cjs', 'package.json', 'tsconfig.json', 'jsconfig.json', '.git' }),
+                filetypes = { 'svelte' },
+            }
+
+            vim.lsp.config.rust_analyzer = {
+                capabilities = capabilities,
+                root_dir = vim.fs.root(0, { "Cargo.toml" }),
+                settings = {
+                    ['rust_analyzer'] = {
+                        cargo = {
+                            allFeatures = true,
+                        },
+                    },
+                },
+            }
+
+            vim.lsp.config.spectral = {}
+            vim.lsp.config.templ = {}
+            vim.lsp.config.htmx = {}
+            vim.lsp.config.cmake = {}
+            vim.lsp.config.dockerls = {}
+            vim.lsp.config.cssls = {}
+            vim.lsp.config.dagger = {}
+            vim.lsp.config.rnix = {}
+            vim.lsp.config.zls = {}
+            vim.lsp.config.taplo = {}
+
+            -- Setup Mason LSP installer
             require('mason-lspconfig').setup({
                 ensure_installed = {
                     'sqlls',
@@ -241,7 +362,6 @@ return {
                     'gopls',
                     'templ',
                     'htmx',
-                    -- 'buf_ls',
                     'cmake',
                     'jsonls',
                     'terraformls',
@@ -256,169 +376,78 @@ return {
                     'dagger',
                     'rnix',
                     'zls',
-                    'taplo', -- toml
-                },
-                handlers = {
-                    lsp_zero.default_setup,
-
-                    lspconfig.lua_ls.setup({
-                        settings = {
-                            Lua = {
-                                workspace = {
-                                    library = vim.api.nvim_get_runtime_file("", true),
-                                    checkThirdParty = false,
-                                    hint = { enable = true },
-                                    telemetry = { enable = false },
-                                },
-                            },
-                        },
-                    }),
-
-                    lspconfig.tailwindcss.setup({
-                        capabilities = capabilities,
-                        filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "astro", "astro-markdown", "gohtml", "gohtmltmpl", "markdown", "mdx", "templ" },
-                        init_options = { userLanguages = { templ = "html" } },
-                    }),
-
-                    lspconfig.jsonls.setup({
-                        settings = {
-                            json = {
-                                schema = require('schemastore').json.schemas(),
-                                validate = { enable = true },
-                            }
-                        }
-                    }),
-
-                    lspconfig.ts_ls.setup({
-                        root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
-                        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
-                    }),
-
-                    lspconfig.eslint.setup({
-                        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
-                        settings = {
-                            workingDirectory = { mode = 'auto' },
-                            format = { enable = true },
-                            lint = { enable = true },
-                        },
-                        on_attach = function(client, bufnr)
-                            vim.api.nvim_create_autocmd("BufWritePre", {
-                                buffer = bufnr,
-                                command = "EslintFixAll",
-                            })
-                        end,
-                    }),
-
-                    lspconfig.sqlls.setup({
-                        filetypes = { 'sql', 'mysql', 'postgres' },
-                    }),
-
-                    lspconfig.gopls.setup({
-                        filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
-                        root_dir = lspconfig.util.root_pattern("go.mod", ".git", "go.work"),
-                        settings = {
-                            gopls = {
-                                gofumpt = true,
-                                codelenses = {
-                                    gc_details = false,
-                                    generate = true,
-                                    regenerate_cgo = true,
-                                    run_govulncheck = true,
-                                    test = true,
-                                    tidy = true,
-                                    upgrade_dependency = true,
-                                    vendor = true,
-                                },
-                                hints = {
-                                    assignVariableTypes = true,
-                                    compositeLiteralFields = true,
-                                    compositeLiteralTypes = true,
-                                    constantValues = true,
-                                    functionTypeParameters = true,
-                                    parameterNames = true,
-                                    rangeVariableTypes = true,
-                                },
-                                analyses = {
-                                    fieldalignment = false,
-                                    nilness = true,
-                                    unusedparams = true,
-                                    unusedwrite = true,
-                                    useany = true,
-                                },
-                                usePlaceholders = true,
-                                completeUnimported = true,
-                                staticcheck = true,
-                                directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
-                            }
-                        }
-                    }),
-
-                    lspconfig.terraformls.setup({
-                        filetypes = { "terraform", "tf", "terraform-vars", "hcl" },
-                        root_dir = lspconfig.util.root_pattern("*.tf", "*.terraform", "*.tfvars", "*.hcl", "*.config"),
-                    }),
-
-                    lspconfig.marksman.setup({
-                        root_dir = lspconfig.util.root_pattern(".git", ".marksman.toml"),
-                        single_file_support = true,
-                        init_options = {
-                            typescript = {},
-                        },
-                    }),
-
-                    lspconfig.astro.setup({
-                        root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
-                        init_options = {
-                            typescript = {},
-                        },
-                    }),
-
-                    lspconfig.typos_lsp.setup({
-                        filetypes = { '*' },
-                        init_options = {
-                            diagnosticSeverity = 'Warning',
-                        },
-                    }),
-
-                    lspconfig.rust_analyzer.setup({
-                        capabilities = capabilities,
-                        root_dir = util.root_pattern("Cargo.toml"),
-                        settings = {
-                            ['rust_analyzer'] = {
-                                cargo = {
-                                    allFeatures = true,
-                                },
-                            },
-                        },
-                    })
+                    'taplo',
+                    'svelte',
                 },
             })
 
-            lsp_zero.format_on_save({
-                format_opts = {
-                    async = false,
-                    timeout_ms = 10000,
-                },
-                servers = {
-                    ["rust_analyzer"] = { "rust" },
-                    ['lua_ls'] = { 'lua' },
-                    ['eslint'] = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", 'vue', 'svelte' },
-                    ['gopls'] = { 'go' },
-                    ['templ'] = { 'templ' },
-                    ['htmx'] = { 'html', 'templ' },
-                    ['sqlls'] = { 'sql' },
-                    ['astro'] = { 'astro' },
-                    ['terraformls'] = { 'hcl', 'terraform' },
-                    ['dockerls'] = { 'dockerfile' },
-                    ['typos_lsp'] = { '*' },
-                    ['marksman'] = { "markdown", "markdown.mdx" },
-                    ['dagger'] = { 'cue' },
-                    ['rnix'] = { 'nix' },
-                    ['nushell'] = { 'nu' },
-                    ['zls'] = { 'zig', 'zir' },
-                    ['taplo'] = { 'toml' },
-                    -- ['buf_ls'] = { 'protobuf' },
-                }
+            -- Enable all LSP servers
+            local servers = {
+                'sqlls', 'spectral', 'lua_ls', 'rust_analyzer', 'gopls', 'templ', 'htmx',
+                'cmake', 'jsonls', 'terraformls', 'dockerls', 'ts_ls', 'eslint', 'astro',
+                'cssls', 'tailwindcss', 'marksman', 'typos_lsp', 'dagger', 'rnix', 'zls',
+                'taplo', 'svelte'
+            }
+
+            for _, server in ipairs(servers) do
+                vim.lsp.enable(server)
+            end
+
+            -- Set up keymaps when LSP attaches
+            vim.api.nvim_create_autocmd('LspAttach', {
+                callback = function(args)
+                    local bufnr = args.buf
+                    local opts = { buffer = bufnr, silent = true }
+
+                    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+                    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+                    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+                    vim.keymap.set('n', 'gi', ':Telescope lsp_implementations<cr>', opts)
+                    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+                    vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', opts)
+                    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+                    vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+                    vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+                    vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+                    vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
+                    vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
+                    vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
+                end,
+            })
+
+            -- Format on save
+            vim.api.nvim_create_autocmd('BufWritePre', {
+                callback = function(args)
+                    local ft = vim.bo[args.buf].filetype
+                    local format_fts = {
+                        rust = true,
+                        lua = true,
+                        javascript = true,
+                        javascriptreact = true,
+                        typescript = true,
+                        typescriptreact = true,
+                        vue = true,
+                        svelte = true,
+                        go = true,
+                        templ = true,
+                        html = true,
+                        sql = true,
+                        astro = true,
+                        hcl = true,
+                        terraform = true,
+                        markdown = true,
+                        cue = true,
+                        nix = true,
+                        nu = true,
+                        zig = true,
+                        zir = true,
+                        toml = true,
+                    }
+
+                    if format_fts[ft] then
+                        vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+                    end
+                end,
             })
         end
     }
