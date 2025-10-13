@@ -6,6 +6,7 @@ in
 {
   programs.ssh = {
     enable = true;
+    # enableDefaultConfig = false;
     extraConfig = lib.mkMerge [
       (lib.mkIf pkgs.stdenv.isLinux ''
         IdentityAgent "~/.1password/agent.sock"

@@ -1,7 +1,7 @@
 [
-  "ollama"
+  "ollama-app"
   "the-unarchiver"
-  "docker"
+  "docker-desktop"
   "1password-cli"
   "1password"
   "brave-browser"
@@ -18,4 +18,5 @@
   "transmission"
   "ghostty@tip"
   "libreoffice"
+  "gimp"
 ]

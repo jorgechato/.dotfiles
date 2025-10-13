@@ -24,8 +24,8 @@
         pkgs.cuelsp
         pkgs.htmx-lsp
         # TERMINAL
-        pkgs.mpd # Music Player Daemon
-        pkgs.rmpc # MPD client
+        # pkgs.mpd # Music Player Daemon
+        # pkgs.rmpc # MPD clientmpd
         pkgs.kubectl
         pkgs.cocoapods # Tauri iOS
         pkgs.libimobiledevice # Tauri iOS
@@ -75,7 +75,6 @@
         pkgs.maltego
         pkgs.sqlitebrowser
         pkgs.raycast
-        pkgs.gimp
         # Nvim
         pkgs.tree-sitter
         # Lua (for nvim)
