@@ -246,7 +246,18 @@ return {
                 on_attach = function(client, bufnr)
                     vim.api.nvim_create_autocmd("BufWritePre", {
                         buffer = bufnr,
-                        command = "EslintFixAll",
+                        callback = function(ctx)
+                            -- Apply ESLint fixes using code actions
+                            vim.lsp.buf.code_action({
+                                context = { only = { "source.fixAll.eslint" }, diagnostics = {} },
+                                apply = true,
+                            })
+
+                            -- Notify svelte language server if applicable
+                            if client.name == "svelte" then
+                                client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+                            end
+                        end,
                     })
                 end,
             }
@@ -341,6 +352,7 @@ return {
                 },
             }
 
+            vim.lsp.config.html = {}
             vim.lsp.config.spectral = {}
             vim.lsp.config.templ = {}
             vim.lsp.config.htmx = {}
@@ -378,6 +390,7 @@ return {
                     'zls',
                     'taplo',
                     'svelte',
+                    'html',
                 },
             })
 
@@ -442,6 +455,7 @@ return {
                         zig = true,
                         zir = true,
                         toml = true,
+                        css = true,
                     }
 
                     if format_fts[ft] then
