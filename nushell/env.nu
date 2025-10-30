@@ -44,9 +44,9 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '/run/current-system/sw
 $env.GOPATH = $"($env.HOME)/.go"
 $env.GOMODCACHE = $"($env.HOME)/.go/pkg/mod"
 $env.PATH = ($env.PATH | split row (char esep) | prepend $"($env.GOPATH)/bin")
-$env.GOPRIVATE = "github.com/garajonai/*,github.com/kouzoh/*"
-$env.GONOPROXY = "github.com/garajonai/*,github.com/kouzoh/*"
-$env.GONOSUMDB = "github.com/garajonai/*,github.com/kouzoh/*"
+$env.GOPRIVATE = "github.com/garajonai/*,github.com/zeals-co-ltd/*"
+$env.GONOPROXY = "github.com/garajonai/*,github.com/zeals-co-ltd/*"
+$env.GONOSUMDB = "github.com/garajonai/*,github.com/zeals-co-ltd/*"
 
 # PROMPT INDICATORS
 $env.PROMPT_INDICATOR = ""
