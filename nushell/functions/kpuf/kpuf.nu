@@ -35,7 +35,7 @@ def kpuf [] {
     try {
         kubectl config use-context $cluster o+e> /tmp/kpuf.log
     } catch {
-        print $"ERROR: You don't have ($cluster) in your ~/.kube/config file."
+        kpuf login $cluster
     }
 
     # Check if cluster is logged in, if not, login.
@@ -61,7 +61,11 @@ def "kpuf login" [
         try {
             gcloud container clusters get-credentials ($context | split row "_" | last ) --region ($context | split row "_" | get 2) --project ($context | split row "_" | get 1) o+e> /tmp/kpuf.log
         } catch {
-            print $"ERROR: There was an error logging into ($context)"
+            try {
+                gcloud container clusters get-credentials ($context | split row "_" | last ) --region ($context | split row "_" | get 2) --project ($context | split row "_" | get 1) --dns-endpoint o+e> /tmp/kpuf.log
+            } catch {
+                print $"ERROR: There was an error logging into ($context)"
+            }
         }
     } else {
         print $"ERROR: Only GCP contexts are supported."
