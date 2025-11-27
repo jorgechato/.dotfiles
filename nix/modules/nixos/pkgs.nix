@@ -105,9 +105,11 @@
 
       # Work
       (lib.mkIf config.dep.isWork [
+        pkgs.air
         pkgs.grpcurl
         pkgs.gosec
         pkgs.pwgen
+        pkgs.jdk
         # pkgs.php81
         pkgs.telepresence2
         pkgs.zoom-us
@@ -115,6 +117,7 @@
         pkgs.mongodb-cli
         (pkgs.google-cloud-sdk.withExtraComponents [
           pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin
+          pkgs.google-cloud-sdk.components.pubsub-emulator
         ])
       ])
     ];
