@@ -109,10 +109,11 @@
         pkgs.grpcurl
         pkgs.gosec
         pkgs.pwgen
-        pkgs.php81
+        # pkgs.php81
         pkgs.telepresence2
         pkgs.zoom-us
         pkgs.notion-app
+        pkgs.mongodb-cli
         (pkgs.google-cloud-sdk.withExtraComponents [
           pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin
         ])
