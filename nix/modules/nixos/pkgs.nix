@@ -101,6 +101,7 @@
         pkgs.stripe-cli
         # pkgs.audible-cli
         # pkgs.aaxtomp3
+        pkgs.testdisk
       ])
 
       # Work
