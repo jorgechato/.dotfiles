@@ -64,6 +64,9 @@ in
           theme: terminal-dark
           terminal_font_size: 20
           image_protocol: kitty-local
+        snippet:
+          exec:
+            enable: true
       '';
       target = ".config/presenterm/config.yaml";
     };
