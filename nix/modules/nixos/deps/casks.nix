@@ -19,4 +19,5 @@
   "ghostty@tip"
   "libreoffice"
   "gimp"
+  "anki" # study
 ]
