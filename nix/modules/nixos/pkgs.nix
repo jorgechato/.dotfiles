@@ -101,7 +101,6 @@
         pkgs.stripe-cli
         # pkgs.audible-cli
         # pkgs.aaxtomp3
-        pkgs.testdisk
       ])
 
       # Work
@@ -116,6 +115,10 @@
         pkgs.zoom-us
         pkgs.notion-app
         pkgs.mongodb-cli
+        pkgs.atlas
+        pkgs.mongodb-tools
+        pkgs.mongosh
+        pkgs.mermaid-cli
         (pkgs.google-cloud-sdk.withExtraComponents [
           pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin
           pkgs.google-cloud-sdk.components.pubsub-emulator
