@@ -19,6 +19,7 @@
         pkgs.cf-terraforming
         pkgs.nixpacks
         pkgs.supabase-cli
+        pkgs.opencode
         # ghostty.packages.${pkgs.system}.default # not working for darwin yet, need to use brew for now
         # LSP
         pkgs.lua-language-server
