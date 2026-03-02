@@ -29,9 +29,9 @@
         # pkgs.mpd # Music Player Daemon
         # pkgs.rmpc # MPD clientmpd
         pkgs.kubectl
-        pkgs.cocoapods # Tauri iOS
-        pkgs.libimobiledevice # Tauri iOS
-        pkgs.ios-deploy # Tauri iOS
+        # pkgs.cocoapods # Tauri iOS
+        # pkgs.libimobiledevice # Tauri iOS
+        # pkgs.ios-deploy # Tauri iOS
         pkgs.sqlite
         pkgs.qrencode
         pkgs.tmux

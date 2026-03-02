@@ -21,4 +21,5 @@
   "twingate" # connect to private networks
   "standard-notes"
   "raspberry-pi-imager"
+  "rustdesk" # remote desktop software
 ]
