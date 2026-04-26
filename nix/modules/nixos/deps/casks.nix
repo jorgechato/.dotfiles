@@ -18,6 +18,6 @@
   "transmission"
   "ghostty@tip"
   "libreoffice"
-  "gimp"
+  "affinity-photo"
   "anki" # study
 ]
