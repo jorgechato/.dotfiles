@@ -34,6 +34,7 @@ in
         # custom
         "nikitabobko/tap" # aerospace
         "libsql/sqld" # Turso dependency to run locally
+        "osx-cross/avr" # keyboard support for my keyboard firmware development
       ];
     };
   };
