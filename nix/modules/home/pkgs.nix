@@ -10,5 +10,6 @@
     pkgs.vscode
     pkgs.z-lua
     pkgs.grc
+    pkgs.spotify
   ];
 }
