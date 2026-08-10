@@ -4,7 +4,7 @@
   "telegram"
   "signal"
   "ente"
-  "ledger-live"
+  "ledger-wallet"
   "proton-drive"
   "proton-mail"
   "proton-pass"

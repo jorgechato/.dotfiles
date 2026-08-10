@@ -47,9 +47,9 @@ in
   # Set Git commit hash for darwin-version.
   system.configurationRevision = self.rev or self.dirtyRev or null;
 
-  # Used for backwards compatibility, please read the changelog before changing.
+  # Used for backwards compatibility, please read the changelog before changing. always keep one version behind the current version.
   # $ darwin-rebuild changelog
-  system.stateVersion = 5;
+  system.stateVersion = 6; # https://nix-darwin.github.io/nix-darwin/manual/index.html#opt-system.stateVersion
 
   nixpkgs.config.allowUnfree = true; # allow install paid apps (require to add license manually in each app)
 

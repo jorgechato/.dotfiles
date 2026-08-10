@@ -22,7 +22,7 @@ in
       key = if config.isWork then workPK else homePK;
       signByDefault = true;
     };
-    extraConfig = {
+    settings = {
       gpg = { format = "ssh"; };
       gpg."ssh".program = lib.mkMerge [
         (lib.mkIf pkgs.stdenv.isLinux "${pkgs._1password-gui}/bin/op-ssh-sign")

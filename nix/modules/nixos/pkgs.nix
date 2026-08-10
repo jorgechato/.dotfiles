@@ -46,7 +46,7 @@
         pkgs.git
         pkgs.fortune
         pkgs.platinum-searcher
-        pkgs.silver-searcher
+        pkgs.silver-searcher-ng
         pkgs.fzf
         pkgs.bat
         pkgs.httpie

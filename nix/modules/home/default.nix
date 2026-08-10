@@ -9,7 +9,7 @@
 
   config = {
     home = {
-      stateVersion = "25.05"; # https://github.com/nix-community/home-manager/blob/master/modules/misc/version.nix#L10
+      stateVersion = "26.11"; # https://github.com/nix-community/home-manager/blob/master/modules/misc/version.nix#L10
     };
 
     targets.darwin = {
