@@ -22,4 +22,6 @@
   "standard-notes"
   "raspberry-pi-imager"
   "rustdesk" # remote desktop software
+  "arduino-ide"
+  "kicad"
 ]

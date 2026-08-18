@@ -17,7 +17,10 @@ in
       global.brewfile = true;
       masApps = lib.mkIf (!config.dep.isWork) appstoreHome;
       onActivation.cleanup = "zap";
-      onActivation.autoUpdate = true;
+      # Auto-update must stay off: Homebrew is pinned by nix-homebrew (see
+      # flake.nix brew-src), and running auto-update inside `brew bundle`
+      # breaks its mas detection, falsely failing every masApps install.
+      onActivation.autoUpdate = false;
       onActivation.upgrade = true;
       brews = lib.mkMerge [
         brews
@@ -32,8 +35,8 @@ in
 
       taps = [
         # custom
-        "nikitabobko/tap" # aerospace
-        "libsql/sqld" # Turso dependency to run locally
+        { name = "nikitabobko/tap"; trusted = true; } # aerospace
+        { name = "libsql/sqld"; trusted = true; } # Turso dependency to run locally
         { name = "osx-cross/avr"; trusted = true; } # keyboard support for my keyboard firmware development
       ];
     };

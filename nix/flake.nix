@@ -6,6 +6,13 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # Override nix-homebrew's pinned Homebrew version; the pinned one (6.0.16)
+    # has a `brew bundle` incompatible with mas 7.x, breaking masApps installs.
+    brew-src = {
+      url = "github:Homebrew/brew/6.0.18";
+      flake = false;
+    };
+    nix-homebrew.inputs.brew-src.follows = "brew-src";
     ghostty.url = "github:ghostty-org/ghostty";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -13,7 +20,7 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, ghostty, nix-homebrew, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, ghostty, nix-homebrew, home-manager, ... }:
     {
       darwinConfigurations."ichi" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs self; };
