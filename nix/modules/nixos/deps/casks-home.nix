@@ -9,19 +9,17 @@
   "proton-mail"
   "proton-pass"
   "steam"
-  "qflipper"
   "yubico-authenticator"
   "cloudflare-warp"
-  "freecad"
-  "calibre"
-  "kindle-previewer" # to use it with KCC https://github.com/ciromattia/kcc/releases
+  "freecad" # 2D/3D builder
   "google-chrome"
   "yacreader"
   "outerbase-studio" # A lightweight Database GUI
   "twingate" # connect to private networks
-  "standard-notes"
   "raspberry-pi-imager"
   "rustdesk" # remote desktop software
   "arduino-ide"
-  "kicad"
+  "kicad" # design boards
+  "bambu-studio" # 3D printer
+  "blender" # 3D
 ]

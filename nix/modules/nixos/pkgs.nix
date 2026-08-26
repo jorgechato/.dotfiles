@@ -3,6 +3,7 @@
     environment.systemPackages = lib.mkMerge [
       [
         # CODE
+        pkgs.platformio
         pkgs.go
         pkgs.zig
         pkgs.lua5_4_compat
