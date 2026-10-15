@@ -20,7 +20,6 @@
         pkgs.cf-terraforming
         pkgs.nixpacks
         pkgs.supabase-cli
-        pkgs.opencode
         pkgs.qmk # keyboard firmware development
         pkgs.avrdude # keyboard firmware development
         # ghostty.packages.${pkgs.system}.default # not working for darwin yet, need to use brew for now

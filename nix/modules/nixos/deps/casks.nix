@@ -19,5 +19,5 @@
   "libreoffice"
   "affinity-photo" # vectorial
   "anki" # study
-  "claude-code"
+  "claude-code@latest"
 ]

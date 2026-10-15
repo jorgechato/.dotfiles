@@ -431,7 +431,7 @@ $env.config = {
             event: { edit: movetolinestart }
         }
         {
-            name: move_to_line_start
+            name: move_to_line_start_2
             modifier: control
             keycode: char_a
             mode: [emacs, vi_normal, vi_insert]
@@ -450,7 +450,7 @@ $env.config = {
             }
         }
         {
-            name: move_to_line_end_or_take_history_hint
+            name: move_to_line_end_or_take_history_hint_2
             modifier: control
             keycode: char_e
             mode: [emacs, vi_normal, vi_insert]
@@ -462,7 +462,7 @@ $env.config = {
             }
         }
         {
-            name: move_to_line_start
+            name: move_to_line_start_3
             modifier: control
             keycode: home
             mode: [emacs, vi_normal, vi_insert]
@@ -476,7 +476,7 @@ $env.config = {
             event: { edit: movetolineend }
         }
         {
-            name: move_down
+            name: move_down_2
             modifier: control
             keycode: char_n
             mode: [emacs, vi_normal, vi_insert]
@@ -488,7 +488,7 @@ $env.config = {
             }
         }
         {
-            name: move_up
+            name: move_up_2
             modifier: control
             keycode: char_p
             mode: [emacs, vi_normal, vi_insert]
@@ -521,28 +521,28 @@ $env.config = {
             event: { edit: delete }
         }
         {
-            name: delete_one_character_forward
+            name: delete_one_character_forward_2
             modifier: control
             keycode: delete
             mode: [emacs, vi_insert]
             event: { edit: delete }
         }
         {
-            name: delete_one_character_backward
+            name: delete_one_character_backward_2
             modifier: control
             keycode: char_h
             mode: [emacs, vi_insert]
             event: { edit: backspace }
         }
         {
-            name: delete_one_word_backward
+            name: delete_one_word_backward_2
             modifier: control
             keycode: char_w
             mode: [emacs, vi_insert]
             event: { edit: backspaceword }
         }
         {
-            name: move_left
+            name: move_left_2
             modifier: none
             keycode: backspace
             mode: vi_normal
@@ -556,7 +556,7 @@ $env.config = {
             event: { send: enter }
         }
         {
-            name: move_left
+            name: move_left_3
             modifier: control
             keycode: char_b
             mode: emacs
@@ -568,7 +568,7 @@ $env.config = {
             }
         }
         {
-            name: move_right_or_take_history_hint
+            name: move_right_or_take_history_hint_2
             modifier: control
             keycode: char_f
             mode: emacs
@@ -630,14 +630,14 @@ $env.config = {
             event: { edit: swapgraphemes }
         }
         {
-            name: move_one_word_left
+            name: move_one_word_left_2
             modifier: alt
             keycode: left
             mode: emacs
             event: { edit: movewordleft }
         }
         {
-            name: move_one_word_right_or_take_history_hint
+            name: move_one_word_right_or_take_history_hint_2
             modifier: alt
             keycode: right
             mode: emacs
@@ -649,14 +649,14 @@ $env.config = {
             }
         }
         {
-            name: move_one_word_left
+            name: move_one_word_left_3
             modifier: alt
             keycode: char_b
             mode: emacs
             event: { edit: movewordleft }
         }
         {
-            name: move_one_word_right_or_take_history_hint
+            name: move_one_word_right_or_take_history_hint_3
             modifier: alt
             keycode: char_f
             mode: emacs
@@ -675,14 +675,14 @@ $env.config = {
             event: { edit: deleteword }
         }
         {
-            name: delete_one_word_backward
+            name: delete_one_word_backward_3
             modifier: alt
             keycode: backspace
             mode: emacs
             event: { edit: backspaceword }
         }
         {
-            name: delete_one_word_backward
+            name: delete_one_word_backward_4
             modifier: alt
             keycode: char_m
             mode: emacs
