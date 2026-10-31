@@ -7,6 +7,7 @@ in
   programs.ssh = {
     enable = true;
     # enableDefaultConfig = false;
+    matchBlocks."git.jrg.tools".proxyCommand = "cloudflared access ssh --hostname ssh-git.jrg.tools";
     extraConfig = lib.mkMerge [
       (lib.mkIf pkgs.stdenv.isLinux ''
         IdentityAgent "~/.1password/agent.sock"
