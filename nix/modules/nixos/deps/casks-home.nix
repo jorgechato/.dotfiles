@@ -18,8 +18,7 @@
   "twingate" # connect to private networks
   "raspberry-pi-imager"
   "rustdesk" # remote desktop software
-  "arduino-ide"
   "kicad" # design boards
   "bambu-studio" # 3D printer
-  "blender" # 3D
+  "solidcraft" # 3D
 ]

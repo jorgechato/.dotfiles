@@ -5,10 +5,9 @@
   "1password-cli"
   "1password"
   "brave-browser"
-  # "jetbrains-toolbox"
   "elgato-stream-deck"
-  "logi-options+"
   "appcleaner"
+  "openlogi"
   "wezterm"
   "sf-symbols"
   "nikitabobko/tap/aerospace"
@@ -17,7 +16,6 @@
   "transmission"
   "ghostty@tip"
   "libreoffice"
-  "affinity-photo" # vectorial
   "anki" # study
   "claude-code@latest"
 ]
